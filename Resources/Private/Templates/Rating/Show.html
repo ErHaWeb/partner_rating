@@ -1,0 +1,115 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true" lang="en">
+<f:layout name="Default"/>
+<f:section name="Main">
+    <f:asset.script identifier="identifier123" src="EXT:partner_rating/Resources/Public/JavaScript/main.js"/>
+    <h1>{department.title}</h1>
+    <f:if condition="{savedRating}">
+        <div>
+            <h2>Rating saved!</h2>
+            <p>
+                <strong>Partner:</strong> {savedRating.partner.title}
+                has been rated with a rating of <strong>{savedRating.rateValue}</strong>
+            </p>
+            <f:if condition="{savedRating.reason} || {savedRating.reasonText} != ''">
+                <f:if condition="{savedRating.reason}">
+                    <p><strong>Reason:</strong> {savedRating.reason.title}</p>
+                </f:if>
+                <f:if condition="!({savedRating.reason}) && {savedRating.reasonText} != ''">
+                    <p><strong>Reason text:</strong></p>
+                    <f:format.html>{savedRating.reasonText}</f:format.html>
+                </f:if>
+            </f:if>
+        </div>
+    </f:if>
+    <h2>Rating Form</h2>
+    <f:form action="save">
+        <f:form.hidden name="department" value="{department.uid}"/>
+        <div>
+            <label for="partner">Partner</label><br>
+            <f:form.textfield name="partnerSearch" value="{values.partnerSearch}"/>
+            <f:form.select name="partner" id="partner" size="10">
+                <f:if condition="{values.partner} > 0">
+                    <f:then>
+                        <f:form.select.option value="0"/>
+                    </f:then>
+                    <f:else>
+                        <f:form.select.option value="0" selected="selected"/>
+                    </f:else>
+                </f:if>
+                <f:for each="{partners}" as="partner">
+                    <f:if condition="{partner.uid} == {values.partner}">
+                        <f:then>
+                            <f:form.select.option value="{partner.uid}" selected="selected">{partner.title}
+                            </f:form.select.option>
+                        </f:then>
+                        <f:else>
+                            <f:form.select.option value="{partner.uid}">{partner.title}</f:form.select.option>
+                        </f:else>
+                    </f:if>
+                </f:for>
+            </f:form.select>
+        </div>
+        <div>
+            <label for="rating">Rating</label><br>
+            <f:form.select name="rating" id="rating">
+                <f:for each="{0:5, 1:4, 2:3, 3:2, 4:1}" as="rating">
+                    <f:if condition="{rating} == {values.rating}">
+                        <f:then>
+                            <f:form.select.option value="{rating}" selected="selected">{rating}</f:form.select.option>
+                        </f:then>
+                        <f:else>
+                            <f:form.select.option value="{rating}">{rating}</f:form.select.option>
+                        </f:else>
+                    </f:if>
+                </f:for>
+            </f:form.select>
+        </div>
+        <div>
+            <f:comment><!-- No reason --></f:comment>
+            <f:if condition="!({values.reason})">
+                <f:then>
+                    <f:form.radio value="0" name="reason" id="reason-0" checked="checked"/>
+                </f:then>
+                <f:else>
+                    <f:form.radio value="0" name="reason" id="reason-0"/>
+                </f:else>
+            </f:if>
+            <label for="reason-0">Kein Grund gewählt</label><br>
+
+            <f:comment><!-- Free text reason --></f:comment>
+            <f:if condition="{values.reason} == -1">
+                <f:then>
+                    <f:form.radio value="-1" name="reason" id="reasonText" checked="checked"/>
+                </f:then>
+                <f:else>
+                    <f:form.radio value="-1" name="reason" id="reasonText"/>
+                </f:else>
+            </f:if>
+            <label for="reasonText">
+                Grund:
+                <f:form.textarea name="reasonText" disabled="disabled" value="{values.reasonText}"/>
+            </label><br>
+
+            <f:comment><!-- Predefined reasons for current department --></f:comment>
+            <f:for each="{reasons}" as="reason">
+                <f:if condition="{reason.uid} == {values.reason}">
+                    <f:then>
+                        <f:form.radio value="{reason.uid}" name="reason" id="reason-{reason.uid}" checked="checked"/>
+                    </f:then>
+                    <f:else>
+                        <f:form.radio value="{reason.uid}" name="reason" id="reason-{reason.uid}"/>
+                    </f:else>
+                </f:if>
+                <label for="reason-{reason.uid}">
+                    {reason.title}<br>
+                    <f:format.html>{reason.description}</f:format.html>
+                </label><br>
+            </f:for>
+        </div>
+        <div>
+            <f:form.submit value="Save Rating"></f:form.submit>
+        </div>
+    </f:form>
+    <f:link.action action="list">← zurück</f:link.action>
+</f:section>
+</html>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="EXT:partner_rating/Resources/Private/Language/locallang_db.xlf" date="2023-09-03T16:55:15Z" product-name="partner_rating">
+		<header/>
+		<body>
+			<trans-unit id="tx_partnerrating_domain_model_partner" resname="tx_partnerrating_domain_model_partner">
+				<source>Partner</source>
+			</trans-unit>
+			<trans-unit id="tx_partnerrating_domain_model_partner.description" resname="tx_partnerrating_domain_model_partner.description">
+				<source>Partner</source>
+			</trans-unit>
+			<trans-unit id="tx_partnerrating_domain_model_partner.title" resname="tx_partnerrating_domain_model_partner.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_partnerrating_domain_model_partner.title.description" resname="tx_partnerrating_domain_model_partner.title.description">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_partnerrating_domain_model_partner.partner_nr" resname="tx_partnerrating_domain_model_partner.partner_nr">
+				<source>Partner Nr</source>
+			</trans-unit>
+			<trans-unit id="tx_partnerrating_domain_model_partner.partner_nr.description" resname="tx_partnerrating_domain_model_partner.partner_nr.description">
+				<source>Partner Nr</source>
+			</trans-unit>
+			<trans-unit id="tx_partnerrating_domain_model_rating" resname="tx_partnerrating_domain_model_rating">
+				<source>Rating</source>
+			</trans-unit>
+			<trans-unit id="tx_partnerrating_domain_model_rating.description" resname="tx_partnerrating_domain_model_rating.description">
+				<source>Rating</source>
+			</trans-unit>
+			<trans-unit id="tx_partnerrating_domain_model_rating.rate_value" resname="tx_partnerrating_domain_model_rating.rate_value">
+				<source>Rate Value</source>
+			</trans-unit>
+			<trans-unit id="tx_partnerrating_domain_model_rating.rate_value.description" resname="tx_partnerrating_domain_model_rating.rate_value.description">
+				<source>Rate Value</source>
+			</trans-unit>
+			<trans-unit id="tx_partnerrating_domain_model_rating.partner" resname="tx_partnerrating_domain_model_rating.partner">
+				<source>Partner</source>
+			</trans-unit>
+			<trans-unit id="tx_partnerrating_domain_model_rating.partner.description" resname="tx_partnerrating_domain_model_rating.partner.description">
+				<source>Partner</source>
+			</trans-unit>
+			<trans-unit id="tx_partnerrating_domain_model_rating.reason" resname="tx_partnerrating_domain_model_rating.reason">
+				<source>Reason</source>
+			</trans-unit>
+			<trans-unit id="tx_partnerrating_domain_model_rating.reason_text" resname="tx_partnerrating_domain_model_rating.reason_text">
+				<source>Reason Text</source>
+			</trans-unit>
+			<trans-unit id="tx_partnerrating_domain_model_rating.reason.description" resname="tx_partnerrating_domain_model_rating.reason.description">
+				<source>Reason</source>
+			</trans-unit>
+			<trans-unit id="tx_partnerrating_domain_model_rating.department" resname="tx_partnerrating_domain_model_rating.department">
+				<source>Department</source>
+			</trans-unit>
+			<trans-unit id="tx_partnerrating_domain_model_rating.department.description" resname="tx_partnerrating_domain_model_rating.department.description">
+				<source>Department</source>
+			</trans-unit>
+			<trans-unit id="tx_partnerrating_domain_model_reason.department" resname="tx_partnerrating_domain_model_reason.department">
+				<source>Department</source>
+			</trans-unit>
+			<trans-unit id="tx_partnerrating_domain_model_reason.department.description" resname="tx_partnerrating_domain_model_reason.department.description">
+				<source>Department</source>
+			</trans-unit>
+			<trans-unit id="tx_partnerrating_domain_model_reason" resname="tx_partnerrating_domain_model_reason">
+				<source>Reason</source>
+			</trans-unit>
+			<trans-unit id="tx_partnerrating_domain_model_reason.description" resname="tx_partnerrating_domain_model_reason.description">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="tx_partnerrating_domain_model_reason.title" resname="tx_partnerrating_domain_model_reason.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_partnerrating_domain_model_reason.title.description" resname="tx_partnerrating_domain_model_reason.title.description">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_partnerrating_domain_model_reason.description.description" resname="tx_partnerrating_domain_model_reason.description.description">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="tx_partnerrating_domain_model_department" resname="tx_partnerrating_domain_model_department">
+				<source>Department</source>
+			</trans-unit>
+			<trans-unit id="tx_partnerrating_domain_model_department.description" resname="tx_partnerrating_domain_model_department.description">
+				<source>Department</source>
+			</trans-unit>
+			<trans-unit id="tx_partnerrating_domain_model_department.title" resname="tx_partnerrating_domain_model_department.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_partnerrating_domain_model_department.title.description" resname="tx_partnerrating_domain_model_department.title.description">
+				<source>Title</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

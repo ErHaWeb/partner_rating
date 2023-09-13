@@ -1,0 +1,10 @@
+plugin.tx_partnerrating_pi1 {
+    view {
+        # cat=plugin.tx_tx_partnerrating/file; type=string; label=Path to template root (FE)
+        templateRootPath = EXT:partner_rating/Resources/Private/Templates/
+        # cat=plugin.tx_tx_partnerrating/file; type=string; label=Path to template partials (FE)
+        partialRootPath = EXT:partner_rating/Resources/Private/Partials/
+        # cat=plugin.tx_tx_partnerrating/file; type=string; label=Path to template layouts (FE)
+        layoutRootPath = EXT:partner_rating/Resources/Private/Layouts/
+    }
+}

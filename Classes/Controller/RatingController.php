@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace ErHaWeb\PartnerRating\Controller;
 
-
 use ErHaWeb\PartnerRating\Domain\Model\Department;
 use ErHaWeb\PartnerRating\Domain\Model\Partner;
 use ErHaWeb\PartnerRating\Domain\Model\Rating;
@@ -43,23 +42,33 @@ class RatingController extends ActionController
     }
 
     /**
+     * Action: listAction
+     *
+     * This action handles the listing of departments.
+     *
      * @return ResponseInterface
      */
     public function listAction(): ResponseInterface
     {
+        // Load all departments and assign them to the view
         $this->view->assign('departments', $this->departmentRepository->findAll());
         return $this->htmlResponse();
     }
 
     /**
-     * @param Department $department
-     * @param Rating|null $savedRating
+     * Action: showAction
+     *
+     * This action handles the display of a department and its associated data.
+     *
+     * @param Department $department The department to display
+     * @param Rating|null $savedRating An optional saved rating for display
      * @return ResponseInterface
      */
     public function showAction(Department $department, ?Rating $savedRating = null): ResponseInterface
     {
         $assign = [];
 
+        // Assign department, reasons, and partners to the view
         $assign['department'] = $department;
         $assign['reasons'] = $this->reasonRepository->findBy(['department' => $department]);
         $assign['partners'] = $this->partnerRepository->findAll();
@@ -68,6 +77,7 @@ class RatingController extends ActionController
             $assign['savedRating'] = $savedRating;
         }
 
+        // Process and assign filtering values to the view
         $values = [];
         $partner = (int)($this->request->getArguments()['partner'] ?? 0);
         if ($partner !== 0) {
@@ -105,8 +115,12 @@ class RatingController extends ActionController
     }
 
     /**
-     * @param Department|null $department
-     * @param Partner|null $partner
+     * Action: saveAction
+     *
+     * This action handles the saving of a rating.
+     *
+     * @param Department|null $department The department associated with the rating
+     * @param Partner|null $partner The partner associated with the rating
      * @return ResponseInterface
      * @throws IllegalObjectTypeException
      */
@@ -116,10 +130,12 @@ class RatingController extends ActionController
         $rating = (int)($this->request->getArguments()['rating'] ?? 0);
         $reasonText = htmlspecialchars($this->request->getArguments()['reasonText'] ?? '');
 
+        // Check if required data is available, if not, redirect
         if ($department === null || $partner === null || ($reason === -1 && $reasonText === '') || ($reason === 0 && $rating > 3)) {
             return $this->redirect('show', 'Rating', 'PartnerRating', $this->request->getArguments());
         }
 
+        // Create a new Rating object and set its properties
         $reasonObject = $this->reasonRepository->findByUid($reason);
 
         /** @var Rating $ratingObject */
@@ -132,9 +148,12 @@ class RatingController extends ActionController
             $ratingObject->setReasonText($reasonText);
         }
         $ratingObject->setRateValue($rating);
+
+        // Add the rating to the repository and persist it
         $this->ratingRepository->add($ratingObject);
         $this->persistenceManager->persistAll();
 
+        // Redirect to the "show" action with appropriate arguments
         return $this->redirect('show', 'Rating', 'PartnerRating', ['department' => $department->getUid(), 'savedRating' => $ratingObject]);
     }
 }

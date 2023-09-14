@@ -2,9 +2,7 @@
 return [
     'ctrl' => [
         'title' => 'LLL:EXT:partner_rating/Resources/Private/Language/locallang_db.xlf:tx_partnerrating_domain_model_rating',
-        'label' => 'partner',
-        'label_alt' => 'rate_value',
-        'label_alt_force' => true,
+        'label' => 'rate_value',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
         'cruser_id' => 'cruser_id',

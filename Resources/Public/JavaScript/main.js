@@ -85,7 +85,8 @@
         radioButtons.forEach(radio => {
             radio.required = true;
             if (radio.checked && parseInt(radio.value, 10) === 0) {
-                radio.setCustomValidity('Please select a reason.');
+                const customValidationMessage = radio.getAttribute('data-validation');
+                radio.setCustomValidity(customValidationMessage);
             } else {
                 radio.setCustomValidity('');
             }
@@ -114,7 +115,8 @@
         // Check if the partner select value is empty or 0
         const selectedPartnerValue = parseInt(partnerSelect.value, 10);
         if (isNaN(selectedPartnerValue) || selectedPartnerValue === 0) {
-            partnerSelect.setCustomValidity('Please select a partner.'); // Set custom validity message
+            const customValidationMessage = partnerSelect.getAttribute('data-validation');
+            partnerSelect.setCustomValidity(customValidationMessage); // Set custom validity message
             event.preventDefault(); // Prevent form submission
         } else {
             partnerSelect.setCustomValidity(''); // Clear custom validity message
@@ -127,7 +129,8 @@
         const selectedPartnerValue = parseInt(partnerSelect.value, 10);
         const selectedReasonValue = parseInt(document.querySelector('input[name="tx_partnerrating_pi1[reason]"]:checked').value, 10);
         if (selectedPartnerValue === 0 && selectedReasonValue !== 0) {
-            partnerSelect.setCustomValidity('Please select a partner.'); // Set custom validity message
+            const customValidationMessage = partnerSelect.getAttribute('data-validation');
+            partnerSelect.setCustomValidity(customValidationMessage); // Set custom validity message
         } else {
             partnerSelect.setCustomValidity(''); // Clear custom validity message
         }

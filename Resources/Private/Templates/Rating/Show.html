@@ -27,15 +27,8 @@
         <div>
             <label for="partner">Partner</label><br>
             <f:form.textfield name="partnerSearch" value="{values.partnerSearch}"/>
-            <f:form.select name="partner" id="partner" size="10">
-                <f:if condition="{values.partner} > 0">
-                    <f:then>
-                        <f:form.select.option value="0"/>
-                    </f:then>
-                    <f:else>
-                        <f:form.select.option value="0" selected="selected"/>
-                    </f:else>
-                </f:if>
+            <f:form.select name="partner" id="partner" size="10" required="required">
+                <f:form.select.option value="0"/>
                 <f:for each="{partners}" as="partner">
                     <f:if condition="{partner.uid} == {values.partner}">
                         <f:then>
@@ -51,7 +44,7 @@
         </div>
         <div>
             <label for="rating">Rating</label><br>
-            <f:form.select name="rating" id="rating">
+            <f:form.select name="rating" id="rating" required="required">
                 <f:for each="{0:5, 1:4, 2:3, 3:2, 4:1}" as="rating">
                     <f:if condition="{rating} == {values.rating}">
                         <f:then>

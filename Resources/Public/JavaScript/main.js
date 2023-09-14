@@ -4,7 +4,7 @@
 (function () {
     'use strict'; // Strict mode directive added
 
-    let searchInput, partnerSelect, textareaField, radioButtons; // Variable declarations added
+    let searchInput, partnerSelect, textareaField, radioButtons, ratingSelect; // Variable declarations added
     let emptyOptionSelected = false; // Variable to track the empty option selection
 
     // Function to perform AJAX request and populate the select field
@@ -54,6 +54,7 @@
 
                 // Update textarea status based on selected radio
                 updateTextareaStatus();
+                handlePartnerSelectChange();
             })
             .catch(error => {
                 console.error('Error:', error);
@@ -72,6 +73,64 @@
     // Function to update textarea status based on selected radio
     function updateTextareaStatus() {
         textareaField.disabled = !radioButtons[1].checked;
+        textareaField.required = radioButtons[1].checked;
+    }
+
+    // Function to handle rating select change
+    function handleRatingSelectChange() {
+        // Get the selected rating value as an integer
+        const selectedRating = parseInt(ratingSelect.value, 10);
+
+        // Validate selected value
+        radioButtons.forEach(radio => {
+            radio.required = true;
+            if (radio.checked && parseInt(radio.value, 10) === 0) {
+                radio.setCustomValidity('Please select a reason.');
+            } else {
+                radio.setCustomValidity('');
+            }
+        });
+
+        // Make the radio buttons required
+        if (selectedRating > 3) {
+            radioButtons.forEach(radio => {
+                radio.required = true;
+            });
+        } else {
+            radioButtons.forEach(radio => {
+                radio.required = false;
+                radio.setCustomValidity('');
+            });
+        }
+    }
+
+    // Function to handle form submission
+    function handleFormSubmit(event) {
+        // Check if the form is valid
+        if (!event.target.checkValidity()) {
+            event.preventDefault(); // Prevent form submission if not valid
+        }
+
+        // Check if the partner select value is empty or 0
+        const selectedPartnerValue = parseInt(partnerSelect.value, 10);
+        if (isNaN(selectedPartnerValue) || selectedPartnerValue === 0) {
+            partnerSelect.setCustomValidity('Please select a partner.'); // Set custom validity message
+            event.preventDefault(); // Prevent form submission
+        } else {
+            partnerSelect.setCustomValidity(''); // Clear custom validity message
+        }
+    }
+
+    // Function to handle partner select change
+    function handlePartnerSelectChange() {
+        // Check if the partner select value is 0 and reason select is not 0
+        const selectedPartnerValue = parseInt(partnerSelect.value, 10);
+        const selectedReasonValue = parseInt(document.querySelector('input[name="tx_partnerrating_pi1[reason]"]:checked').value, 10);
+        if (selectedPartnerValue === 0 && selectedReasonValue !== 0) {
+            partnerSelect.setCustomValidity('Please select a partner.'); // Set custom validity message
+        } else {
+            partnerSelect.setCustomValidity(''); // Clear custom validity message
+        }
     }
 
     // DOMContentLoaded event listener
@@ -87,6 +146,8 @@
         textareaField = container.querySelector('textarea[name="tx_partnerrating_pi1[reasonText]"]');
         searchInput = container.querySelector('input[name="tx_partnerrating_pi1[partnerSearch]"]');
         partnerSelect = container.querySelector('select[name="tx_partnerrating_pi1[partner]"]');
+        ratingSelect = container.querySelector('select[name="tx_partnerrating_pi1[rating]"]');
+        const form = container.querySelector('form');
 
         // Add input event listener to the search input
         if (searchInput && partnerSelect) {
@@ -97,7 +158,24 @@
         if (radioButtons && textareaField) {
             radioButtons.forEach(radio => {
                 radio.addEventListener('change', updateTextareaStatus);
+                radio.addEventListener('change', handleRatingSelectChange);
+                radio.addEventListener('change', handlePartnerSelectChange);
             });
+        }
+
+        // Add change event listener to rating select
+        if (ratingSelect) {
+            ratingSelect.addEventListener('change', handleRatingSelectChange);
+        }
+
+        // Add change event listener to partner select
+        if (partnerSelect) {
+            partnerSelect.addEventListener('change', handlePartnerSelectChange);
+        }
+
+        // Add form submit event listener to perform additional validation
+        if (form) {
+            form.addEventListener('submit', handleFormSubmit);
         }
 
         // Initially perform AJAX request and populate the select field if the search input is not empty
@@ -107,5 +185,9 @@
 
         // Initially, check the radio buttons and enable/disable textarea accordingly
         updateTextareaStatus();
+        // Initially, check the rating select to set the required attribute for radio buttons
+        handleRatingSelectChange();
+        // Initially, check the partner select for immediate validation
+        handlePartnerSelectChange();
     });
 })();

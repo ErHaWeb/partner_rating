@@ -2,16 +2,48 @@
     "name": "erhaweb/partner-rating",
     "type": "typo3-cms-extension",
     "description": "Extbase/Fluid extension that allows departments to rate collaboration partners via a front-end form. The rating is based on school grades. Grades greater than 4 must be justified. This is possible either by predefined reasons or a free text input.",
-    "authors": [],
     "license": "GPL-2.0-or-later",
     "require": {
         "typo3/cms-core": "^12.4"
     },
     "require-dev": {
-        "roave/security-advisories": "dev-latest"
-        ,
+        "roave/security-advisories": "dev-latest",
         "typo3/testing-framework": "^6.9.0"
     },
+    "authors": [
+        {
+            "name": "Eric Harrer",
+            "role": "Developer",
+            "email": "info@eric-harrer.de",
+            "homepage": "https://www.eric-harrer.de"
+        },
+        {
+            "name": "Axel Hempelt",
+            "role": "Product Owner",
+            "email": "info@fiz-soft.de",
+            "homepage": "https://fiz-soft.de/"
+        }
+    ],
+    "keywords": [
+        "TYPO3",
+        "extension",
+        "Partner",
+        "Rating",
+        "Department",
+        "Reason"
+    ],
+    "homepage": "https://extensions.typo3.org/extension/partner_rating",
+    "support": {
+        "source": "https://github.com/ErHaWeb/partner_rating",
+        "issues": "https://github.com/ErHaWeb/partner_rating/issues",
+        "docs": "https://github.com/ErHaWeb/partner_rating#readme"
+    },
+    "funding": [
+        {
+            "type": "other",
+            "url:": "https://www.paypal.com/paypalme/ebode"
+        }
+    ],
     "autoload": {
         "psr-4": {
             "ErHaWeb\\PartnerRating\\": "Classes"

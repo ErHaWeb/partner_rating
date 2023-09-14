@@ -5,29 +5,29 @@
     <h1>{department.title}</h1>
     <f:if condition="{savedRating}">
         <div>
-            <h2>Rating saved!</h2>
+            <h2><f:translate key="save.title"/></h2>
             <p>
-                <strong>Partner:</strong> {savedRating.partner.title}
-                has been rated with a rating of <strong>{savedRating.rateValue}</strong>
+                <strong><f:translate key="partner.title"/>:</strong>
+                <f:translate key="save.message" arguments="{0: '{savedRating.partner.title}', 1: '{savedRating.rateValue}'}" />
             </p>
             <f:if condition="{savedRating.reason} || {savedRating.reasonText} != ''">
                 <f:if condition="{savedRating.reason}">
-                    <p><strong>Reason:</strong> {savedRating.reason.title}</p>
+                    <p><strong><f:translate key="reason.title"/>:</strong> {savedRating.reason.title}</p>
                 </f:if>
                 <f:if condition="!({savedRating.reason}) && {savedRating.reasonText} != ''">
-                    <p><strong>Reason text:</strong></p>
+                    <p><strong><f:translate key="reasonText.title"/>:</strong></p>
                     <f:format.html>{savedRating.reasonText}</f:format.html>
                 </f:if>
             </f:if>
         </div>
     </f:if>
-    <h2>Rating Form</h2>
+    <h2><f:translate key="form.title"/></h2>
     <f:form action="save">
         <f:form.hidden name="department" value="{department.uid}"/>
         <div>
-            <label for="partner">Partner</label><br>
+            <label for="partner"><f:translate key="partner.title"/></label><br>
             <f:form.textfield name="partnerSearch" value="{values.partnerSearch}"/>
-            <f:form.select name="partner" id="partner" size="10" required="required">
+            <f:form.select name="partner" id="partner" size="10" required="required" additionalAttributes="{data-validation:'{f:translate(key: \'validation.partner\')}'}">
                 <f:form.select.option value="0"/>
                 <f:for each="{partners}" as="partner">
                     <f:if condition="{partner.uid} == {values.partner}">
@@ -43,7 +43,7 @@
             </f:form.select>
         </div>
         <div>
-            <label for="rating">Rating</label><br>
+            <label for="rating"><f:translate key="rating.title"/></label><br>
             <f:form.select name="rating" id="rating" required="required">
                 <f:for each="{0:5, 1:4, 2:3, 3:2, 4:1}" as="rating">
                     <f:if condition="{rating} == {values.rating}">
@@ -61,13 +61,13 @@
             <f:comment><!-- No reason --></f:comment>
             <f:if condition="!({values.reason})">
                 <f:then>
-                    <f:form.radio value="0" name="reason" id="reason-0" checked="checked"/>
+                    <f:form.radio value="0" name="reason" id="reason-0" checked="checked" additionalAttributes="{data-validation:'{f:translate(key: \'validation.reason\')}'}"/>
                 </f:then>
                 <f:else>
-                    <f:form.radio value="0" name="reason" id="reason-0"/>
+                    <f:form.radio value="0" name="reason" id="reason-0" additionalAttributes="{data-validation:'{f:translate(key: \'validation.reason\')}'}"/>
                 </f:else>
             </f:if>
-            <label for="reason-0">Kein Grund gewählt</label><br>
+            <label for="reason-0"><f:translate key="reason.none"/></label><br>
 
             <f:comment><!-- Free text reason --></f:comment>
             <f:if condition="{values.reason} == -1">
@@ -79,7 +79,7 @@
                 </f:else>
             </f:if>
             <label for="reasonText">
-                Grund:
+                <f:translate key="reasonText.title"/>:
                 <f:form.textarea name="reasonText" disabled="disabled" value="{values.reasonText}"/>
             </label><br>
 
@@ -100,9 +100,9 @@
             </f:for>
         </div>
         <div>
-            <f:form.submit value="Save Rating"></f:form.submit>
+            <f:form.submit value="{f:translate(key: 'submit')}"></f:form.submit>
         </div>
     </f:form>
-    <f:link.action action="list">← zurück</f:link.action>
+    <f:link.action action="list"><f:translate key="back"/>></f:link.action>
 </f:section>
 </html>

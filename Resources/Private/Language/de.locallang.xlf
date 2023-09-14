@@ -1,10 +1,59 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-    <file source-language="en" datatype="plaintext" original="EXT:partner_rating/Resources/Private/Language/locallang_db.xlf" date="2023-09-03T16:55:15Z" product-name="partner_rating">
+    <file source-language="en" target-language="de" datatype="plaintext" original="EXT:partner_rating/Resources/Private/Language/locallang_db.xlf" date="2023-09-03T16:55:15Z" product-name="partner_rating">
         <header/>
         <body>
-            <trans-unit id="validation.reason" resname="validation.reason">
+            <trans-unit id="validation.reason">
                 <source>Please select a reason.</source>
+                <target>Bitte wählen Sie einen Grund aus.</target>
+            </trans-unit>
+            <trans-unit id="validation.partner">
+                <source>Please select a partner.</source>
+                <target>Bitte wählen Sie einen Partner.</target>
+            </trans-unit>
+            <trans-unit id="form.title">
+                <source>Rating Form</source>
+                <target>Bewertungsformular</target>
+            </trans-unit>
+            <trans-unit id="partner.title" resname="validation.reason">
+                <source>Cooperation partner</source>
+                <target>Kooperationspartner</target>
+            </trans-unit>
+            <trans-unit id="save.title">
+                <source>Rating saved!</source>
+                <target>Bewertung gespeichert!</target>
+            </trans-unit>
+            <trans-unit id="save.message">
+                <source>%1$s has been rated with a rating of %2$s.</source>
+                <target>%1$s wurde bewertet mit der Note %2$s.</target>
+            </trans-unit>
+            <trans-unit id="reason.title">
+                <source>Reason</source>
+                <target>Begründung</target>
+            </trans-unit>
+            <trans-unit id="reasonText.title">
+                <source>Reason Text</source>
+                <target>Begründungstext</target>
+            </trans-unit>
+            <trans-unit id="rating.title">
+                <source>Rating</source>
+                <target>Bewertung</target>
+            </trans-unit>
+            <trans-unit id="reason.none">
+                <source>No reason selected</source>
+                <target>Kein Grund ausgewählt</target>
+            </trans-unit>
+            <trans-unit id="reasonText.title">
+                <source>Reason (free text)</source>
+                <target>Grund (Freitext)</target>
+            </trans-unit>
+            <trans-unit id="submit">
+                <source>Save Rating</source>
+                <target>Bewertung speichern</target>
+            </trans-unit>
+            <trans-unit id="back">
+                <source>← back</source>
+                <target>← zurück</target>
             </trans-unit>
         </body>
     </file>

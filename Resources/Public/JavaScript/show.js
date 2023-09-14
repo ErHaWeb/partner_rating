@@ -136,6 +136,25 @@
         }
     }
 
+    // Function to update the URL without reloading the page
+    function updateURLWithoutReloading() {
+        // Get the current URL
+        let currentURL = window.location.href;
+
+        // The path segment to remove
+        const segmentToRemove = "/saved/";
+
+        // Check if the path segment exists in the URL
+        const index = currentURL.indexOf(segmentToRemove);
+        if (index !== -1) {
+            // Remove the path segment and all subsequent parts
+            const newURL = currentURL.substring(0, index);
+
+            // Update the URL without reloading the page
+            history.replaceState(null, "", newURL);
+        }
+    }
+
     // DOMContentLoaded event listener
     document.addEventListener('DOMContentLoaded', function () {
         const container = document.querySelector('.tx_partnerrating');
@@ -192,5 +211,7 @@
         handleRatingSelectChange();
         // Initially, check the partner select for immediate validation
         handlePartnerSelectChange();
+        // Initially remove the path segment "saved" from the URL
+        updateURLWithoutReloading();
     });
 })();

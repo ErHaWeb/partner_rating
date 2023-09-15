@@ -30,7 +30,7 @@ use TYPO3\CMS\Core\Site\Entity\SiteLanguage;
 /**
  * Middleware for getting partners based on search criteria.
  */
-final readonly class GetPartner implements MiddlewareInterface
+final  class GetPartner implements MiddlewareInterface
 {
     /**
      * Constructor for GetPartner middleware.
@@ -40,9 +40,9 @@ final readonly class GetPartner implements MiddlewareInterface
      * @param ConnectionPool $connectionPool
      */
     public function __construct(
-        private ResponseFactoryInterface $responseFactory,
-        private StreamFactoryInterface   $streamFactory,
-        private ConnectionPool           $connectionPool
+        private readonly ResponseFactoryInterface $responseFactory,
+        private readonly StreamFactoryInterface   $streamFactory,
+        private readonly ConnectionPool $connectionPool
     )
     {
     }

@@ -38,7 +38,7 @@ class RatingController extends ActionController
         private readonly DepartmentRepository $departmentRepository,
         private readonly ReasonRepository     $reasonRepository,
         private readonly PartnerRepository    $partnerRepository,
-        private readonly RatingRepository     $ratingRepository
+        private readonly RatingRepository $ratingRepository
     )
     {
     }

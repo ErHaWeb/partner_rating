@@ -7,4 +7,11 @@ plugin.tx_partnerrating_pi1 {
         # cat=plugin.tx_tx_partnerrating/file; type=string; label=Path to template layouts (FE)
         layoutRootPath = EXT:partner_rating/Resources/Private/Layouts/
     }
+
+    settings {
+        # cat=plugin.tx_tx_partnerrating/file; type=string; label=Path to CSS file (FE)
+        cssFile = EXT:partner_rating/Resources/Public/Css/main.min.css
+        # cat=plugin.tx_tx_partnerrating/file; type=string; label=Path to JavaScript file (FE)
+        javaScriptFile = EXT:partner_rating/Resources/Public/JavaScript/show.min.js
+    }
 }

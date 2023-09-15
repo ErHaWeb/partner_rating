@@ -5,7 +5,7 @@
         <body>
             <trans-unit id="validation.reason">
                 <source>Please select a reason.</source>
-                <target>Bitte wählen Sie einen Grund aus.</target>
+                <target>Bitte wählen Sie einen Bewertungsgrund aus.</target>
             </trans-unit>
             <trans-unit id="validation.partner">
                 <source>Please select a partner.</source>
@@ -28,11 +28,11 @@
                 <target>%1$s wurde bewertet mit der Note %2$s.</target>
             </trans-unit>
             <trans-unit id="reason.title">
-                <source>Reason</source>
+                <source>Rating Reason</source>
                 <target>Begründung</target>
             </trans-unit>
             <trans-unit id="reasonText.title">
-                <source>Reason Text</source>
+                <source>Rating Reason Text</source>
                 <target>Begründungstext</target>
             </trans-unit>
             <trans-unit id="rating.title">
@@ -41,11 +41,11 @@
             </trans-unit>
             <trans-unit id="reason.none">
                 <source>No reason selected</source>
-                <target>Kein Grund ausgewählt</target>
+                <target>Kein Bewertungsgrund ausgewählt</target>
             </trans-unit>
             <trans-unit id="reasonText.title">
-                <source>Reason (free text)</source>
-                <target>Grund (Freitext)</target>
+                <source>Rating Reason (free text)</source>
+                <target>Bewertungsgrund (Freitext)</target>
             </trans-unit>
             <trans-unit id="submit">
                 <source>Save Rating</source>

@@ -11,6 +11,6 @@ defined('TYPO3') || die();
         // arbitrary, but unique plugin name (not visible in the backend)
         'Pi1',
         // plugin title, as visible in the drop-down in the backend, use "LLL:" for localization
-        'Partner Rating'
+        'LLL:EXT:partner_rating/Resources/Private/Language/locallang_be.xlf:partnerrating_pi1.title'
     );
 })();

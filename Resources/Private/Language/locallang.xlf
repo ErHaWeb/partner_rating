@@ -22,10 +22,10 @@
                 <source>%1$s has been rated with a rating of %2$s.</source>
             </trans-unit>
             <trans-unit id="reason.title">
-                <source>Reason</source>
+                <source>Rating Reason</source>
             </trans-unit>
             <trans-unit id="reasonText.title">
-                <source>Reason Text</source>
+                <source>Rating Reason Text</source>
             </trans-unit>
             <trans-unit id="rating.title">
                 <source>Rating</source>
@@ -34,7 +34,7 @@
                 <source>No reason selected</source>
             </trans-unit>
             <trans-unit id="reasonText.title">
-                <source>Reason (free text)</source>
+                <source>Rating Reason (free text)</source>
             </trans-unit>
             <trans-unit id="submit">
                 <source>Save Rating</source>

@@ -2,9 +2,9 @@ mod.wizards.newContentElement.wizardItems {
     plugins {
         elements {
             partnerrating_pi1 {
-                iconIdentifier = actions-device-desktop-user
                 title = Partner Rating
                 description = Display a partner rating form
+                iconIdentifier = partnerrating_pi1
                 tt_content_defValues {
                     CType = list
                     list_type = partnerrating_pi1

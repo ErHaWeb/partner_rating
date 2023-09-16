@@ -9,7 +9,10 @@ return [
         'erhaweb/partner-rating/get-partner' => [
             'target' => GetPartner::class,
             'after' => [
-                'typo3/cms-frontend/prepare-tsfe-rendering',
+                'typo3/cms-frontend/site',
+            ],
+            'before' => [
+                'typo3/cms-frontend/eid',
             ],
         ],
     ],

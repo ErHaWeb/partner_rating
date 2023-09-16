@@ -5,11 +5,11 @@
 		<body>
 			<trans-unit id="partnerrating_pi1.title">
 				<source>Partner Rating</source>
-				<target>Partner-Bewertung</target>
+				<target>Partnerbewertung</target>
 			</trans-unit>
 			<trans-unit id="partnerrating_pi1.description">
-				<source>Plugin to provide a front-end form for departments to rate collaboration partners.</source>
-				<target>Plugin zur Bereitstellung eines Frontend-Formulars für Abteilungen zur Bewertung von Kooperationspartnern.</target>
+				<source>Plugin to provide a front-end form for departments to rate partners.</source>
+				<target>Plugin zur Bereitstellung eines Frontend-Formulars für Abteilungen zur Bewertung von Partnern.</target>
 			</trans-unit>
 		</body>
 	</file>

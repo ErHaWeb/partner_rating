@@ -1,0 +1,30 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+<f:spaceless>
+
+    <f:section name="Default">
+        <div class="wrapper-rating">
+            <div class="wrapper-rating-items">
+                <label for="rating"><f:translate key="rating.title"/></label>
+                <f:for each="{0:1, 1:2, 2:3, 3:4, 4:5}" as="rating">
+                    <div class="form-check rating-item">
+                        <f:if condition="{rating} == {values.rating}">
+                            <f:then>
+                                <f:form.radio name="rating" value="{rating}" checked="checked" class="form-check-input"
+                                              additionalAttributes="{required: required}" id="radioRating{rating}"/>
+                                <label class="form-check-label" for="radioRating{rating}">{rating}</label>
+                            </f:then>
+                            <f:else>
+                                <f:form.radio name="rating" value="{rating}" checked="checked" class="form-check-input"
+                                              additionalAttributes="{required: required}" id="radioRating{rating}"/>
+                                <label class="form-check-label" for="radioRating{rating}">{rating}</label>
+                            </f:else>
+                        </f:if>
+                    </div>
+                </f:for>
+            </div>
+        </div>
+    </f:section>
+
+</f:spaceless>
+</html>

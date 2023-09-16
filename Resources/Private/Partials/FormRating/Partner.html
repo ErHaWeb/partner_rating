@@ -1,0 +1,41 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+<f:spaceless>
+
+    <f:section name="Default">
+        <div class="wrapper-partner">
+            <div class="input-group input-group-search">
+                <label class="input-group-text" for="partnerSearch">
+                    <f:translate key="partner.title"/>
+                </label>
+                <f:form.textfield id="partnerSearch" class="form-control partnerSearch"
+                                  placeholder="{f:translate(key: 'partner.searchPlaceholder')}"
+                                  name="partnerSearch" value="{values.partnerSearch}"/>
+                <span class="input-group-text searchTooltip"><abbr title="{f:translate(key: 'partner.searchTooltip')}"
+                                                                   class="initialism">?</abbr></span>
+            </div>
+
+            <div class="input-group input-group-partner">
+                <f:form.select name="partner" id="partner" size="6"
+                               required="required"
+                               additionalAttributes="{data-validation: '{f:translate(key: \'validation.partner\')}'}"
+                               class="form-select">
+                    <f:form.select.option value="0" additionalAttributes="{disabled: disabled}"><f:translate key="partner.choosePartner"/></f:form.select.option>
+                    <f:for each="{partners}" as="partner">
+                        <f:if condition="{partner.uid} == {values.partner}">
+                            <f:then>
+                                <f:form.select.option value="{partner.uid}" selected="selected">{partner.title}
+                                </f:form.select.option>
+                            </f:then>
+                            <f:else>
+                                <f:form.select.option value="{partner.uid}">{partner.title}</f:form.select.option>
+                            </f:else>
+                        </f:if>
+                    </f:for>
+                </f:form.select>
+            </div>
+        </div>
+    </f:section>
+
+</f:spaceless>
+</html>

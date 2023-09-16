@@ -1,0 +1,60 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true" lang="en">
+<f:spaceless>
+
+    <f:section name="Default">
+
+        <f:if condition="{savedRating}">
+            <div class="wrapper-alert">
+                <div id="Alert_SavedRating" class="alert alert-success alert-dismissible fade show" role="alert">
+                    <div class="wrapper-inner">
+                        <div class="alert-title">
+                            <f:translate key="save.title"/>
+                        </div>
+                        <div class="alert-partner-title">
+                            <span><f:translate key="partner.title"/></span>
+                        </div>
+                        <div class="alert-save-message">
+                            <f:translate key="save.message"
+                                         arguments="{0: '{savedRating.partner.title}', 1: '{savedRating.rateValue}'}"/>
+                        </div>
+
+                        <div class="alert-reason">
+                            <f:if condition="{savedRating.reason} || {savedRating.reasonText} != ''">
+                                <f:if condition="{savedRating.reason}">
+                                    <div class="alert-reason-title">
+                                        <span><f:translate key="reason.title"/>: </span> {savedRating.reason.title}
+                                    </div>
+                                </f:if>
+                                <f:if condition="!({savedRating.reason}) && {savedRating.reasonText} != ''">
+                                    <div class="alert-reason-text">
+                                        <span><f:translate key="reasonText.title"/>: </span>
+                                        <f:format.html>{savedRating.reasonText}</f:format.html>
+                                    </div>
+                                </f:if>
+                            </f:if>
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"
+                            aria-label="Close" tabindex="-1"></button>
+                </div>
+            </div>
+        </f:if>
+
+        <f:asset.script identifier="Alert_SavedRating_AutoClosed">
+            setTimeout(function() {
+            let alertElement = document.getElementById("Alert_SavedRating")
+            let searchField = document.getElementById("partnerSearch")
+
+            alertElement.classList.remove("show")
+            alertElement.classList.add("d-none")
+
+            searchField.focus()
+            }, 3000)
+        </f:asset.script>
+
+    </f:section>
+
+</f:spaceless>
+</html>

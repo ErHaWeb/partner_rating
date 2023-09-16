@@ -4,8 +4,8 @@
 		<header/>
 		<body>
 			<trans-unit id="tx_partnerrating_domain_model_partner" resname="tx_partnerrating_domain_model_partner">
-				<source>Cooperation partner</source>
-				<target>Kooperationspartner</target>
+				<source>Partner</source>
+				<target>Partner</target>
 			</trans-unit>
 			<trans-unit id="tx_partnerrating_domain_model_partner.title" resname="tx_partnerrating_domain_model_partner.title">
 				<source>Title</source>
@@ -36,12 +36,12 @@
 				<target>Von einer Abteilung zugewiesener Bewertungswert</target>
 			</trans-unit>
 			<trans-unit id="tx_partnerrating_domain_model_rating.partner" resname="tx_partnerrating_domain_model_rating.partner">
-				<source>Cooperation partner</source>
-				<target>Kooperationspartner</target>
+				<source>Partner</source>
+				<target>Partner</target>
 			</trans-unit>
 			<trans-unit id="tx_partnerrating_domain_model_rating.partner.description" resname="tx_partnerrating_domain_model_rating.partner.description">
-				<source>Cooperation partner who received this rating</source>
-				<target>Kooperationspartner, die diese Bewertung erhalten haben</target>
+				<source>Partner who received this rating</source>
+				<target>Partner, die diese Bewertung erhalten haben</target>
 			</trans-unit>
 			<trans-unit id="tx_partnerrating_domain_model_rating.reason" resname="tx_partnerrating_domain_model_rating.reason">
 				<source>Rating Reason</source>

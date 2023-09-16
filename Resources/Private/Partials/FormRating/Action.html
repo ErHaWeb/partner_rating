@@ -1,0 +1,24 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+<f:spaceless>
+
+    <f:section name="Default">
+        <div class="wrapper-action">
+            <div class="row">
+                <div class="col">
+                    <f:link.action action="list"
+                                   additionalAttributes="{'tabindex': '-1'}"
+                                   class="btn btn-outline-secondary btn-sm">
+                        <f:translate key="back"/>
+                    </f:link.action>
+                </div>
+                <div class="col">
+                    <f:form.submit value="{f:translate(key: 'submit')}"
+                                   class="btn btn-primary btn-sm"/>
+                </div>
+            </div>
+        </div>
+    </f:section>
+
+</f:spaceless>
+</html>

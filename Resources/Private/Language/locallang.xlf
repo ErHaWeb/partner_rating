@@ -13,8 +13,17 @@
                 <source>Rating Form</source>
             </trans-unit>
             <trans-unit id="partner.title">
-                <source>Cooperation partner</source>
+                <source>Partner</source>
             </trans-unit>
+			<trans-unit id="partner.searchPlaceholder">
+				<source>Number or name of the partner</source>
+			</trans-unit>
+			<trans-unit id="partner.searchTooltip">
+				<source>Enter partial words or partner numbers to find matching results more quickly.</source>
+			</trans-unit>
+			<trans-unit id="partner.choosePartner">
+				<source>Choose a Partner</source>
+			</trans-unit>
             <trans-unit id="save.title">
                 <source>Rating saved!</source>
             </trans-unit>

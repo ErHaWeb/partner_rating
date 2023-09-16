@@ -1,0 +1,18 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+<f:spaceless>
+
+    <f:section name="Default">
+        <div class="wrapper-form">
+            <f:form action="save">
+                <f:form.hidden name="department" value="{department.uid}"/>
+                <f:render partial="FormRating/Partner" section="Default" arguments="{_all}"/>
+                <f:render partial="FormRating/Rating" section="Default" arguments="{_all}"/>
+                <f:render partial="FormRating/Reason" section="Default" arguments="{_all}"/>
+                <f:render partial="FormRating/Action" section="Default" arguments="{_all}"/>
+            </f:form>
+        </div>
+    </f:section>
+
+</f:spaceless>
+</html>

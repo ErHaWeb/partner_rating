@@ -16,15 +16,13 @@ namespace ErHaWeb\PartnerRating\Middleware;
 
 
 use Doctrine\DBAL\Exception;
-use JsonException;
 use PDO;
-use Psr\Http\Message\ResponseFactoryInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
-use Psr\Http\Message\StreamFactoryInterface;
 use Psr\Http\Server\MiddlewareInterface;
 use Psr\Http\Server\RequestHandlerInterface;
 use TYPO3\CMS\Core\Database\ConnectionPool;
+use TYPO3\CMS\Core\Http\JsonResponse;
 use TYPO3\CMS\Core\Site\Entity\SiteLanguage;
 
 /**
@@ -35,13 +33,9 @@ final  class GetPartner implements MiddlewareInterface
     /**
      * Constructor for GetPartner middleware.
      *
-     * @param ResponseFactoryInterface $responseFactory
-     * @param StreamFactoryInterface $streamFactory
      * @param ConnectionPool $connectionPool
      */
     public function __construct(
-        private readonly ResponseFactoryInterface $responseFactory,
-        private readonly StreamFactoryInterface   $streamFactory,
         private readonly ConnectionPool $connectionPool
     )
     {
@@ -53,7 +47,6 @@ final  class GetPartner implements MiddlewareInterface
      * @param ServerRequestInterface $request The HTTP request object.
      * @param RequestHandlerInterface $handler The request handler.
      * @return ResponseInterface The JSON response containing partner data.
-     * @throws JsonException If JSON encoding fails.
      */
     public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
     {
@@ -62,13 +55,8 @@ final  class GetPartner implements MiddlewareInterface
             return $handler->handle($request);
         }
 
-        // Retrieve partners matching the search criteria and encode them as JSON.
-        $partnersData = json_encode($this->getPartners($request), JSON_THROW_ON_ERROR);
-
         // Create a JSON response with appropriate headers and body.
-        return $this->responseFactory->createResponse()
-            ->withHeader('Content-Type', 'application/json')
-            ->withBody($this->streamFactory->createStream($partnersData));
+        return new JsonResponse($this->getPartners($request), 200);
     }
 
     /**

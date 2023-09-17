@@ -4,10 +4,10 @@
     <f:section name="Default">
         <div class="wrapper-partner">
             <div class="input-group input-group-search">
-                <label class="input-group-text" for="partnerSearch">
+                <label class="input-group-text" for="partnerSearch-{data.uid}">
                     <f:translate key="partner.title"/>
                 </label>
-                <f:form.textfield id="partnerSearch" class="form-control partnerSearch"
+                <f:form.textfield id="partnerSearch-{data.uid}" class="form-control partnerSearch"
                                   placeholder="{f:translate(key: 'partner.searchPlaceholder')}"
                                   name="partnerSearch" value="{values.partnerSearch}"/>
                 <span class="input-group-text searchTooltip"><abbr title="{f:translate(key: 'partner.searchTooltip')}"
@@ -15,7 +15,7 @@
             </div>
 
             <div class="input-group input-group-partner">
-                <f:form.select name="partner" id="partner" size="6"
+                <f:form.select name="partner" id="partner-{data.uid}" size="6"
                                required="required"
                                additionalAttributes="{data-validation: '{f:translate(key: \'validation.partner\')}'}"
                                class="form-select">

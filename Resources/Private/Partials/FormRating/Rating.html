@@ -5,18 +5,18 @@
         <div class="wrapper-rating">
             <div class="wrapper-rating-items">
                 <label for="rating"><f:translate key="rating.title"/></label>
-                <f:for each="{0:1, 1:2, 2:3, 3:4, 4:5}" as="rating">
+                <f:for each="{0:1, 1:2, 2:3, 3:4, 4:5}" iteration="iterator" as="rating">
                     <div class="form-check rating-item">
-                        <f:if condition="{rating} == {values.rating}">
+                        <f:if condition="{rating} == {values.rating} || !({values.rating}) && {iterator.cycle} == 1">
                             <f:then>
                                 <f:form.radio name="rating" value="{rating}" checked="checked" class="form-check-input"
-                                              additionalAttributes="{required: required}" id="radioRating{rating}"/>
-                                <label class="form-check-label" for="radioRating{rating}">{rating}</label>
+                                              additionalAttributes="{required: required}" id="radioRating-{data.uid}-{rating}"/>
+                                <label class="form-check-label" for="radioRating-{data.uid}-{rating}">{rating}</label>
                             </f:then>
                             <f:else>
-                                <f:form.radio name="rating" value="{rating}" checked="checked" class="form-check-input"
-                                              additionalAttributes="{required: required}" id="radioRating{rating}"/>
-                                <label class="form-check-label" for="radioRating{rating}">{rating}</label>
+                                <f:form.radio name="rating" value="{rating}" class="form-check-input"
+                                              additionalAttributes="{required: required}" id="radioRating-{data.uid}-{rating}"/>
+                                <label class="form-check-label" for="radioRating-{data.uid}-{rating}">{rating}</label>
                             </f:else>
                         </f:if>
                     </div>

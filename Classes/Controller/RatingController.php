@@ -27,6 +27,7 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 use TYPO3\CMS\Extbase\Persistence\Exception\IllegalObjectTypeException;
 use TYPO3\CMS\Extbase\Persistence\Generic\PersistenceManager;
+use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 
 /**
  * The rating controller
@@ -69,6 +70,10 @@ class RatingController extends ActionController
     public function showAction(Department $department, ?Rating $savedRating = null): ResponseInterface
     {
         $assign = [];
+
+        /** @var ContentObjectRenderer $currentContentObject */
+        $currentContentObject = $this->request->getAttribute('currentContentObject');
+        $assign['data'] = $currentContentObject->data;
 
         // Assign department, reasons, and partners to the view
         $assign['department'] = $department;

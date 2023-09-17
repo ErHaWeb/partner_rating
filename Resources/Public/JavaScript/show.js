@@ -2,12 +2,15 @@
 
 // Immediately Invoked Function Expression (IIFE) for the JavaScript code
 (function () {
-    'use strict'; // Strict mode directive added
+    'use strict'; // Enable strict mode
 
-    let searchInput, partnerSelect, textareaField, radioButtons, ratingSelect; // Variable declarations added
-    let emptyOptionSelected = false; // Variable to track the empty option selection
+    // Declare variables for DOM elements
+    let searchInput, partnerSelect, textareaField, radioReasons, radioRating, savedRatingAlert;
 
-    // Function to perform AJAX request and populate the select field
+    // Flag to track whether an empty option is selected
+    let emptyOptionSelected = false;
+
+    // Function to perform an AJAX request and populate the select field
     function updatePartnerSelect() {
         const searchText = searchInput.value;
 
@@ -15,8 +18,8 @@
         const formData = new FormData();
         formData.append('searchText', searchText);
 
-        // Perform AJAX request with POST method
-        fetch('/', { // Updated server endpoint string
+        // Perform an AJAX request with the POST method
+        fetch('/', {
             method: 'POST',
             body: formData
         })
@@ -52,7 +55,7 @@
                     }
                 }
 
-                // Update textarea status based on selected radio
+                // Update textarea status based on the selected radio
                 updateTextareaStatus();
                 handlePartnerSelectChange();
             })
@@ -70,19 +73,26 @@
         partnerSelect.appendChild(optionElement);
     }
 
-    // Function to update textarea status based on selected radio
+    // Function to update textarea status based on the selected radio
     function updateTextareaStatus() {
-        textareaField.disabled = !radioButtons[1].checked;
-        textareaField.required = radioButtons[1].checked;
+        textareaField.disabled = !radioReasons[1].checked;
+        textareaField.required = radioReasons[1].checked;
     }
 
     // Function to handle rating select change
     function handleRatingSelectChange() {
         // Get the selected rating value as an integer
-        const selectedRating = parseInt(ratingSelect.value, 10);
+        let ratingValue;
 
-        // Validate selected value
-        radioButtons.forEach(radio => {
+        // Validate the selected rating
+        radioRating.forEach(radio => {
+            if (radio.checked) {
+                ratingValue = parseInt(radio.value, 10);
+            }
+        });
+
+        // Validate the selected reason
+        radioReasons.forEach(radio => {
             radio.required = true;
             if (radio.checked && parseInt(radio.value, 10) === 0) {
                 const customValidationMessage = radio.getAttribute('data-validation');
@@ -92,13 +102,13 @@
             }
         });
 
-        // Make the radio buttons required
-        if (selectedRating > 3) {
-            radioButtons.forEach(radio => {
+        // Make the radio buttons required if the rating is greater than 3
+        if (ratingValue > 3) {
+            radioReasons.forEach(radio => {
                 radio.required = true;
             });
         } else {
-            radioButtons.forEach(radio => {
+            radioReasons.forEach(radio => {
                 radio.required = false;
                 radio.setCustomValidity('');
             });
@@ -155,44 +165,83 @@
         }
     }
 
+    // Function to hide the alert after a timeout
+    function hideAlertTimeout() {
+        setTimeout(function () {
+            savedRatingAlert.classList.remove("show");
+            savedRatingAlert.classList.add("d-none");
+
+            searchInput.focus();
+        }, 3000);
+    }
+
     // DOMContentLoaded event listener
     document.addEventListener('DOMContentLoaded', function () {
         const container = document.querySelector('.tx_partnerrating');
 
         if (!container) {
             console.error('DOM elements not found.');
-            return; // Early return if container is not found
+            return; // Early return if the container is not found
         }
 
-        radioButtons = container.querySelectorAll('input[name="tx_partnerrating_pi1[reason]"]');
+        // Get DOM elements
+        radioReasons = container.querySelectorAll('input[name="tx_partnerrating_pi1[reason]"]');
         textareaField = container.querySelector('textarea[name="tx_partnerrating_pi1[reasonText]"]');
         searchInput = container.querySelector('input[name="tx_partnerrating_pi1[partnerSearch]"]');
         partnerSelect = container.querySelector('select[name="tx_partnerrating_pi1[partner]"]');
-        ratingSelect = container.querySelector('select[name="tx_partnerrating_pi1[rating]"]');
+        radioRating = container.querySelectorAll('input[name="tx_partnerrating_pi1[rating]"]');
+        savedRatingAlert = container.querySelector('.saved-rating-alert');
         const form = container.querySelector('form');
 
         // Add input event listener to the search input
         if (searchInput && partnerSelect) {
             searchInput.addEventListener('input', updatePartnerSelect);
+
+            // Initially perform an AJAX request and populate the select field if the search input is not empty
+            if (searchInput.value !== '') {
+                updatePartnerSelect();
+            }
+
+            // Set focus on the partner search input field
+            searchInput.focus();
         }
 
-        // Add change event listeners to radio buttons only if both radioButtons and textareaField exist
-        if (radioButtons && textareaField) {
-            radioButtons.forEach(radio => {
+        // Add change event listener to radio buttons for reasons and text area
+        if (radioReasons && textareaField) {
+            radioReasons.forEach(radio => {
                 radio.addEventListener('change', updateTextareaStatus);
+            });
+
+            // Initially, check the radio buttons and enable/disable the textarea accordingly
+            updateTextareaStatus();
+        }
+
+        // Add change event listener to radio buttons for rating and reasons
+        if (radioRating && radioReasons) {
+            radioReasons.forEach(radio => {
                 radio.addEventListener('change', handleRatingSelectChange);
+            });
+            radioRating.forEach(radio => {
+                radio.addEventListener('change', handleRatingSelectChange);
+            });
+
+            // Initially, check the rating select to set the required attribute for radio buttons
+            handleRatingSelectChange();
+        }
+
+        // Add change event listener to partner select
+        if (radioRating && radioReasons && partnerSelect) {
+            radioReasons.forEach(radio => {
                 radio.addEventListener('change', handlePartnerSelectChange);
             });
-        }
-
-        // Add change event listener to rating select
-        if (ratingSelect) {
-            ratingSelect.addEventListener('change', handleRatingSelectChange);
         }
 
         // Add change event listener to partner select
         if (partnerSelect) {
             partnerSelect.addEventListener('change', handlePartnerSelectChange);
+
+            // Initially, check the partner select for immediate validation
+            handlePartnerSelectChange();
         }
 
         // Add form submit event listener to perform additional validation
@@ -200,17 +249,11 @@
             form.addEventListener('submit', handleFormSubmit);
         }
 
-        // Initially perform AJAX request and populate the select field if the search input is not empty
-        if (searchInput.value !== '') {
-            updatePartnerSelect();
+        // Hide the alert after a timeout
+        if (searchInput && savedRatingAlert) {
+            hideAlertTimeout();
         }
 
-        // Initially, check the radio buttons and enable/disable textarea accordingly
-        updateTextareaStatus();
-        // Initially, check the rating select to set the required attribute for radio buttons
-        handleRatingSelectChange();
-        // Initially, check the partner select for immediate validation
-        handlePartnerSelectChange();
         // Initially remove the path segment "saved" from the URL
         updateURLWithoutReloading();
     });

@@ -5,7 +5,7 @@
 
         <f:if condition="{savedRating}">
             <div class="wrapper-alert">
-                <div id="Alert_SavedRating" class="alert alert-success alert-dismissible fade show" role="alert">
+                <div class="alert alert-success alert-dismissible fade show saved-rating-alert" role="alert">
                     <div class="wrapper-inner">
                         <div class="alert-title">
                             <f:translate key="save.title"/>
@@ -40,18 +40,6 @@
                 </div>
             </div>
         </f:if>
-
-        <f:asset.script identifier="Alert_SavedRating_AutoClosed">
-            setTimeout(function() {
-            let alertElement = document.getElementById("Alert_SavedRating")
-            let searchField = document.getElementById("partnerSearch")
-
-            alertElement.classList.remove("show")
-            alertElement.classList.add("d-none")
-
-            searchField.focus()
-            }, 3000)
-        </f:asset.script>
 
     </f:section>
 

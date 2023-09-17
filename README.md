@@ -15,13 +15,17 @@ routeEnhancers:
     routes:
       - routePath: '/'
         _controller: 'Rating::list'
+      - routePath: '/{department_title}'
+        _controller: 'Rating::show'
+        _arguments:
+          department_title: 'department'
       - routePath: '/{department_title}/saved/{saved_rating}'
         _controller: 'Rating::show'
         _arguments:
           department_title: 'department'
           saved_rating: 'savedRating'
-      - routePath: '/{department_title}'
-        _controller: 'Rating::show'
+      - routePath: '/{department_title}/send'
+        _controller: 'Rating::save'
         _arguments:
           department_title: 'department'
     defaultController: 'Rating::show'

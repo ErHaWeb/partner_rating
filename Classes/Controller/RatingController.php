@@ -18,6 +18,7 @@ namespace ErHaWeb\PartnerRating\Controller;
 use ErHaWeb\PartnerRating\Domain\Model\Department;
 use ErHaWeb\PartnerRating\Domain\Model\Partner;
 use ErHaWeb\PartnerRating\Domain\Model\Rating;
+use ErHaWeb\PartnerRating\Domain\Model\Reason;
 use ErHaWeb\PartnerRating\Domain\Repository\DepartmentRepository;
 use ErHaWeb\PartnerRating\Domain\Repository\PartnerRepository;
 use ErHaWeb\PartnerRating\Domain\Repository\RatingRepository;
@@ -25,23 +26,34 @@ use ErHaWeb\PartnerRating\Domain\Repository\ReasonRepository;
 use Psr\Http\Message\ResponseInterface;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
+use TYPO3\CMS\Extbase\Mvc\Exception\StopActionException;
 use TYPO3\CMS\Extbase\Persistence\Exception\IllegalObjectTypeException;
 use TYPO3\CMS\Extbase\Persistence\Generic\PersistenceManager;
-use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 
 /**
  * The rating controller
  */
 class RatingController extends ActionController
 {
+    private PersistenceManager $persistenceManager;
+    private DepartmentRepository $departmentRepository;
+    private ReasonRepository $reasonRepository;
+    private PartnerRepository $partnerRepository;
+    private RatingRepository $ratingRepository;
+
     public function __construct(
-        private readonly PersistenceManager   $persistenceManager,
-        private readonly DepartmentRepository $departmentRepository,
-        private readonly ReasonRepository     $reasonRepository,
-        private readonly PartnerRepository    $partnerRepository,
-        private readonly RatingRepository $ratingRepository
+        PersistenceManager   $persistenceManager,
+        DepartmentRepository $departmentRepository,
+        ReasonRepository     $reasonRepository,
+        PartnerRepository    $partnerRepository,
+        RatingRepository     $ratingRepository
     )
     {
+        $this->ratingRepository = $ratingRepository;
+        $this->partnerRepository = $partnerRepository;
+        $this->reasonRepository = $reasonRepository;
+        $this->departmentRepository = $departmentRepository;
+        $this->persistenceManager = $persistenceManager;
     }
 
     /**
@@ -70,14 +82,11 @@ class RatingController extends ActionController
     public function showAction(Department $department, ?Rating $savedRating = null): ResponseInterface
     {
         $assign = [];
-
-        /** @var ContentObjectRenderer $currentContentObject */
-        $currentContentObject = $this->request->getAttribute('currentContentObject');
-        $assign['data'] = $currentContentObject->data;
+        $assign['data'] = $this->configurationManager->getContentObject()->data;
 
         // Assign department, reasons, and partners to the view
         $assign['department'] = $department;
-        $assign['reasons'] = $this->reasonRepository->findBy(['department' => $department]);
+        $assign['reasons'] = $this->reasonRepository->findByDepartment($department);
         $assign['partners'] = $this->partnerRepository->findAll();
 
         if ($savedRating !== null) {
@@ -129,7 +138,7 @@ class RatingController extends ActionController
      * @param Department|null $department The department associated with the rating
      * @param Partner|null $partner The partner associated with the rating
      * @return ResponseInterface
-     * @throws IllegalObjectTypeException
+     * @throws IllegalObjectTypeException|StopActionException
      */
     public function saveAction(?Department $department, ?Partner $partner): ResponseInterface
     {
@@ -143,6 +152,7 @@ class RatingController extends ActionController
         }
 
         // Create a new Rating object and set its properties
+        /** @var Reason $reasonObject */
         $reasonObject = $this->reasonRepository->findByUid($reason);
 
         /** @var Rating $ratingObject */

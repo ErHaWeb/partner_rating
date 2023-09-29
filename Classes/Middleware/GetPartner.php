@@ -14,8 +14,7 @@ declare(strict_types=1);
 
 namespace ErHaWeb\PartnerRating\Middleware;
 
-
-use Doctrine\DBAL\Exception;
+use Exception;
 use PDO;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
@@ -30,15 +29,18 @@ use TYPO3\CMS\Core\Site\Entity\SiteLanguage;
  */
 final  class GetPartner implements MiddlewareInterface
 {
+    private ConnectionPool $connectionPool;
+
     /**
      * Constructor for GetPartner middleware.
      *
      * @param ConnectionPool $connectionPool
      */
     public function __construct(
-        private readonly ConnectionPool $connectionPool
+        ConnectionPool $connectionPool
     )
     {
+        $this->connectionPool = $connectionPool;
     }
 
     /**
@@ -79,9 +81,12 @@ final  class GetPartner implements MiddlewareInterface
         $queryBuilder = $this->connectionPool->getQueryBuilderForTable('tx_partnerrating_domain_model_partner');
 
         // Define the columns to select in the SQL query.
-        $queryBuilder->select('uid AS value', 'title AS label')
-            ->from('tx_partnerrating_domain_model_partner')
-            ->executeQuery();
+        try {
+            $queryBuilder->select('uid AS value', 'title AS label')
+                ->from('tx_partnerrating_domain_model_partner')
+                ->executeQuery();
+        } catch (Exception $e) {
+        }
 
         // Create an array of WHERE clause expressions to filter results by language and search keywords.
         $whereExpressions = [
@@ -121,14 +126,10 @@ final  class GetPartner implements MiddlewareInterface
         $queryBuilder->where(...$whereExpressions);
 
         // Execute the query and retrieve the results.
-        $result = $queryBuilder->executeQuery();
-
         try {
-            // Fetch all results as an associative array and return it.
-            return $result->fetchAllAssociative();
-        } catch (Exception) {
-            // If an exception occurs, return an empty array.
-            return [];
+            return $queryBuilder->executeQuery()->fetchAllAssociative();
+        } catch (Exception|\Doctrine\DBAL\Driver\Exception $e) {
         }
+        return [];
     }
 }

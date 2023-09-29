@@ -4,8 +4,9 @@
     "description": "Extbase/Fluid extension that allows departments to rate collaboration partners via a front-end form. The rating is based on school grades. Grades greater than 4 must be justified. This is possible either by predefined reasons or a free text input.",
     "license": "GPL-2.0-or-later",
     "require": {
-        "typo3/cms-core": "^12.4",
-        "php": "^8.1"
+        "ext-pdo": "*",
+        "typo3/cms-core": "^11.5 || ^12.4",
+        "php": "^7.4 || ^8.0 || ^8.1 || ^8.2"
     },
     "require-dev": {
         "roave/security-advisories": "dev-latest",

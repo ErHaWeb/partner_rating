@@ -15,10 +15,12 @@ declare(strict_types=1);
 namespace ErHaWeb\PartnerRating\Domain\Repository;
 
 
+use ErHaWeb\PartnerRating\Domain\Model\Department;
 use TYPO3\CMS\Extbase\Persistence\Repository;
 
 /**
  * The repository for Reasons
+ * @method findByDepartment(Department $department)
  */
 class ReasonRepository extends Repository
 {

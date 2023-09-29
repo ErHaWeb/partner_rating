@@ -47,6 +47,7 @@ text input.
     QuickStart/Index
     Configuration/Index
     Templates/Index
+    Routing/Index
     KnownProblems/Index
 
 ..  Meta Menu

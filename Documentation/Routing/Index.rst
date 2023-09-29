@@ -1,5 +1,6 @@
-..  include:: /Includes.rst.txt
-..  _configuration-routing:
+.. include:: /Includes.rst.txt
+
+.. _routing:
 
 Routing
 =======

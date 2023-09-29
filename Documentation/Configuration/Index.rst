@@ -10,5 +10,4 @@ Configuration
    :titlesonly:
 
    TypoScriptReference/Index
-   Routing
    TSconfig

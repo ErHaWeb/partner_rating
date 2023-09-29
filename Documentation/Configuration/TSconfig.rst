@@ -1,7 +1,4 @@
 ..  include:: /Includes.rst.txt
-..  highlight:: typoscript
-..  index::
-    TSconfig
 ..  _configuration-tsconfig:
 
 Page TSconfig

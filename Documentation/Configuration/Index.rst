@@ -1,5 +1,4 @@
 ..  include:: /Includes.rst.txt
-
 ..  _configuration:
 
 =============
@@ -11,4 +10,5 @@ Configuration
    :titlesonly:
 
    TypoScriptReference/Index
+   Routing
    TSconfig

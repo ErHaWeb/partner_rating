@@ -1,45 +1,34 @@
 # Partner Rating
-This Extbase/Fluid based TYPO3 extension allows to easily rate cooperation partners via a frontend form. The rating is given by a department, which can be selected before. Each department can give a cooperation partner a school grade from 1 to 5. For grades worse than 3, a justification for the evaluation must be given. The justification can be either a freely selectable text or a predefined text.
 
-## Route Enhancer Configuration
+## What does it do?
 
-Add the following YAML configuration to your site configuration to ensure that the extension uses nice URL paths based on the `slug` field.
+This Extbase/Fluid based TYPO3 extension allows departments in a company to easily rate cooperation partners via a frontend form. The evaluation is based on school grades. Grades greater than 4 must be justified. This justification can be done either by predefined reasons or by a free text entry.
 
-```yaml
-routeEnhancers:
-  PartnerRating:
-    type: Extbase
-    limitToPages: [1]
-    extension: PartnerRating
-    plugin: Pi1
-    routes:
-      - routePath: '/'
-        _controller: 'Rating::list'
-      - routePath: '/{department_title}'
-        _controller: 'Rating::show'
-        _arguments:
-          department_title: 'department'
-      - routePath: '/{department_title}/saved/{saved_rating}'
-        _controller: 'Rating::show'
-        _arguments:
-          department_title: 'department'
-          saved_rating: 'savedRating'
-      - routePath: '/{department_title}/send'
-        _controller: 'Rating::save'
-        _arguments:
-          department_title: 'department'
-    defaultController: 'Rating::show'
-    aspects:
-      department_title:
-        type: PersistedAliasMapper
-        tableName: tx_partnerrating_domain_model_department
-        routeFieldName: slug
-      saved_rating:
-        type: PersistedAliasMapper
-        tableName: tx_partnerrating_domain_model_rating
-        routeFieldName: uid
-```
+Special attention is paid to the fact that a large number of cooperation partners can be found quickly. This is possible through an AJAX-driven database search, which results in a dynamic adjustment of the partner selection field.
 
-**Hint**
+## What does it NOT do?
+Currently there is no frontend access protection provided. The rating form is intended for internal use and should not be published unprotected. Therefore we recommend to use it either in the intranet, in a protected login area realized with TYPO3 on-board means or a password protection (for example via .htaccess file).
 
-The URL path /saved/<ID> is set by the RouteEnhancer, but does not appear in the browser because this path section is removed from the URL in the browser's address bar immediately after the page is reloaded using the History API. This way, the nice section URLs are preserved without additional sections.
+Furthermore, there is currently no possibility to statistically evaluate or display the collected rating data that is saved via the form. We therefore advise you to export the rating data as CSV with the TYPO3 on-board tools and to evaluate it with an external tool.
+
+## Screenshots
+
+Frontend View:
+
+![Frontend View](Documentation/Images/FrontendView.png)
+
+New Content Element Wizard:
+
+![New Content Element Wizard](Documentation/Images/NewContentElementWizard.png)
+
+Plugin Settings:
+
+![Plugin Settings](Documentation/Images/PluginSettings.png)
+
+Constant Editor:
+
+![Constant Editor](Documentation/Images/ConstantEditor-Options.png)
+
+## Further information
+
+For more information, see the documentation at [docs.typo3.org](https://docs.typo3.org/p/erhaweb/partner-rating/main/en-us/).

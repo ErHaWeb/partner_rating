@@ -9,9 +9,11 @@ plugin.tx_partnerrating_pi1 {
     }
 
     settings {
-        # cat=plugin.tx_tx_partnerrating/file; type=string; label=Path to CSS file (FE)
+        # cat=plugin.tx_tx_partnerrating/file; type=boolean; label=Include Bootstrap from CDN:If this option is "true" then Bootstrap 5 will be included via CDN from jsDelivr. This option should only be used for testing purposes. If you want to use Bootstrap 5 (the default framework of the Partner Rating template) for rendering, it is recommended to include it yourself via your site package and leave this option disabled.
+        includeBootstrap = 0
+        # cat=plugin.tx_tx_partnerrating/file; type=string; label=Path to CSS file (FE):CSS file that is used by default
         cssFile = EXT:partner_rating/Resources/Public/Css/main.min.css
-        # cat=plugin.tx_tx_partnerrating/file; type=string; label=Path to JavaScript file (FE)
+        # cat=plugin.tx_tx_partnerrating/file; type=string; label=Path to JavaScript file (FE):JavaScript file that is used by default
         javaScriptFile = EXT:partner_rating/Resources/Public/JavaScript/show.min.js
     }
 }

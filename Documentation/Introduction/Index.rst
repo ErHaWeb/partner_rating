@@ -75,6 +75,6 @@ Below you can find a screenshot of all available constants in the constant edito
 
 ..  figure:: /Images/ConstantEditor-Options.png
     :alt: Constant Editor Partner Rating Options
-    :width: 534px
+    :width: 734px
 
     Constant Editor Partner Rating Options

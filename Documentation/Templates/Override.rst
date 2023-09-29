@@ -63,7 +63,7 @@ define your own fluid paths in addition to the default paths.
 ..  figure:: /Images/ConstantEditor-FluidPaths.png
     :class: with-shadow
     :alt: Constant Editor: Fluid Template Paths
-    :width: 579px
+    :width: 734px
 
     Constant Editor: Fluid Template Paths
 

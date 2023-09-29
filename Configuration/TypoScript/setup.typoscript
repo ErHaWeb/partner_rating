@@ -17,6 +17,7 @@ plugin.tx_partnerrating_pi1 {
     }
 
     settings {
+        includeBootstrap = {$plugin.tx_partnerrating_pi1.settings.includeBootstrap}
         cssFile = {$plugin.tx_partnerrating_pi1.settings.cssFile}
         javaScriptFile = {$plugin.tx_partnerrating_pi1.settings.javaScriptFile}
     }

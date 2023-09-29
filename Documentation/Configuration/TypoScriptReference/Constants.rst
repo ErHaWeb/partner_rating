@@ -69,6 +69,19 @@ Settings
 The following options are located under the following path:
 :typoscript:`plugin.tx_partnerrating_pi1.settings`
 
+..  _configuration-typoscript-constants-settings-includebootstrap:
+
+Include Bootstrap from CDN
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+..  confval:: includeBootstrap
+
+    :type: boolean
+    :Default: false
+    :Path: plugin.tx_partnerrating_pi1.settings
+
+    If this option is `true` then Bootstrap 5 will be included via CDN from jsDelivr. This option should only be used for testing purposes. If you want to use Bootstrap 5 (the default framework of the Partner Rating template) for rendering, it is recommended to include it yourself via your site package and leave this option disabled.
+
 ..  _configuration-typoscript-constants-settings-cssfile:
 
 CSS File

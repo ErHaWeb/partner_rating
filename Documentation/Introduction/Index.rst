@@ -37,7 +37,7 @@ Below you can find an example of the frontend output of the partner rating
 plugin. Styling and structure can be customized as you like. The default
 template and styles are based on Bootstrap 5.
 
-..  figure:: /Images/FrontendView.png
+..  figure:: /Images/en/FrontendView.png
     :class: with-shadow
     :alt: Frontend View
     :width: 688px
@@ -49,7 +49,8 @@ template and styles are based on Bootstrap 5.
 New Content Element Wizard
 --------------------------
 
-..  figure:: /Images/NewContentElementWizard.png
+..  figure:: /Images/en/NewContentElementWizard.png
+    :class: with-shadow
     :alt: New Content Element Wizard
     :width: 999px
 
@@ -62,18 +63,75 @@ Plugin Settings
 
 Below you can find a screenshot of the plugin settings.
 
-..  figure:: /Images/PluginSettings.png
+..  figure:: /Images/en/PluginSettings.png
+    :class: with-shadow
     :alt: The plugin settings
     :width: 622px
 
     The plugin settings
+
+..  _screenshots-records:
+
+Records
+-------
+
+Below are screenshots of the various data sets used by the extension.
+
+..  _screenshots-records-department:
+
+Department
+~~~~~~~~~~
+
+..  figure:: /Images/en/ModelDepartment.png
+    :class: with-shadow
+    :alt: Department
+    :width: 716px
+
+    Department
+
+..  _screenshots-records-partner:
+
+Partner
+~~~~~~~
+
+..  figure:: /Images/en/ModelPartner.png
+    :class: with-shadow
+    :alt: Department
+    :width: 716px
+
+    Partner
+
+..  _screenshots-records-reason:
+
+Reason
+~~~~~~
+
+..  figure:: /Images/en/ModelReason.png
+    :class: with-shadow
+    :alt: Department
+    :width: 716px
+
+    Reason
+
+..  _screenshots-records-rating:
+
+Rating
+~~~~~~
+
+..  figure:: /Images/en/ModelRating.png
+    :class: with-shadow
+    :alt: Department
+    :width: 716px
+
+    Rating
 
 Constant Editor
 ---------------
 
 Below you can find a screenshot of all available constants in the constant editor.
 
-..  figure:: /Images/ConstantEditor-Options.png
+..  figure:: /Images/en/ConstantEditor-Options.png
+    :class: with-shadow
     :alt: Constant Editor Partner Rating Options
     :width: 734px
 

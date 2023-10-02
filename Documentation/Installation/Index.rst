@@ -24,7 +24,7 @@ Installation
 
             These tables can be created under `Admin Tools` → `Maintenance` → `Analyze Database Structure` → `Apply selected changes`.
 
-            ..  figure:: /Images/Maintenance-AnalyzeDatabaseStructure.png
+            ..  figure:: /Images/en/Maintenance-AnalyzeDatabaseStructure.png
                 :class: with-shadow
                 :alt: Maintenance: Analyze Database Structure
                 :width: 901px
@@ -60,7 +60,7 @@ Installation
 
             These tables can be created under `Admin Tools` → `Maintenance` → `Analyze Database Structure` → `Apply selected changes`.
 
-            ..  figure:: /Images/Maintenance-AnalyzeDatabaseStructure.png
+            ..  figure:: /Images/en/Maintenance-AnalyzeDatabaseStructure.png
                 :class: with-shadow
                 :alt: Maintenance: Analyze Database Structure
                 :width: 901px

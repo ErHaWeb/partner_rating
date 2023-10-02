@@ -60,7 +60,7 @@ We suggest that you use a sitepackage extension. Learn how to
 In the constant editor under `Web` → `Template` → `Constant Editor` you can
 define your own fluid paths in addition to the default paths.
 
-..  figure:: /Images/ConstantEditor-FluidPaths.png
+..  figure:: /Images/en/ConstantEditor-FluidPaths.png
     :class: with-shadow
     :alt: Constant Editor: Fluid Template Paths
     :width: 734px

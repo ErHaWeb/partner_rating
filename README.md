@@ -13,21 +13,31 @@ Furthermore, there is currently no possibility to statistically evaluate or disp
 
 ## Screenshots
 
-Frontend View:
+### Frontend View:
 
-![Frontend View](Documentation/Images/FrontendView.png)
+![Frontend View](Documentation/Images/en/FrontendView.png)
 
-New Content Element Wizard:
+### New Content Element Wizard:
 
-![New Content Element Wizard](Documentation/Images/NewContentElementWizard.png)
+![New Content Element Wizard](Documentation/Images/en/NewContentElementWizard.png)
 
-Plugin Settings:
+### Plugin Settings:
 
-![Plugin Settings](Documentation/Images/PluginSettings.png)
+![Plugin Settings](Documentation/Images/en/PluginSettings.png)
 
-Constant Editor:
+### Records:
 
-![Constant Editor](Documentation/Images/ConstantEditor-Options.png)
+![Department](Documentation/Images/en/ModelDepartment.png)
+
+![Partner](Documentation/Images/en/ModelPartner.png)
+
+![Reason](Documentation/Images/en/ModelReason.png)
+
+![Rating](Documentation/Images/en/ModelRating.png)
+
+### Constant Editor:
+
+![Constant Editor](Documentation/Images/en/ConstantEditor-Options.png)
 
 ## Further information
 

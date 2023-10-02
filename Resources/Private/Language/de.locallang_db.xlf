@@ -3,109 +3,109 @@
   <file source-language="en" datatype="plaintext" original="EXT:partner_rating/Resources/Private/Language/locallang_db.xlf" date="2023-09-03T16:55:15Z" product-name="partner_rating" target-language="de">
     <header/>
     <body>
-      <trans-unit id="tx_partnerrating_domain_model_partner" resname="tx_partnerrating_domain_model_partner">
+      <trans-unit id="tx_partnerrating_domain_model_partner" resname="tx_partnerrating_domain_model_partner" approved="yes">
         <source>Partner</source>
-        <target state="needs-translation">Partner</target>
+        <target state="final">Partner</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_partner.title" resname="tx_partnerrating_domain_model_partner.title">
+      <trans-unit id="tx_partnerrating_domain_model_partner.title" resname="tx_partnerrating_domain_model_partner.title" approved="yes">
         <source>Title</source>
-        <target state="translated">Titel</target>
+        <target state="final">Titel</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_partner.title.description" resname="tx_partnerrating_domain_model_partner.title.description">
+      <trans-unit id="tx_partnerrating_domain_model_partner.title.description" resname="tx_partnerrating_domain_model_partner.title.description" approved="yes">
         <source>By entering the name of the partner, a partner can be found in the evaluation sheet.</source>
-        <target state="translated">Durch Eingabe des Namens des Partners kann ein Partner im Bewertungsbogen gefunden werden.</target>
+        <target state="final">Durch Eingabe des Namens des Partners kann ein Partner im Bewertungsbogen gefunden werden.</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_partner.partner_nr" resname="tx_partnerrating_domain_model_partner.partner_nr">
+      <trans-unit id="tx_partnerrating_domain_model_partner.partner_nr" resname="tx_partnerrating_domain_model_partner.partner_nr" approved="yes">
         <source>Partner Nr</source>
-        <target state="needs-translation">Partner Nr</target>
+        <target state="final">Partner Nr.</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_partner.partner_nr.description" resname="tx_partnerrating_domain_model_partner.partner_nr.description">
+      <trans-unit id="tx_partnerrating_domain_model_partner.partner_nr.description" resname="tx_partnerrating_domain_model_partner.partner_nr.description" approved="yes">
         <source>By entering the partner number, a partner can be found in the evaluation sheet.</source>
-        <target state="translated">Über die Eingabe der Partnernummer kann ein Partner im Bewertungsbogen gefunden werden.</target>
+        <target state="final">Über die Eingabe der Partnernummer kann ein Partner im Bewertungsbogen gefunden werden.</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_rating" resname="tx_partnerrating_domain_model_rating">
+      <trans-unit id="tx_partnerrating_domain_model_rating" resname="tx_partnerrating_domain_model_rating" approved="yes">
         <source>Rating</source>
-        <target state="translated">Bewertung</target>
+        <target state="final">Bewertung</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_rating.rate_value" resname="tx_partnerrating_domain_model_rating.rate_value">
+      <trans-unit id="tx_partnerrating_domain_model_rating.rate_value" resname="tx_partnerrating_domain_model_rating.rate_value" approved="yes">
         <source>Rate Value</source>
-        <target state="translated">Bewertungswert</target>
+        <target state="final">Bewertungswert</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_rating.rate_value.description" resname="tx_partnerrating_domain_model_rating.rate_value.description">
+      <trans-unit id="tx_partnerrating_domain_model_rating.rate_value.description" resname="tx_partnerrating_domain_model_rating.rate_value.description" approved="yes">
         <source>Valuation value assigned by a department</source>
-        <target state="translated">Von einer Abteilung zugewiesener Bewertungswert</target>
+        <target state="final">Von einer Abteilung zugewiesener Bewertungswert</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_rating.partner" resname="tx_partnerrating_domain_model_rating.partner">
+      <trans-unit id="tx_partnerrating_domain_model_rating.partner" resname="tx_partnerrating_domain_model_rating.partner" approved="yes">
         <source>Partner</source>
-        <target state="needs-translation">Partner</target>
+        <target state="final">Partner</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_rating.partner.description" resname="tx_partnerrating_domain_model_rating.partner.description">
+      <trans-unit id="tx_partnerrating_domain_model_rating.partner.description" resname="tx_partnerrating_domain_model_rating.partner.description" approved="yes">
         <source>Partner who received this rating</source>
-        <target state="translated">Partner, die diese Bewertung erhalten haben</target>
+        <target state="final">Partner, die diese Bewertung erhalten haben</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_rating.reason" resname="tx_partnerrating_domain_model_rating.reason">
+      <trans-unit id="tx_partnerrating_domain_model_rating.reason" resname="tx_partnerrating_domain_model_rating.reason" approved="yes">
         <source>Rating Reason</source>
-        <target state="translated">Bewertungsgrund</target>
+        <target state="final">Bewertungsgrund</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_rating.reason_text" resname="tx_partnerrating_domain_model_rating.reason_text">
+      <trans-unit id="tx_partnerrating_domain_model_rating.reason_text" resname="tx_partnerrating_domain_model_rating.reason_text" approved="yes">
         <source>Rating Reason Text</source>
-        <target state="translated">Begründungstext</target>
+        <target state="final">Begründungstext</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_rating.reason_text.description" resname="tx_partnerrating_domain_model_rating.reason_text">
+      <trans-unit id="tx_partnerrating_domain_model_rating.reason_text.description" resname="tx_partnerrating_domain_model_rating.reason_text" approved="yes">
         <source>Justification for the department's rating in free text form</source>
-        <target state="translated">Begründung für die Bewertung durch die Abteilung in freier Textform</target>
+        <target state="final">Begründung für die Bewertung durch die Abteilung in freier Textform</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_rating.reason.description" resname="tx_partnerrating_domain_model_rating.reason.description">
+      <trans-unit id="tx_partnerrating_domain_model_rating.reason.description" resname="tx_partnerrating_domain_model_rating.reason.description" approved="yes">
         <source>Reason for rating given by the department</source>
-        <target state="translated">Von der Abteilung angegebener Bewertungsgrund</target>
+        <target state="final">Von der Abteilung angegebener Bewertungsgrund</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_rating.department" resname="tx_partnerrating_domain_model_rating.department">
+      <trans-unit id="tx_partnerrating_domain_model_rating.department" resname="tx_partnerrating_domain_model_rating.department" approved="yes">
         <source>Department</source>
-        <target state="translated">Abteilung</target>
+        <target state="final">Abteilung</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_rating.department.description" resname="tx_partnerrating_domain_model_rating.department.description">
+      <trans-unit id="tx_partnerrating_domain_model_rating.department.description" resname="tx_partnerrating_domain_model_rating.department.description" approved="yes">
         <source>Department that gave the rating</source>
-        <target state="translated">Abteilung, die die Bewertung abgegeben hat</target>
+        <target state="final">Abteilung, die die Bewertung abgegeben hat</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_reason.department" resname="tx_partnerrating_domain_model_reason.department">
+      <trans-unit id="tx_partnerrating_domain_model_reason.department" resname="tx_partnerrating_domain_model_reason.department" approved="yes">
         <source>Department</source>
-        <target state="translated">Abteilung</target>
+        <target state="final">Abteilung</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_reason.department.description" resname="tx_partnerrating_domain_model_reason.department.description">
+      <trans-unit id="tx_partnerrating_domain_model_reason.department.description" resname="tx_partnerrating_domain_model_reason.department.description" approved="yes">
         <source>Department to which this reason is available for selection in the rating form</source>
-        <target state="translated">Abteilung, der dieser Grund im Bewertungsformular zur Auswahl steht</target>
+        <target state="final">Abteilung, der dieser Grund im Bewertungsformular zur Auswahl steht</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_reason" resname="tx_partnerrating_domain_model_reason">
+      <trans-unit id="tx_partnerrating_domain_model_reason" resname="tx_partnerrating_domain_model_reason" approved="yes">
         <source>Rating Reason</source>
-        <target state="translated">Bewertungsgrund</target>
+        <target state="final">Bewertungsgrund</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_reason.description" resname="tx_partnerrating_domain_model_reason.description">
+      <trans-unit id="tx_partnerrating_domain_model_reason.description" resname="tx_partnerrating_domain_model_reason.description" approved="yes">
         <source>Description</source>
-        <target state="translated">Beschreibung</target>
+        <target state="final">Beschreibung</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_reason.title" resname="tx_partnerrating_domain_model_reason.title">
+      <trans-unit id="tx_partnerrating_domain_model_reason.title" resname="tx_partnerrating_domain_model_reason.title" approved="yes">
         <source>Title</source>
-        <target state="translated">Titel</target>
+        <target state="final">Titel</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_reason.title.description" resname="tx_partnerrating_domain_model_reason.title.description">
+      <trans-unit id="tx_partnerrating_domain_model_reason.title.description" resname="tx_partnerrating_domain_model_reason.title.description" approved="yes">
         <source>Heading of the rating reason</source>
-        <target state="translated">Überschrift des Bewertungsgrundes</target>
+        <target state="final">Überschrift des Bewertungsgrundes</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_reason.description.description" resname="tx_partnerrating_domain_model_reason.description.description">
+      <trans-unit id="tx_partnerrating_domain_model_reason.description.description" resname="tx_partnerrating_domain_model_reason.description.description" approved="yes">
         <source>Complete formulation of the rating reason</source>
-        <target state="translated">Vollständige Formulierung des Grundes für die Bewertung</target>
+        <target state="final">Vollständige Formulierung des Grundes für die Bewertung</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_department" resname="tx_partnerrating_domain_model_department">
+      <trans-unit id="tx_partnerrating_domain_model_department" resname="tx_partnerrating_domain_model_department" approved="yes">
         <source>Department</source>
-        <target state="translated">Abteilung</target>
+        <target state="final">Abteilung</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_department.title" resname="tx_partnerrating_domain_model_department.title">
+      <trans-unit id="tx_partnerrating_domain_model_department.title" resname="tx_partnerrating_domain_model_department.title" approved="yes">
         <source>Title</source>
-        <target state="translated">Titel</target>
+        <target state="final">Titel</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_department.title.description" resname="tx_partnerrating_domain_model_department.title.description">
+      <trans-unit id="tx_partnerrating_domain_model_department.title.description" resname="tx_partnerrating_domain_model_department.title.description" approved="yes">
         <source>Name of the department used in the list output of departments by the plugin.</source>
-        <target state="translated">Name der Abteilung, der in der Listenausgabe der Abteilungen durch das Plugin verwendet wird.</target>
+        <target state="final">Name der Abteilung, der in der Listenausgabe der Abteilungen durch das Plugin verwendet wird.</target>
       </trans-unit>
     </body>
   </file>

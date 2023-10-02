@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xliff version="1.0">
+  <file source-language="en" datatype="plaintext" original="EXT:partner_rating/Resources/Private/Language/locallang_db.xlf" date="2023-09-03T16:55:15Z" product-name="partner_rating" target-language="nl">
+    <header/>
+    <body>
+      <trans-unit id="partnerrating_pi1.title">
+        <source>Partner Rating</source>
+        <target state="needs-translation">Partner Rating</target>
+      </trans-unit>
+      <trans-unit id="partnerrating_pi1.description">
+        <source>Plugin to provide a front-end form for departments to rate partners.</source>
+        <target state="needs-translation">Plugin to provide a front-end form for departments to rate partners.</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

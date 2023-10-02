@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xliff version="1.0">
+  <file source-language="en" datatype="plaintext" original="EXT:partner_rating/Resources/Private/Language/locallang_db.xlf" date="2023-09-03T16:55:15Z" product-name="partner_rating" target-language="vi">
+    <header/>
+    <body>
+      <trans-unit id="tx_partnerrating_domain_model_partner" resname="tx_partnerrating_domain_model_partner">
+        <source>Partner</source>
+        <target state="needs-translation">Partner</target>
+      </trans-unit>
+      <trans-unit id="tx_partnerrating_domain_model_partner.title" resname="tx_partnerrating_domain_model_partner.title">
+        <source>Title</source>
+        <target state="needs-translation">Title</target>
+      </trans-unit>
+      <trans-unit id="tx_partnerrating_domain_model_partner.title.description" resname="tx_partnerrating_domain_model_partner.title.description">
+        <source>By entering the name of the partner, a partner can be found in the evaluation sheet.</source>
+        <target state="needs-translation">By entering the name of the partner, a partner can be found in the evaluation sheet.</target>
+      </trans-unit>
+      <trans-unit id="tx_partnerrating_domain_model_partner.partner_nr" resname="tx_partnerrating_domain_model_partner.partner_nr">
+        <source>Partner Nr</source>
+        <target state="needs-translation">Partner Nr</target>
+      </trans-unit>
+      <trans-unit id="tx_partnerrating_domain_model_partner.partner_nr.description" resname="tx_partnerrating_domain_model_partner.partner_nr.description">
+        <source>By entering the partner number, a partner can be found in the evaluation sheet.</source>
+        <target state="needs-translation">By entering the partner number, a partner can be found in the evaluation sheet.</target>
+      </trans-unit>
+      <trans-unit id="tx_partnerrating_domain_model_rating" resname="tx_partnerrating_domain_model_rating">
+        <source>Rating</source>
+        <target state="needs-translation">Rating</target>
+      </trans-unit>
+      <trans-unit id="tx_partnerrating_domain_model_rating.rate_value" resname="tx_partnerrating_domain_model_rating.rate_value">
+        <source>Rate Value</source>
+        <target state="needs-translation">Rate Value</target>
+      </trans-unit>
+      <trans-unit id="tx_partnerrating_domain_model_rating.rate_value.description" resname="tx_partnerrating_domain_model_rating.rate_value.description">
+        <source>Valuation value assigned by a department</source>
+        <target state="needs-translation">Valuation value assigned by a department</target>
+      </trans-unit>
+      <trans-unit id="tx_partnerrating_domain_model_rating.partner" resname="tx_partnerrating_domain_model_rating.partner">
+        <source>Partner</source>
+        <target state="needs-translation">Partner</target>
+      </trans-unit>
+      <trans-unit id="tx_partnerrating_domain_model_rating.partner.description" resname="tx_partnerrating_domain_model_rating.partner.description">
+        <source>Partner who received this rating</source>
+        <target state="needs-translation">Partner who received this rating</target>
+      </trans-unit>
+      <trans-unit id="tx_partnerrating_domain_model_rating.reason" resname="tx_partnerrating_domain_model_rating.reason">
+        <source>Rating Reason</source>
+        <target state="needs-translation">Rating Reason</target>
+      </trans-unit>
+      <trans-unit id="tx_partnerrating_domain_model_rating.reason_text" resname="tx_partnerrating_domain_model_rating.reason_text">
+        <source>Rating Reason Text</source>
+        <target state="needs-translation">Rating Reason Text</target>
+      </trans-unit>
+      <trans-unit id="tx_partnerrating_domain_model_rating.reason_text.description" resname="tx_partnerrating_domain_model_rating.reason_text">
+        <source>Justification for the department's rating in free text form</source>
+        <target state="needs-translation">Justification for the department's rating in free text form</target>
+      </trans-unit>
+      <trans-unit id="tx_partnerrating_domain_model_rating.reason.description" resname="tx_partnerrating_domain_model_rating.reason.description">
+        <source>Reason for rating given by the department</source>
+        <target state="needs-translation">Reason for rating given by the department</target>
+      </trans-unit>
+      <trans-unit id="tx_partnerrating_domain_model_rating.department" resname="tx_partnerrating_domain_model_rating.department">
+        <source>Department</source>
+        <target state="needs-translation">Department</target>
+      </trans-unit>
+      <trans-unit id="tx_partnerrating_domain_model_rating.department.description" resname="tx_partnerrating_domain_model_rating.department.description">
+        <source>Department that gave the rating</source>
+        <target state="needs-translation">Department that gave the rating</target>
+      </trans-unit>
+      <trans-unit id="tx_partnerrating_domain_model_reason.department" resname="tx_partnerrating_domain_model_reason.department">
+        <source>Department</source>
+        <target state="needs-translation">Department</target>
+      </trans-unit>
+      <trans-unit id="tx_partnerrating_domain_model_reason.department.description" resname="tx_partnerrating_domain_model_reason.department.description">
+        <source>Department to which this reason is available for selection in the rating form</source>
+        <target state="needs-translation">Department to which this reason is available for selection in the rating form</target>
+      </trans-unit>
+      <trans-unit id="tx_partnerrating_domain_model_reason" resname="tx_partnerrating_domain_model_reason">
+        <source>Rating Reason</source>
+        <target state="needs-translation">Rating Reason</target>
+      </trans-unit>
+      <trans-unit id="tx_partnerrating_domain_model_reason.description" resname="tx_partnerrating_domain_model_reason.description">
+        <source>Description</source>
+        <target state="needs-translation">Description</target>
+      </trans-unit>
+      <trans-unit id="tx_partnerrating_domain_model_reason.title" resname="tx_partnerrating_domain_model_reason.title">
+        <source>Title</source>
+        <target state="needs-translation">Title</target>
+      </trans-unit>
+      <trans-unit id="tx_partnerrating_domain_model_reason.title.description" resname="tx_partnerrating_domain_model_reason.title.description">
+        <source>Heading of the rating reason</source>
+        <target state="needs-translation">Heading of the rating reason</target>
+      </trans-unit>
+      <trans-unit id="tx_partnerrating_domain_model_reason.description.description" resname="tx_partnerrating_domain_model_reason.description.description">
+        <source>Complete formulation of the rating reason</source>
+        <target state="needs-translation">Complete formulation of the rating reason</target>
+      </trans-unit>
+      <trans-unit id="tx_partnerrating_domain_model_department" resname="tx_partnerrating_domain_model_department">
+        <source>Department</source>
+        <target state="needs-translation">Department</target>
+      </trans-unit>
+      <trans-unit id="tx_partnerrating_domain_model_department.title" resname="tx_partnerrating_domain_model_department.title">
+        <source>Title</source>
+        <target state="needs-translation">Title</target>
+      </trans-unit>
+      <trans-unit id="tx_partnerrating_domain_model_department.title.description" resname="tx_partnerrating_domain_model_department.title.description">
+        <source>Name of the department used in the list output of departments by the plugin.</source>
+        <target state="needs-translation">Name of the department used in the list output of departments by the plugin.</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

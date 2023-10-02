@@ -3,13 +3,13 @@
   <file source-language="en" datatype="plaintext" original="EXT:partner_rating/Resources/Private/Language/locallang_db.xlf" date="2023-09-03T16:55:15Z" product-name="partner_rating" target-language="de">
     <header/>
     <body>
-      <trans-unit id="partnerrating_pi1.title">
+      <trans-unit id="partnerrating_pi1.title" approved="yes">
         <source>Partner Rating</source>
-        <target state="translated">Partnerbewertung</target>
+        <target state="final">Partnerbewertung</target>
       </trans-unit>
-      <trans-unit id="partnerrating_pi1.description">
+      <trans-unit id="partnerrating_pi1.description" approved="yes">
         <source>Plugin to provide a front-end form for departments to rate partners.</source>
-        <target state="translated">Plugin zur Bereitstellung eines Frontend-Formulars für Abteilungen zur Bewertung von Partnern.</target>
+        <target state="final">Plugin zur Bereitstellung eines Frontend-Formulars für Abteilungen zur Bewertung von Partnern.</target>
       </trans-unit>
     </body>
   </file>

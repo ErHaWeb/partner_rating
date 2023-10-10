@@ -2,7 +2,7 @@
 
 ## What does it do?
 
-This Extbase/Fluid based TYPO3 extension allows departments in a company to easily rate cooperation partners via a frontend form. The evaluation is based on school grades. Grades greater than 4 must be justified. This justification can be done either by predefined reasons or by a free text entry.
+This Extbase/Fluid based TYPO3 extension allows departments in a company to easily rate cooperation partners via a frontend form. The evaluation is based on school grades. Grades greater than a configurable limit value must be justified. This justification can be done either by predefined reasons or by a free text entry.
 
 Special attention is paid to the fact that a large number of cooperation partners can be found quickly. This is possible through an AJAX-driven database search, which results in a dynamic adjustment of the partner selection field.
 

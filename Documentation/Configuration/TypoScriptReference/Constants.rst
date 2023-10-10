@@ -107,3 +107,16 @@ JavaScript File
     :Path: plugin.tx_partnerrating_pi1.settings
 
     JavaScript file that is used by default
+
+..  _configuration-typoscript-constants-settings-ratingreasonminvalue:
+
+Rating Reason Min. Value
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+..  confval:: ratingReasonMinValue
+
+    :type: int
+    :Default: 3
+    :Path: plugin.tx_partnerrating_pi1.settings
+
+    If the selected rating exceeds this limit, then there is an obligation to select a reason.

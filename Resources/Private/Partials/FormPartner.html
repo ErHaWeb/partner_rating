@@ -3,7 +3,7 @@
 
     <f:section name="Default">
         <div class="wrapper-form">
-            <f:form action="save" arguments="{department:department.uid}">
+            <f:form action="save" arguments="{department:department.uid}" data="{rating-reason-min-value:settings.ratingReasonMinValue}">
                 <f:render partial="FormRating/Partner" section="Default" arguments="{_all}"/>
                 <f:render partial="FormRating/Rating" section="Default" arguments="{_all}"/>
                 <f:render partial="FormRating/Reason" section="Default" arguments="{_all}"/>

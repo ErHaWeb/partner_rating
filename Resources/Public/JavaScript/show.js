@@ -10,6 +10,9 @@
     // Flag to track whether an empty option is selected
     let emptyOptionSelected = false;
 
+    // Rating value that must be stated as a minimum so that there is no obligation to state reasons
+    let ratingReasonMinValue = 0;
+
     // Function to perform an AJAX request and populate the select field
     function updatePartnerSelect() {
         const searchText = searchInput.value;
@@ -102,8 +105,8 @@
             }
         });
 
-        // Make the radio buttons required if the rating is greater than 3
-        if (ratingValue > 3) {
+        // Make the radio buttons required if the rating is greater than the configured limit value
+        if (ratingReasonMinValue !== 0 && ratingValue > ratingReasonMinValue) {
             radioReasons.forEach(radio => {
                 radio.required = true;
             });
@@ -192,6 +195,9 @@
         radioRating = container.querySelectorAll('input[name="tx_partnerrating_pi1[rating]"]');
         savedRatingAlert = container.querySelector('.saved-rating-alert');
         const form = container.querySelector('form');
+
+        // Get configured limit value for rating reasons
+        ratingReasonMinValue = parseInt(form.getAttribute('data-rating-reason-min-value'), 10);
 
         // Add input event listener to the search input
         if (searchInput && partnerSelect) {

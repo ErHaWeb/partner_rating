@@ -147,7 +147,7 @@ class RatingController extends ActionController
         $reasonText = htmlspecialchars($this->request->getArguments()['reasonText'] ?? '');
 
         // Check if required data is available, if not, redirect
-        if ($department === null || $partner === null || ($reason === -1 && $reasonText === '') || ($reason === 0 && $rating > 3)) {
+        if ($department === null || $partner === null || ($reason === -1 && $reasonText === '') || ($reason === 0 && (int)$this->settings['ratingReasonMinValue'] !== 0 && $rating > (int)$this->settings['ratingReasonMinValue'])) {
             return $this->redirect('show', 'Rating', 'PartnerRating', $this->request->getArguments());
         }
 

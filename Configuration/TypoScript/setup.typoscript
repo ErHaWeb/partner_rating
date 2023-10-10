@@ -20,5 +20,6 @@ plugin.tx_partnerrating_pi1 {
         includeBootstrap = {$plugin.tx_partnerrating_pi1.settings.includeBootstrap}
         cssFile = {$plugin.tx_partnerrating_pi1.settings.cssFile}
         javaScriptFile = {$plugin.tx_partnerrating_pi1.settings.javaScriptFile}
+        ratingReasonMinValue = {$plugin.tx_partnerrating_pi1.settings.ratingReasonMinValue}
     }
 }

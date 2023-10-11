@@ -102,21 +102,17 @@ final  class GetPartner implements MiddlewareInterface
             // Check if the word is enclosed in double quotes.
             $isQuoted = preg_match('/^"(.+)"$/', $word, $matches);
 
-            // Determine the search mode (case-sensitive for quoted, case-insensitive for non-quoted).
-            $searchMode = $isQuoted ? 'quoted' : 'non_quoted';
-
             // Process the word and perform a search with '%' wildcards.
             $exactWord = $isQuoted ? str_replace('""', '"', $matches[1]) : $word;
-            $likePattern = '%' . $exactWord . '%';
 
-            // Bind the parameters without specifying data types.
-            $queryBuilder
-                ->setParameter('likePattern', $likePattern)
-                ->setParameter('searchMode', $searchMode);
-
-            // Use the parameters in the like expressions.
-            $titleExpression = $queryBuilder->expr()->like('title', ':likePattern');
-            $partnerNrExpression = $queryBuilder->expr()->like('partner_nr', ':likePattern');
+            $titleExpression = $queryBuilder->expr()->like(
+                'title',
+                $queryBuilder->createNamedParameter('%' . $queryBuilder->escapeLikeWildcards($exactWord) . '%')
+            );
+            $partnerNrExpression = $queryBuilder->expr()->like(
+                'partner_nr',
+                $queryBuilder->createNamedParameter('%' . $queryBuilder->escapeLikeWildcards($exactWord) . '%')
+            );
 
             // Combine title and partnerNr expressions with an OR condition.
             $whereExpressions[] = $queryBuilder->expr()->or($titleExpression, $partnerNrExpression);

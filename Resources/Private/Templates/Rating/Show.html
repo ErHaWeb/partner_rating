@@ -1,18 +1,14 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true" lang="en">
-
 <f:layout name="Default"/>
-
 <f:section name="Main">
-
     <f:asset.script identifier="tx_partnerrating_pi1.show" src="{settings.javaScriptFile}"/>
-
     <div class="show-department">
         <h2 class="headline">{department.title}</h2>
         <f:render partial="SaveRating" section="Default" arguments="{_all}"/>
-        <h3 class="subheadline small"><f:translate key="form.title"/></h3>
+        <h3 class="subheadline small">
+            <f:translate key="form.title"/>
+        </h3>
         <f:render partial="FormPartner" section="Default" arguments="{_all}"/>
     </div>
-
 </f:section>
-
 </html>

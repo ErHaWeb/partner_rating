@@ -1,20 +1,16 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true" lang="en">
-
 <f:layout name="Default"/>
-
 <f:section name="Main">
     <div class="list-department">
         <ul class="list-group list-group-flush">
             <f:for each="{departments}" as="department">
                 <li class="list-group-item">
-                    <f:link.action action="show"
-                                   arguments="{department:department}"
-                                   class="btn btn-lg btn-primary">{department.title}
+                    <f:link.action action="show" arguments="{department:department}" class="btn btn-lg btn-primary">
+                        {department.title}
                     </f:link.action>
                 </li>
             </f:for>
         </ul>
     </div>
 </f:section>
-
 </html>

@@ -1,81 +1,67 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true" lang="en">
-<f:spaceless>
+<f:section name="Default">
+    <div class="wrapper-reason">
+        <f:render section="NoneReason" arguments="{_all}"/>
+        <f:render section="ReasonText" arguments="{_all}"/>
+        <f:render section="PredefinedReason" arguments="{_all}"/>
+    </div>
+</f:section>
 
-    <f:section name="Default">
-        <div class="wrapper-reason">
-            <f:render section="NoneReason" arguments="{_all}"/>
-            <f:render section="ReasonText" arguments="{_all}"/>
-            <f:render section="PredefinedReason" arguments="{_all}"/>
-        </div>
-    </f:section>
+<f:comment><!-- No Reason --></f:comment>
+<f:section name="NoneReason">
+    <f:comment><!-- No reason --></f:comment>
+    <div class="form-check reason-none">
+        <f:if condition="!({values.reason})">
+            <f:then>
+                <f:form.radio value="0" name="reason" id="reason-{data.uid}-0" checked="checked" additionalAttributes="{data-validation:'{f:translate(key: \'validation.reason\')}'}" class="form-check-input"/>
+            </f:then>
+            <f:else>
+                <f:form.radio value="0" name="reason" id="reason-{data.uid}-0" additionalAttributes="{data-validation:'{f:translate(key: \'validation.reason\')}'}" class="form-check-input"/>
+            </f:else>
+        </f:if>
+        <label class="form-check-label" for="reason-{data.uid}-0">
+            <f:translate key="reason.none"/>
+        </label>
+    </div>
+</f:section>
 
+<f:comment><!-- Reason Text --></f:comment>
+<f:section name="ReasonText">
+    <f:comment><!-- Free text reason --></f:comment>
+    <div class="form-check reason-text">
+        <f:if condition="{values.reason} == -1">
+            <f:then>
+                <f:form.radio value="-1" name="reason" id="reasonText-{data.uid}" checked="checked" class="form-check-input"/>
+            </f:then>
+            <f:else>
+                <f:form.radio value="-1" name="reason" id="reasonText-{data.uid}" class="form-check-input"/>
+            </f:else>
+        </f:if>
+        <label class="form-check-label" for="reasonText-{data.uid}">
+            <f:translate key="reasonText.title"/>
+            <f:form.textarea name="reasonText" disabled="disabled" value="{values.reasonText}" class="form-control" rows="2"/>
+        </label>
+    </div>
+</f:section>
 
-    <f:section name="NoneReason">
-        <f:comment><!-- No reason --></f:comment>
-        <div class="form-check reason-none">
-            <f:if condition="!({values.reason})">
+<f:comment><!-- Predefined Reasons --></f:comment>
+<f:section name="PredefinedReason">
+    <f:comment><!-- Predefined reasons for current department --></f:comment>
+    <div class="form-check reason-predefined">
+        <f:for each="{reasons}" as="reason">
+            <f:if condition="{reason.uid} == {values.reason}">
                 <f:then>
-                    <f:form.radio value="0" name="reason" id="reason-{data.uid}-0" checked="checked"
-                                  additionalAttributes="{data-validation:'{f:translate(key: \'validation.reason\')}'}"
-                                  class="form-check-input"/>
+                    <f:form.radio value="{reason.uid}" name="reason" id="reason-{data.uid}-{reason.uid}" checked="checked" class="form-check-input"/>
                 </f:then>
                 <f:else>
-                    <f:form.radio value="0" name="reason" id="reason-{data.uid}-0"
-                                  additionalAttributes="{data-validation:'{f:translate(key: \'validation.reason\')}'}"
-                                  class="form-check-input"/>
+                    <f:form.radio value="{reason.uid}" name="reason" id="reason-{data.uid}-{reason.uid}" class="form-check-input"/>
                 </f:else>
             </f:if>
-            <label class="form-check-label" for="reason-{data.uid}-0">
-                <f:translate key="reason.none"/>
-            </label>
-        </div>
-    </f:section>
-
-    <f:section name="ReasonText">
-        <f:comment><!-- Free text reason --></f:comment>
-        <div class="form-check reason-text">
-            <f:if condition="{values.reason} == -1">
-                <f:then>
-                    <f:form.radio value="-1" name="reason" id="reasonText-{data.uid}"
-                                  checked="checked" class="form-check-input"/>
-                </f:then>
-                <f:else>
-                    <f:form.radio value="-1" name="reason" id="reasonText-{data.uid}"
-                                  class="form-check-input"/>
-                </f:else>
-            </f:if>
-            <label class="form-check-label" for="reasonText-{data.uid}">
-                <f:translate key="reasonText.title"/>
-                <f:form.textarea name="reasonText" disabled="disabled"
-                                 value="{values.reasonText}" class="form-control"
-                                 rows="2"/>
-            </label>
-        </div>
-    </f:section>
-
-
-    <f:section name="PredefinedReason">
-        <f:comment><!-- Predefined reasons for current department --></f:comment>
-        <div class="form-check reason-predefined">
-            <f:for each="{reasons}" as="reason">
-                <f:if condition="{reason.uid} == {values.reason}">
-                    <f:then>
-                        <f:form.radio value="{reason.uid}" name="reason" id="reason-{data.uid}-{reason.uid}"
-                                      checked="checked"
-                                      class="form-check-input"/>
-                    </f:then>
-                    <f:else>
-                        <f:form.radio value="{reason.uid}" name="reason" id="reason-{data.uid}-{reason.uid}"
-                                      class="form-check-input"/>
-                    </f:else>
-                </f:if>
-                <label class="form-check-label" for="reason-{data.uid}-{reason.uid}">
-                    <span class="title">{reason.title}</span><br>
-                    <span class="description">{reason.description -> f:format.html()}</span>
-                </label><br>
-            </f:for>
-        </div>
-    </f:section>
-
-</f:spaceless>
+            <label class="form-check-label" for="reason-{data.uid}-{reason.uid}">
+                <span class="title">{reason.title}</span><br>
+                <span class="description">{reason.description -> f:format.html()}</span>
+            </label><br>
+        </f:for>
+    </div>
+</f:section>
 </html>

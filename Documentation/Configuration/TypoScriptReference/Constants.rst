@@ -133,3 +133,16 @@ Rating Reason Min. Value
     :Path: plugin.tx_partnerrating_pi1.settings
 
     If the selected rating exceeds this limit, then there is an obligation to select a reason.
+
+..  _configuration-typoscript-constants-settings-keepminonesearchresult:
+
+Keep min. one search result
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+..  confval:: keepMinOneSearchResult
+
+    :type: boolean
+    :Default: true
+    :Path: plugin.tx_partnerrating_pi1.settings
+
+    If this setting is `true`, then it is ensured that at least one result remains in the partner selection list, even if the entered string no longer leads to any results.

@@ -13,6 +13,9 @@
     // Rating value that must be stated as a minimum so that there is no obligation to state reasons
     let ratingReasonMinValue = 0;
 
+    // Flag to track whether a minimum one search result is kept
+    let keepMinOneSearchResult = false;
+
     // Function to perform an AJAX request and populate the select field
     function updatePartnerSelect() {
         const searchText = searchInput.value;
@@ -28,7 +31,7 @@
         })
             .then(response => response.json())
             .then(data => {
-                if (partnerSelect && data.length > 0) {
+                if (!keepMinOneSearchResult || partnerSelect && data.length > 0) {
                     // Get the currently selected value as an integer
                     const previouslySelectedValue = parseInt(partnerSelect.value, 10);
 
@@ -196,8 +199,9 @@
         savedRatingAlert = container.querySelector('.saved-rating-alert');
         const form = container.querySelector('form');
 
-        // Get configured limit value for rating reasons
+        // Set values from data attributes
         ratingReasonMinValue = parseInt(form.getAttribute('data-rating-reason-min-value'), 10);
+        keepMinOneSearchResult = form.getAttribute('data-keep-min-one-search-result') === '1';
 
         // Add input event listener to the search input
         if (searchInput && partnerSelect) {

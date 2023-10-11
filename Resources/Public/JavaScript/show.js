@@ -81,8 +81,14 @@
 
     // Function to update textarea status based on the selected radio
     function updateTextareaStatus() {
-        textareaField.disabled = !radioReasons[1].checked;
-        textareaField.required = radioReasons[1].checked;
+        textareaField.disabled = true;
+        textareaField.required = false;
+        radioReasons.forEach(radio => {
+            if(radio.value === '-1' && radio.checked) {
+                textareaField.disabled = false;
+                textareaField.required = true;
+            }
+        });
     }
 
     // Function to handle rating select change

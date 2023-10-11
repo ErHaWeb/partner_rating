@@ -21,5 +21,9 @@ plugin.tx_partnerrating_pi1 {
         ratingReasonMinValue = 3
         # cat=plugin.tx_tx_partnerrating/misc/c; type=boolean; label=Keep min. one search result:If this setting is `true`, then it is ensured that at least one result remains in the partner selection list, even if the entered string no longer leads to any results.
         keepMinOneSearchResult = 1
+        # cat=plugin.tx_tx_partnerrating/misc/d; type=string; label=Partner Label Fields:Comma-separated list of database fields to be used for forming the label of entries in the partner selection field. Fields that do not exist in the partner table are ignored.
+        partnerLabelFields = title,partner_nr
+        # cat=plugin.tx_tx_partnerrating/misc/d; type=string; label=Partner Label Field Split String:String used between label fields that are defined by `partnerLabelFields`.
+        partnerLabelFieldSplitString = |
     }
 }

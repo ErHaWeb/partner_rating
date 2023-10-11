@@ -2,8 +2,10 @@
 <f:section name="Default">
     <div class="wrapper-form">
         <f:variable name="data" value="{
-                rating-reason-min-value:settings.ratingReasonMinValue,
-                keep-min-one-search-result:settings.keepMinOneSearchResult
+                rating-reason-min-value:ratingReasonMinValue,
+                keep-min-one-search-result:keepMinOneSearchResult,
+                partner-label-fields:partnerLabelFields,
+                partner-label-field-split-string:settings.partnerLabelFieldSplitString
             }"/>
         <f:form action="save" arguments="{department:department.uid}" data="{data}">
             <f:render partial="FormRating/Partner" section="Default" arguments="{_all}"/>

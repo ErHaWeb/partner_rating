@@ -13,17 +13,6 @@
                 <f:form.select.option value="0" additionalAttributes="{disabled: disabled}">
                     <f:translate key="partner.choosePartner"/>
                 </f:form.select.option>
-                <f:for each="{partners}" as="partner">
-                    <f:if condition="{partner.uid} == {values.partner}">
-                        <f:then>
-                            <f:form.select.option value="{partner.uid}" selected="selected">{partner.title}
-                            </f:form.select.option>
-                        </f:then>
-                        <f:else>
-                            <f:form.select.option value="{partner.uid}">{partner.title}</f:form.select.option>
-                        </f:else>
-                    </f:if>
-                </f:for>
             </f:form.select>
         </div>
     </div>

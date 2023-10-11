@@ -85,6 +85,19 @@ class RatingController extends ActionController
         $assign['data'] = $this->configurationManager->getContentObject()->data;
         $assign['ratingValues'] = GeneralUtility::intExplode(',', $this->settings['ratingValues']);
 
+        $assign['ratingReasonMinValue'] = (int)$this->settings['ratingReasonMinValue'];
+        $assign['keepMinOneSearchResult'] = (int)$this->settings['keepMinOneSearchResult'] ? 1 : 0;
+
+        $partnerLabelFields = GeneralUtility::trimExplode(',', $this->settings['partnerLabelFields']);
+        $existingColumns = array_keys($GLOBALS['TCA']['tx_partnerrating_domain_model_partner']['columns']);
+        foreach ($partnerLabelFields as $key => $replaceColumn) {
+            if (!in_array($replaceColumn, $existingColumns, true)) {
+                unset($partnerLabelFields[$key]);
+            }
+        }
+
+        $assign['partnerLabelFields'] = implode(',', $partnerLabelFields);
+
         // Assign department, reasons, and partners to the view
         $assign['department'] = $department;
         $assign['reasons'] = $this->reasonRepository->findByDepartment($department);
@@ -144,9 +157,10 @@ class RatingController extends ActionController
         $reason = (int)($this->request->getArguments()['reason'] ?? 0);
         $rating = (int)($this->request->getArguments()['rating'] ?? 0);
         $reasonText = htmlspecialchars($this->request->getArguments()['reasonText'] ?? '');
+        $ratingReasonMinValue = (int)$this->settings['ratingReasonMinValue'];
 
         // Check if required data is available, if not, redirect
-        if ($department === null || $partner === null || ($reason === -1 && $reasonText === '') || ($reason === 0 && (int)$this->settings['ratingReasonMinValue'] !== 0 && $rating > (int)$this->settings['ratingReasonMinValue'])) {
+        if ($department === null || $partner === null || ($reason === -1 && $reasonText === '') || ($reason === 0 && $ratingReasonMinValue !== 0 && $rating > $ratingReasonMinValue)) {
             return $this->redirect('show', 'Rating', 'PartnerRating', $this->request->getArguments());
         }
 

@@ -146,3 +146,29 @@ Keep min. one search result
     :Path: plugin.tx_partnerrating_pi1.settings
 
     If this setting is `true`, then it is ensured that at least one result remains in the partner selection list, even if the entered string no longer leads to any results.
+
+..  _configuration-typoscript-constants-settings-partnerlabelfields:
+
+Partner Label Fields
+~~~~~~~~~~~~~~~~~~~~
+
+..  confval:: partnerLabelFields
+
+    :type: string
+    :Default: title,partner_nr
+    :Path: plugin.tx_partnerrating_pi1.settings
+
+    Comma-separated list of database fields to be used for forming the label of entries in the partner selection field. Fields that do not exist in the partner table are ignored.
+
+..  _configuration-typoscript-constants-settings-partnerlabelfieldsplitstring:
+
+Partner Label Field Split String
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+..  confval:: partnerLabelFieldSplitString
+
+    :type: string
+    :Default: |
+    :Path: plugin.tx_partnerrating_pi1.settings
+
+    String used between label fields that are defined by `partnerLabelFields`.

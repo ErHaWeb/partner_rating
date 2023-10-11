@@ -16,6 +16,12 @@
     // Flag to track whether a minimum one search result is kept
     let keepMinOneSearchResult = false;
 
+    // List of fields to be used to form the label of items in the partner select field
+    let partnerLabelFields = '';
+
+    // Split string to be used to form the label of items in the partner select field
+    let partnerLabelFieldSplitString = '';
+
     // Function to perform an AJAX request and populate the select field
     function updatePartnerSelect() {
         const searchText = searchInput.value;
@@ -23,6 +29,7 @@
         // Create a FormData object to send data via POST
         const formData = new FormData();
         formData.append('searchText', searchText);
+        formData.append('partnerLabelFields', partnerLabelFields);
 
         // Perform an AJAX request with the POST method
         fetch('/', {
@@ -31,7 +38,7 @@
         })
             .then(response => response.json())
             .then(data => {
-                if (!keepMinOneSearchResult || partnerSelect && data.length > 0) {
+                if (partnerSelect && (data.length > 0 || !keepMinOneSearchResult)) {
                     // Get the currently selected value as an integer
                     const previouslySelectedValue = parseInt(partnerSelect.value, 10);
 
@@ -46,7 +53,7 @@
                     // Add new options based on the AJAX response
                     data.forEach(option => {
                         // Check if the option's value matches the previously selected value
-                        if (option.value === previouslySelectedValue) {
+                        if (option.uid === previouslySelectedValue) {
                             // Select this option and mark the match as found
                             option.selected = true;
                             matchFound = true;
@@ -73,8 +80,14 @@
     // Function to add an option to the select field
     function addOption(option) {
         const optionElement = document.createElement('option');
-        optionElement.value = option.value;
-        optionElement.textContent = option.label;
+        optionElement.value = option.uid;
+        optionElement.textContent = '';
+        partnerLabelFields.split(',').forEach((value, key, array) => {
+            optionElement.textContent += option[value];
+            if (!Object.is(array.length - 1, key)) {
+                optionElement.textContent += ' ' + partnerLabelFieldSplitString + ' ';
+            }
+        });
         optionElement.selected = option.selected;
         partnerSelect.appendChild(optionElement);
     }
@@ -206,17 +219,25 @@
         const form = container.querySelector('form');
 
         // Set values from data attributes
-        ratingReasonMinValue = parseInt(form.getAttribute('data-rating-reason-min-value'), 10);
-        keepMinOneSearchResult = form.getAttribute('data-keep-min-one-search-result') === '1';
+        if (form.hasAttribute('data-rating-reason-min-value')) {
+            ratingReasonMinValue = parseInt(form.getAttribute('data-rating-reason-min-value'), 10);
+        }
+        if (form.hasAttribute('data-keep-min-one-search-result')) {
+            keepMinOneSearchResult = form.getAttribute('data-keep-min-one-search-result') === '1';
+        }
+        if (form.hasAttribute('data-partner-label-fields')) {
+            partnerLabelFields = form.getAttribute('data-partner-label-fields');
+        }
+        if (form.hasAttribute('data-partner-label-field-split-string')) {
+            partnerLabelFieldSplitString = form.getAttribute('data-partner-label-field-split-string');
+        }
 
         // Add input event listener to the search input
         if (searchInput && partnerSelect) {
             searchInput.addEventListener('input', updatePartnerSelect);
 
             // Initially perform an AJAX request and populate the select field if the search input is not empty
-            if (searchInput.value !== '') {
-                updatePartnerSelect();
-            }
+            updatePartnerSelect();
 
             // Set focus on the partner search input field
             searchInput.focus();

@@ -23,6 +23,7 @@ use Psr\Http\Server\RequestHandlerInterface;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Http\JsonResponse;
 use TYPO3\CMS\Core\Site\Entity\SiteLanguage;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
  * Middleware for getting partners based on search criteria.
@@ -71,6 +72,7 @@ final  class GetPartner implements MiddlewareInterface
     {
         // Extract the search text from the request's parsed body, defaulting to an empty string if not provided.
         $searchText = htmlspecialchars($request->getParsedBody()['searchText'] ?? '', ENT_NOQUOTES | ENT_SUBSTITUTE | ENT_HTML401);
+        $partnerLabelFields = GeneralUtility::trimExplode(',', $request->getParsedBody()['partnerLabelFields'] ?? [], true);
 
         // Retrieve the language associated with the request, falling back to the default language of the site.
         /** @var SiteLanguage $language */
@@ -82,7 +84,8 @@ final  class GetPartner implements MiddlewareInterface
 
         // Define the columns to select in the SQL query.
         try {
-            $queryBuilder->select('uid AS value', 'title AS label')
+            $select = array_merge(['uid'], $partnerLabelFields);
+            $queryBuilder->select(...$select)
                 ->from('tx_partnerrating_domain_model_partner')
                 ->executeQuery();
         } catch (Exception $e) {

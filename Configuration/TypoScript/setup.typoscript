@@ -23,5 +23,7 @@ plugin.tx_partnerrating_pi1 {
         ratingValues = {$plugin.tx_partnerrating_pi1.settings.ratingValues}
         ratingReasonMinValue = {$plugin.tx_partnerrating_pi1.settings.ratingReasonMinValue}
         keepMinOneSearchResult = {$plugin.tx_partnerrating_pi1.settings.keepMinOneSearchResult}
+        partnerLabelFields = {$plugin.tx_partnerrating_pi1.settings.partnerLabelFields}
+        partnerLabelFieldSplitString = {$plugin.tx_partnerrating_pi1.settings.partnerLabelFieldSplitString}
     }
 }

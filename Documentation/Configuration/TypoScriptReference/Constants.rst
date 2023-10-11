@@ -108,6 +108,19 @@ JavaScript File
 
     JavaScript file that is used by default
 
+..  _configuration-typoscript-constants-settings-ratingvalues:
+
+Rating Values
+~~~~~~~~~~~~~
+
+..  confval:: ratingValues
+
+    :type: string
+    :Default: 1,2,3,4,5
+    :Path: plugin.tx_partnerrating_pi1.settings
+
+    Comma separated list of integer values that can be selected for the rating.
+
 ..  _configuration-typoscript-constants-settings-ratingreasonminvalue:
 
 Rating Reason Min. Value

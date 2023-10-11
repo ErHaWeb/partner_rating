@@ -15,7 +15,9 @@ plugin.tx_partnerrating_pi1 {
         cssFile = EXT:partner_rating/Resources/Public/Css/main.min.css
         # cat=plugin.tx_tx_partnerrating/file/f; type=string; label=Path to JavaScript file (FE):JavaScript file that is used by default
         javaScriptFile = EXT:partner_rating/Resources/Public/JavaScript/show.min.js
-        # cat=plugin.tx_tx_partnerrating/misc/a; type=int+; label=Rating Reason Min. Value:If the selected rating exceeds this limit, then there is an obligation to select a reason.
+        # cat=plugin.tx_tx_partnerrating/misc/a; type=string; label=Rating Values:Comma separated list of integer values that can be selected for the rating.
+        ratingValues = 1,2,3,4,5
+        # cat=plugin.tx_tx_partnerrating/misc/b; type=int+; label=Rating Reason Min. Value:If the selected rating exceeds this limit, then there is an obligation to select a reason.
         ratingReasonMinValue = 3
     }
 }

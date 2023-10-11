@@ -30,9 +30,9 @@ Partner Rating
 ----
 
 Extbase/Fluid extension that allows departments to rate collaboration partners
-via a front-end form. The rating is based on school grades. Grades greater than
-a configurable limit value must be justified. This is possible either by
-predefined reasons or a free text input.
+via a front-end form. Rating values can be specified as a comma separated list
+of integer values. Rating values greater than a configurable limit value must
+be justified. This is possible either by predefined reasons or a free text input.
 
 ----
 

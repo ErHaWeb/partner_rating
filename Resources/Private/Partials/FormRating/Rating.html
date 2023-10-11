@@ -5,7 +5,7 @@
         <div class="wrapper-rating">
             <div class="wrapper-rating-items">
                 <label for="rating"><f:translate key="rating.title"/></label>
-                <f:for each="{0:1, 1:2, 2:3, 3:4, 4:5}" iteration="iterator" as="rating">
+                <f:for each="{ratingValues}" iteration="iterator" as="rating">
                     <div class="form-check rating-item">
                         <f:if condition="{rating} == {values.rating} || !({values.rating}) && {iterator.cycle} == 1">
                             <f:then>

@@ -83,6 +83,7 @@ class RatingController extends ActionController
     {
         $assign = [];
         $assign['data'] = $this->configurationManager->getContentObject()->data;
+        $assign['ratingValues'] = GeneralUtility::intExplode(',', $this->settings['ratingValues']);
 
         // Assign department, reasons, and partners to the view
         $assign['department'] = $department;
@@ -121,10 +122,8 @@ class RatingController extends ActionController
         }
 
         if (!empty($values)) {
-            $this->view->assign('values', $values);
+            $assign['values'] = $values;
         }
-
-        $assign['values'] = $values;
 
         $this->view->assignMultiple($assign);
         return $this->htmlResponse();

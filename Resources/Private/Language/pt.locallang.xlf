@@ -43,6 +43,10 @@
         <source>Rating Reason</source>
         <target state="needs-translation">Rating Reason</target>
       </trans-unit>
+      <trans-unit id="reasons.title">
+        <source>Rating Reasons</source>
+        <target state="needs-translation">Rating Reasons</target>
+      </trans-unit>
       <trans-unit id="reasonText.title">
         <source>Rating Reason Text</source>
         <target state="needs-translation">Rating Reason Text</target>

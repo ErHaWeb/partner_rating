@@ -101,7 +101,6 @@ class RatingController extends ActionController
         // Assign department, reasons, and partners to the view
         $assign['department'] = $department;
         $assign['reasons'] = $this->reasonRepository->findByDepartment($department);
-        $assign['partners'] = $this->partnerRepository->findAll();
 
         if ($savedRating !== null) {
             $assign['savedRating'] = $savedRating;

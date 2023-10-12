@@ -9,7 +9,7 @@ CREATE TABLE tx_partnerrating_domain_model_rating
 (
     rate_value  int(11)          DEFAULT '0' NOT NULL,
     partner     int(11) unsigned DEFAULT '0',
-    reason      int(11) unsigned DEFAULT '0',
+    reason      text                         NOT NULL,
     reason_text text,
     department  int(11) unsigned DEFAULT '0'
 );

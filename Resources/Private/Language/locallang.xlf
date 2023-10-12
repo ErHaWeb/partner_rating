@@ -33,6 +33,9 @@
             <trans-unit id="reason.title">
                 <source>Rating Reason</source>
             </trans-unit>
+            <trans-unit id="reasons.title">
+                <source>Rating Reasons</source>
+            </trans-unit>
             <trans-unit id="reasonText.title">
                 <source>Rating Reason Text</source>
             </trans-unit>

@@ -14,18 +14,30 @@
                         <f:translate key="save.message" arguments="{0: '{savedRating.partner.title}', 1: '{savedRating.rateValue}'}"/>
                     </div>
                     <div class="alert-reason">
-                        <f:if condition="{savedRating.reason} || {savedRating.reasonText} != ''">
-                            <f:if condition="{savedRating.reason}">
-                                <div class="alert-reason-title">
-                                    <span><f:translate key="reason.title"/>: </span> {savedRating.reason.title}
-                                </div>
-                            </f:if>
-                            <f:if condition="!({savedRating.reason}) && {savedRating.reasonText} != ''">
-                                <div class="alert-reason-text">
-                                    <span><f:translate key="reasonText.title"/>: </span>
-                                    <f:format.html>{savedRating.reasonText}</f:format.html>
-                                </div>
-                            </f:if>
+                        <f:if condition="{savedRating.reason}">
+                            <f:switch expression="{savedRating.reason -> f:count()}">
+                                <f:case value="0"/>
+                                <f:case value="1">
+                                    <div class="alert-reason-title">
+                                        <span><f:translate key="reason.title"/>:</span> {savedRating.reason.0.title}
+                                    </div>
+                                </f:case>
+                                <f:defaultCase>
+                                    <div class="alert-reason-title">
+                                        <span><f:translate key="reasons.title"/>:</span><br>
+                                        <f:for each="{savedRating.reason}" as="reason" iteration="iterator">
+                                            {reason.title}
+                                            <f:if condition="!({iterator.isLast})"><br></f:if>
+                                        </f:for>
+                                    </div>
+                                </f:defaultCase>
+                            </f:switch>
+                        </f:if>
+                        <f:if condition="{savedRating.reasonText} != ''">
+                            <div class="alert-reason-text">
+                                <span><f:translate key="reasonText.title"/>: </span>
+                                <f:format.html>{savedRating.reasonText}</f:format.html>
+                            </div>
                         </f:if>
                     </div>
                 </div>

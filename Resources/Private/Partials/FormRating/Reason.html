@@ -1,9 +1,11 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true" lang="en">
 <f:section name="Default">
-    <div class="wrapper-reason">
-        <f:render section="NoneReason" arguments="{_all}"/>
-        <f:render section="ReasonText" arguments="{_all}"/>
+    <div class="wrapper-reason" data-validation="{f:translate(key:'validation.reason')}">
+        <f:if condition="!({settings.allowMultipleReasons})">
+            <f:render section="NoneReason" arguments="{_all}"/>
+        </f:if>
         <f:render section="PredefinedReason" arguments="{_all}"/>
+        <f:render section="ReasonText" arguments="{_all}"/>
     </div>
 </f:section>
 
@@ -16,27 +18,34 @@
         </f:if>
         <f:variable name="value" value="0"/>
         <f:variable name="id" value="reason-{data.uid}-0"/>
-        <f:variable name="additionalAttributes" value="{data-validation:'{f:translate(key: \'validation.reason\')}'}"/>
         <f:variable name="label" value="{f:translate(key: 'reason.none')}"/>
-        <f:render section="CheckRadioElement" arguments="{checked:checked, value:value, id:id, additionalAttributes:additionalAttributes, label:label}"/>
+        <f:render section="CheckRadioElement" arguments="{checked:checked, value:value, id:id, label:label}"/>
     </div>
 </f:section>
 
 <f:comment><!-- Reason Text --></f:comment>
 <f:section name="ReasonText">
     <f:comment><!-- Free text reason --></f:comment>
-    <div class="form-check reason-text">
-        <f:if condition="{values.reason} == -1">
-            <f:variable name="checked" value="checked"/>
-        </f:if>
-        <f:variable name="value" value="-1"/>
-        <f:variable name="id" value="reasonText-{data.uid}"/>
-        <f:variable name="label">
-            <f:translate key="reasonText.title"/>
-            <f:form.textarea name="reasonText" disabled="disabled" value="{values.reasonText}" class="form-control" rows="2"/>
-        </f:variable>
-        <f:render section="CheckRadioElement" arguments="{checked:checked, value:value, id:id, label:label}"/>
-    </div>
+    <f:variable name="id" value="reasonText-{data.uid}"/>
+    <f:if condition="!({settings.allowMultipleReasons})">
+        <f:then>
+            <div class="form-check reason-text">
+                <f:if condition="{values.reason} == -1">
+                    <f:variable name="checked" value="checked"/>
+                </f:if>
+                <f:variable name="value" value="-1"/>
+                <f:variable name="label">
+                    <f:translate key="reasonText.title"/>
+                    <f:form.textarea name="reasonText" disabled="disabled" value="{values.reasonText}" class="form-control" rows="2"/>
+                </f:variable>
+                <f:render section="CheckRadioElement" arguments="{checked:checked, value:value, id:id, label:label}"/>
+            </div>
+        </f:then>
+        <f:else>
+            <label for="{id}"><f:translate key="reasonText.title"/></label>
+            <f:form.textarea name="reasonText" id="{id}" value="{values.reasonText}" class="form-control" rows="2"/>
+        </f:else>
+    </f:if>
 </f:section>
 
 <f:comment><!-- Predefined Reasons --></f:comment>
@@ -60,12 +69,26 @@
 </f:section>
 
 <f:section name="CheckRadioElement">
-    <f:if condition="{checked}">
+    <f:if condition="{settings.allowMultipleReasons}">
         <f:then>
-            <f:form.radio value="{value}" name="reason" id="{id}" checked="checked" additionalAttributes="{additionalAttributes}" class="form-check-input"/>
+            <f:if condition="{checked}">
+                <f:then>
+                    <f:form.checkbox value="{value}" name="reason" multiple="1" id="{id}" checked="checked" class="form-check-input"/>
+                </f:then>
+                <f:else>
+                    <f:form.checkbox value="{value}" name="reason" multiple="1" id="{id}" class="form-check-input"/>
+                </f:else>
+            </f:if>
         </f:then>
         <f:else>
-            <f:form.radio value="{value}" name="reason" id="{id}" additionalAttributes="{additionalAttributes}" class="form-check-input"/>
+            <f:if condition="{checked}">
+                <f:then>
+                    <f:form.radio value="{value}" name="reason" id="{id}" checked="checked" class="form-check-input"/>
+                </f:then>
+                <f:else>
+                    <f:form.radio value="{value}" name="reason" id="{id}" class="form-check-input"/>
+                </f:else>
+            </f:if>
         </f:else>
     </f:if>
     <label class="form-check-label" for="{id}">{label -> f:format.raw()}</label>

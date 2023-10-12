@@ -5,22 +5,21 @@
     'use strict'; // Enable strict mode
 
     // Declare variables for DOM elements
-    let searchInput, partnerSelect, textareaField, radioReasons, radioRating, savedRatingAlert;
-
-    // Flag to track whether an empty option is selected
-    let emptyOptionSelected = false;
-
-    // Rating value that must be stated as a minimum so that there is no obligation to state reasons
-    let ratingReasonMinValue = 0;
-
-    // Flag to track whether a minimum one search result is kept
-    let keepMinOneSearchResult = false;
-
-    // List of fields to be used to form the label of items in the partner select field
-    let partnerLabelFields = '';
-
-    // Split string to be used to form the label of items in the partner select field
-    let partnerLabelFieldSplitString = '';
+    let form = null,
+        searchInput = null,
+        partnerSelect = null,
+        textareaField = null,
+        reasonWrapper = null,
+        reasonOptions = null,
+        radioRating = null,
+        savedRatingAlert = null,
+        ratingValue = 0,
+        emptyOptionSelected = false,
+        ratingReasonMinValue = 0,
+        keepMinOneSearchResult = false,
+        partnerLabelFields = '',
+        partnerLabelFieldSplitString = '',
+        allowMultipleReasons = false;
 
     // Function to perform an AJAX request and populate the select field
     function updatePartnerSelect() {
@@ -67,10 +66,6 @@
                         emptyOptionSelected = true;
                     }
                 }
-
-                // Update textarea status based on the selected radio
-                updateTextareaStatus();
-                handlePartnerSelectChange();
             })
             .catch(error => {
                 console.error('Error:', error);
@@ -92,12 +87,12 @@
         partnerSelect.appendChild(optionElement);
     }
 
-    // Function to update textarea status based on the selected radio
+    // Function to update textarea status based on the selected option
     function updateTextareaStatus() {
         textareaField.disabled = true;
         textareaField.required = false;
-        radioReasons.forEach(radio => {
-            if(radio.value === '-1' && radio.checked) {
+        reasonOptions.forEach(option => {
+            if (option.value === '-1' && option.checked) {
                 textareaField.disabled = false;
                 textareaField.required = true;
             }
@@ -106,9 +101,6 @@
 
     // Function to handle rating select change
     function handleRatingSelectChange() {
-        // Get the selected rating value as an integer
-        let ratingValue;
-
         // Validate the selected rating
         radioRating.forEach(radio => {
             if (radio.checked) {
@@ -117,26 +109,30 @@
         });
 
         // Validate the selected reason
-        radioReasons.forEach(radio => {
-            radio.required = true;
-            if (radio.checked && parseInt(radio.value, 10) === 0) {
-                const customValidationMessage = radio.getAttribute('data-validation');
-                radio.setCustomValidity(customValidationMessage);
+        reasonOptions.forEach(option => {
+            if (!allowMultipleReasons) {
+                option.required = true;
+            }
+            if (option.checked && parseInt(option.value, 10) === 0) {
+                const customValidationMessage = reasonWrapper.getAttribute('data-validation');
+                option.setCustomValidity(customValidationMessage);
             } else {
-                radio.setCustomValidity('');
+                option.setCustomValidity('');
             }
         });
 
-        // Make the radio buttons required if the rating is greater than the configured limit value
-        if (ratingReasonMinValue !== 0 && ratingValue > ratingReasonMinValue) {
-            radioReasons.forEach(radio => {
-                radio.required = true;
-            });
-        } else {
-            radioReasons.forEach(radio => {
-                radio.required = false;
-                radio.setCustomValidity('');
-            });
+        if (!allowMultipleReasons) {
+            // Make the options required if the rating is greater than the configured limit value
+            if (ratingReasonMinValue !== 0 && ratingValue > ratingReasonMinValue) {
+                reasonOptions.forEach(option => {
+                    option.required = true;
+                });
+            } else {
+                reasonOptions.forEach(option => {
+                    option.required = false;
+                    option.setCustomValidity('');
+                });
+            }
         }
     }
 
@@ -147,14 +143,43 @@
             event.preventDefault(); // Prevent form submission if not valid
         }
 
+        checkSelectedPartner(event);
+        checkReasonOptions(event);
+    }
+
+    function checkSelectedPartner(event) {
+        partnerSelect.setCustomValidity(''); // Clear custom validity message
+
         // Check if the partner select value is empty or 0
         const selectedPartnerValue = parseInt(partnerSelect.value, 10);
         if (isNaN(selectedPartnerValue) || selectedPartnerValue === 0) {
             const customValidationMessage = partnerSelect.getAttribute('data-validation');
             partnerSelect.setCustomValidity(customValidationMessage); // Set custom validity message
             event.preventDefault(); // Prevent form submission
-        } else {
-            partnerSelect.setCustomValidity(''); // Clear custom validity message
+            form.reportValidity(); // Trigger validation message
+        }
+    }
+
+    function checkReasonOptions(event) {
+        // Check if at least one checkbox is selected
+        let checkboxChecked = false;
+        reasonOptions.forEach((checkbox) => {
+            if (checkbox.checked) {
+                checkboxChecked = true;
+            }
+        });
+
+        // Clear any previous custom validation messages
+        reasonOptions.forEach((checkbox) => {
+            checkbox.setCustomValidity("");
+        });
+
+        if (ratingReasonMinValue !== 0 && ratingValue > ratingReasonMinValue && !checkboxChecked && textareaField.value === '') {
+            // Set a custom validation message on the first checkbox
+            const customValidationMessage = reasonWrapper.getAttribute('data-validation');
+            reasonOptions[0].setCustomValidity(customValidationMessage);
+            event.preventDefault(); // Prevent form submission
+            form.reportValidity(); // Trigger validation message
         }
     }
 
@@ -162,8 +187,13 @@
     function handlePartnerSelectChange() {
         // Check if the partner select value is 0 and reason select is not 0
         const selectedPartnerValue = parseInt(partnerSelect.value, 10);
-        const selectedReasonValue = parseInt(document.querySelector('input[name="tx_partnerrating_pi1[reason]"]:checked').value, 10);
-        if (selectedPartnerValue === 0 && selectedReasonValue !== 0) {
+        const selectedReasons = document.querySelector('input[name="tx_partnerrating_pi1[reason]"]:checked');
+        let selectedReasonValue = 0;
+        if (selectedReasons !== null) {
+            selectedReasonValue = parseInt(selectedReasons.value, 10);
+        }
+
+        if (selectedPartnerValue === 0) {
             const customValidationMessage = partnerSelect.getAttribute('data-validation');
             partnerSelect.setCustomValidity(customValidationMessage); // Set custom validity message
         } else {
@@ -200,98 +230,112 @@
         }, 3000);
     }
 
-    // DOMContentLoaded event listener
+    // Listen for the DOM content to be fully loaded
     document.addEventListener('DOMContentLoaded', function () {
+        // Select the container with class '.tx_partnerrating'
         const container = document.querySelector('.tx_partnerrating');
 
+        // Check if the container exists in the DOM
         if (!container) {
             console.error('DOM elements not found.');
             return; // Early return if the container is not found
         }
 
-        // Get DOM elements
-        radioReasons = container.querySelectorAll('input[name="tx_partnerrating_pi1[reason]"]');
+        // Query the form element within the container
+        form = container.querySelector('form');
+
+        // Initialize variables from data attributes if they exist
+        if (form.hasAttribute('data-ratingreasonminvalue')) {
+            ratingReasonMinValue = parseInt(form.getAttribute('data-ratingreasonminvalue'), 10);
+        }
+        if (form.hasAttribute('data-keepminonesearchresult')) {
+            keepMinOneSearchResult = form.getAttribute('data-keepminonesearchresult') === '1';
+        }
+        if (form.hasAttribute('data-partnerlabelfields')) {
+            partnerLabelFields = form.getAttribute('data-partnerlabelfields');
+        }
+        if (form.hasAttribute('data-partnerlabelfieldsplitstring')) {
+            partnerLabelFieldSplitString = form.getAttribute('data-partnerlabelfieldsplitstring');
+        }
+        if (form.hasAttribute('data-allowmultiplereasons')) {
+            allowMultipleReasons = form.getAttribute('data-allowmultiplereasons') === '1';
+        }
+
+        // Query other relevant elements within the container
+        reasonWrapper = container.querySelector('.wrapper-reason');
         textareaField = container.querySelector('textarea[name="tx_partnerrating_pi1[reasonText]"]');
         searchInput = container.querySelector('input[name="tx_partnerrating_pi1[partnerSearch]"]');
         partnerSelect = container.querySelector('select[name="tx_partnerrating_pi1[partner]"]');
         radioRating = container.querySelectorAll('input[name="tx_partnerrating_pi1[rating]"]');
         savedRatingAlert = container.querySelector('.saved-rating-alert');
-        const form = container.querySelector('form');
 
-        // Set values from data attributes
-        if (form.hasAttribute('data-rating-reason-min-value')) {
-            ratingReasonMinValue = parseInt(form.getAttribute('data-rating-reason-min-value'), 10);
-        }
-        if (form.hasAttribute('data-keep-min-one-search-result')) {
-            keepMinOneSearchResult = form.getAttribute('data-keep-min-one-search-result') === '1';
-        }
-        if (form.hasAttribute('data-partner-label-fields')) {
-            partnerLabelFields = form.getAttribute('data-partner-label-fields');
-        }
-        if (form.hasAttribute('data-partner-label-field-split-string')) {
-            partnerLabelFieldSplitString = form.getAttribute('data-partner-label-field-split-string');
+        // Attach event listeners based on the condition if multiple reasons are allowed or not
+        if (allowMultipleReasons) {
+            reasonOptions = reasonWrapper.querySelectorAll('input[type="checkbox"][name="tx_partnerrating_pi1[reason][]"]');
+        } else {
+            reasonOptions = reasonWrapper.querySelectorAll('input[type="radio"][name="tx_partnerrating_pi1[reason]"]');
         }
 
-        // Add input event listener to the search input
+        // Attach input event listener for the search input box
         if (searchInput && partnerSelect) {
             searchInput.addEventListener('input', updatePartnerSelect);
-
-            // Initially perform an AJAX request and populate the select field if the search input is not empty
+            // Pre-populate the partner select field based on initial search input
             updatePartnerSelect();
-
-            // Set focus on the partner search input field
+            // Set focus on the search input field
             searchInput.focus();
         }
 
-        // Add change event listener to radio buttons for reasons and text area
-        if (radioReasons && textareaField) {
-            radioReasons.forEach(radio => {
-                radio.addEventListener('change', updateTextareaStatus);
-            });
+        // Attach input event listener for the textarea field
+        if (textareaField) {
+            textareaField.addEventListener('input', checkReasonOptions);
+        }
 
-            // Initially, check the radio buttons and enable/disable the textarea accordingly
+        // Attach event listeners for reason radio buttons and textarea field
+        if (reasonOptions && textareaField && !allowMultipleReasons) {
+            reasonOptions.forEach(option => {
+                option.addEventListener('change', updateTextareaStatus);
+            });
+            // Initialize textarea status based on reason options
             updateTextareaStatus();
         }
 
-        // Add change event listener to radio buttons for rating and reasons
-        if (radioRating && radioReasons) {
-            radioReasons.forEach(radio => {
+        // Attach change event listeners for rating radio buttons and reason options
+        if (radioRating && reasonOptions) {
+            reasonOptions.forEach(radio => {
                 radio.addEventListener('change', handleRatingSelectChange);
             });
             radioRating.forEach(radio => {
                 radio.addEventListener('change', handleRatingSelectChange);
             });
-
-            // Initially, check the rating select to set the required attribute for radio buttons
+            // Initialize the required attribute for radio buttons based on rating select
             handleRatingSelectChange();
         }
 
-        // Add change event listener to partner select
-        if (radioRating && radioReasons && partnerSelect) {
-            radioReasons.forEach(radio => {
+        // Attach change event listener to partner select
+        if (radioRating && reasonOptions && partnerSelect) {
+            reasonOptions.forEach(radio => {
                 radio.addEventListener('change', handlePartnerSelectChange);
             });
         }
 
-        // Add change event listener to partner select
+        // Attach change event listener to partner select for validation
         if (partnerSelect) {
             partnerSelect.addEventListener('change', handlePartnerSelectChange);
-
-            // Initially, check the partner select for immediate validation
+            // Validate partner select initially
             handlePartnerSelectChange();
         }
 
-        // Add form submit event listener to perform additional validation
+        // Attach submit event listener to the form for additional validation
         if (form) {
             form.addEventListener('submit', handleFormSubmit);
         }
 
-        // Hide the alert after a timeout
+        // Hide the saved rating alert after a timeout
         if (searchInput && savedRatingAlert) {
             hideAlertTimeout();
         }
 
-        // Initially remove the path segment "saved" from the URL
+        // Remove the "saved" path segment from the URL initially
         updateURLWithoutReloading();
     });
 })();

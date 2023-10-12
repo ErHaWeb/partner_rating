@@ -25,5 +25,6 @@ plugin.tx_partnerrating_pi1 {
         keepMinOneSearchResult = {$plugin.tx_partnerrating_pi1.settings.keepMinOneSearchResult}
         partnerLabelFields = {$plugin.tx_partnerrating_pi1.settings.partnerLabelFields}
         partnerLabelFieldSplitString = {$plugin.tx_partnerrating_pi1.settings.partnerLabelFieldSplitString}
+        allowMultipleReasons = {$plugin.tx_partnerrating_pi1.settings.allowMultipleReasons}
     }
 }

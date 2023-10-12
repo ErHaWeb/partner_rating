@@ -130,40 +130,32 @@ return [
             ],
         ],
         'reason' => [
-            'displayCond' => [
-                'AND' => [
-                    'FIELD:reason:>:0',
-                    'OR' => [
-                        'FIELD:rate_value:>:3',
-                        'FIELD:reason_text:REQ:false',
-                    ],
-                ],
-            ],
             'exclude' => true,
             'label' => 'LLL:EXT:partner_rating/Resources/Private/Language/locallang_db.xlf:tx_partnerrating_domain_model_rating.reason',
             'description' => 'LLL:EXT:partner_rating/Resources/Private/Language/locallang_db.xlf:tx_partnerrating_domain_model_rating.reason.description',
             'config' => [
                 'type' => 'select',
-                'renderType' => 'selectSingle',
+                'renderType' => 'selectMultipleSideBySide',
                 'foreign_table' => 'tx_partnerrating_domain_model_reason',
-                'items' => [
-                    ['', 0],
-                ],
                 'default' => 0,
-                'minitems' => 0,
-                'maxitems' => 1,
-            ],
-        ],
-        'reason_text' => [
-            'displayCond' => [
-                'AND' => [
-                    'FIELD:reason_text:REQ:true',
-                    'OR' => [
-                        'FIELD:rate_value:>:3',
-                        'FIELD:reason:=:0',
+                'size' => 10,
+                'autoSizeMax' => 30,
+                'maxitems' => 9999,
+                'multiple' => 0,
+                'fieldControl' => [
+                    'editPopup' => [
+                        'disabled' => false,
+                    ],
+                    'addRecord' => [
+                        'disabled' => false,
+                    ],
+                    'listModule' => [
+                        'disabled' => true,
                     ],
                 ],
             ],
+        ],
+        'reason_text' => [
             'exclude' => true,
             'label' => 'LLL:EXT:partner_rating/Resources/Private/Language/locallang_db.xlf:tx_partnerrating_domain_model_rating.reason_text',
             'description' => 'LLL:EXT:partner_rating/Resources/Private/Language/locallang_db.xlf:tx_partnerrating_domain_model_rating.reason_text.description',

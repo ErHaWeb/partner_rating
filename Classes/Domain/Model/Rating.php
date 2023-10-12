@@ -16,6 +16,7 @@ namespace ErHaWeb\PartnerRating\Domain\Model;
 
 
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
+use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 /**
  * Rating
@@ -40,9 +41,10 @@ class Rating extends AbstractEntity
     /**
      * reason
      *
-     * @var ?Reason
+     * @var ?ObjectStorage<Reason>
+     * @TYPO3\CMS\Extbase\Annotation\ORM\Cascade("remove")
      */
-    protected ?Reason $reason = null;
+    protected ?ObjectStorage $reason = null;
 
     /**
      * reasonText
@@ -57,6 +59,29 @@ class Rating extends AbstractEntity
      * @var ?Department
      */
     protected ?Department $department = null;
+
+    /**
+     * __construct
+     */
+    public function __construct()
+    {
+
+        // Do not remove the next line: It would break the functionality
+        $this->initializeObject();
+    }
+
+    /**
+     * Initializes all ObjectStorage properties when model is reconstructed from DB (where __construct is not called)
+     * Do not modify this method!
+     * It will be rewritten on each save in the extension builder
+     * You may modify the constructor of this class instead
+     *
+     * @return void
+     */
+    public function initializeObject(): void
+    {
+        $this->reason = $this->reason ?: new ObjectStorage();
+    }
 
     /**
      * Returns the rateValue
@@ -101,11 +126,33 @@ class Rating extends AbstractEntity
     }
 
     /**
+     * Adds a Reason
+     *
+     * @param Reason $reason
+     * @return void
+     */
+    public function addReason(Reason $reason): void
+    {
+        $this->reason->attach($reason);
+    }
+
+    /**
+     * Removes a Reason
+     *
+     * @param Reason $reasonToRemove The Reason to be removed
+     * @return void
+     */
+    public function removeReason(Reason $reasonToRemove): void
+    {
+        $this->reason->detach($reasonToRemove);
+    }
+
+    /**
      * Returns the reason
      *
-     * @return ?Reason
+     * @return ?ObjectStorage<Reason>
      */
-    public function getReason(): ?Reason
+    public function getReason(): ?ObjectStorage
     {
         return $this->reason;
     }
@@ -113,10 +160,10 @@ class Rating extends AbstractEntity
     /**
      * Sets the reason
      *
-     * @param Reason $reason
+     * @param ObjectStorage<Reason> $reason
      * @return void
      */
-    public function setReason(Reason $reason): void
+    public function setReason(ObjectStorage $reason): void
     {
         $this->reason = $reason;
     }

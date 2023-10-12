@@ -14,43 +14,59 @@ declare(strict_types=1);
 
 namespace ErHaWeb\PartnerRating\Controller;
 
-
 use ErHaWeb\PartnerRating\Domain\Model\Department;
 use ErHaWeb\PartnerRating\Domain\Model\Partner;
 use ErHaWeb\PartnerRating\Domain\Model\Rating;
 use ErHaWeb\PartnerRating\Domain\Model\Reason;
 use ErHaWeb\PartnerRating\Domain\Repository\DepartmentRepository;
-use ErHaWeb\PartnerRating\Domain\Repository\PartnerRepository;
 use ErHaWeb\PartnerRating\Domain\Repository\RatingRepository;
 use ErHaWeb\PartnerRating\Domain\Repository\ReasonRepository;
 use Psr\Http\Message\ResponseInterface;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
-use TYPO3\CMS\Extbase\Mvc\Exception\StopActionException;
 use TYPO3\CMS\Extbase\Persistence\Exception\IllegalObjectTypeException;
 use TYPO3\CMS\Extbase\Persistence\Generic\PersistenceManager;
+use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 /**
  * The rating controller
  */
 class RatingController extends ActionController
 {
+    /**
+     * @var PersistenceManager
+     */
     private PersistenceManager $persistenceManager;
+
+    /**
+     * @var DepartmentRepository
+     */
     private DepartmentRepository $departmentRepository;
+
+    /**
+     * @var ReasonRepository
+     */
     private ReasonRepository $reasonRepository;
-    private PartnerRepository $partnerRepository;
+
+    /**
+     * @var RatingRepository
+     */
     private RatingRepository $ratingRepository;
 
+    /**
+     * @param PersistenceManager $persistenceManager
+     * @param DepartmentRepository $departmentRepository
+     * @param ReasonRepository $reasonRepository
+     * @param RatingRepository $ratingRepository
+     */
     public function __construct(
         PersistenceManager   $persistenceManager,
         DepartmentRepository $departmentRepository,
         ReasonRepository     $reasonRepository,
-        PartnerRepository    $partnerRepository,
         RatingRepository     $ratingRepository
     )
     {
         $this->ratingRepository = $ratingRepository;
-        $this->partnerRepository = $partnerRepository;
         $this->reasonRepository = $reasonRepository;
         $this->departmentRepository = $departmentRepository;
         $this->persistenceManager = $persistenceManager;
@@ -83,12 +99,12 @@ class RatingController extends ActionController
     {
         $assign = [];
         $assign['data'] = $this->configurationManager->getContentObject()->data;
-        $assign['ratingValues'] = GeneralUtility::intExplode(',', $this->settings['ratingValues']);
+        $assign['ratingValues'] = GeneralUtility::intExplode(',', ($this->settings['ratingValues'] ?? ''));
 
-        $assign['ratingReasonMinValue'] = (int)$this->settings['ratingReasonMinValue'];
-        $assign['keepMinOneSearchResult'] = (int)$this->settings['keepMinOneSearchResult'] ? 1 : 0;
+        $assign['dataAttributes']['ratingreasonminvalue'] = (int)($this->settings['ratingReasonMinValue'] ?? 0);
+        $assign['dataAttributes']['keepminonesearchresult'] = (int)($this->settings['keepMinOneSearchResult'] ?? 0) ? 1 : 0;
 
-        $partnerLabelFields = GeneralUtility::trimExplode(',', $this->settings['partnerLabelFields']);
+        $partnerLabelFields = GeneralUtility::trimExplode(',', ($this->settings['partnerLabelFields'] ?? ''));
         $existingColumns = array_keys($GLOBALS['TCA']['tx_partnerrating_domain_model_partner']['columns']);
         foreach ($partnerLabelFields as $key => $replaceColumn) {
             if (!in_array($replaceColumn, $existingColumns, true)) {
@@ -96,7 +112,9 @@ class RatingController extends ActionController
             }
         }
 
-        $assign['partnerLabelFields'] = implode(',', $partnerLabelFields);
+        $assign['dataAttributes']['partnerlabelfields'] = implode(',', $partnerLabelFields);
+        $assign['dataAttributes']['partnerlabelfieldsplitstring'] = $this->settings['partnerLabelFieldSplitString'] ?? '|';
+        $assign['dataAttributes']['allowmultiplereasons'] = ($this->settings['allowMultipleReasons'] ? 1 : 0);
 
         // Assign department, reasons, and partners to the view
         $assign['department'] = $department;
@@ -113,7 +131,7 @@ class RatingController extends ActionController
             $values['partner'] = $partner;
         }
 
-        $partnerSearch = htmlspecialchars($this->request->getArguments()['partnerSearch'] ?? '', ENT_NOQUOTES | ENT_SUBSTITUTE | ENT_HTML401);
+        $partnerSearch = htmlspecialchars(($this->request->getArguments()['partnerSearch'] ?? ''), ENT_NOQUOTES | ENT_SUBSTITUTE | ENT_HTML401);
         if ($partnerSearch !== '') {
             $values['partnerSearch'] = $partnerSearch;
         }
@@ -149,33 +167,44 @@ class RatingController extends ActionController
      * @param Department|null $department The department associated with the rating
      * @param Partner|null $partner The partner associated with the rating
      * @return ResponseInterface
-     * @throws IllegalObjectTypeException|StopActionException
+     * @throws IllegalObjectTypeException
      */
     public function saveAction(?Department $department, ?Partner $partner): ResponseInterface
     {
-        $reason = (int)($this->request->getArguments()['reason'] ?? 0);
-        $rating = (int)($this->request->getArguments()['rating'] ?? 0);
-        $reasonText = htmlspecialchars($this->request->getArguments()['reasonText'] ?? '');
-        $ratingReasonMinValue = (int)$this->settings['ratingReasonMinValue'];
-
-        // Check if required data is available, if not, redirect
-        if ($department === null || $partner === null || ($reason === -1 && $reasonText === '') || ($reason === 0 && $ratingReasonMinValue !== 0 && $rating > $ratingReasonMinValue)) {
-            return $this->redirect('show', 'Rating', 'PartnerRating', $this->request->getArguments());
+        $reasons = GeneralUtility::makeInstance(ObjectStorage::class);
+        if ($this->settings['allowMultipleReasons'] ?? false) {
+            $reasonUids = $this->request->getArguments()['reason'] ?? [];
+            if (is_array($reasonUids)) {
+                foreach ($reasonUids as $reasonUid) {
+                    /** @var Reason $reasonObject */
+                    $reasonObject = $this->reasonRepository->findByUid($reasonUid);
+                    $reasons->attach($reasonObject);
+                }
+            }
+        } else {
+            $reasonUid = (int)($this->request->getArguments()['reason'] ?? 0);
+            if ($reasonUid !== 0 && $reasonUid !== -1) {
+                /** @var Reason $reasonObject */
+                $reasonObject = $this->reasonRepository->findByUid($reasonUid);
+                $reasons->attach($reasonObject);
+            }
         }
 
-        // Create a new Rating object and set its properties
-        /** @var Reason $reasonObject */
-        $reasonObject = $this->reasonRepository->findByUid($reason);
+        $rating = (int)($this->request->getArguments()['rating'] ?? 0);
+        $reasonText = htmlspecialchars($this->request->getArguments()['reasonText'] ?? '');
+        $ratingReasonMinValue = (int)($this->settings['ratingReasonMinValue'] ?? 0);
+
+        // Check if required data is available, if not, redirect
+        if ($department === null || $partner === null || (empty($reasons) && $reasonText === '' && $ratingReasonMinValue !== 0 && $rating > $ratingReasonMinValue)) {
+            return $this->redirect('show', 'Rating', 'PartnerRating', $this->request->getArguments());
+        }
 
         /** @var Rating $ratingObject */
         $ratingObject = GeneralUtility::makeInstance(Rating::class);
         $ratingObject->setDepartment($department);
         $ratingObject->setPartner($partner);
-        if (!is_null($reasonObject)) {
-            $ratingObject->setReason($reasonObject);
-        } else {
-            $ratingObject->setReasonText($reasonText);
-        }
+        $ratingObject->setReason($reasons);
+        $ratingObject->setReasonText($reasonText);
         $ratingObject->setRateValue($rating);
 
         // Add the rating to the repository and persist it

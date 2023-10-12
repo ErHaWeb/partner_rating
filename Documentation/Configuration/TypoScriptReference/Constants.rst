@@ -172,3 +172,16 @@ Partner Label Field Split String
     :Path: plugin.tx_partnerrating_pi1.settings
 
     String used between label fields that are defined by `partnerLabelFields`.
+
+..  _configuration-typoscript-constants-settings-allowmultiplereasons:
+
+Allow Multiple Reasons
+~~~~~~~~~~~~~~~~~~~~~~
+
+..  confval:: allowMultipleReasons
+
+    :type: boolean
+    :Default: false
+    :Path: plugin.tx_partnerrating_pi1.settings
+
+    If this setting is `true`, multiple reasons can be selected (checkboxes). If this setting is `false`, only one reason can be selected (radio buttons).

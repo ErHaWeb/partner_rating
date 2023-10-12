@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace ErHaWeb\PartnerRating\Domain\Repository;
 
-
 use TYPO3\CMS\Extbase\Persistence\Repository;
 
 /**

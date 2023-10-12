@@ -30,6 +30,9 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  */
 final  class GetPartner implements MiddlewareInterface
 {
+    /**
+     * @var ConnectionPool
+     */
     private ConnectionPool $connectionPool;
 
     /**
@@ -37,9 +40,7 @@ final  class GetPartner implements MiddlewareInterface
      *
      * @param ConnectionPool $connectionPool
      */
-    public function __construct(
-        ConnectionPool $connectionPool
-    )
+    public function __construct(ConnectionPool $connectionPool)
     {
         $this->connectionPool = $connectionPool;
     }

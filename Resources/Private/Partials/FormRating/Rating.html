@@ -5,18 +5,10 @@
             <label for="rating">
                 <f:translate key="rating.title"/>
             </label>
-            <f:for each="{ratingValues}" iteration="iterator" as="rating">
+            <f:for each="{ratingValues}" as="rating">
                 <div class="form-check rating-item">
-                    <f:if condition="{rating} == {values.rating} || !({values.rating}) && {iterator.cycle} == 1">
-                        <f:then>
-                            <f:form.radio name="rating" value="{rating}" checked="checked" class="form-check-input" additionalAttributes="{required: required}" id="radioRating-{data.uid}-{rating}"/>
-                            <label class="form-check-label" for="radioRating-{data.uid}-{rating}">{rating}</label>
-                        </f:then>
-                        <f:else>
-                            <f:form.radio name="rating" value="{rating}" class="form-check-input" additionalAttributes="{required: required}" id="radioRating-{data.uid}-{rating}"/>
-                            <label class="form-check-label" for="radioRating-{data.uid}-{rating}">{rating}</label>
-                        </f:else>
-                    </f:if>
+                    <f:form.radio property="rateValue" value="{rating}" class="form-check-input" additionalAttributes="{required: required}" id="radioRating-{data.uid}-{rating}"/>
+                    <label class="form-check-label" for="radioRating-{data.uid}-{rating}">{rating}</label>
                 </div>
             </f:for>
         </div>

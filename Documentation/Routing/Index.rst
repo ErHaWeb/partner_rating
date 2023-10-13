@@ -34,39 +34,22 @@ Add the following YAML configuration under :yaml:`routeEnhancers`:
     routeEnhancers:
       PartnerRating:
         type: Extbase
-        limitToPages: [1]
+        limitToPages:
+          - 1
         extension: PartnerRating
         plugin: Pi1
         routes:
-          - routePath: '/'
+          -
+            routePath: /
             _controller: 'Rating::list'
-          - routePath: '/{department_title}'
+          -
+            routePath: '/{department}'
             _controller: 'Rating::show'
             _arguments:
-              department_title: 'department'
-          - routePath: '/{department_title}/saved/{saved_rating}'
-            _controller: 'Rating::show'
-            _arguments:
-              department_title: 'department'
-              saved_rating: 'savedRating'
-          - routePath: '/{department_title}/send'
-            _controller: 'Rating::save'
-            _arguments:
-              department_title: 'department'
-        defaultController: 'Rating::show'
+              department: department
+        defaultController: 'Rating::list'
         aspects:
-          department_title:
+          department:
             type: PersistedAliasMapper
             tableName: tx_partnerrating_domain_model_department
             routeFieldName: slug
-          saved_rating:
-            type: PersistedAliasMapper
-            tableName: tx_partnerrating_domain_model_rating
-            routeFieldName: uid
-
-.. _hint:
-
-Hint
-----
-
-The URL path `/saved/` is set by the Route Enhancer, but does not appear in the browser because this path section is removed from the URL in the browser's address bar immediately after the page is reloaded using the History API. This way, the nice section URLs are preserved without additional sections.

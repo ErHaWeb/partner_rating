@@ -11,7 +11,7 @@ ExtensionUtility::configurePlugin(
     // arbitrary, but unique plugin name (not visible in the backend)
     'Pi1',
     // all actions
-    [RatingController::class => 'list,show,save'],
+    [RatingController::class => 'list,show'],
     // non-cacheable actions
-    []
+    [RatingController::class => 'list,show']
 );

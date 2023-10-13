@@ -5,7 +5,17 @@
     'use strict'; // Enable strict mode
 
     // Declare variables for DOM elements
-    let form = null,
+    let reasonWrapperClass = '.wrapper-reason',
+        savedRatingAlertClass = '.saved-rating-alert',
+        extensionName = 'tx_partnerrating',
+        pluginName = '_pi1',
+        partnerSearchName = 'partnerSearch',
+        ratingName = 'rating',
+        partnerName = 'partner',
+        rateValueName = 'rateValue',
+        reasonName = 'reason',
+        reasonTextName = 'reasonText',
+        form = null,
         searchInput = null,
         partnerSelect = null,
         textareaField = null,
@@ -187,7 +197,7 @@
     function handlePartnerSelectChange() {
         // Check if the partner select value is 0 and reason select is not 0
         const selectedPartnerValue = parseInt(partnerSelect.value, 10);
-        const selectedReasons = document.querySelector('input[name="tx_partnerrating_pi1[reason]"]:checked');
+        const selectedReasons = document.querySelector('[name="' + extensionName + pluginName + '[' + ratingName + '][' + reasonName + ']"]:checked');
         let selectedReasonValue = 0;
         if (selectedReasons !== null) {
             selectedReasonValue = parseInt(selectedReasons.value, 10);
@@ -198,25 +208,6 @@
             partnerSelect.setCustomValidity(customValidationMessage); // Set custom validity message
         } else {
             partnerSelect.setCustomValidity(''); // Clear custom validity message
-        }
-    }
-
-    // Function to update the URL without reloading the page
-    function updateURLWithoutReloading() {
-        // Get the current URL
-        let currentURL = window.location.href;
-
-        // The path segment to remove
-        const segmentToRemove = "/saved/";
-
-        // Check if the path segment exists in the URL
-        const index = currentURL.indexOf(segmentToRemove);
-        if (index !== -1) {
-            // Remove the path segment and all subsequent parts
-            const newURL = currentURL.substring(0, index);
-
-            // Update the URL without reloading the page
-            history.replaceState(null, "", newURL);
         }
     }
 
@@ -233,7 +224,7 @@
     // Listen for the DOM content to be fully loaded
     document.addEventListener('DOMContentLoaded', function () {
         // Select the container with class '.tx_partnerrating'
-        const container = document.querySelector('.tx_partnerrating');
+        const container = document.querySelector('.' + extensionName);
 
         // Check if the container exists in the DOM
         if (!container) {
@@ -262,18 +253,18 @@
         }
 
         // Query other relevant elements within the container
-        reasonWrapper = container.querySelector('.wrapper-reason');
-        textareaField = container.querySelector('textarea[name="tx_partnerrating_pi1[reasonText]"]');
-        searchInput = container.querySelector('input[name="tx_partnerrating_pi1[partnerSearch]"]');
-        partnerSelect = container.querySelector('select[name="tx_partnerrating_pi1[partner]"]');
-        radioRating = container.querySelectorAll('input[name="tx_partnerrating_pi1[rating]"]');
-        savedRatingAlert = container.querySelector('.saved-rating-alert');
+        reasonWrapper = container.querySelector(reasonWrapperClass);
+        searchInput = container.querySelector('[name="' + extensionName + pluginName + '[' + partnerSearchName + ']"]');
+        partnerSelect = container.querySelector('[name="' + extensionName + pluginName + '[' + ratingName + '][' + partnerName + ']"]');
+        radioRating = container.querySelectorAll('[name="' + extensionName + pluginName + '[' + ratingName + '][' + rateValueName + ']"]');
+        textareaField = container.querySelector('[name="' + extensionName + pluginName + '[' + ratingName + '][' + reasonTextName + ']"]');
+        savedRatingAlert = container.querySelector(savedRatingAlertClass);
 
         // Attach event listeners based on the condition if multiple reasons are allowed or not
         if (allowMultipleReasons) {
-            reasonOptions = reasonWrapper.querySelectorAll('input[type="checkbox"][name="tx_partnerrating_pi1[reason][]"]');
+            reasonOptions = reasonWrapper.querySelectorAll('[name="' + extensionName + pluginName + '[' + ratingName + '][' + reasonName + '][]"]');
         } else {
-            reasonOptions = reasonWrapper.querySelectorAll('input[type="radio"][name="tx_partnerrating_pi1[reason]"]');
+            reasonOptions = reasonWrapper.querySelectorAll('[name="' + extensionName + pluginName + '[' + ratingName + '][' + reasonName + ']"]');
         }
 
         // Attach input event listener for the search input box
@@ -334,8 +325,5 @@
         if (searchInput && savedRatingAlert) {
             hideAlertTimeout();
         }
-
-        // Remove the "saved" path segment from the URL initially
-        updateURLWithoutReloading();
     });
 })();

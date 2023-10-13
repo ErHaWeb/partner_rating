@@ -15,9 +15,7 @@ declare(strict_types=1);
 namespace ErHaWeb\PartnerRating\Controller;
 
 use ErHaWeb\PartnerRating\Domain\Model\Department;
-use ErHaWeb\PartnerRating\Domain\Model\Partner;
 use ErHaWeb\PartnerRating\Domain\Model\Rating;
-use ErHaWeb\PartnerRating\Domain\Model\Reason;
 use ErHaWeb\PartnerRating\Domain\Repository\DepartmentRepository;
 use ErHaWeb\PartnerRating\Domain\Repository\RatingRepository;
 use ErHaWeb\PartnerRating\Domain\Repository\ReasonRepository;
@@ -26,7 +24,6 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 use TYPO3\CMS\Extbase\Persistence\Exception\IllegalObjectTypeException;
 use TYPO3\CMS\Extbase\Persistence\Generic\PersistenceManager;
-use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 /**
  * The rating controller
@@ -92,12 +89,24 @@ class RatingController extends ActionController
      * This action handles the display of a department and its associated data.
      *
      * @param Department $department The department to display
-     * @param Rating|null $savedRating An optional saved rating for display
+     * @param Rating|null $rating
      * @return ResponseInterface
+     * @throws IllegalObjectTypeException
      */
-    public function showAction(Department $department, ?Rating $savedRating = null): ResponseInterface
+    public function showAction(Department $department, ?Rating $rating = null): ResponseInterface
     {
         $assign = [];
+
+        // If rating exists save it
+        if ($rating !== null) {
+            if($this->persistenceManager->isNewObject($rating)) {
+                $this->ratingRepository->add($rating);
+                $rating->setDepartment($department);
+                $this->persistenceManager->persistAll();
+            }
+            $assign['savedRating'] = $rating;
+        }
+
         $assign['data'] = $this->configurationManager->getContentObject()->data;
         $assign['ratingValues'] = GeneralUtility::intExplode(',', ($this->settings['ratingValues'] ?? ''));
 
@@ -119,10 +128,6 @@ class RatingController extends ActionController
         // Assign department, reasons, and partners to the view
         $assign['department'] = $department;
         $assign['reasons'] = $this->reasonRepository->findByDepartment($department);
-
-        if ($savedRating !== null) {
-            $assign['savedRating'] = $savedRating;
-        }
 
         // Process and assign filtering values to the view
         $values = [];
@@ -157,61 +162,5 @@ class RatingController extends ActionController
 
         $this->view->assignMultiple($assign);
         return $this->htmlResponse();
-    }
-
-    /**
-     * Action: saveAction
-     *
-     * This action handles the saving of a rating.
-     *
-     * @param Department|null $department The department associated with the rating
-     * @param Partner|null $partner The partner associated with the rating
-     * @return ResponseInterface
-     * @throws IllegalObjectTypeException
-     */
-    public function saveAction(?Department $department, ?Partner $partner): ResponseInterface
-    {
-        $reasons = GeneralUtility::makeInstance(ObjectStorage::class);
-        if ($this->settings['allowMultipleReasons'] ?? false) {
-            $reasonUids = $this->request->getArguments()['reason'] ?? [];
-            if (is_array($reasonUids)) {
-                foreach ($reasonUids as $reasonUid) {
-                    /** @var Reason $reasonObject */
-                    $reasonObject = $this->reasonRepository->findByUid($reasonUid);
-                    $reasons->attach($reasonObject);
-                }
-            }
-        } else {
-            $reasonUid = (int)($this->request->getArguments()['reason'] ?? 0);
-            if ($reasonUid !== 0 && $reasonUid !== -1) {
-                /** @var Reason $reasonObject */
-                $reasonObject = $this->reasonRepository->findByUid($reasonUid);
-                $reasons->attach($reasonObject);
-            }
-        }
-
-        $rating = (int)($this->request->getArguments()['rating'] ?? 0);
-        $reasonText = htmlspecialchars($this->request->getArguments()['reasonText'] ?? '');
-        $ratingReasonMinValue = (int)($this->settings['ratingReasonMinValue'] ?? 0);
-
-        // Check if required data is available, if not, redirect
-        if ($department === null || $partner === null || (empty($reasons) && $reasonText === '' && $ratingReasonMinValue !== 0 && $rating > $ratingReasonMinValue)) {
-            return $this->redirect('show', 'Rating', 'PartnerRating', $this->request->getArguments());
-        }
-
-        /** @var Rating $ratingObject */
-        $ratingObject = GeneralUtility::makeInstance(Rating::class);
-        $ratingObject->setDepartment($department);
-        $ratingObject->setPartner($partner);
-        $ratingObject->setReason($reasons);
-        $ratingObject->setReasonText($reasonText);
-        $ratingObject->setRateValue($rating);
-
-        // Add the rating to the repository and persist it
-        $this->ratingRepository->add($ratingObject);
-        $this->persistenceManager->persistAll();
-
-        // Redirect to the "show" action with appropriate arguments
-        return $this->redirect('show', 'Rating', 'PartnerRating', ['department' => $department->getUid(), 'savedRating' => $ratingObject]);
     }
 }

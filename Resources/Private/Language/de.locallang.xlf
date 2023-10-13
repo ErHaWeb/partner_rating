@@ -43,9 +43,9 @@
         <source>Rating Reason</source>
         <target state="final">Begründung</target>
       </trans-unit>
-      <trans-unit id="reasons.title">
+      <trans-unit id="reasons.title" approved="yes">
         <source>Rating Reasons</source>
-        <target state="needs-translation">Rating Reasons</target>
+        <target state="final">Begründungen</target>
       </trans-unit>
       <trans-unit id="reasonText.title" approved="yes">
         <source>Rating Reason Text</source>

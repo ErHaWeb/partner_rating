@@ -1,0 +1,40 @@
+.. include:: /Includes.rst.txt
+
+2.0.0 - October 13, 2023
+========================
+
+
+.. only:: html
+
+   .. contents::
+        :local:
+        :depth: 3
+
+Breaking changes
+----------------
+
+Database compare required
+^^^^^^^^^^^^^^^^^^^^^^^^^
+1 Change requires database compare after update
+
+All Changes
+-----------
+This is a list of all changes in this release: ::
+
+    2023-10-13 [BUGFIX] Ensure that only one rating record is created per form submission (Commit 4e5eb0e by Eric Harrer)
+    2023-10-12 [TASK] Refactor PHP files (Commit 9244f22 by Eric Harrer)
+    2023-10-12 [FEATURE] Add setting to allow multiple reasons (Commit 5f07f56 by Eric Harrer)
+    2023-10-12 [TASK] Remove unnecessary variable "partners" in showAction (Commit b962bd8 by Eric Harrer)
+    2023-10-12 [BUGFIX] Prevent var "data" from being overwritten (Commit 84cdd75 by Eric Harrer)
+    2023-10-11 [TASK] Refactor reason fluid template file (Commit 7576365 by Eric Harrer)
+    2023-10-11 [BUGFIX] Prevent missing parameter in save action when js validation doesn't take effect (Commit 1052549 by Eric Harrer)
+    2023-10-11 [FEATURE] Configurable partner label fields (Commit 7660890 by Eric Harrer)
+    2023-10-11 [TASK] Set disabled state of free text input independent of associated radio position (Commit ae780e8 by Eric Harrer)
+    2023-10-11 [TASK] Replace grid definitions with flexbox (Commit b906d2c by Eric Harrer)
+    2023-10-11 [TASK] Refactor fluid template files (Commit d3a2f56 by Eric Harrer)
+    2023-10-11 [FEATURE] Configurable preservation of at least one search result in partner selection (Commit 991f698 by Eric Harrer)
+    2023-10-11 [BUGFIX] Consider all space-separated terms in AJAX search (Commit 901763c by Eric Harrer)
+    2023-10-11 [FEATURE] Add configurable rating values (Commit 66af3a9 by Eric Harrer)
+    2023-10-10 [FEATURE] Add configurable min. rating value for reason obligation (Commit a5cd932 by Eric Harrer)
+
+This list has been created by using `git log $(git describe --tags --abbrev=0)..HEAD --abbrev-commit --pretty='%ad %s (Commit %h by %an)' --date=short`.

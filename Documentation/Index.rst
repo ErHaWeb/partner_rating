@@ -55,5 +55,6 @@ be justified. This is possible either by predefined reasons or a free text input
 ..  toctree::
     :hidden:
 
+    Changelog/Index
     Sitemap
     genindex

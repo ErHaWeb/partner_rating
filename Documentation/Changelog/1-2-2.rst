@@ -1,0 +1,26 @@
+.. include:: /Includes.rst.txt
+
+1.2.2 - October 02, 2023
+========================
+
+
+.. only:: html
+
+   .. contents::
+        :local:
+        :depth: 3
+
+Breaking changes
+----------------
+No breaking changes!
+
+All Changes
+-----------
+This is a list of all changes in this release: ::
+
+    2023-10-02 [TASK] Set version number to v1.2.2 (Commit 9bb847b by Eric Harrer)
+    2023-10-02 [DOCS] Add more screenshots (Commit 2b27e8f by Eric Harrer)
+    2023-10-02 [TASK] Remove unnecessary German labels after crowdin synchronization (Commit aba89bb by Eric Harrer)
+    2023-10-02 [TASK] Add Crowdin configuration file (Commit f90f579 by Eric Harrer)
+
+This list has been created by using `git log $(git describe --tags --abbrev=0)..HEAD --abbrev-commit --pretty='%ad %s (Commit %h by %an)' --date=short`.

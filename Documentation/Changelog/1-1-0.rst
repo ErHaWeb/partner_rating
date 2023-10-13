@@ -1,0 +1,30 @@
+.. include:: /Includes.rst.txt
+
+1.1.0 - September 14, 2023
+==========================
+
+
+.. only:: html
+
+   .. contents::
+        :local:
+        :depth: 3
+
+Breaking changes
+----------------
+No breaking changes!
+
+All Changes
+-----------
+This is a list of all changes in this release: ::
+
+    2023-09-14 [TASK] Add CSS reference and update JavaScript reference for show action (Commit f262826 by Eric Harrer)
+    2023-09-14 [TASK] Set more suitable identifier in Script ViewHelper (Commit 967fe37 by Eric Harrer)
+    2023-09-14 [BUGFIX] Remove superfluous character (Commit e5979c1 by Eric Harrer)
+    2023-09-14 [TASK] Improve rating selection (Commit 78b5697 by Eric Harrer)
+    2023-09-14 [TASK] Set more appropriate title for rating records (Commit 589401e by Eric Harrer)
+    2023-09-14 [TASK] Replace static javascript validation text by translated data-validation values (Commit acaa405 by Eric Harrer)
+    2023-09-14 [TASK] Replace static text by language labels (Commit 4e27b15 by Eric Harrer)
+    2023-09-14 [FEATURE] Add frontend validation (Commit 33f49df by Eric Harrer)
+
+This list has been created by using `git log $(git describe --tags --abbrev=0)..HEAD --abbrev-commit --pretty='%ad %s (Commit %h by %an)' --date=short`.

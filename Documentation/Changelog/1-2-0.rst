@@ -1,0 +1,52 @@
+.. include:: /Includes.rst.txt
+
+1.2.0 - September 29, 2023
+==========================
+
+
+.. only:: html
+
+   .. contents::
+        :local:
+        :depth: 3
+
+Breaking changes
+----------------
+No breaking changes!
+
+All Changes
+-----------
+This is a list of all changes in this release: ::
+
+    2023-09-29 [FEATURE] Add option to include Bootstrap 5 from CDN (for testing purposes) (Commit db0dbcf by Eric Harrer)
+    2023-09-29 [DOCS] Move routing documentation to upper level (Commit 7c40c28 by Eric Harrer)
+    2023-09-29 [TASK] Increase backward compatibility down to TYPO3 11.5 and PHP 7.4 (Commit 5a31487 by Eric Harrer)
+    2023-09-29 [DOCS] Move Route Enhancer documentation from markdown to reST documentation (Commit daf1331 by Eric Harrer)
+    2023-09-29 [DOCS] Add initial documentation (Commit 140450a by Eric Harrer)
+    2023-09-29 [TASK] Switch to "stable" version state (Commit 9c6205a by Eric Harrer)
+    2023-09-29 [TASK] Remove unnecessary fluid path duplicates from constants (Commit 2134246 by Eric Harrer)
+    2023-09-29 [TASK] Update title of static TypoScript include (Commit 2d55d4a by Eric Harrer)
+    2023-09-29 [TASK] Add .gitignore file and remove unnecessary .DS_Store file (Commit 44ce1c8 by Eric Harrer)
+    2023-09-29 [TASK] Add missing PSR-4 autoload information to ext_emconf.php (Commit 7dd89f6 by Eric Harrer)
+    2023-09-18 [TASK] revert: remove css height for select box for mobile devices (Commit 7086024 by Axel Hempelt)
+    2023-09-18 [BUGFIX] add css height for select box for mobile devices (Commit c76acd4 by Axel Hempelt)
+    2023-09-17 [BUGFIX] Handle rating radio inputs instead of select and fix missing element errors (Commit 9456369 by Eric Harrer)
+    2023-09-17 [TASK] Unique field ids by adding the content uid (Commit bef78a4 by Eric Harrer)
+    2023-09-17 [DOCS] Add missing route configuration to README.md (Commit 8f6d1a7 by Eric Harrer)
+    2023-09-17 [TASK] Add department parameter as form argument (Commit 0c02c1d by Eric Harrer)
+    2023-09-17 [TASK] Add missing attribute in html tag (Commit 9414483 by Eric Harrer)
+    2023-09-16 Merge remote-tracking branch 'origin/main' (Commit 273b3d9 by Axel Hempelt)
+    2023-09-16 [TASK] create first beta for bootstrap layout (Commit c2fcc13 by Axel Hempelt)
+    2023-09-16 [TASK] Optimize middleware response time (Commit b38dc30 by Eric Harrer)
+    2023-09-15 [TASK] Add references to CSS and JavaScript files in extension settings (Commit 38d7823 by Eric Harrer)
+    2023-09-15 [TASK] Increase PHP backward compatibility down to version 8.1 (Commit 4a3a2ca by Eric Harrer)
+    2023-09-15 [TASK] Add information about the PHP version requirement (Commit 2baba1d by Eric Harrer)
+    2023-09-15 [TASK] Add further German translations, new labels and meaningful field descriptions (Commit a31f80d by Eric Harrer)
+    2023-09-15 [TASK] Update plugin icon (Commit b0fd0b5 by Eric Harrer)
+    2023-09-14 [TASK] Update extension meta information (Commit bb32613 by Eric Harrer)
+    2023-09-14 [TASK] Update extension description (Commit 5ed64af by Eric Harrer)
+    2023-09-14 [TASK] Replace GIF extension icons by SVG files (Commit dbe878d by Eric Harrer)
+    2023-09-14 [TASK] Add slug fields and documentation of the necessary route enhancer configuration (Commit 8453104 by Eric Harrer)
+    2023-09-14 [TASK] Add CSS reference and update JavaScript reference for show action (Commit f262826 by Eric Harrer)
+
+This list has been created by using `git log $(git describe --tags --abbrev=0)..HEAD --abbrev-commit --pretty='%ad %s (Commit %h by %an)' --date=short`.

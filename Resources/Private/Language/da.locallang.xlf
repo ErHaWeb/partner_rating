@@ -5,63 +5,63 @@
     <body>
       <trans-unit id="validation.reason">
         <source>Please select a reason.</source>
-        <target state="needs-translation">Please select a reason.</target>
+        <target state="translated">Vælg venligst en grund.</target>
       </trans-unit>
       <trans-unit id="validation.partner">
         <source>Please select a partner.</source>
-        <target state="needs-translation">Please select a partner.</target>
+        <target state="translated">Vælg venligst en partner.</target>
       </trans-unit>
       <trans-unit id="form.title">
         <source>Rating Form</source>
-        <target state="needs-translation">Rating Form</target>
+        <target state="translated">Bedømmelseformular</target>
       </trans-unit>
       <trans-unit id="partner.title">
         <source>Partner</source>
-        <target state="needs-translation">Partner</target>
+        <target state="translated">Partner</target>
       </trans-unit>
       <trans-unit id="partner.searchPlaceholder">
         <source>Number or name of the partner</source>
-        <target state="needs-translation">Number or name of the partner</target>
+        <target state="translated">Partnerens nummer eller navn</target>
       </trans-unit>
       <trans-unit id="partner.searchTooltip">
         <source>Enter partial words or partner numbers to find matching results more quickly.</source>
-        <target state="needs-translation">Enter partial words or partner numbers to find matching results more quickly.</target>
+        <target state="translated">Indtast delvise ord eller partnertal for at finde matchende resultater hurtigere.</target>
       </trans-unit>
       <trans-unit id="partner.choosePartner">
         <source>Choose a Partner</source>
-        <target state="needs-translation">Choose a Partner</target>
+        <target state="translated">Vælg en partner</target>
       </trans-unit>
       <trans-unit id="save.title">
         <source>Rating saved!</source>
-        <target state="needs-translation">Rating saved!</target>
+        <target state="translated">Bedømmelse gemt!</target>
       </trans-unit>
       <trans-unit id="save.message">
         <source>%1$s has been rated with a rating of %2$s.</source>
-        <target state="needs-translation">%1$s has been rated with a rating of %2$s.</target>
+        <target state="translated">%1$s er blevet bedømt med en bedømmelse på %2$s.</target>
       </trans-unit>
       <trans-unit id="reason.title">
         <source>Rating Reason</source>
-        <target state="needs-translation">Rating Reason</target>
+        <target state="translated">Årsag til bedømmelse</target>
       </trans-unit>
       <trans-unit id="reasons.title">
         <source>Rating Reasons</source>
-        <target state="needs-translation">Rating Reasons</target>
+        <target state="translated">Årsag til bedømmelser</target>
       </trans-unit>
       <trans-unit id="reasonText.title">
         <source>Rating Reason Text</source>
-        <target state="needs-translation">Rating Reason Text</target>
+        <target state="translated">Tekst til årsag til bedømmelser</target>
       </trans-unit>
       <trans-unit id="rating.title">
         <source>Rating</source>
-        <target state="needs-translation">Rating</target>
+        <target state="translated">Bedømmelse</target>
       </trans-unit>
       <trans-unit id="reason.none">
         <source>No reason selected</source>
-        <target state="needs-translation">No reason selected</target>
+        <target state="translated">Ingen årsag valgt</target>
       </trans-unit>
       <trans-unit id="reasonText.title">
         <source>Rating Reason (free text)</source>
-        <target state="needs-translation">Rating Reason Text</target>
+        <target state="translated">Tekst til årsag til bedømmelser</target>
       </trans-unit>
       <trans-unit id="submit">
         <source>Save Rating</source>

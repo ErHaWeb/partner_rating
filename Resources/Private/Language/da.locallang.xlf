@@ -65,11 +65,11 @@
       </trans-unit>
       <trans-unit id="submit">
         <source>Save Rating</source>
-        <target state="needs-translation">Save Rating</target>
+        <target state="translated">Gem bedømmelse</target>
       </trans-unit>
       <trans-unit id="back">
         <source>← back</source>
-        <target state="needs-translation">← back</target>
+        <target state="translated">← tilbage</target>
       </trans-unit>
     </body>
   </file>

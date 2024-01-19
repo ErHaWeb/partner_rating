@@ -9,7 +9,7 @@
       </trans-unit>
       <trans-unit id="partnerrating_pi1.description">
         <source>Plugin to provide a front-end form for departments to rate partners.</source>
-        <target state="needs-translation">Plugin to provide a front-end form for departments to rate partners.</target>
+        <target state="translated">Plugin der leverer en front-end formular til afdelinger til at bedømme partnere.</target>
       </trans-unit>
     </body>
   </file>

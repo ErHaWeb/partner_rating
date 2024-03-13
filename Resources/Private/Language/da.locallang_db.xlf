@@ -3,37 +3,37 @@
   <file source-language="en" datatype="plaintext" original="EXT:partner_rating/Resources/Private/Language/locallang_db.xlf" date="2023-09-03T16:55:15Z" product-name="partner_rating" target-language="da">
     <header/>
     <body>
-      <trans-unit id="tx_partnerrating_domain_model_partner" resname="tx_partnerrating_domain_model_partner">
+      <trans-unit id="tx_partnerrating_domain_model_partner" resname="tx_partnerrating_domain_model_partner" approved="yes">
         <source>Partner</source>
-        <target state="translated">Partner</target>
+        <target state="final">Partner</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_partner.title" resname="tx_partnerrating_domain_model_partner.title">
+      <trans-unit id="tx_partnerrating_domain_model_partner.title" resname="tx_partnerrating_domain_model_partner.title" approved="yes">
         <source>Title</source>
-        <target state="translated">Titel</target>
+        <target state="final">Titel</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_partner.title.description" resname="tx_partnerrating_domain_model_partner.title.description">
+      <trans-unit id="tx_partnerrating_domain_model_partner.title.description" resname="tx_partnerrating_domain_model_partner.title.description" approved="yes">
         <source>By entering the name of the partner, a partner can be found in the evaluation sheet.</source>
-        <target state="translated">Ved at indtaste navnet på partneren, kan en partner findes i evalueringsarket.</target>
+        <target state="final">Ved at indtaste navnet på partneren, kan en partner findes i evalueringsarket.</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_partner.partner_nr" resname="tx_partnerrating_domain_model_partner.partner_nr">
+      <trans-unit id="tx_partnerrating_domain_model_partner.partner_nr" resname="tx_partnerrating_domain_model_partner.partner_nr" approved="yes">
         <source>Partner Nr</source>
-        <target state="translated">Partner nr.</target>
+        <target state="final">Partner nr.</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_partner.partner_nr.description" resname="tx_partnerrating_domain_model_partner.partner_nr.description">
+      <trans-unit id="tx_partnerrating_domain_model_partner.partner_nr.description" resname="tx_partnerrating_domain_model_partner.partner_nr.description" approved="yes">
         <source>By entering the partner number, a partner can be found in the evaluation sheet.</source>
-        <target state="translated">Ved at indtaste partnernummeret, kan en partner findes i evalueringsarket.</target>
+        <target state="final">Ved at indtaste partnernummeret, kan en partner findes i evalueringsarket.</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_rating" resname="tx_partnerrating_domain_model_rating">
+      <trans-unit id="tx_partnerrating_domain_model_rating" resname="tx_partnerrating_domain_model_rating" approved="yes">
         <source>Rating</source>
-        <target state="translated">Bedømmelse</target>
+        <target state="final">Bedømmelse</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_rating.rate_value" resname="tx_partnerrating_domain_model_rating.rate_value">
+      <trans-unit id="tx_partnerrating_domain_model_rating.rate_value" resname="tx_partnerrating_domain_model_rating.rate_value" approved="yes">
         <source>Rate Value</source>
-        <target state="translated">Bedømmelsesværdi</target>
+        <target state="final">Bedømmelsesværdi</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_rating.rate_value.description" resname="tx_partnerrating_domain_model_rating.rate_value.description">
+      <trans-unit id="tx_partnerrating_domain_model_rating.rate_value.description" resname="tx_partnerrating_domain_model_rating.rate_value.description" approved="yes">
         <source>Valuation value assigned by a department</source>
-        <target state="translated">Værdiansættelsesværdi tildelt af en afdeling</target>
+        <target state="final">Værdiansættelsesværdi tildelt af en afdeling</target>
       </trans-unit>
       <trans-unit id="tx_partnerrating_domain_model_rating.partner" resname="tx_partnerrating_domain_model_rating.partner">
         <source>Partner</source>

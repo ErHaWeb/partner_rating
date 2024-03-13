@@ -63,13 +63,13 @@
         <source>Rating Reason (free text)</source>
         <target state="final">Tekst til årsag til bedømmelser</target>
       </trans-unit>
-      <trans-unit id="submit">
+      <trans-unit id="submit" approved="yes">
         <source>Save Rating</source>
-        <target state="translated">Gem bedømmelse</target>
+        <target state="final">Gem bedømmelse</target>
       </trans-unit>
-      <trans-unit id="back">
+      <trans-unit id="back" approved="yes">
         <source>← back</source>
-        <target state="translated">← tilbage</target>
+        <target state="final">← tilbage</target>
       </trans-unit>
     </body>
   </file>

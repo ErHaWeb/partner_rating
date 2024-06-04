@@ -6,7 +6,7 @@ use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
 defined('TYPO3') || die();
 
 ExtensionUtility::configurePlugin(
-// extension name, matching the PHP namespaces (but without the vendor)
+    // extension name, matching the PHP namespaces (but without the vendor)
     'PartnerRating',
     // arbitrary, but unique plugin name (not visible in the backend)
     'Pi1',

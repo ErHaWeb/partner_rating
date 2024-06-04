@@ -7,3 +7,9 @@ services:
 
   ErHaWeb\PartnerRating\:
     resource: '../Classes/*'
+
+  ErHaWeb\PartnerRating\Event\Listener\SiteConfigurationLoadedEventListener:
+    tags:
+      - name: event.listener
+        identifier: 'ext-partnerrating/site-configuration-loaded'
+        event: TYPO3\CMS\Core\Configuration\Event\SiteConfigurationLoadedEvent

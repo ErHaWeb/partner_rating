@@ -6,7 +6,7 @@ defined('TYPO3') || die();
 
 (static function (): void {
     ExtensionUtility::registerPlugin(
-    // extension name, matching the PHP namespaces (but without the vendor)
+        // extension name, matching the PHP namespaces (but without the vendor)
         'PartnerRating',
         // arbitrary, but unique plugin name (not visible in the backend)
         'Pi1',

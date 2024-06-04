@@ -21,7 +21,6 @@ use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
  */
 class Department extends AbstractEntity
 {
-
     /**
      * title
      *
@@ -31,8 +30,6 @@ class Department extends AbstractEntity
 
     /**
      * Returns the title
-     *
-     * @return string
      */
     public function getTitle(): string
     {
@@ -41,9 +38,6 @@ class Department extends AbstractEntity
 
     /**
      * Sets the title
-     *
-     * @param string $title
-     * @return void
      */
     public function setTitle(string $title): void
     {

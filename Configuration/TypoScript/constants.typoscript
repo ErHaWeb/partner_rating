@@ -1,31 +1,36 @@
-plugin.tx_partnerrating_pi1 {
-    view {
-        # cat=plugin.tx_tx_partnerrating/file/a; type=string; label=Path to template root (FE)
-        templateRootPath =
-        # cat=plugin.tx_tx_partnerrating/file/b; type=string; label=Path to template partials (FE)
-        partialRootPath =
-        # cat=plugin.tx_tx_partnerrating/file/c; type=string; label=Path to template layouts (FE)
-        layoutRootPath =
-    }
+# customcategory=plugin.tx_partnerrating_pi1=LLL:EXT:partner_rating/Resources/Private/Language/locallang_be.xlf:constants.customcategory.plugin.tx_partnerrating_pi1
+# customsubcategory=100_fluidrootpaths=LLL:EXT:partner_rating/Resources/Private/Language/locallang_be.xlf:constants.subcategory.fluidrootpaths
+# customsubcategory=200_resources=LLL:EXT:partner_rating/Resources/Private/Language/locallang_be.xlf:constants.subcategory.resources
+# customsubcategory=300_settings=LLL:EXT:partner_rating/Resources/Private/Language/locallang_be.xlf:constants.subcategory.settings
 
-    settings {
-        # cat=plugin.tx_tx_partnerrating/file/d; type=boolean; label=Include Bootstrap from CDN:If this option is "true" then Bootstrap 5 will be included via CDN from jsDelivr. This option should only be used for testing purposes. If you want to use Bootstrap 5 (the default framework of the Partner Rating template) for rendering, it is recommended to include it yourself via your site package and leave this option disabled.
-        includeBootstrap = 0
-        # cat=plugin.tx_tx_partnerrating/file/e; type=string; label=Path to CSS file (FE):CSS file that is used by default
-        cssFile = EXT:partner_rating/Resources/Public/Css/main.min.css
-        # cat=plugin.tx_tx_partnerrating/file/f; type=string; label=Path to JavaScript file (FE):JavaScript file that is used by default
-        javaScriptFile = EXT:partner_rating/Resources/Public/JavaScript/show.min.js
-        # cat=plugin.tx_tx_partnerrating/misc/a; type=string; label=Rating Values:Comma separated list of integer values that can be selected for the rating.
-        ratingValues = 1,2,3,4,5
-        # cat=plugin.tx_tx_partnerrating/misc/b; type=int+; label=Rating Reason Min. Value:If the selected rating exceeds this limit, then there is an obligation to select a reason.
-        ratingReasonMinValue = 3
-        # cat=plugin.tx_tx_partnerrating/misc/c; type=boolean; label=Keep min. one search result:If this setting is `true`, then it is ensured that at least one result remains in the partner selection list, even if the entered string no longer leads to any results.
-        keepMinOneSearchResult = 1
-        # cat=plugin.tx_tx_partnerrating/misc/d; type=string; label=Partner Label Fields:Comma-separated list of database fields to be used for forming the label of entries in the partner selection field. Fields that do not exist in the partner table are ignored.
-        partnerLabelFields = title,partner_nr
-        # cat=plugin.tx_tx_partnerrating/misc/e; type=string; label=Partner Label Field Split String:String used between label fields that are defined by `partnerLabelFields`.
-        partnerLabelFieldSplitString = |
-        # cat=plugin.tx_tx_partnerrating/misc/f; type=boolean; label=Allow Multiple Reasons:If this setting is `true`, multiple reasons can be selected (checkboxes). If this setting is `false`, only one reason can be selected (radio buttons).
-        allowMultipleReasons = 0
-    }
+plugin.tx_partnerrating_pi1 {
+  view {
+    # cat=plugin.tx_partnerrating_pi1/100_fluidrootpaths/a; type=string; label=Path to template root (FE)
+    templateRootPath =
+    # cat=plugin.tx_partnerrating_pi1/100_fluidrootpaths/b; type=string; label=Path to template partials (FE)
+    partialRootPath =
+    # cat=plugin.tx_partnerrating_pi1/100_fluidrootpaths/c; type=string; label=Path to template layouts (FE)
+    layoutRootPath =
+  }
+
+  settings {
+    # cat=plugin.tx_partnerrating_pi1/200_resources/d; type=boolean; label=Include Bootstrap from CDN:If this option is "true" then Bootstrap 5 will be included via CDN from jsDelivr. This option should only be used for testing purposes. If you want to use Bootstrap 5 (the default framework of the Partner Rating template) for rendering, it is recommended to include it yourself via your site package and leave this option disabled.
+    includeBootstrap = 0
+    # cat=plugin.tx_partnerrating_pi1/200_resources/e; type=string; label=Path to CSS file (FE):CSS file that is used by default
+    cssFile = EXT:partner_rating/Resources/Public/Css/main.min.css
+    # cat=plugin.tx_partnerrating_pi1/200_resources/f; type=string; label=Path to JavaScript file (FE):JavaScript file that is used by default
+    javaScriptFile = EXT:partner_rating/Resources/Public/JavaScript/show.min.js
+    # cat=plugin.tx_partnerrating_pi1/300_settings/a; type=string; label=Rating Values:Comma separated list of integer values that can be selected for the rating.
+    ratingValues = 1,2,3,4,5
+    # cat=plugin.tx_partnerrating_pi1/300_settings/b; type=int+; label=Rating Reason Min. Value:If the selected rating exceeds this limit, then there is an obligation to select a reason.
+    ratingReasonMinValue = 3
+    # cat=plugin.tx_partnerrating_pi1/300_settings/c; type=boolean; label=Keep min. one search result:If this setting is `true`, then it is ensured that at least one result remains in the partner selection list, even if the entered string no longer leads to any results.
+    keepMinOneSearchResult = 1
+    # cat=plugin.tx_partnerrating_pi1/300_settings/d; type=string; label=Partner Label Fields:Comma-separated list of database fields to be used for forming the label of entries in the partner selection field. Fields that do not exist in the partner table are ignored.
+    partnerLabelFields = title,partner_nr
+    # cat=plugin.tx_partnerrating_pi1/300_settings/e; type=string; label=Partner Label Field Split String:String used between label fields that are defined by `partnerLabelFields`.
+    partnerLabelFieldSplitString = |
+    # cat=plugin.tx_partnerrating_pi1/300_settings/f; type=boolean; label=Allow Multiple Reasons:If this setting is `true`, multiple reasons can be selected (checkboxes). If this setting is `false`, only one reason can be selected (radio buttons).
+    allowMultipleReasons = 0
+  }
 }

@@ -1,16 +1,16 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true" lang="en">
+<html data-namespace-typo3-fluid="true" lang="en" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
 <f:section name="Default">
     <div class="wrapper-partner">
         <div class="input-group input-group-search">
             <label class="input-group-text" for="partnerSearch-{data.uid}">
                 <f:translate key="partner.title"/>
             </label>
-            <f:form.textfield id="partnerSearch-{data.uid}" class="form-control partnerSearch" placeholder="{f:translate(key: 'partner.searchPlaceholder')}" name="partnerSearch" value="{values.partnerSearch}"/>
-            <span class="input-group-text searchTooltip"><abbr title="{f:translate(key: 'partner.searchTooltip')}" class="initialism">?</abbr></span>
+            <f:form.textfield class="form-control partnerSearch" id="partnerSearch-{data.uid}" name="partnerSearch" placeholder="{f:translate(key: 'partner.searchPlaceholder')}" value="{values.partnerSearch}"/>
+            <span class="input-group-text searchTooltip"><abbr class="initialism" title="{f:translate(key: 'partner.searchTooltip')}">?</abbr></span>
         </div>
         <div class="input-group input-group-partner">
-            <f:form.select property="partner" id="partner-{data.uid}" size="6" required="required" additionalAttributes="{data-validation: '{f:translate(key: \'validation.partner\')}'}" class="form-select">
-                <f:form.select.option value="0" selected="selected">
+            <f:form.select additionalAttributes="{data-validation: '{f:translate(key: \'validation.partner\')}'}" class="form-select" id="partner-{data.uid}" property="partner" required="required" size="6">
+                <f:form.select.option selected="selected" value="0">
                     <f:translate key="partner.choosePartner"/>
                 </f:form.select.option>
             </f:form.select>

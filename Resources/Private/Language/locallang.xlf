@@ -1,57 +1,60 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<xliff version="1.0">
-    <file source-language="en" datatype="plaintext" original="EXT:partner_rating/Resources/Private/Language/locallang_db.xlf" date="2023-09-03T16:55:15Z" product-name="partner_rating">
-        <header/>
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns:t3="http://typo3.org/schemas/xliff" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" original="EXT:partner_rating/Resources/Private/Language/locallang_db.xlf" datatype="plaintext" product-name="partner_rating" date="2024-04-11T09:06:16+02:00">
+        <header></header>
         <body>
-            <trans-unit id="validation.reason">
+            <trans-unit id="validation.reason" resname="validation.reason">
                 <source>Please select a reason.</source>
             </trans-unit>
-            <trans-unit id="validation.partner">
+            <trans-unit id="validation.partner" resname="validation.partner">
                 <source>Please select a partner.</source>
             </trans-unit>
-            <trans-unit id="form.title">
+            <trans-unit id="form.title" resname="form.title">
                 <source>Rating Form</source>
             </trans-unit>
-            <trans-unit id="partner.title">
+            <trans-unit id="partner.title" resname="partner.title">
                 <source>Partner</source>
             </trans-unit>
-			<trans-unit id="partner.searchPlaceholder">
-				<source>Number or name of the partner</source>
-			</trans-unit>
-			<trans-unit id="partner.searchTooltip">
-				<source>Enter partial words or partner numbers to find matching results more quickly.</source>
-			</trans-unit>
-			<trans-unit id="partner.choosePartner">
-				<source>Choose a Partner</source>
-			</trans-unit>
-            <trans-unit id="save.title">
+            <trans-unit id="partner.searchPlaceholder" resname="partner.searchPlaceholder">
+                <source>Number or name of the partner</source>
+            </trans-unit>
+            <trans-unit id="partner.searchTooltip" resname="partner.searchTooltip">
+                <source>Enter partial words or partner numbers to find matching results more quickly.</source>
+            </trans-unit>
+            <trans-unit id="partner.choosePartner" resname="partner.choosePartner">
+                <source>Choose a Partner</source>
+            </trans-unit>
+            <trans-unit id="save.title" resname="save.title">
                 <source>Rating saved!</source>
             </trans-unit>
-            <trans-unit id="save.message">
+            <trans-unit id="save.message" resname="save.message">
                 <source>%1$s has been rated with a rating of %2$s.</source>
             </trans-unit>
-            <trans-unit id="reason.title">
+            <trans-unit id="reason.title" resname="reason.title">
                 <source>Rating Reason</source>
             </trans-unit>
-            <trans-unit id="reasons.title">
+            <trans-unit id="reasons.title" resname="reasons.title">
                 <source>Rating Reasons</source>
             </trans-unit>
-            <trans-unit id="reasonText.title">
-                <source>Rating Reason Text</source>
-            </trans-unit>
-            <trans-unit id="rating.title">
-                <source>Rating</source>
-            </trans-unit>
-            <trans-unit id="reason.none">
-                <source>No reason selected</source>
-            </trans-unit>
-            <trans-unit id="reasonText.title">
+            <trans-unit id="reasonText.title" resname="reasonText.title">
                 <source>Rating Reason (free text)</source>
             </trans-unit>
-            <trans-unit id="submit">
+            <trans-unit id="rating.title" resname="rating.title">
+                <source>Rating</source>
+            </trans-unit>
+            <trans-unit id="reason.none" resname="reason.none">
+                <source>No reason selected</source>
+            </trans-unit>
+            <trans-unit id="pages.notFound" resname="pages.notFound">
+                <source>No record storage page defined</source>
+            </trans-unit>
+            <trans-unit id="department.notFound" resname="department.notFound">
+                <source>No department found</source>
+            </trans-unit>
+            <trans-unit id="submit" resname="submit">
                 <source>Save Rating</source>
             </trans-unit>
-            <trans-unit id="back">
+            <trans-unit id="back" resname="back">
                 <source>← back</source>
             </trans-unit>
         </body>

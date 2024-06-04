@@ -1,14 +1,26 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="EXT:partner_rating/Resources/Private/Language/locallang_db.xlf" date="2023-09-03T16:55:15Z" product-name="partner_rating">
-		<header/>
-		<body>
-			<trans-unit id="partnerrating_pi1.title">
-				<source>Partner Rating</source>
-			</trans-unit>
-			<trans-unit id="partnerrating_pi1.description">
-				<source>Plugin to provide a front-end form for departments to rate partners.</source>
-			</trans-unit>
-		</body>
-	</file>
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns:t3="http://typo3.org/schemas/xliff" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" original="EXT:partner_rating/Resources/Private/Language/locallang_db.xlf" datatype="plaintext" product-name="partner_rating" date="2024-04-11T09:06:26+02:00">
+        <header></header>
+        <body>
+            <trans-unit id="partnerrating_pi1.title" resname="partnerrating_pi1.title">
+                <source>Partner Rating</source>
+            </trans-unit>
+            <trans-unit id="partnerrating_pi1.description" resname="partnerrating_pi1.description">
+                <source>Plugin to provide a front-end form for departments to rate partners.</source>
+            </trans-unit>
+            <trans-unit id="constants.customcategory.plugin.tx_partnerrating_pi1" resname="constants.customcategory.plugin.tx_partnerrating_pi1">
+                <source>Partner Rating</source>
+            </trans-unit>
+            <trans-unit id="constants.subcategory.fluidrootpaths" resname="constants.subcategory.fluidrootpaths">
+                <source>Fluid root paths</source>
+            </trans-unit>
+            <trans-unit id="constants.subcategory.resources" resname="constants.subcategory.resources">
+                <source>Resources</source>
+            </trans-unit>
+            <trans-unit id="constants.subcategory.settings" resname="constants.subcategory.settings">
+                <source>Settings</source>
+            </trans-unit>
+        </body>
+    </file>
 </xliff>

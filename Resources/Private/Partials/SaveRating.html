@@ -1,4 +1,4 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true" lang="en">
+<html data-namespace-typo3-fluid="true" lang="en" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
 <f:section name="Default">
     <f:if condition="{savedRating}">
         <div class="wrapper-alert">
@@ -11,7 +11,7 @@
                         <span><f:translate key="partner.title"/></span>
                     </div>
                     <div class="alert-save-message">
-                        <f:translate key="save.message" arguments="{0: '{savedRating.partner.title}', 1: '{savedRating.rateValue}'}"/>
+                        <f:translate arguments="{0: '{savedRating.partner.title}', 1: '{savedRating.rateValue}'}" key="save.message"/>
                     </div>
                     <div class="alert-reason">
                         <f:if condition="{savedRating.reason}">
@@ -25,7 +25,7 @@
                                 <f:defaultCase>
                                     <div class="alert-reason-title">
                                         <span><f:translate key="reasons.title"/>:</span><br>
-                                        <f:for each="{savedRating.reason}" as="reason" iteration="iterator">
+                                        <f:for as="reason" each="{savedRating.reason}" iteration="iterator">
                                             {reason.title}
                                             <f:if condition="!({iterator.isLast})"><br></f:if>
                                         </f:for>
@@ -41,7 +41,7 @@
                         </f:if>
                     </div>
                 </div>
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" tabindex="-1"></button>
+                <button aria-label="Close" class="btn-close" data-bs-dismiss="alert" tabindex="-1" type="button"></button>
             </div>
         </div>
     </f:if>

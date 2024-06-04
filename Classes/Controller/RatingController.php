@@ -30,56 +30,20 @@ use TYPO3\CMS\Extbase\Persistence\Generic\PersistenceManager;
  */
 class RatingController extends ActionController
 {
-    /**
-     * @var PersistenceManager
-     */
-    private PersistenceManager $persistenceManager;
-
-    /**
-     * @var DepartmentRepository
-     */
-    private DepartmentRepository $departmentRepository;
-
-    /**
-     * @var ReasonRepository
-     */
-    private ReasonRepository $reasonRepository;
-
-    /**
-     * @var RatingRepository
-     */
-    private RatingRepository $ratingRepository;
-
-    /**
-     * @param PersistenceManager $persistenceManager
-     * @param DepartmentRepository $departmentRepository
-     * @param ReasonRepository $reasonRepository
-     * @param RatingRepository $ratingRepository
-     */
-    public function __construct(
-        PersistenceManager   $persistenceManager,
-        DepartmentRepository $departmentRepository,
-        ReasonRepository     $reasonRepository,
-        RatingRepository     $ratingRepository
-    )
+    public function __construct(private readonly PersistenceManager $persistenceManager, private readonly DepartmentRepository $departmentRepository, private readonly ReasonRepository $reasonRepository, private readonly RatingRepository $ratingRepository)
     {
-        $this->ratingRepository = $ratingRepository;
-        $this->reasonRepository = $reasonRepository;
-        $this->departmentRepository = $departmentRepository;
-        $this->persistenceManager = $persistenceManager;
     }
 
     /**
      * Action: listAction
      *
      * This action handles the listing of departments.
-     *
-     * @return ResponseInterface
      */
     public function listAction(): ResponseInterface
     {
-        // Load all departments and assign them to the view
-        $this->view->assign('departments', $this->departmentRepository->findAll());
+        $assign['data'] = $this->request->getAttribute('currentContentObject')->data;
+        $assign['departments'] = $this->departmentRepository->findAll();
+        $this->view->assignMultiple($assign);
         return $this->htmlResponse();
     }
 
@@ -87,19 +51,15 @@ class RatingController extends ActionController
      * Action: showAction
      *
      * This action handles the display of a department and its associated data.
-     *
-     * @param Department $department The department to display
-     * @param Rating|null $rating
-     * @return ResponseInterface
      * @throws IllegalObjectTypeException
      */
-    public function showAction(Department $department, ?Rating $rating = null): ResponseInterface
+    public function showAction(Department $department, null|Rating $rating = null): ResponseInterface
     {
         $assign = [];
 
         // If rating exists save it
         if ($rating !== null) {
-            if($this->persistenceManager->isNewObject($rating)) {
+            if ($this->persistenceManager->isNewObject($rating)) {
                 $this->ratingRepository->add($rating);
                 $rating->setDepartment($department);
                 $this->persistenceManager->persistAll();
@@ -107,7 +67,7 @@ class RatingController extends ActionController
             $assign['savedRating'] = $rating;
         }
 
-        $assign['data'] = $this->configurationManager->getContentObject()->data;
+        $assign['data'] = $this->request->getAttribute('currentContentObject')->data;
         $assign['ratingValues'] = GeneralUtility::intExplode(',', ($this->settings['ratingValues'] ?? ''));
 
         $assign['dataAttributes']['ratingreasonminvalue'] = (int)($this->settings['ratingReasonMinValue'] ?? 0);
@@ -131,8 +91,8 @@ class RatingController extends ActionController
 
         // Process and assign filtering values to the view
         $values = [];
-        $partner = (int)($this->request->getArguments()['partner'] ?? 0);
-        if ($partner !== 0) {
+        $partner = $this->request->getArguments()['partner'] ?? null;
+        if ($partner !== null) {
             $values['partner'] = $partner;
         }
 
@@ -141,18 +101,18 @@ class RatingController extends ActionController
             $values['partnerSearch'] = $partnerSearch;
         }
 
-        $reason = (int)($this->request->getArguments()['reason'] ?? 0);
-        if ($reason !== 0) {
+        $reason = $this->request->getArguments()['reason'] ?? null;
+        if ($reason !== null) {
             $values['reason'] = $reason;
         }
 
-        $reasonText = htmlspecialchars($this->request->getArguments()['reasonText'] ?? '');
+        $reasonText = $this->request->getArguments()['reasonText'] ?? '';
         if ($reasonText !== '') {
-            $values['reasonText'] = $reasonText;
+            $values['reasonText'] = htmlspecialchars($reasonText);
         }
 
-        $rating = (int)($this->request->getArguments()['rating'] ?? 0);
-        if ($rating !== 0) {
+        $rating = $this->request->getArguments()['rating'] ?? null;
+        if ($rating !== null) {
             $values['rating'] = $rating;
         }
 

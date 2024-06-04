@@ -21,7 +21,6 @@ use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
  */
 class Reason extends AbstractEntity
 {
-
     /**
      * title
      *
@@ -39,14 +38,12 @@ class Reason extends AbstractEntity
     /**
      * department
      *
-     * @var ?Department
+     * @var null|Department
      */
-    protected ?Department $department = null;
+    protected null|Department $department = null;
 
     /**
      * Returns the title
-     *
-     * @return string
      */
     public function getTitle(): string
     {
@@ -55,9 +52,6 @@ class Reason extends AbstractEntity
 
     /**
      * Sets the title
-     *
-     * @param string $title
-     * @return void
      */
     public function setTitle(string $title): void
     {
@@ -66,8 +60,6 @@ class Reason extends AbstractEntity
 
     /**
      * Returns the description
-     *
-     * @return string
      */
     public function getDescription(): string
     {
@@ -76,9 +68,6 @@ class Reason extends AbstractEntity
 
     /**
      * Sets the description
-     *
-     * @param string $description
-     * @return void
      */
     public function setDescription(string $description): void
     {
@@ -87,19 +76,14 @@ class Reason extends AbstractEntity
 
     /**
      * Returns the department
-     *
-     * @return ?Department
      */
-    public function getDepartment(): ?Department
+    public function getDepartment(): null|Department
     {
         return $this->department;
     }
 
     /**
      * Sets the department
-     *
-     * @param Department $department
-     * @return void
      */
     public function setDepartment(Department $department): void
     {

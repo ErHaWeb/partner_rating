@@ -14,6 +14,7 @@ declare(strict_types=1);
 
 namespace ErHaWeb\PartnerRating\Domain\Model;
 
+use TYPO3\CMS\Extbase\Annotation\ORM\Cascade;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
@@ -22,7 +23,6 @@ use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
  */
 class Rating extends AbstractEntity
 {
-
     /**
      * rateValue
      *
@@ -33,17 +33,17 @@ class Rating extends AbstractEntity
     /**
      * partner
      *
-     * @var ?Partner
+     * @var null|Partner
      */
-    protected ?Partner $partner = null;
+    protected null|Partner $partner = null;
 
     /**
      * reason
      *
-     * @var ?ObjectStorage<Reason>
-     * @TYPO3\CMS\Extbase\Annotation\ORM\Cascade("remove")
+     * @var null|ObjectStorage<Reason>
      */
-    protected ?ObjectStorage $reason = null;
+    #[Cascade(['value' => 'remove'])]
+    protected null|ObjectStorage $reason = null;
 
     /**
      * reasonText
@@ -55,9 +55,9 @@ class Rating extends AbstractEntity
     /**
      * department
      *
-     * @var ?Department
+     * @var null|Department
      */
-    protected ?Department $department = null;
+    protected null|Department $department = null;
 
     /**
      * __construct
@@ -74,8 +74,6 @@ class Rating extends AbstractEntity
      * Do not modify this method!
      * It will be rewritten on each save in the extension builder
      * You may modify the constructor of this class instead
-     *
-     * @return void
      */
     public function initializeObject(): void
     {
@@ -84,8 +82,6 @@ class Rating extends AbstractEntity
 
     /**
      * Returns the rateValue
-     *
-     * @return int
      */
     public function getRateValue(): int
     {
@@ -94,9 +90,6 @@ class Rating extends AbstractEntity
 
     /**
      * Sets the rateValue
-     *
-     * @param int $rateValue
-     * @return void
      */
     public function setRateValue(int $rateValue): void
     {
@@ -105,19 +98,14 @@ class Rating extends AbstractEntity
 
     /**
      * Returns the partner
-     *
-     * @return ?Partner
      */
-    public function getPartner(): ?Partner
+    public function getPartner(): null|Partner
     {
         return $this->partner;
     }
 
     /**
      * Sets the partner
-     *
-     * @param Partner $partner
-     * @return void
      */
     public function setPartner(Partner $partner): void
     {
@@ -126,9 +114,6 @@ class Rating extends AbstractEntity
 
     /**
      * Adds a Reason
-     *
-     * @param Reason $reason
-     * @return void
      */
     public function addReason(Reason $reason): void
     {
@@ -137,9 +122,6 @@ class Rating extends AbstractEntity
 
     /**
      * Removes a Reason
-     *
-     * @param Reason $reasonToRemove The Reason to be removed
-     * @return void
      */
     public function removeReason(Reason $reasonToRemove): void
     {
@@ -148,19 +130,16 @@ class Rating extends AbstractEntity
 
     /**
      * Returns the reason
-     *
-     * @return ?ObjectStorage<Reason>
+     * @return null|ObjectStorage<Reason>
      */
-    public function getReason(): ?ObjectStorage
+    public function getReason(): null|ObjectStorage
     {
         return $this->reason;
     }
 
     /**
      * Sets the reason
-     *
      * @param ObjectStorage<Reason> $reason
-     * @return void
      */
     public function setReason(ObjectStorage $reason): void
     {
@@ -169,8 +148,6 @@ class Rating extends AbstractEntity
 
     /**
      * Returns the reasonText
-     *
-     * @return string
      */
     public function getReasonText(): string
     {
@@ -179,9 +156,6 @@ class Rating extends AbstractEntity
 
     /**
      * Sets the reasonText
-     *
-     * @param string $reasonText reasonText
-     * @return void
      */
     public function setReasonText(string $reasonText): void
     {
@@ -190,19 +164,14 @@ class Rating extends AbstractEntity
 
     /**
      * Returns the department
-     *
-     * @return ?Department
      */
-    public function getDepartment(): ?Department
+    public function getDepartment(): null|Department
     {
         return $this->department;
     }
 
     /**
      * Sets the department
-     *
-     * @param Department $department
-     * @return void
      */
     public function setDepartment(Department $department): void
     {

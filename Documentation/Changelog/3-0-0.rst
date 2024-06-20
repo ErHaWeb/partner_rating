@@ -46,12 +46,16 @@ All Changes
 -----------
 This is a list of all changes in this release: ::
 
+    2024-06-20 [DOCS] Update frontend view screenshot (Commit e4609bf by Eric Harrer)
+    2024-06-20 Merge branch '13' (Commit 05f181f by Eric Harrer)
+    2024-06-20 [DOCS] Update ChangeLog for 3.0.0 (Commit 636d980 by Eric Harrer)
     2024-06-20 !!![TASK] Remove deprecated single reason selection (radios) (Commit 07a4e09 by Eric Harrer)
     2024-06-20 [DOCS] Add Site Set usage in quick start guide (Commit 9d11d8f by Eric Harrer)
     2024-06-20 [FEATURE] Add configuration as Site Set (Commit 1edd451 by Eric Harrer)
     2024-06-20 [TASK] Add XLIFF labels for constants (Commit e5119ed by Eric Harrer)
     2024-06-20 [DOCS] Update target version information (Commit 6411f15 by Eric Harrer)
     2024-06-20 [DOCS] Add info about automatic route enhancer configuration (Commit 4f1fa2f by Eric Harrer)
+    2024-06-20 [BUGFIX] Add missing nonce values for assets (Commit d060f53 by Eric Harrer)
     2024-06-20 [BUGFIX] Add missing nonce values for assets (Commit b67e26e by Eric Harrer)
     2024-06-20 Merge branch 'main' into 13 (Commit 7f37e17 by Eric Harrer)
     2024-06-20 [TASK] Set version number to v3.0.0 and add ChangeLog (Commit 219c85c by Eric Harrer)

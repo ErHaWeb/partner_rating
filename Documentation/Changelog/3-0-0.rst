@@ -10,6 +10,25 @@
         :local:
         :depth: 3
 
+Compatibility
+-------------
+
+This version has been optimised for TYPO3 versions 12 and 13 and PHP >= 8.1.
+
+Features
+----------------
+
+Site Set added
+^^^^^^^^^^^^^^
+
+In TYPO3 v13, a new Site Set can now also be referenced as a dependency in the site configuration as an alternative to the static include in the template record.
+
+
+Automatic Route Enhancer Configuration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If you do not have any special requirements for the Route Enhancer configuration, you no longer need to worry about this. The extension now automatically adds such a configuration.
+
 Breaking changes
 ----------------
 
@@ -27,6 +46,17 @@ All Changes
 -----------
 This is a list of all changes in this release: ::
 
-
+    2024-06-20 !!![TASK] Remove deprecated single reason selection (radios) (Commit 07a4e09 by Eric Harrer)
+    2024-06-20 [DOCS] Add Site Set usage in quick start guide (Commit 9d11d8f by Eric Harrer)
+    2024-06-20 [FEATURE] Add configuration as Site Set (Commit 1edd451 by Eric Harrer)
+    2024-06-20 [TASK] Add XLIFF labels for constants (Commit e5119ed by Eric Harrer)
+    2024-06-20 [DOCS] Update target version information (Commit 6411f15 by Eric Harrer)
+    2024-06-20 [DOCS] Add info about automatic route enhancer configuration (Commit 4f1fa2f by Eric Harrer)
+    2024-06-20 [BUGFIX] Add missing nonce values for assets (Commit b67e26e by Eric Harrer)
+    2024-06-20 Merge branch 'main' into 13 (Commit 7f37e17 by Eric Harrer)
+    2024-06-20 [TASK] Set version number to v3.0.0 and add ChangeLog (Commit 219c85c by Eric Harrer)
+    2024-06-20 [TASK] Update copyright information (Commit 4513583 by Eric Harrer)
+    2024-06-04 Merge branch 'main' into 13.x (Commit a06a7e1 by Eric Bode)
+    2024-06-04 [TASK] Add initial v12/13 compatible state (Commit 26a856c by Eric Bode)
 
 This list has been created by using `git log $(git describe --tags --abbrev=0)..HEAD --abbrev-commit --pretty='%ad %s (Commit %h by %an)' --date=short`.

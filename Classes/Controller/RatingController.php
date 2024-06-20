@@ -83,7 +83,6 @@ class RatingController extends ActionController
 
         $assign['dataAttributes']['partnerlabelfields'] = implode(',', $partnerLabelFields);
         $assign['dataAttributes']['partnerlabelfieldsplitstring'] = $this->settings['partnerLabelFieldSplitString'] ?? '|';
-        $assign['dataAttributes']['allowmultiplereasons'] = ($this->settings['allowMultipleReasons'] ? 1 : 0);
 
         // Assign department, reasons, and partners to the view
         $assign['department'] = $department;

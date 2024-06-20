@@ -13,9 +13,15 @@
 Breaking changes
 ----------------
 
-Database compare required
-^^^^^^^^^^^^^^^^^^^^^^^^^
-1 Change requires database compare after update
+Radio buttons variant removed
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The option to use the partner rating with a radio selection (previous default) was obsolete and has been removed without replacement. I'm sorry about that.
+
+The ability to switch between multiple selection with checkboxes and single selection via radio caused a few more complicated problems with regard to Extbase use. As this extension was developed on behalf of a customer who only uses the multiple selection variant, single selection has been discarded for the time being for budget reasons.
+
+The display now behaves by default as it did in previous versions if the constant `plugin.tx_partnerrating_pi1.settings.allowMultipleReasons = 1` was defined.
+
+If you want the single selection with radio buttons back feel free to contact the developer `Eric Harrer <mailto:info@eric-harrer.de>`__ and request this functionality for v13 in a paid way.
 
 All Changes
 -----------

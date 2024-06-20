@@ -54,9 +54,6 @@
             <trans-unit id="constants.settings.partnerLabelFieldSplitString" resname="constants.settings.partnerLabelFieldSplitString">
                 <source>Partner Label Field Split String:String used between label fields that are defined by `partnerLabelFields`.</source>
             </trans-unit>
-            <trans-unit id="constants.settings.allowMultipleReasons" resname="constants.settings.allowMultipleReasons">
-                <source>Allow Multiple Reasons:If this setting is `true`, multiple reasons can be selected (checkboxes). If this setting is `false`, only one reason can be selected (radio buttons).</source>
-            </trans-unit>
         </body>
     </file>
 </xliff>

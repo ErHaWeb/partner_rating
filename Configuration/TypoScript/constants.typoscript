@@ -30,7 +30,5 @@ plugin.tx_partnerrating_pi1 {
     partnerLabelFields = title,partner_nr
     # cat=plugin.tx_partnerrating_pi1/300_settings/e; type=string; label=LLL:EXT:partner_rating/Resources/Private/Language/locallang_be.xlf:constants.settings.partnerLabelFieldSplitString
     partnerLabelFieldSplitString = |
-    # cat=plugin.tx_partnerrating_pi1/300_settings/f; type=boolean; label=LLL:EXT:partner_rating/Resources/Private/Language/locallang_be.xlf:constants.settings.allowMultipleReasons
-    allowMultipleReasons = 0
   }
 }

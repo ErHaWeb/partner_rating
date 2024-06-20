@@ -43,7 +43,3 @@ settings:
     label: 'LLL:EXT:partner_rating/Resources/Private/Language/locallang_be.xlf:constants.settings.partnerLabelFieldSplitString'
     type: string
     default: '|'
-  plugin.tx_partnerrating_pi1.settings.allowMultipleReasons:
-    label: 'LLL:EXT:partner_rating/Resources/Private/Language/locallang_be.xlf:constants.settings.allowMultipleReasons'
-    type: int
-    default: 0

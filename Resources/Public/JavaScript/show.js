@@ -28,8 +28,7 @@
     ratingReasonMinValue = 0,
     keepMinOneSearchResult = false,
     partnerLabelFields = '',
-    partnerLabelFieldSplitString = '',
-    allowMultipleReasons = false;
+    partnerLabelFieldSplitString = '';
 
   // Function to perform an AJAX request and populate the select field
   function updatePartnerSelect() {
@@ -97,18 +96,6 @@
     partnerSelect.appendChild(optionElement);
   }
 
-  // Function to update textarea status based on the selected option
-  function updateTextareaStatus() {
-    textareaField.disabled = true;
-    textareaField.required = false;
-    reasonOptions.forEach(option => {
-      if (option.value === '-1' && option.checked) {
-        textareaField.disabled = false;
-        textareaField.required = true;
-      }
-    });
-  }
-
   // Function to handle rating select change
   function handleRatingSelectChange() {
     // Validate the selected rating
@@ -120,9 +107,6 @@
 
     // Validate the selected reason
     reasonOptions.forEach(option => {
-      if (!allowMultipleReasons) {
-        option.required = true;
-      }
       if (option.checked && parseInt(option.value, 10) === 0) {
         const customValidationMessage = reasonWrapper.getAttribute('data-validation');
         option.setCustomValidity(customValidationMessage);
@@ -130,20 +114,6 @@
         option.setCustomValidity('');
       }
     });
-
-    if (!allowMultipleReasons) {
-      // Make the options required if the rating is greater than the configured limit value
-      if (ratingReasonMinValue !== 0 && ratingValue > ratingReasonMinValue) {
-        reasonOptions.forEach(option => {
-          option.required = true;
-        });
-      } else {
-        reasonOptions.forEach(option => {
-          option.required = false;
-          option.setCustomValidity('');
-        });
-      }
-    }
   }
 
   // Function to handle form submission
@@ -242,9 +212,6 @@
     if (form.hasAttribute('data-partnerlabelfieldsplitstring')) {
       partnerLabelFieldSplitString = form.getAttribute('data-partnerlabelfieldsplitstring');
     }
-    if (form.hasAttribute('data-allowmultiplereasons')) {
-      allowMultipleReasons = form.getAttribute('data-allowmultiplereasons') === '1';
-    }
 
     // Query other relevant elements within the container
     reasonWrapper = container.querySelector(reasonWrapperClass);
@@ -255,11 +222,7 @@
     savedRatingAlert = container.querySelector(savedRatingAlertClass);
 
     // Attach event listeners based on the condition if multiple reasons are allowed or not
-    if (allowMultipleReasons) {
-      reasonOptions = reasonWrapper.querySelectorAll('[name="' + extensionName + pluginName + '[' + ratingName + '][' + reasonName + '][]"]');
-    } else {
-      reasonOptions = reasonWrapper.querySelectorAll('[name="' + extensionName + pluginName + '[' + ratingName + '][' + reasonName + ']"]');
-    }
+    reasonOptions = reasonWrapper.querySelectorAll('[name="' + extensionName + pluginName + '[' + ratingName + '][' + reasonName + '][]"]');
 
     // Attach input event listener for the search input box
     if (searchInput && partnerSelect) {
@@ -273,15 +236,6 @@
     // Attach input event listener for the textarea field
     if (textareaField) {
       textareaField.addEventListener('input', checkReasonOptions);
-    }
-
-    // Attach event listeners for reason radio buttons and textarea field
-    if (reasonOptions && textareaField && !allowMultipleReasons) {
-      reasonOptions.forEach(option => {
-        option.addEventListener('change', updateTextareaStatus);
-      });
-      // Initialize textarea status based on reason options
-      updateTextareaStatus();
     }
 
     // Attach change event listeners for rating radio buttons and reason options

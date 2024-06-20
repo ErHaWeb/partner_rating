@@ -1,73 +1,77 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<xliff version="1.0">
-  <file source-language="en" datatype="plaintext" original="EXT:partner_rating/Resources/Private/Language/locallang_db.xlf" date="2023-09-03T16:55:15Z" product-name="partner_rating" target-language="he">
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns:t3="http://typo3.org/schemas/xliff" xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" original="EXT:partner_rating/Resources/Private/Language/locallang_db.xlf" datatype="plaintext" product-name="partner_rating" date="2024-04-11T09:06:16+02:00" target-language="he">
     <header/>
     <body>
-      <trans-unit id="validation.reason">
+      <trans-unit id="validation.reason" resname="validation.reason">
         <source>Please select a reason.</source>
         <target state="needs-translation">Please select a reason.</target>
       </trans-unit>
-      <trans-unit id="validation.partner">
+      <trans-unit id="validation.partner" resname="validation.partner">
         <source>Please select a partner.</source>
         <target state="needs-translation">Please select a partner.</target>
       </trans-unit>
-      <trans-unit id="form.title">
+      <trans-unit id="form.title" resname="form.title">
         <source>Rating Form</source>
         <target state="needs-translation">Rating Form</target>
       </trans-unit>
-      <trans-unit id="partner.title">
+      <trans-unit id="partner.title" resname="partner.title">
         <source>Partner</source>
         <target state="needs-translation">Partner</target>
       </trans-unit>
-      <trans-unit id="partner.searchPlaceholder">
+      <trans-unit id="partner.searchPlaceholder" resname="partner.searchPlaceholder">
         <source>Number or name of the partner</source>
         <target state="needs-translation">Number or name of the partner</target>
       </trans-unit>
-      <trans-unit id="partner.searchTooltip">
+      <trans-unit id="partner.searchTooltip" resname="partner.searchTooltip">
         <source>Enter partial words or partner numbers to find matching results more quickly.</source>
         <target state="needs-translation">Enter partial words or partner numbers to find matching results more quickly.</target>
       </trans-unit>
-      <trans-unit id="partner.choosePartner">
+      <trans-unit id="partner.choosePartner" resname="partner.choosePartner">
         <source>Choose a Partner</source>
         <target state="needs-translation">Choose a Partner</target>
       </trans-unit>
-      <trans-unit id="save.title">
+      <trans-unit id="save.title" resname="save.title">
         <source>Rating saved!</source>
         <target state="needs-translation">Rating saved!</target>
       </trans-unit>
-      <trans-unit id="save.message">
+      <trans-unit id="save.message" resname="save.message">
         <source>%1$s has been rated with a rating of %2$s.</source>
         <target state="needs-translation">%1$s has been rated with a rating of %2$s.</target>
       </trans-unit>
-      <trans-unit id="reason.title">
+      <trans-unit id="reason.title" resname="reason.title">
         <source>Rating Reason</source>
         <target state="needs-translation">Rating Reason</target>
       </trans-unit>
-      <trans-unit id="reasons.title">
+      <trans-unit id="reasons.title" resname="reasons.title">
         <source>Rating Reasons</source>
         <target state="needs-translation">Rating Reasons</target>
       </trans-unit>
-      <trans-unit id="reasonText.title">
-        <source>Rating Reason Text</source>
-        <target state="needs-translation">Rating Reason Text</target>
+      <trans-unit id="reasonText.title" resname="reasonText.title">
+        <source>Rating Reason (free text)</source>
+        <target state="needs-translation">Rating Reason (free text)</target>
       </trans-unit>
-      <trans-unit id="rating.title">
+      <trans-unit id="rating.title" resname="rating.title">
         <source>Rating</source>
         <target state="needs-translation">Rating</target>
       </trans-unit>
-      <trans-unit id="reason.none">
+      <trans-unit id="reason.none" resname="reason.none">
         <source>No reason selected</source>
         <target state="needs-translation">No reason selected</target>
       </trans-unit>
-      <trans-unit id="reasonText.title">
-        <source>Rating Reason (free text)</source>
-        <target state="needs-translation">Rating Reason Text</target>
+      <trans-unit id="pages.notFound" resname="pages.notFound">
+        <source>No record storage page defined</source>
+        <target state="needs-translation">No record storage page defined</target>
       </trans-unit>
-      <trans-unit id="submit">
+      <trans-unit id="department.notFound" resname="department.notFound">
+        <source>No department found</source>
+        <target state="needs-translation">No department found</target>
+      </trans-unit>
+      <trans-unit id="submit" resname="submit">
         <source>Save Rating</source>
         <target state="needs-translation">Save Rating</target>
       </trans-unit>
-      <trans-unit id="back">
+      <trans-unit id="back" resname="back">
         <source>← back</source>
         <target state="needs-translation">← back</target>
       </trans-unit>

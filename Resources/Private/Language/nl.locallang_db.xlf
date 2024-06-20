@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<xliff version="1.0">
-  <file source-language="en" datatype="plaintext" original="EXT:partner_rating/Resources/Private/Language/locallang_db.xlf" date="2023-09-03T16:55:15Z" product-name="partner_rating" target-language="nl">
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns:t3="http://typo3.org/schemas/xliff" xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" original="EXT:partner_rating/Resources/Private/Language/locallang_db.xlf" datatype="plaintext" product-name="partner_rating" date="2024-04-11T09:06:39+02:00" target-language="nl">
     <header/>
     <body>
       <trans-unit id="tx_partnerrating_domain_model_partner" resname="tx_partnerrating_domain_model_partner">
@@ -51,7 +51,7 @@
         <source>Rating Reason Text</source>
         <target state="needs-translation">Rating Reason Text</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_rating.reason_text.description" resname="tx_partnerrating_domain_model_rating.reason_text">
+      <trans-unit id="tx_partnerrating_domain_model_rating.reason_text.description" resname="tx_partnerrating_domain_model_rating.reason_text.description">
         <source>Justification for the department's rating in free text form</source>
         <target state="needs-translation">Justification for the department's rating in free text form</target>
       </trans-unit>
@@ -106,6 +106,10 @@
       <trans-unit id="tx_partnerrating_domain_model_department.title.description" resname="tx_partnerrating_domain_model_department.title.description">
         <source>Name of the department used in the list output of departments by the plugin.</source>
         <target state="needs-translation">Name of the department used in the list output of departments by the plugin.</target>
+      </trans-unit>
+      <trans-unit id="sys_template.TypoScript.partner_rating_title" resname="sys_template.TypoScript.partner_rating_title">
+        <source>Partner Rating: Static TypoScript Include (partner_rating)</source>
+        <target state="needs-translation">Partner Rating: Static TypoScript Include (partner_rating)</target>
       </trans-unit>
     </body>
   </file>

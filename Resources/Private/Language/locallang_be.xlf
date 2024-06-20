@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xliff version="1.2" xmlns:t3="http://typo3.org/schemas/xliff" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-    <file source-language="en" original="EXT:partner_rating/Resources/Private/Language/locallang_db.xlf" datatype="plaintext" product-name="partner_rating" date="2024-04-11T09:06:26+02:00">
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" original="EXT:partner_rating/Resources/Private/Language/locallang_db.xlf" datatype="plaintext" product-name="partner_rating" date="2024-06-20T14:39:50+02:00">
         <header></header>
         <body>
             <trans-unit id="partnerrating_pi1.title" resname="partnerrating_pi1.title">
@@ -20,6 +20,42 @@
             </trans-unit>
             <trans-unit id="constants.subcategory.settings" resname="constants.subcategory.settings">
                 <source>Settings</source>
+            </trans-unit>
+            <trans-unit id="constants.view.templateRootPath" resname="constants.view.templateRootPath">
+                <source>Path to template root (FE)</source>
+            </trans-unit>
+            <trans-unit id="constants.view.partialRootPath" resname="constants.view.partialRootPath">
+                <source>Path to template partials (FE)</source>
+            </trans-unit>
+            <trans-unit id="constants.view.layoutRootPath" resname="constants.view.layoutRootPath">
+                <source>Path to template layouts (FE)</source>
+            </trans-unit>
+            <trans-unit id="constants.settings.includeBootstrap" resname="constants.settings.includeBootstrap">
+                <source>Include Bootstrap from CDN:If this option is &#34;true&#34; then Bootstrap 5 will be included via CDN from jsDelivr. This option should only be used for testing purposes. If you want to use Bootstrap 5 (the default framework of the Partner Rating template) for rendering, it is recommended to include it yourself via your site package and leave this option disabled.</source>
+            </trans-unit>
+            <trans-unit id="constants.settings.cssFile" resname="constants.settings.cssFile">
+                <source>Path to CSS file (FE):CSS file that is used by default</source>
+            </trans-unit>
+            <trans-unit id="constants.settings.javaScriptFile" resname="constants.settings.javaScriptFile">
+                <source>Path to JavaScript file (FE):JavaScript file that is used by default</source>
+            </trans-unit>
+            <trans-unit id="constants.settings.ratingValues" resname="constants.settings.ratingValues">
+                <source>Rating Values:Comma separated list of integer values that can be selected for the rating.</source>
+            </trans-unit>
+            <trans-unit id="constants.settings.ratingReasonMinValue" resname="constants.settings.ratingReasonMinValue">
+                <source>Rating Reason Min. Value:If the selected rating exceeds this limit, then there is an obligation to select a reason.</source>
+            </trans-unit>
+            <trans-unit id="constants.settings.keepMinOneSearchResult" resname="constants.settings.keepMinOneSearchResult">
+                <source>Keep min. one search result:If this setting is `true`, then it is ensured that at least one result remains in the partner selection list, even if the entered string no longer leads to any results.</source>
+            </trans-unit>
+            <trans-unit id="constants.settings.partnerLabelFields" resname="constants.settings.partnerLabelFields">
+                <source>Partner Label Fields:Comma-separated list of database fields to be used for forming the label of entries in the partner selection field. Fields that do not exist in the partner table are ignored.</source>
+            </trans-unit>
+            <trans-unit id="constants.settings.partnerLabelFieldSplitString" resname="constants.settings.partnerLabelFieldSplitString">
+                <source>Partner Label Field Split String:String used between label fields that are defined by `partnerLabelFields`.</source>
+            </trans-unit>
+            <trans-unit id="constants.settings.allowMultipleReasons" resname="constants.settings.allowMultipleReasons">
+                <source>Allow Multiple Reasons:If this setting is `true`, multiple reasons can be selected (checkboxes). If this setting is `false`, only one reason can be selected (radio buttons).</source>
             </trans-unit>
         </body>
     </file>

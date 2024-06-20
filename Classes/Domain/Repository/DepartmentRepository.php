@@ -8,7 +8,7 @@ declare(strict_types=1);
  * For the full copyright and license information, please read the
  * LICENSE.txt file that was distributed with this source code.
  *
- * (c) 2023 Eric Harrer <info@eric-harrer.de>, eric-harrer.de
+ * (c) 2024 Eric Harrer <info@eric-harrer.de>, eric-harrer.de
  *          Axel Hempelt <info@fiz-soft.de>, fiz-soft.de
  */
 

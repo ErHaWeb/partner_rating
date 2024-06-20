@@ -1,0 +1,45 @@
+settings:
+  plugin.tx_partnerrating_pi1.view.templateRootPath:
+    label: 'LLL:EXT:partner_rating/Resources/Private/Language/locallang_be.xlf:constants.view.templateRootPath'
+    type: string
+    default: ''
+  plugin.tx_partnerrating_pi1.view.partialRootPath:
+    label: 'LLL:EXT:partner_rating/Resources/Private/Language/locallang_be.xlf:constants.view.partialRootPath'
+    type: string
+    default: ''
+  plugin.tx_partnerrating_pi1.view.layoutRootPath:
+    label: 'LLL:EXT:partner_rating/Resources/Private/Language/locallang_be.xlf:constants.view.layoutRootPath'
+    type: string
+    default: ''
+  plugin.tx_partnerrating_pi1.settings.includeBootstrap:
+    label: 'LLL:EXT:partner_rating/Resources/Private/Language/locallang_be.xlf:constants.settings.includeBootstrap'
+    type: int
+    default: 0
+  plugin.tx_partnerrating_pi1.settings.cssFile:
+    label: 'LLL:EXT:partner_rating/Resources/Private/Language/locallang_be.xlf:constants.settings.cssFile'
+    type: string
+    default: 'EXT:partner_rating/Resources/Public/Css/main.min.css'
+  plugin.tx_partnerrating_pi1.settings.javaScriptFile:
+    label: 'LLL:EXT:partner_rating/Resources/Private/Language/locallang_be.xlf:constants.settings.javaScriptFile'
+    type: string
+    default: 'EXT:partner_rating/Resources/Public/JavaScript/show.min.js'
+  plugin.tx_partnerrating_pi1.settings.ratingValues:
+    label: 'LLL:EXT:partner_rating/Resources/Private/Language/locallang_be.xlf:constants.settings.ratingValues'
+    type: string
+    default: '1,2,3,4,5'
+  plugin.tx_partnerrating_pi1.settings.ratingReasonMinValue:
+    label: 'LLL:EXT:partner_rating/Resources/Private/Language/locallang_be.xlf:constants.settings.ratingReasonMinValue'
+    type: int
+    default: 3
+  plugin.tx_partnerrating_pi1.settings.keepMinOneSearchResult:
+    label: 'LLL:EXT:partner_rating/Resources/Private/Language/locallang_be.xlf:constants.settings.keepMinOneSearchResult'
+    type: int
+    default: 1
+  plugin.tx_partnerrating_pi1.settings.partnerLabelFields:
+    label: 'LLL:EXT:partner_rating/Resources/Private/Language/locallang_be.xlf:constants.settings.partnerLabelFields'
+    type: string
+    default: 'title,partner_nr'
+  plugin.tx_partnerrating_pi1.settings.partnerLabelFieldSplitString:
+    label: 'LLL:EXT:partner_rating/Resources/Private/Language/locallang_be.xlf:constants.settings.partnerLabelFieldSplitString'
+    type: string
+    default: '|'

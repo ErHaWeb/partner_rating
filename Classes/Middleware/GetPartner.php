@@ -8,18 +8,18 @@ declare(strict_types=1);
  * For the full copyright and license information, please read the
  * LICENSE.txt file that was distributed with this source code.
  *
- * (c) 2023 Eric Harrer <info@eric-harrer.de>, eric-harrer.de
+ * (c) 2024 Eric Harrer <info@eric-harrer.de>, eric-harrer.de
  *          Axel Hempelt <info@fiz-soft.de>, fiz-soft.de
  */
 
 namespace ErHaWeb\PartnerRating\Middleware;
 
-use Exception;
-use PDO;
+use Doctrine\DBAL\Exception;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\MiddlewareInterface;
 use Psr\Http\Server\RequestHandlerInterface;
+use TYPO3\CMS\Core\Database\Connection;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Http\JsonResponse;
 use TYPO3\CMS\Core\Site\Entity\SiteLanguage;
@@ -31,26 +31,15 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 final  class GetPartner implements MiddlewareInterface
 {
     /**
-     * @var ConnectionPool
-     */
-    private ConnectionPool $connectionPool;
-
-    /**
      * Constructor for GetPartner middleware.
-     *
-     * @param ConnectionPool $connectionPool
      */
-    public function __construct(ConnectionPool $connectionPool)
+    public function __construct(private readonly ConnectionPool $connectionPool)
     {
-        $this->connectionPool = $connectionPool;
     }
 
     /**
      * Process the HTTP request and return a JSON response of partners based on search criteria.
-     *
-     * @param ServerRequestInterface $request The HTTP request object.
-     * @param RequestHandlerInterface $handler The request handler.
-     * @return ResponseInterface The JSON response containing partner data.
+     * @throws Exception
      */
     public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
     {
@@ -65,9 +54,7 @@ final  class GetPartner implements MiddlewareInterface
 
     /**
      * Retrieve a list of partners based on search criteria.
-     *
-     * @param ServerRequestInterface $request The HTTP request object.
-     * @return array An array of partners matching the search criteria.
+     * @throws Exception
      */
     private function getPartners(ServerRequestInterface $request): array
     {
@@ -84,17 +71,14 @@ final  class GetPartner implements MiddlewareInterface
         $queryBuilder = $this->connectionPool->getQueryBuilderForTable('tx_partnerrating_domain_model_partner');
 
         // Define the columns to select in the SQL query.
-        try {
-            $select = array_merge(['uid'], $partnerLabelFields);
-            $queryBuilder->select(...$select)
-                ->from('tx_partnerrating_domain_model_partner')
-                ->executeQuery();
-        } catch (Exception $e) {
-        }
+        $select = array_merge(['uid'], $partnerLabelFields);
+        $queryBuilder->select(...$select)
+            ->from('tx_partnerrating_domain_model_partner')
+            ->executeQuery();
 
         // Create an array of WHERE clause expressions to filter results by language and search keywords.
         $whereExpressions = [
-            $queryBuilder->expr()->eq('sys_language_uid', $queryBuilder->createNamedParameter($languageId, PDO::PARAM_INT))
+            $queryBuilder->expr()->eq('sys_language_uid', $queryBuilder->createNamedParameter($languageId, Connection::PARAM_INT))
         ];
 
         // Split the search text into individual words and build expressions for each word.
@@ -128,7 +112,7 @@ final  class GetPartner implements MiddlewareInterface
         // Execute the query and retrieve the results.
         try {
             return $queryBuilder->executeQuery()->fetchAllAssociative();
-        } catch (Exception|\Doctrine\DBAL\Driver\Exception $e) {
+        } catch (Exception) {
         }
         return [];
     }

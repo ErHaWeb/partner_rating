@@ -1,11 +1,11 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true" lang="en">
+<html data-namespace-typo3-fluid="true" lang="en" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
 <f:section name="Default">
     <div class="wrapper-form">
-        <f:form method="post" controller="Rating" action="show" name="rating" object="{rating}" arguments="{department : department}" data="{dataAttributes}">
-            <f:render partial="FormRating/Partner" section="Default" arguments="{_all}"/>
-            <f:render partial="FormRating/Rating" section="Default" arguments="{_all}"/>
-            <f:render partial="FormRating/Reason" section="Default" arguments="{_all}"/>
-            <f:render partial="FormRating/Action" section="Default" arguments="{_all}"/>
+        <f:form action="show" arguments="{department : department}" controller="Rating" data="{dataAttributes}" method="post" name="rating" object="{rating}">
+            <f:render arguments="{_all}" partial="FormRating/Partner" section="Default"/>
+            <f:render arguments="{_all}" partial="FormRating/Rating" section="Default"/>
+            <f:render arguments="{_all}" partial="FormRating/Reason" section="Default"/>
+            <f:render arguments="{_all}" partial="FormRating/Action" section="Default"/>
         </f:form>
     </div>
 </f:section>

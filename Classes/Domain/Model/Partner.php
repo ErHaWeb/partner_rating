@@ -8,7 +8,7 @@ declare(strict_types=1);
  * For the full copyright and license information, please read the
  * LICENSE.txt file that was distributed with this source code.
  *
- * (c) 2023 Eric Harrer <info@eric-harrer.de>, eric-harrer.de
+ * (c) 2024 Eric Harrer <info@eric-harrer.de>, eric-harrer.de
  *          Axel Hempelt <info@fiz-soft.de>, fiz-soft.de
  */
 
@@ -21,7 +21,6 @@ use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
  */
 class Partner extends AbstractEntity
 {
-
     /**
      * title
      *
@@ -38,8 +37,6 @@ class Partner extends AbstractEntity
 
     /**
      * Returns the title
-     *
-     * @return string
      */
     public function getTitle(): string
     {
@@ -48,9 +45,6 @@ class Partner extends AbstractEntity
 
     /**
      * Sets the title
-     *
-     * @param string $title
-     * @return void
      */
     public function setTitle(string $title): void
     {
@@ -59,8 +53,6 @@ class Partner extends AbstractEntity
 
     /**
      * Returns the partnerNr
-     *
-     * @return string
      */
     public function getPartnerNr(): string
     {
@@ -69,9 +61,6 @@ class Partner extends AbstractEntity
 
     /**
      * Sets the partnerNr
-     *
-     * @param string $partnerNr
-     * @return void
      */
     public function setPartnerNr(string $partnerNr): void
     {

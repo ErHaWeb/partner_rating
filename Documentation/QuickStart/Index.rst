@@ -10,19 +10,54 @@ Quick start
 
 1.  :ref:`Install <installation>` the Extension
 
-2.  Include the static TypoScript
+2.  Include the Extension configuration
 
-    #.  Go to the Template module under `Web` → `Template` (TYPO3 11.5) or `Site Management` → `TypoScript` (TYPO3 12.4).
+    The modern recommended way to reference the configuration of this extension
+    since TYPO3 v13 is via its Site Set. Alternatively, it is still possible to
+    use the static include in the template record.
 
-    #.  Select `Info/Modify` (TYPO3 11.5) `Info/Modify` or `Edit TypoScript Record` (TYPO3 12.4) in the module header.
+    ..  tabs::
 
-    #.  Click the button `Edit the whole template record`.
+        ..  group-tab:: Site Set
 
-    #.  Switch to the tab `Advanced Options`.
+            #.  Go to the Sites module under `Site Management` → `Sites`
 
-    #.  Select `Partner Rating: Static TypoScript Include (partner_rating)` under `Include static (from extensions)` (TYPO3 11.5) or `Include TypoScript sets` (TYPO3 12.4) → `Available Items`.
+            #.  Select `Partner Rating` under `Sets for this Site`
 
-    #.  Click `Save` and `Close`.
+            #.  Click `Save` and `Close`.
+
+            ..  tip::
+
+                You will notice that the constant editor can no longer be opened if the configuration
+                was referenced via Site Set. To overwrite the default setting values of
+                `EXT:partner_rating/Configuration/Sets/PartnerRating/settings.definitions.yaml`,
+                use a file `config/sites/<site-identifier>/settings.yaml`.
+
+                **Example:** Activating the integration of Bootstrap assets (for test purposes)
+
+                ..  code-block:: yaml
+                    :linenos:
+                    :caption: `config/sites/<site-identifier>/settings.yaml`
+
+                    plugin:
+                      tx_partnerrating_pi1:
+                        settings:
+                          includeBootstrap: 1
+
+
+        ..  group-tab:: Static TypoScript Include
+
+            #.  Go to the Template module under `Web` → `Template` (TYPO3 11.5) or `Site Management` → `TypoScript` (TYPO3 >= 12.4).
+
+            #.  Select `Info/Modify` (TYPO3 11.5) `Info/Modify` or `Edit TypoScript Record` (TYPO3 >= 12.4) in the module header.
+
+            #.  Click the button `Edit the whole template record`.
+
+            #.  Switch to the tab `Advanced Options`.
+
+            #.  Select `Partner Rating: Static TypoScript Include (partner_rating)` under `Include static (from extensions)` (TYPO3 11.5) or `Include TypoScript sets` (TYPO3 >= 12.4) → `Available Items`.
+
+            #.  Click `Save` and `Close`.
 
 3.  Create a record storage page and records for departments, partners and reasons
 

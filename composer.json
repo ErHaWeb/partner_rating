@@ -1,77 +1,76 @@
 {
-    "name": "erhaweb/partner-rating",
-    "type": "typo3-cms-extension",
-    "description": "Extbase/Fluid extension that allows departments to rate collaboration partners via a front-end form. Rating values can be specified as a comma separated list of integer values. Rating values greater than a configurable limit value must be justified. This is possible either by predefined reasons or a free text input.",
-    "license": "GPL-2.0-or-later",
-    "require": {
-        "ext-pdo": "*",
-        "typo3/cms-core": "^11.5 || ^12.4",
-        "php": "^7.4 || ^8.0 || ^8.1 || ^8.2"
-    },
-    "require-dev": {
-        "roave/security-advisories": "dev-latest",
-        "typo3/testing-framework": "^6.9.0"
-    },
-    "authors": [
-        {
-            "name": "Eric Harrer",
-            "role": "Developer",
-            "email": "info@eric-harrer.de",
-            "homepage": "https://www.eric-harrer.de"
-        },
-        {
-            "name": "Axel Hempelt",
-            "role": "Product Owner",
-            "email": "info@fiz-soft.de",
-            "homepage": "https://fiz-soft.de/"
-        }
-    ],
-    "keywords": [
-        "TYPO3",
-        "extension",
-        "Partner",
-        "Rating",
-        "Department",
-        "Reason"
-    ],
-    "homepage": "https://extensions.typo3.org/extension/partner_rating",
-    "support": {
-        "source": "https://github.com/ErHaWeb/partner_rating",
-        "issues": "https://github.com/ErHaWeb/partner_rating/issues",
-        "docs": "https://github.com/ErHaWeb/partner_rating#readme"
-    },
-    "funding": [
-        {
-            "type": "other",
-            "url:": "https://www.paypal.com/paypalme/ebode"
-        }
-    ],
-    "autoload": {
-        "psr-4": {
-            "ErHaWeb\\PartnerRating\\": "Classes"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "ErHaWeb\\PartnerRating\\Tests\\": "Tests"
-        }
-    },
-    "replace": {
-        "typo3-ter/partner-rating": "self.version"
-    },
-    "config": {
-        "vendor-dir": ".Build/vendor",
-        "bin-dir": ".Build/bin"
-    },
-    "scripts": {
-        "post-autoload-dump": [
-            "TYPO3\\TestingFramework\\Composer\\ExtensionTestEnvironment::prepare"
-        ]
-    },
-    "extra": {
-        "typo3/cms": {
-            "web-dir": ".Build/public",
-            "extension-key": "partner_rating"
-        }
-    }
+	"name": "erhaweb/partner-rating",
+	"type": "typo3-cms-extension",
+	"description": "Extbase/Fluid extension that allows departments to rate collaboration partners via a front-end form. Rating values can be specified as a comma separated list of integer values. Rating values greater than a configurable limit value must be justified. This is possible either by predefined reasons or a free text input.",
+	"license": "GPL-2.0-or-later",
+	"require": {
+		"typo3/cms-core": "^12.4 || ^13.0",
+		"php": "^8.1 || ^8.2 || ^8.3"
+	},
+	"require-dev": {
+		"roave/security-advisories": "dev-latest",
+		"typo3/testing-framework": "^6.9.0"
+	},
+	"authors": [
+		{
+			"name": "Eric Harrer",
+			"role": "Developer",
+			"email": "info@eric-harrer.de",
+			"homepage": "https://www.eric-harrer.de"
+		},
+		{
+			"name": "Axel Hempelt",
+			"role": "Product Owner",
+			"email": "info@fiz-soft.de",
+			"homepage": "https://fiz-soft.de/"
+		}
+	],
+	"keywords": [
+		"TYPO3",
+		"extension",
+		"Partner",
+		"Rating",
+		"Department",
+		"Reason"
+	],
+	"homepage": "https://extensions.typo3.org/extension/partner_rating",
+	"support": {
+		"source": "https://github.com/ErHaWeb/partner_rating",
+		"issues": "https://github.com/ErHaWeb/partner_rating/issues",
+		"docs": "https://github.com/ErHaWeb/partner_rating#readme"
+	},
+	"funding": [
+		{
+			"type": "other",
+			"url:": "https://www.paypal.com/paypalme/ebode"
+		}
+	],
+	"autoload": {
+		"psr-4": {
+			"ErHaWeb\\PartnerRating\\": "Classes"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"ErHaWeb\\PartnerRating\\Tests\\": "Tests"
+		}
+	},
+	"replace": {
+		"typo3-ter/partner-rating": "self.version"
+	},
+	"config": {
+		"vendor-dir": ".Build/vendor",
+		"bin-dir": ".Build/bin"
+	},
+	"scripts": {
+		"post-autoload-dump": [
+			"TYPO3\\TestingFramework\\Composer\\ExtensionTestEnvironment::prepare"
+		]
+	},
+	"extra": {
+		"typo3/cms": {
+			"web-dir": ".Build/public",
+			"extension-key": "partner_rating"
+		}
+	}
 }

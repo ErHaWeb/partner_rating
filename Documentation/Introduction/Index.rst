@@ -40,7 +40,7 @@ template and styles are based on Bootstrap 5.
 ..  figure:: /Images/en/FrontendView.png
     :class: with-shadow
     :alt: Frontend View
-    :width: 688px
+    :width: 476px
 
     Frontend View
 

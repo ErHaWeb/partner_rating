@@ -12,15 +12,15 @@ Quick start
 
 2.  Include the static TypoScript
 
-    #.  Go to the Template module under `Web` → `Template` (TYPO3 11.5) or `Site Management` → `TypoScript` (TYPO3 12.4).
+    #.  Go to the Template module under `Web` → `Template` (TYPO3 11.5) or `Site Management` → `TypoScript` (TYPO3 >= 12.4).
 
-    #.  Select `Info/Modify` (TYPO3 11.5) `Info/Modify` or `Edit TypoScript Record` (TYPO3 12.4) in the module header.
+    #.  Select `Info/Modify` (TYPO3 11.5) `Info/Modify` or `Edit TypoScript Record` (TYPO3 >= 12.4) in the module header.
 
     #.  Click the button `Edit the whole template record`.
 
     #.  Switch to the tab `Advanced Options`.
 
-    #.  Select `Partner Rating: Static TypoScript Include (partner_rating)` under `Include static (from extensions)` (TYPO3 11.5) or `Include TypoScript sets` (TYPO3 12.4) → `Available Items`.
+    #.  Select `Partner Rating: Static TypoScript Include (partner_rating)` under `Include static (from extensions)` (TYPO3 11.5) or `Include TypoScript sets` (TYPO3 >= 12.4) → `Available Items`.
 
     #.  Click `Save` and `Close`.
 

@@ -40,7 +40,7 @@ Installation
                     # TYPO3 11.5
                     typo3cms database:updateschema "*.add,*.change"
 
-                    # TYPO3 12.4
+                    # TYPO3 >= 12.4
                     typo3 database:updateschema "*.add,*.change"
 
 
@@ -76,7 +76,7 @@ Installation
                     # TYPO3 11.5
                     ddev typo3cms database:updateschema "*.add,*.change"
 
-                    # TYPO3 12.4
+                    # TYPO3 >= 12.4
                     ddev typo3 database:updateschema "*.add,*.change"
 
     ..  group-tab:: Classic

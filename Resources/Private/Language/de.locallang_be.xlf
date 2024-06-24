@@ -11,65 +11,65 @@
         <source>Plugin to provide a front-end form for departments to rate partners.</source>
         <target state="final">Plugin zur Bereitstellung eines Frontend-Formulars für Abteilungen zur Bewertung von Partnern.</target>
       </trans-unit>
-      <trans-unit id="constants.customcategory.plugin.tx_partnerrating_pi1" resname="constants.customcategory.plugin.tx_partnerrating_pi1">
+      <trans-unit id="constants.customcategory.plugin.tx_partnerrating_pi1" resname="constants.customcategory.plugin.tx_partnerrating_pi1" approved="yes">
         <source>Partner Rating</source>
-        <target state="needs-translation">Partner Rating</target>
+        <target state="final">Partner-Bewertung</target>
       </trans-unit>
-      <trans-unit id="constants.subcategory.fluidrootpaths" resname="constants.subcategory.fluidrootpaths">
+      <trans-unit id="constants.subcategory.fluidrootpaths" resname="constants.subcategory.fluidrootpaths" approved="yes">
         <source>Fluid root paths</source>
-        <target state="needs-translation">Fluid root paths</target>
+        <target state="final">Fuid Root-Pfade</target>
       </trans-unit>
-      <trans-unit id="constants.subcategory.resources" resname="constants.subcategory.resources">
+      <trans-unit id="constants.subcategory.resources" resname="constants.subcategory.resources" approved="yes">
         <source>Resources</source>
-        <target state="needs-translation">Resources</target>
+        <target state="final">Ressourcen</target>
       </trans-unit>
-      <trans-unit id="constants.subcategory.settings" resname="constants.subcategory.settings">
+      <trans-unit id="constants.subcategory.settings" resname="constants.subcategory.settings" approved="yes">
         <source>Settings</source>
-        <target state="needs-translation">Settings</target>
+        <target state="final">Einstellungen</target>
       </trans-unit>
-      <trans-unit id="constants.view.templateRootPath" resname="constants.view.templateRootPath">
+      <trans-unit id="constants.view.templateRootPath" resname="constants.view.templateRootPath" approved="yes">
         <source>Path to template root (FE)</source>
-        <target state="needs-translation">Path to template root (FE)</target>
+        <target state="final">Pfad zum Template Root-Pfad (FE)</target>
       </trans-unit>
-      <trans-unit id="constants.view.partialRootPath" resname="constants.view.partialRootPath">
+      <trans-unit id="constants.view.partialRootPath" resname="constants.view.partialRootPath" approved="yes">
         <source>Path to template partials (FE)</source>
-        <target state="needs-translation">Path to template partials (FE)</target>
+        <target state="final">Pfad zum Partial Root-Pfad (FE)</target>
       </trans-unit>
-      <trans-unit id="constants.view.layoutRootPath" resname="constants.view.layoutRootPath">
+      <trans-unit id="constants.view.layoutRootPath" resname="constants.view.layoutRootPath" approved="yes">
         <source>Path to template layouts (FE)</source>
-        <target state="needs-translation">Path to template layouts (FE)</target>
+        <target state="final">Pfad zum Layout Root-Pfad (FE)</target>
       </trans-unit>
-      <trans-unit id="constants.settings.includeBootstrap" resname="constants.settings.includeBootstrap">
+      <trans-unit id="constants.settings.includeBootstrap" resname="constants.settings.includeBootstrap" approved="yes">
         <source>Include Bootstrap from CDN:If this option is "true" then Bootstrap 5 will be included via CDN from jsDelivr. This option should only be used for testing purposes. If you want to use Bootstrap 5 (the default framework of the Partner Rating template) for rendering, it is recommended to include it yourself via your site package and leave this option disabled.</source>
-        <target state="needs-translation">Include Bootstrap from CDN:If this option is "true" then Bootstrap 5 will be included via CDN from jsDelivr. This option should only be used for testing purposes. If you want to use Bootstrap 5 (the default framework of the Partner Rating template) for rendering, it is recommended to include it yourself via your site package and leave this option disabled.</target>
+        <target state="final">Bootstrap von CDN einbinden:Wenn diese Option "true" ist, wird Bootstrap 5 über CDN von jsDelivr eingebunden. Diese Option sollte nur zu Testzwecken verwendet werden. Wenn Sie Bootstrap 5 (das Standard-Framework der Partner-Bewertungsvorlage) zum Rendern verwenden möchten, wird empfohlen, es selbst über Ihr Website-Paket einzubinden und diese Option deaktiviert zu lassen.</target>
       </trans-unit>
-      <trans-unit id="constants.settings.cssFile" resname="constants.settings.cssFile">
+      <trans-unit id="constants.settings.cssFile" resname="constants.settings.cssFile" approved="yes">
         <source>Path to CSS file (FE):CSS file that is used by default</source>
-        <target state="needs-translation">Path to CSS file (FE):CSS file that is used by default</target>
+        <target state="final">Pfad zur CSS-Datei (FE):CSS-Datei, die standardmäßig verwendet wird</target>
       </trans-unit>
-      <trans-unit id="constants.settings.javaScriptFile" resname="constants.settings.javaScriptFile">
+      <trans-unit id="constants.settings.javaScriptFile" resname="constants.settings.javaScriptFile" approved="yes">
         <source>Path to JavaScript file (FE):JavaScript file that is used by default</source>
-        <target state="needs-translation">Path to JavaScript file (FE):JavaScript file that is used by default</target>
+        <target state="final">Pfad zur JavaScript-Datei (FE):JavaScript-Datei, die standardmäßig verwendet wird</target>
       </trans-unit>
-      <trans-unit id="constants.settings.ratingValues" resname="constants.settings.ratingValues">
+      <trans-unit id="constants.settings.ratingValues" resname="constants.settings.ratingValues" approved="yes">
         <source>Rating Values:Comma separated list of integer values that can be selected for the rating.</source>
-        <target state="needs-translation">Rating Values:Comma separated list of integer values that can be selected for the rating.</target>
+        <target state="final">Bewertungswerte:Durch Kommata getrennte Liste von Ganzzahlwerten, die für die Bewertung ausgewählt werden können.</target>
       </trans-unit>
-      <trans-unit id="constants.settings.ratingReasonMinValue" resname="constants.settings.ratingReasonMinValue">
+      <trans-unit id="constants.settings.ratingReasonMinValue" resname="constants.settings.ratingReasonMinValue" approved="yes">
         <source>Rating Reason Min. Value:If the selected rating exceeds this limit, then there is an obligation to select a reason.</source>
-        <target state="needs-translation">Rating Reason Min. Value:If the selected rating exceeds this limit, then there is an obligation to select a reason.</target>
+        <target state="final">Bewertung Grund Min. Wert:Wenn die gewählte Bewertung diesen Grenzwert überschreitet, muss ein Grund ausgewählt werden.</target>
       </trans-unit>
-      <trans-unit id="constants.settings.keepMinOneSearchResult" resname="constants.settings.keepMinOneSearchResult">
+      <trans-unit id="constants.settings.keepMinOneSearchResult" resname="constants.settings.keepMinOneSearchResult" approved="yes">
         <source>Keep min. one search result:If this setting is `true`, then it is ensured that at least one result remains in the partner selection list, even if the entered string no longer leads to any results.</source>
-        <target state="needs-translation">Keep min. one search result:If this setting is `true`, then it is ensured that at least one result remains in the partner selection list, even if the entered string no longer leads to any results.</target>
+        <target state="final">Mindestens ein Suchergebnis beibehalten:Ist diese Einstellung `true`, so wird sichergestellt, dass mindestens ein Ergebnis in der Partnerauswahlliste verbleibt, auch wenn die eingegebene Zeichenfolge zu keinem Ergebnis mehr führt.</target>
       </trans-unit>
-      <trans-unit id="constants.settings.partnerLabelFields" resname="constants.settings.partnerLabelFields">
+      <trans-unit id="constants.settings.partnerLabelFields" resname="constants.settings.partnerLabelFields" approved="yes">
         <source>Partner Label Fields:Comma-separated list of database fields to be used for forming the label of entries in the partner selection field. Fields that do not exist in the partner table are ignored.</source>
-        <target state="needs-translation">Partner Label Fields:Comma-separated list of database fields to be used for forming the label of entries in the partner selection field. Fields that do not exist in the partner table are ignored.</target>
+        <target state="final">Partnerbezeichnungsfelder:Durch Kommata getrennte Liste von Datenbankfeldern, die zur Bildung der Bezeichnung der Einträge im Partnerauswahlfeld verwendet werden sollen. Felder, die in der Partnertabelle nicht vorhanden sind, werden ignoriert.</target>
       </trans-unit>
-      <trans-unit id="constants.settings.partnerLabelFieldSplitString" resname="constants.settings.partnerLabelFieldSplitString">
+      <trans-unit id="constants.settings.partnerLabelFieldSplitString" resname="constants.settings.partnerLabelFieldSplitString" approved="yes">
         <source>Partner Label Field Split String:String used between label fields that are defined by `partnerLabelFields`.</source>
-        <target state="needs-translation">Partner Label Field Split String:String used between label fields that are defined by `partnerLabelFields`.</target>
+        <target state="final">Trennzeichenkette für Partnerbezeichnungsfelder:Zeichenkette, die zwischen den durch `partnerLabelFields` definierten Partnerbezeichnungsfeldern verwendet wird.</target>
       </trans-unit>
     </body>
   </file>

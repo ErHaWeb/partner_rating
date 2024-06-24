@@ -59,13 +59,13 @@
         <source>No reason selected</source>
         <target state="final">Kein Bewertungsgrund ausgewählt</target>
       </trans-unit>
-      <trans-unit id="pages.notFound" resname="pages.notFound">
+      <trans-unit id="pages.notFound" resname="pages.notFound" approved="yes">
         <source>No record storage page defined</source>
-        <target state="needs-translation">No record storage page defined</target>
+        <target state="final">Kein Datensatzspeicher definiert</target>
       </trans-unit>
-      <trans-unit id="department.notFound" resname="department.notFound">
+      <trans-unit id="department.notFound" resname="department.notFound" approved="yes">
         <source>No department found</source>
-        <target state="needs-translation">No department found</target>
+        <target state="final">Keine Abteilung gefunden</target>
       </trans-unit>
       <trans-unit id="submit" resname="submit" approved="yes">
         <source>Save Rating</source>

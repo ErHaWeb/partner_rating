@@ -86,7 +86,7 @@ class RatingController extends ActionController
 
         // Assign department, reasons, and partners to the view
         $assign['department'] = $department;
-        $assign['reasons'] = $this->reasonRepository->findByDepartment($department);
+        $assign['reasons'] = $this->reasonRepository->findBy(['department' => $department]);
 
         // Process and assign filtering values to the view
         $values = [];

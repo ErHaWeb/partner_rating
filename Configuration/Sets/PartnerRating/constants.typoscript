@@ -1,1 +1,34 @@
-@import "EXT:partner_rating/Configuration/TypoScript/constants.typoscript"
+# customcategory=plugin.tx_partnerrating_pi1=LLL:EXT:partner_rating/Resources/Private/Language/locallang_be.xlf:constants.customcategory.plugin.tx_partnerrating_pi1
+# customsubcategory=100_fluidrootpaths=LLL:EXT:partner_rating/Resources/Private/Language/locallang_be.xlf:constants.subcategory.fluidrootpaths
+# customsubcategory=200_resources=LLL:EXT:partner_rating/Resources/Private/Language/locallang_be.xlf:constants.subcategory.resources
+# customsubcategory=300_settings=LLL:EXT:partner_rating/Resources/Private/Language/locallang_be.xlf:constants.subcategory.settings
+
+plugin.tx_partnerrating_pi1 {
+  view {
+    # cat=plugin.tx_partnerrating_pi1/100_fluidrootpaths/a; type=string; label=LLL:EXT:partner_rating/Resources/Private/Language/locallang_be.xlf:constants.view.templateRootPath
+    templateRootPath =
+    # cat=plugin.tx_partnerrating_pi1/100_fluidrootpaths/b; type=string; label=LLL:EXT:partner_rating/Resources/Private/Language/locallang_be.xlf:constants.view.partialRootPath
+    partialRootPath =
+    # cat=plugin.tx_partnerrating_pi1/100_fluidrootpaths/c; type=string; label=LLL:EXT:partner_rating/Resources/Private/Language/locallang_be.xlf:constants.view.layoutRootPath
+    layoutRootPath =
+  }
+
+  settings {
+    # cat=plugin.tx_partnerrating_pi1/200_resources/d; type=boolean; label=LLL:EXT:partner_rating/Resources/Private/Language/locallang_be.xlf:constants.settings.includeBootstrap
+    includeBootstrap = 0
+    # cat=plugin.tx_partnerrating_pi1/200_resources/e; type=string; label=LLL:EXT:partner_rating/Resources/Private/Language/locallang_be.xlf:constants.settings.cssFile
+    cssFile = EXT:partner_rating/Resources/Public/Css/main.min.css
+    # cat=plugin.tx_partnerrating_pi1/200_resources/f; type=string; label=LLL:EXT:partner_rating/Resources/Private/Language/locallang_be.xlf:constants.settings.javaScriptFile
+    javaScriptFile = EXT:partner_rating/Resources/Public/JavaScript/show.min.js
+    # cat=plugin.tx_partnerrating_pi1/300_settings/a; type=string; label=LLL:EXT:partner_rating/Resources/Private/Language/locallang_be.xlf:constants.settings.ratingValues
+    ratingValues = 1,2,3,4,5
+    # cat=plugin.tx_partnerrating_pi1/300_settings/b; type=int+; label=LLL:EXT:partner_rating/Resources/Private/Language/locallang_be.xlf:constants.settings.ratingReasonMinValue
+    ratingReasonMinValue = 3
+    # cat=plugin.tx_partnerrating_pi1/300_settings/c; type=boolean; label=LLL:EXT:partner_rating/Resources/Private/Language/locallang_be.xlf:constants.settings.keepMinOneSearchResult
+    keepMinOneSearchResult = 1
+    # cat=plugin.tx_partnerrating_pi1/300_settings/d; type=string; label=LLL:EXT:partner_rating/Resources/Private/Language/locallang_be.xlf:constants.settings.partnerLabelFields
+    partnerLabelFields = title,partner_nr
+    # cat=plugin.tx_partnerrating_pi1/300_settings/e; type=string; label=LLL:EXT:partner_rating/Resources/Private/Language/locallang_be.xlf:constants.settings.partnerLabelFieldSplitString
+    partnerLabelFieldSplitString = |
+  }
+}

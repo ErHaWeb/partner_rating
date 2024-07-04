@@ -81,9 +81,6 @@
             <trans-unit id="tx_partnerrating_domain_model_department.title.description" resname="tx_partnerrating_domain_model_department.title.description">
                 <source>Name of the department used in the list output of departments by the plugin.</source>
             </trans-unit>
-            <trans-unit id="sys_template.TypoScript.partner_rating_title" resname="sys_template.TypoScript.partner_rating_title">
-                <source>Partner Rating: Static TypoScript Include (partner_rating)</source>
-            </trans-unit>
         </body>
     </file>
 </xliff>

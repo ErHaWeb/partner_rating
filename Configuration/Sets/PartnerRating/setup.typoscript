@@ -1,1 +1,29 @@
-@import "EXT:partner_rating/Configuration/TypoScript/setup.typoscript"
+plugin.tx_partnerrating_pi1 {
+  view {
+    templateRootPaths {
+      0 = EXT:partner_rating/Resources/Private/Templates/
+      1 = {$plugin.tx_partnerrating_pi1.view.templateRootPath}
+    }
+
+    partialRootPaths {
+      0 = EXT:partner_rating/Resources/Private/Partials/
+      1 = {$plugin.tx_partnerrating_pi1.view.partialRootPath}
+    }
+
+    layoutRootPaths {
+      0 = EXT:partner_rating/Resources/Private/Layouts/
+      1 = {$plugin.tx_partnerrating_pi1.view.layoutRootPath}
+    }
+  }
+
+  settings {
+    includeBootstrap = {$plugin.tx_partnerrating_pi1.settings.includeBootstrap}
+    cssFile = {$plugin.tx_partnerrating_pi1.settings.cssFile}
+    javaScriptFile = {$plugin.tx_partnerrating_pi1.settings.javaScriptFile}
+    ratingValues = {$plugin.tx_partnerrating_pi1.settings.ratingValues}
+    ratingReasonMinValue = {$plugin.tx_partnerrating_pi1.settings.ratingReasonMinValue}
+    keepMinOneSearchResult = {$plugin.tx_partnerrating_pi1.settings.keepMinOneSearchResult}
+    partnerLabelFields = {$plugin.tx_partnerrating_pi1.settings.partnerLabelFields}
+    partnerLabelFieldSplitString = {$plugin.tx_partnerrating_pi1.settings.partnerLabelFieldSplitString}
+  }
+}

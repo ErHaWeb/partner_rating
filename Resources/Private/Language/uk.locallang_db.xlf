@@ -107,10 +107,6 @@
         <source>Name of the department used in the list output of departments by the plugin.</source>
         <target state="needs-translation">Name of the department used in the list output of departments by the plugin.</target>
       </trans-unit>
-      <trans-unit id="sys_template.TypoScript.partner_rating_title" resname="sys_template.TypoScript.partner_rating_title">
-        <source>Partner Rating: Static TypoScript Include (partner_rating)</source>
-        <target state="needs-translation">Partner Rating: Static TypoScript Include (partner_rating)</target>
-      </trans-unit>
     </body>
   </file>
 </xliff>

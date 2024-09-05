@@ -38,7 +38,7 @@ class Reason extends AbstractEntity
     /**
      * department
      *
-     * @var null|Department
+     * @var Department|null
      */
     protected null|Department $department = null;
 

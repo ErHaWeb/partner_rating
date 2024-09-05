@@ -4,18 +4,15 @@ plugin.tx_partnerrating_pi1 {
       0 = EXT:partner_rating/Resources/Private/Templates/
       1 = {$plugin.tx_partnerrating_pi1.view.templateRootPath}
     }
-
     partialRootPaths {
       0 = EXT:partner_rating/Resources/Private/Partials/
       1 = {$plugin.tx_partnerrating_pi1.view.partialRootPath}
     }
-
     layoutRootPaths {
       0 = EXT:partner_rating/Resources/Private/Layouts/
       1 = {$plugin.tx_partnerrating_pi1.view.layoutRootPath}
     }
   }
-
   settings {
     includeBootstrap = {$plugin.tx_partnerrating_pi1.settings.includeBootstrap}
     cssFile = {$plugin.tx_partnerrating_pi1.settings.cssFile}

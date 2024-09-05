@@ -1,1 +1,1 @@
-@import "EXT:partner_rating/Configuration/Sets/PartnerRating/setup.typoscript"
+@import 'EXT:partner_rating/Configuration/Sets/PartnerRating/setup.typoscript'

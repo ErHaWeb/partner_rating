@@ -19,6 +19,4 @@ use TYPO3\CMS\Extbase\Persistence\Repository;
 /**
  * The repository for Partners
  */
-class PartnerRepository extends Repository
-{
-}
+class PartnerRepository extends Repository {}

@@ -21,6 +21,4 @@ use TYPO3\CMS\Extbase\Persistence\Repository;
  * The repository for Reasons
  * @method findByDepartment(Department $department)
  */
-class ReasonRepository extends Repository
-{
-}
+class ReasonRepository extends Repository {}

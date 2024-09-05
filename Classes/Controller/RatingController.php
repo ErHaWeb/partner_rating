@@ -30,9 +30,12 @@ use TYPO3\CMS\Extbase\Persistence\Generic\PersistenceManager;
  */
 class RatingController extends ActionController
 {
-    public function __construct(private readonly PersistenceManager $persistenceManager, private readonly DepartmentRepository $departmentRepository, private readonly ReasonRepository $reasonRepository, private readonly RatingRepository $ratingRepository)
-    {
-    }
+    public function __construct(
+        private readonly PersistenceManager $persistenceManager,
+        private readonly DepartmentRepository $departmentRepository,
+        private readonly ReasonRepository $reasonRepository,
+        private readonly RatingRepository $ratingRepository
+    ) {}
 
     /**
      * Action: listAction

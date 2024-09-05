@@ -33,14 +33,14 @@ class Rating extends AbstractEntity
     /**
      * partner
      *
-     * @var null|Partner
+     * @var Partner|null
      */
     protected null|Partner $partner = null;
 
     /**
      * reason
      *
-     * @var null|ObjectStorage<Reason>
+     * @var ObjectStorage<Reason>|null
      */
     #[Cascade(['value' => 'remove'])]
     protected null|ObjectStorage $reason = null;
@@ -55,7 +55,7 @@ class Rating extends AbstractEntity
     /**
      * department
      *
-     * @var null|Department
+     * @var Department|null
      */
     protected null|Department $department = null;
 
@@ -64,7 +64,6 @@ class Rating extends AbstractEntity
      */
     public function __construct()
     {
-
         // Do not remove the next line: It would break the functionality
         $this->initializeObject();
     }
@@ -130,7 +129,7 @@ class Rating extends AbstractEntity
 
     /**
      * Returns the reason
-     * @return null|ObjectStorage<Reason>
+     * @return ObjectStorage<Reason>|null
      */
     public function getReason(): null|ObjectStorage
     {

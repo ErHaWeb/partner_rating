@@ -28,14 +28,14 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 /**
  * Middleware for getting partners based on search criteria.
  */
-final  class GetPartner implements MiddlewareInterface
+final class GetPartner implements MiddlewareInterface
 {
     /**
      * Constructor for GetPartner middleware.
      */
-    public function __construct(private readonly ConnectionPool $connectionPool)
-    {
-    }
+    public function __construct(
+        private readonly ConnectionPool $connectionPool
+    ) {}
 
     /**
      * Process the HTTP request and return a JSON response of partners based on search criteria.
@@ -78,7 +78,7 @@ final  class GetPartner implements MiddlewareInterface
 
         // Create an array of WHERE clause expressions to filter results by language and search keywords.
         $whereExpressions = [
-            $queryBuilder->expr()->eq('sys_language_uid', $queryBuilder->createNamedParameter($languageId, Connection::PARAM_INT))
+            $queryBuilder->expr()->eq('sys_language_uid', $queryBuilder->createNamedParameter($languageId, Connection::PARAM_INT)),
         ];
 
         // Split the search text into individual words and build expressions for each word.

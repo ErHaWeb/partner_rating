@@ -63,17 +63,17 @@
         <source>No record storage page defined</source>
         <target state="final">Stránka úložiště záznamů není definována</target>
       </trans-unit>
-      <trans-unit id="department.notFound" resname="department.notFound">
+      <trans-unit id="department.notFound" resname="department.notFound" approved="yes">
         <source>No department found</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Nebylo nalezeno žádné oddělení</target>
+        <target state="final">Nebylo nalezeno žádné oddělení</target>
       </trans-unit>
-      <trans-unit id="submit" resname="submit">
+      <trans-unit id="submit" resname="submit" approved="yes">
         <source>Save Rating</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Uložit hodnocení</target>
+        <target state="final">Uložit hodnocení</target>
       </trans-unit>
-      <trans-unit id="back" resname="back">
+      <trans-unit id="back" resname="back" approved="yes">
         <source>← back</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">&lt;unk&gt; Zpět</target>
+        <target state="final">&lt;unk&gt; Zpět</target>
       </trans-unit>
     </body>
   </file>

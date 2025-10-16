@@ -5,71 +5,71 @@
     <body>
       <trans-unit id="partnerrating_pi1.title" resname="partnerrating_pi1.title">
         <source>Partner Rating</source>
-        <target state="needs-translation">Partner Rating</target>
+        <target state="needs-review-translation" state-qualifier="leveraged-mt">Classificação de Parceiros</target>
       </trans-unit>
       <trans-unit id="partnerrating_pi1.description" resname="partnerrating_pi1.description">
         <source>Plugin to provide a front-end form for departments to rate partners.</source>
-        <target state="needs-translation">Plugin to provide a front-end form for departments to rate partners.</target>
+        <target state="needs-review-translation" state-qualifier="leveraged-mt">Plugin para fornecer um formulário front-end para os departamentos avaliarem parceiros.</target>
       </trans-unit>
       <trans-unit id="constants.customcategory.plugin.tx_partnerrating_pi1" resname="constants.customcategory.plugin.tx_partnerrating_pi1">
         <source>Partner Rating</source>
-        <target state="needs-translation">Partner Rating</target>
+        <target state="needs-review-translation" state-qualifier="leveraged-mt">Classificação de Parceiros</target>
       </trans-unit>
       <trans-unit id="constants.subcategory.fluidrootpaths" resname="constants.subcategory.fluidrootpaths">
         <source>Fluid root paths</source>
-        <target state="needs-translation">Fluid root paths</target>
+        <target state="needs-review-translation" state-qualifier="leveraged-mt">Caminhos raiz fluidos</target>
       </trans-unit>
       <trans-unit id="constants.subcategory.resources" resname="constants.subcategory.resources">
         <source>Resources</source>
-        <target state="needs-translation">Resources</target>
+        <target state="needs-review-translation" state-qualifier="leveraged-mt">Recursos</target>
       </trans-unit>
       <trans-unit id="constants.subcategory.settings" resname="constants.subcategory.settings">
         <source>Settings</source>
-        <target state="needs-translation">Settings</target>
+        <target state="needs-review-translation" state-qualifier="leveraged-mt">Confirgurações</target>
       </trans-unit>
       <trans-unit id="constants.view.templateRootPath" resname="constants.view.templateRootPath">
         <source>Path to template root (FE)</source>
-        <target state="needs-translation">Path to template root (FE)</target>
+        <target state="needs-review-translation" state-qualifier="leveraged-mt">Caminho para a raiz do modelo (FE)</target>
       </trans-unit>
       <trans-unit id="constants.view.partialRootPath" resname="constants.view.partialRootPath">
         <source>Path to template partials (FE)</source>
-        <target state="needs-translation">Path to template partials (FE)</target>
+        <target state="needs-review-translation" state-qualifier="leveraged-mt">Caminho para os Parceiros dos Temas (FE)</target>
       </trans-unit>
       <trans-unit id="constants.view.layoutRootPath" resname="constants.view.layoutRootPath">
         <source>Path to template layouts (FE)</source>
-        <target state="needs-translation">Path to template layouts (FE)</target>
+        <target state="needs-review-translation" state-qualifier="leveraged-mt">Caminho para layouts do modelo (FE)</target>
       </trans-unit>
       <trans-unit id="constants.settings.includeBootstrap" resname="constants.settings.includeBootstrap">
         <source>Include Bootstrap from CDN:If this option is "true" then Bootstrap 5 will be included via CDN from jsDelivr. This option should only be used for testing purposes. If you want to use Bootstrap 5 (the default framework of the Partner Rating template) for rendering, it is recommended to include it yourself via your site package and leave this option disabled.</source>
-        <target state="needs-translation">Include Bootstrap from CDN:If this option is "true" then Bootstrap 5 will be included via CDN from jsDelivr. This option should only be used for testing purposes. If you want to use Bootstrap 5 (the default framework of the Partner Rating template) for rendering, it is recommended to include it yourself via your site package and leave this option disabled.</target>
+        <target state="needs-review-translation" state-qualifier="leveraged-mt">Incluir Bootstrap do CDN:Se esta opção for "true" então o Bootstrap 5 será incluído via CDN de jsDelivr. Esta opção só deve ser usada para fins de teste. Se você quiser usar o Bootstrap 5 (a estrutura padrão do modelo de Avaliação do Parceiro) para renderização, é recomendável incluir você mesmo através de seu pacote de site e deixar esta opção desativada.</target>
       </trans-unit>
       <trans-unit id="constants.settings.cssFile" resname="constants.settings.cssFile">
         <source>Path to CSS file (FE):CSS file that is used by default</source>
-        <target state="needs-translation">Path to CSS file (FE):CSS file that is used by default</target>
+        <target state="needs-review-translation" state-qualifier="leveraged-mt">Caminho para o arquivo CSS (FE):CSS que é usado por padrão</target>
       </trans-unit>
       <trans-unit id="constants.settings.javaScriptFile" resname="constants.settings.javaScriptFile">
         <source>Path to JavaScript file (FE):JavaScript file that is used by default</source>
-        <target state="needs-translation">Path to JavaScript file (FE):JavaScript file that is used by default</target>
+        <target state="needs-review-translation" state-qualifier="leveraged-mt">Caminho para o arquivo JavaScript (FE):Arquivo JavaScript que é usado por padrão</target>
       </trans-unit>
       <trans-unit id="constants.settings.ratingValues" resname="constants.settings.ratingValues">
         <source>Rating Values:Comma separated list of integer values that can be selected for the rating.</source>
-        <target state="needs-translation">Rating Values:Comma separated list of integer values that can be selected for the rating.</target>
+        <target state="needs-review-translation" state-qualifier="leveraged-mt">Classificação dos Valores: Lista de valores inteiros separados por vírgula que podem ser selecionados para a classificação.</target>
       </trans-unit>
       <trans-unit id="constants.settings.ratingReasonMinValue" resname="constants.settings.ratingReasonMinValue">
         <source>Rating Reason Min. Value:If the selected rating exceeds this limit, then there is an obligation to select a reason.</source>
-        <target state="needs-translation">Rating Reason Min. Value:If the selected rating exceeds this limit, then there is an obligation to select a reason.</target>
+        <target state="needs-review-translation" state-qualifier="leveraged-mt">Avaliação de Reason Min. Valor: Se a classificação selecionada exceder esse limite, então há uma obrigação de selecionar um motivo.</target>
       </trans-unit>
       <trans-unit id="constants.settings.keepMinOneSearchResult" resname="constants.settings.keepMinOneSearchResult">
         <source>Keep min. one search result:If this setting is `true`, then it is ensured that at least one result remains in the partner selection list, even if the entered string no longer leads to any results.</source>
-        <target state="needs-translation">Keep min. one search result:If this setting is `true`, then it is ensured that at least one result remains in the partner selection list, even if the entered string no longer leads to any results.</target>
+        <target state="needs-review-translation" state-qualifier="leveraged-mt">Mantenha min. um resultado de pesquisa: Se esta configuração é `true`, então é assegurado que pelo menos um resultado permaneça na lista de seleção de parceiros, Mesmo que a seqüência de caracteres inserida não leve mais a qualquer resultado.</target>
       </trans-unit>
       <trans-unit id="constants.settings.partnerLabelFields" resname="constants.settings.partnerLabelFields">
         <source>Partner Label Fields:Comma-separated list of database fields to be used for forming the label of entries in the partner selection field. Fields that do not exist in the partner table are ignored.</source>
-        <target state="needs-translation">Partner Label Fields:Comma-separated list of database fields to be used for forming the label of entries in the partner selection field. Fields that do not exist in the partner table are ignored.</target>
+        <target state="needs-review-translation" state-qualifier="leveraged-mt">Rótulo de Parceiros: Lista separada por vírgulas de campos do banco de dados a serem usados para formar o rótulo de entradas no campo de seleção do parceiro. Campos que não existem na tabela de parceiros são ignorados.</target>
       </trans-unit>
       <trans-unit id="constants.settings.partnerLabelFieldSplitString" resname="constants.settings.partnerLabelFieldSplitString">
         <source>Partner Label Field Split String:String used between label fields that are defined by `partnerLabelFields`.</source>
-        <target state="needs-translation">Partner Label Field Split String:String used between label fields that are defined by `partnerLabelFields`.</target>
+        <target state="needs-review-translation" state-qualifier="leveraged-mt">Campo de etiqueta de parceria divide String:String usada entre campos de rótulo que são definidos por `partnerLabelFields`.</target>
       </trans-unit>
     </body>
   </file>

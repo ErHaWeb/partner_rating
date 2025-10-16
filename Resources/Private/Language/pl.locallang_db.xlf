@@ -3,109 +3,109 @@
   <file source-language="en" original="EXT:partner_rating/Resources/Private/Language/locallang_db.xlf" datatype="plaintext" product-name="partner_rating" date="2024-04-11T09:06:39+02:00" target-language="pl">
     <header/>
     <body>
-      <trans-unit id="tx_partnerrating_domain_model_partner" resname="tx_partnerrating_domain_model_partner">
+      <trans-unit id="tx_partnerrating_domain_model_partner" resname="tx_partnerrating_domain_model_partner" approved="yes">
         <source>Partner</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Partner</target>
+        <target state="final">Partner</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_partner.title" resname="tx_partnerrating_domain_model_partner.title">
+      <trans-unit id="tx_partnerrating_domain_model_partner.title" resname="tx_partnerrating_domain_model_partner.title" approved="yes">
         <source>Title</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Rozporządzenie Rady (EWG) nr 2658/87 z dnia 23 lipca 1987 r. w sprawie nomenklatury taryfowej i statystycznej oraz w sprawie Wspólnej Taryfy Celnej (Dz.U. L 256 z 7.9.1987, s. 1).</target>
+        <target state="final">Rozporządzenie Rady (EWG) nr 2658/87 z dnia 23 lipca 1987 r. w sprawie nomenklatury taryfowej i statystycznej oraz w sprawie Wspólnej Taryfy Celnej (Dz.U. L 256 z 7.9.1987, s. 1).</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_partner.title.description" resname="tx_partnerrating_domain_model_partner.title.description">
+      <trans-unit id="tx_partnerrating_domain_model_partner.title.description" resname="tx_partnerrating_domain_model_partner.title.description" approved="yes">
         <source>By entering the name of the partner, a partner can be found in the evaluation sheet.</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Wpisując imię i nazwisko partnera, w arkuszu oceny można znaleźć partnera.</target>
+        <target state="final">Wpisując imię i nazwisko partnera, w arkuszu oceny można znaleźć partnera.</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_partner.partner_nr" resname="tx_partnerrating_domain_model_partner.partner_nr">
+      <trans-unit id="tx_partnerrating_domain_model_partner.partner_nr" resname="tx_partnerrating_domain_model_partner.partner_nr" approved="yes">
         <source>Partner Nr</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Numer partnera</target>
+        <target state="final">Numer partnera</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_partner.partner_nr.description" resname="tx_partnerrating_domain_model_partner.partner_nr.description">
+      <trans-unit id="tx_partnerrating_domain_model_partner.partner_nr.description" resname="tx_partnerrating_domain_model_partner.partner_nr.description" approved="yes">
         <source>By entering the partner number, a partner can be found in the evaluation sheet.</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Wpisując numer partnera, partner można znaleźć w arkuszu oceny.</target>
+        <target state="final">Wpisując numer partnera, partner można znaleźć w arkuszu oceny.</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_rating" resname="tx_partnerrating_domain_model_rating">
+      <trans-unit id="tx_partnerrating_domain_model_rating" resname="tx_partnerrating_domain_model_rating" approved="yes">
         <source>Rating</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Ocena</target>
+        <target state="final">Ocena</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_rating.rate_value" resname="tx_partnerrating_domain_model_rating.rate_value">
+      <trans-unit id="tx_partnerrating_domain_model_rating.rate_value" resname="tx_partnerrating_domain_model_rating.rate_value" approved="yes">
         <source>Rate Value</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Oceń wartość</target>
+        <target state="final">Oceń wartość</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_rating.rate_value.description" resname="tx_partnerrating_domain_model_rating.rate_value.description">
+      <trans-unit id="tx_partnerrating_domain_model_rating.rate_value.description" resname="tx_partnerrating_domain_model_rating.rate_value.description" approved="yes">
         <source>Valuation value assigned by a department</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Wartość wyceny przypisana przez dział</target>
+        <target state="final">Wartość wyceny przypisana przez dział</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_rating.partner" resname="tx_partnerrating_domain_model_rating.partner">
+      <trans-unit id="tx_partnerrating_domain_model_rating.partner" resname="tx_partnerrating_domain_model_rating.partner" approved="yes">
         <source>Partner</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Partner</target>
+        <target state="final">Partner</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_rating.partner.description" resname="tx_partnerrating_domain_model_rating.partner.description">
+      <trans-unit id="tx_partnerrating_domain_model_rating.partner.description" resname="tx_partnerrating_domain_model_rating.partner.description" approved="yes">
         <source>Partner who received this rating</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Partner, który otrzymał tę ocenę</target>
+        <target state="final">Partner, który otrzymał tę ocenę</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_rating.reason" resname="tx_partnerrating_domain_model_rating.reason">
+      <trans-unit id="tx_partnerrating_domain_model_rating.reason" resname="tx_partnerrating_domain_model_rating.reason" approved="yes">
         <source>Rating Reason</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Powód oceny</target>
+        <target state="final">Powód oceny</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_rating.reason_text" resname="tx_partnerrating_domain_model_rating.reason_text">
+      <trans-unit id="tx_partnerrating_domain_model_rating.reason_text" resname="tx_partnerrating_domain_model_rating.reason_text" approved="yes">
         <source>Rating Reason Text</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Tekst przyczyny oceny</target>
+        <target state="final">Tekst przyczyny oceny</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_rating.reason_text.description" resname="tx_partnerrating_domain_model_rating.reason_text.description">
+      <trans-unit id="tx_partnerrating_domain_model_rating.reason_text.description" resname="tx_partnerrating_domain_model_rating.reason_text.description" approved="yes">
         <source>Justification for the department's rating in free text form</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Uzasadnienie oceny departamentu w postaci tekstu ogólnego.</target>
+        <target state="final">Uzasadnienie oceny departamentu w postaci tekstu ogólnego.</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_rating.reason.description" resname="tx_partnerrating_domain_model_rating.reason.description">
+      <trans-unit id="tx_partnerrating_domain_model_rating.reason.description" resname="tx_partnerrating_domain_model_rating.reason.description" approved="yes">
         <source>Reason for rating given by the department</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Powód oceny podanej przez dział</target>
+        <target state="final">Powód oceny podanej przez dział</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_rating.department" resname="tx_partnerrating_domain_model_rating.department">
+      <trans-unit id="tx_partnerrating_domain_model_rating.department" resname="tx_partnerrating_domain_model_rating.department" approved="yes">
         <source>Department</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Departament</target>
+        <target state="final">Departament</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_rating.department.description" resname="tx_partnerrating_domain_model_rating.department.description">
+      <trans-unit id="tx_partnerrating_domain_model_rating.department.description" resname="tx_partnerrating_domain_model_rating.department.description" approved="yes">
         <source>Department that gave the rating</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Departament, który wydał ocenę</target>
+        <target state="final">Departament, który wydał ocenę</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_reason.department" resname="tx_partnerrating_domain_model_reason.department">
+      <trans-unit id="tx_partnerrating_domain_model_reason.department" resname="tx_partnerrating_domain_model_reason.department" approved="yes">
         <source>Department</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Departament</target>
+        <target state="final">Departament</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_reason.department.description" resname="tx_partnerrating_domain_model_reason.department.description">
+      <trans-unit id="tx_partnerrating_domain_model_reason.department.description" resname="tx_partnerrating_domain_model_reason.department.description" approved="yes">
         <source>Department to which this reason is available for selection in the rating form</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Departament, dla którego ten powód jest dostępny do wyboru w formularzu oceny</target>
+        <target state="final">Departament, dla którego ten powód jest dostępny do wyboru w formularzu oceny</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_reason" resname="tx_partnerrating_domain_model_reason">
+      <trans-unit id="tx_partnerrating_domain_model_reason" resname="tx_partnerrating_domain_model_reason" approved="yes">
         <source>Rating Reason</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Powód oceny</target>
+        <target state="final">Powód oceny</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_reason.description" resname="tx_partnerrating_domain_model_reason.description">
+      <trans-unit id="tx_partnerrating_domain_model_reason.description" resname="tx_partnerrating_domain_model_reason.description" approved="yes">
         <source>Description</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Opis</target>
+        <target state="final">Opis</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_reason.title" resname="tx_partnerrating_domain_model_reason.title">
+      <trans-unit id="tx_partnerrating_domain_model_reason.title" resname="tx_partnerrating_domain_model_reason.title" approved="yes">
         <source>Title</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Rozporządzenie Rady (EWG) nr 2658/87 z dnia 23 lipca 1987 r. w sprawie nomenklatury taryfowej i statystycznej oraz w sprawie Wspólnej Taryfy Celnej (Dz.U. L 256 z 7.9.1987, s. 1).</target>
+        <target state="final">Rozporządzenie Rady (EWG) nr 2658/87 z dnia 23 lipca 1987 r. w sprawie nomenklatury taryfowej i statystycznej oraz w sprawie Wspólnej Taryfy Celnej (Dz.U. L 256 z 7.9.1987, s. 1).</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_reason.title.description" resname="tx_partnerrating_domain_model_reason.title.description">
+      <trans-unit id="tx_partnerrating_domain_model_reason.title.description" resname="tx_partnerrating_domain_model_reason.title.description" approved="yes">
         <source>Heading of the rating reason</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Nagłówek przyczyny oceny</target>
+        <target state="final">Nagłówek przyczyny oceny</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_reason.description.description" resname="tx_partnerrating_domain_model_reason.description.description">
+      <trans-unit id="tx_partnerrating_domain_model_reason.description.description" resname="tx_partnerrating_domain_model_reason.description.description" approved="yes">
         <source>Complete formulation of the rating reason</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Pełne sformułowanie przyczyny oceny</target>
+        <target state="final">Pełne sformułowanie przyczyny oceny</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_department" resname="tx_partnerrating_domain_model_department">
+      <trans-unit id="tx_partnerrating_domain_model_department" resname="tx_partnerrating_domain_model_department" approved="yes">
         <source>Department</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Departament</target>
+        <target state="final">Departament</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_department.title" resname="tx_partnerrating_domain_model_department.title">
+      <trans-unit id="tx_partnerrating_domain_model_department.title" resname="tx_partnerrating_domain_model_department.title" approved="yes">
         <source>Title</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Rozporządzenie Rady (EWG) nr 2658/87 z dnia 23 lipca 1987 r. w sprawie nomenklatury taryfowej i statystycznej oraz w sprawie Wspólnej Taryfy Celnej (Dz.U. L 256 z 7.9.1987, s. 1).</target>
+        <target state="final">Rozporządzenie Rady (EWG) nr 2658/87 z dnia 23 lipca 1987 r. w sprawie nomenklatury taryfowej i statystycznej oraz w sprawie Wspólnej Taryfy Celnej (Dz.U. L 256 z 7.9.1987, s. 1).</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_department.title.description" resname="tx_partnerrating_domain_model_department.title.description">
+      <trans-unit id="tx_partnerrating_domain_model_department.title.description" resname="tx_partnerrating_domain_model_department.title.description" approved="yes">
         <source>Name of the department used in the list output of departments by the plugin.</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Nazwa departamentu używanego na liście wyjść departamentów przez wtyczkę.</target>
+        <target state="final">Nazwa departamentu używanego na liście wyjść departamentów przez wtyczkę.</target>
       </trans-unit>
     </body>
   </file>

@@ -3,109 +3,109 @@
   <file source-language="en" original="EXT:partner_rating/Resources/Private/Language/locallang_db.xlf" datatype="plaintext" product-name="partner_rating" date="2024-04-11T09:06:39+02:00" target-language="es-ES">
     <header/>
     <body>
-      <trans-unit id="tx_partnerrating_domain_model_partner" resname="tx_partnerrating_domain_model_partner">
+      <trans-unit id="tx_partnerrating_domain_model_partner" resname="tx_partnerrating_domain_model_partner" approved="yes">
         <source>Partner</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Socio</target>
+        <target state="final">Socio</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_partner.title" resname="tx_partnerrating_domain_model_partner.title">
+      <trans-unit id="tx_partnerrating_domain_model_partner.title" resname="tx_partnerrating_domain_model_partner.title" approved="yes">
         <source>Title</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Título</target>
+        <target state="final">Título</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_partner.title.description" resname="tx_partnerrating_domain_model_partner.title.description">
+      <trans-unit id="tx_partnerrating_domain_model_partner.title.description" resname="tx_partnerrating_domain_model_partner.title.description" approved="yes">
         <source>By entering the name of the partner, a partner can be found in the evaluation sheet.</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Al introducir el nombre del socio, se puede encontrar un socio en la hoja de evaluación.</target>
+        <target state="final">Al introducir el nombre del socio, se puede encontrar un socio en la hoja de evaluación.</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_partner.partner_nr" resname="tx_partnerrating_domain_model_partner.partner_nr">
+      <trans-unit id="tx_partnerrating_domain_model_partner.partner_nr" resname="tx_partnerrating_domain_model_partner.partner_nr" approved="yes">
         <source>Partner Nr</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Nº de socio</target>
+        <target state="final">Nº de socio</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_partner.partner_nr.description" resname="tx_partnerrating_domain_model_partner.partner_nr.description">
+      <trans-unit id="tx_partnerrating_domain_model_partner.partner_nr.description" resname="tx_partnerrating_domain_model_partner.partner_nr.description" approved="yes">
         <source>By entering the partner number, a partner can be found in the evaluation sheet.</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Al introducir el número de socio, se puede encontrar un socio en la hoja de evaluación.</target>
+        <target state="final">Al introducir el número de socio, se puede encontrar un socio en la hoja de evaluación.</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_rating" resname="tx_partnerrating_domain_model_rating">
+      <trans-unit id="tx_partnerrating_domain_model_rating" resname="tx_partnerrating_domain_model_rating" approved="yes">
         <source>Rating</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Valoración</target>
+        <target state="final">Valoración</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_rating.rate_value" resname="tx_partnerrating_domain_model_rating.rate_value">
+      <trans-unit id="tx_partnerrating_domain_model_rating.rate_value" resname="tx_partnerrating_domain_model_rating.rate_value" approved="yes">
         <source>Rate Value</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Valoración</target>
+        <target state="final">Valoración</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_rating.rate_value.description" resname="tx_partnerrating_domain_model_rating.rate_value.description">
+      <trans-unit id="tx_partnerrating_domain_model_rating.rate_value.description" resname="tx_partnerrating_domain_model_rating.rate_value.description" approved="yes">
         <source>Valuation value assigned by a department</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Valor de valoración asignado por un departamento</target>
+        <target state="final">Valor de valoración asignado por un departamento</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_rating.partner" resname="tx_partnerrating_domain_model_rating.partner">
+      <trans-unit id="tx_partnerrating_domain_model_rating.partner" resname="tx_partnerrating_domain_model_rating.partner" approved="yes">
         <source>Partner</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Socio</target>
+        <target state="final">Socio</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_rating.partner.description" resname="tx_partnerrating_domain_model_rating.partner.description">
+      <trans-unit id="tx_partnerrating_domain_model_rating.partner.description" resname="tx_partnerrating_domain_model_rating.partner.description" approved="yes">
         <source>Partner who received this rating</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Socio que recibió esta calificación</target>
+        <target state="final">Socio que recibió esta calificación</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_rating.reason" resname="tx_partnerrating_domain_model_rating.reason">
+      <trans-unit id="tx_partnerrating_domain_model_rating.reason" resname="tx_partnerrating_domain_model_rating.reason" approved="yes">
         <source>Rating Reason</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Razón de puntuación</target>
+        <target state="final">Razón de puntuación</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_rating.reason_text" resname="tx_partnerrating_domain_model_rating.reason_text">
+      <trans-unit id="tx_partnerrating_domain_model_rating.reason_text" resname="tx_partnerrating_domain_model_rating.reason_text" approved="yes">
         <source>Rating Reason Text</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Razón de puntuación</target>
+        <target state="final">Razón de puntuación</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_rating.reason_text.description" resname="tx_partnerrating_domain_model_rating.reason_text.description">
+      <trans-unit id="tx_partnerrating_domain_model_rating.reason_text.description" resname="tx_partnerrating_domain_model_rating.reason_text.description" approved="yes">
         <source>Justification for the department's rating in free text form</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Justificación de la calificación del departamento en forma de texto libre</target>
+        <target state="final">Justificación de la calificación del departamento en forma de texto libre</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_rating.reason.description" resname="tx_partnerrating_domain_model_rating.reason.description">
+      <trans-unit id="tx_partnerrating_domain_model_rating.reason.description" resname="tx_partnerrating_domain_model_rating.reason.description" approved="yes">
         <source>Reason for rating given by the department</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Motivo de la valoración dada por el departamento</target>
+        <target state="final">Motivo de la valoración dada por el departamento</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_rating.department" resname="tx_partnerrating_domain_model_rating.department">
+      <trans-unit id="tx_partnerrating_domain_model_rating.department" resname="tx_partnerrating_domain_model_rating.department" approved="yes">
         <source>Department</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Departamento</target>
+        <target state="final">Departamento</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_rating.department.description" resname="tx_partnerrating_domain_model_rating.department.description">
+      <trans-unit id="tx_partnerrating_domain_model_rating.department.description" resname="tx_partnerrating_domain_model_rating.department.description" approved="yes">
         <source>Department that gave the rating</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Departamento que dio la calificación</target>
+        <target state="final">Departamento que dio la calificación</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_reason.department" resname="tx_partnerrating_domain_model_reason.department">
+      <trans-unit id="tx_partnerrating_domain_model_reason.department" resname="tx_partnerrating_domain_model_reason.department" approved="yes">
         <source>Department</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Departamento</target>
+        <target state="final">Departamento</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_reason.department.description" resname="tx_partnerrating_domain_model_reason.department.description">
+      <trans-unit id="tx_partnerrating_domain_model_reason.department.description" resname="tx_partnerrating_domain_model_reason.department.description" approved="yes">
         <source>Department to which this reason is available for selection in the rating form</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Departamento al que esta razón está disponible para su selección en el formulario de valoración</target>
+        <target state="final">Departamento al que esta razón está disponible para su selección en el formulario de valoración</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_reason" resname="tx_partnerrating_domain_model_reason">
+      <trans-unit id="tx_partnerrating_domain_model_reason" resname="tx_partnerrating_domain_model_reason" approved="yes">
         <source>Rating Reason</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Razón de puntuación</target>
+        <target state="final">Razón de puntuación</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_reason.description" resname="tx_partnerrating_domain_model_reason.description">
+      <trans-unit id="tx_partnerrating_domain_model_reason.description" resname="tx_partnerrating_domain_model_reason.description" approved="yes">
         <source>Description</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Descripción</target>
+        <target state="final">Descripción</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_reason.title" resname="tx_partnerrating_domain_model_reason.title">
+      <trans-unit id="tx_partnerrating_domain_model_reason.title" resname="tx_partnerrating_domain_model_reason.title" approved="yes">
         <source>Title</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Título</target>
+        <target state="final">Título</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_reason.title.description" resname="tx_partnerrating_domain_model_reason.title.description">
+      <trans-unit id="tx_partnerrating_domain_model_reason.title.description" resname="tx_partnerrating_domain_model_reason.title.description" approved="yes">
         <source>Heading of the rating reason</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Rumbo de la razón de valoración</target>
+        <target state="final">Rumbo de la razón de valoración</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_reason.description.description" resname="tx_partnerrating_domain_model_reason.description.description">
+      <trans-unit id="tx_partnerrating_domain_model_reason.description.description" resname="tx_partnerrating_domain_model_reason.description.description" approved="yes">
         <source>Complete formulation of the rating reason</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Formulación completa de la razón de valoración</target>
+        <target state="final">Formulación completa de la razón de valoración</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_department" resname="tx_partnerrating_domain_model_department">
+      <trans-unit id="tx_partnerrating_domain_model_department" resname="tx_partnerrating_domain_model_department" approved="yes">
         <source>Department</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Departamento</target>
+        <target state="final">Departamento</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_department.title" resname="tx_partnerrating_domain_model_department.title">
+      <trans-unit id="tx_partnerrating_domain_model_department.title" resname="tx_partnerrating_domain_model_department.title" approved="yes">
         <source>Title</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Título</target>
+        <target state="final">Título</target>
       </trans-unit>
-      <trans-unit id="tx_partnerrating_domain_model_department.title.description" resname="tx_partnerrating_domain_model_department.title.description">
+      <trans-unit id="tx_partnerrating_domain_model_department.title.description" resname="tx_partnerrating_domain_model_department.title.description" approved="yes">
         <source>Name of the department used in the list output of departments by the plugin.</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Nombre del departamento utilizado en la lista de salida de departamentos por el plugin.</target>
+        <target state="final">Nombre del departamento utilizado en la lista de salida de departamentos por el plugin.</target>
       </trans-unit>
     </body>
   </file>

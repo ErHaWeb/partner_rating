@@ -63,9 +63,9 @@
         <source>No record storage page defined</source>
         <target state="final">Ingen lagringsside defineret</target>
       </trans-unit>
-      <trans-unit id="department.notFound" resname="department.notFound">
+      <trans-unit id="department.notFound" resname="department.notFound" approved="yes">
         <source>No department found</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Ingen afdeling fundet</target>
+        <target state="final">Ingen afdeling fundet</target>
       </trans-unit>
       <trans-unit id="submit" resname="submit" approved="yes">
         <source>Save Rating</source>

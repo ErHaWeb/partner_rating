@@ -5,107 +5,107 @@
     <body>
       <trans-unit id="tx_partnerrating_domain_model_partner" resname="tx_partnerrating_domain_model_partner">
         <source>Partner</source>
-        <target state="needs-translation">Partner</target>
+        <target state="needs-review-translation" state-qualifier="leveraged-mt">Partner</target>
       </trans-unit>
       <trans-unit id="tx_partnerrating_domain_model_partner.title" resname="tx_partnerrating_domain_model_partner.title">
         <source>Title</source>
-        <target state="needs-translation">Title</target>
+        <target state="needs-review-translation" state-qualifier="leveraged-mt">Hlava 1 – Celkem</target>
       </trans-unit>
       <trans-unit id="tx_partnerrating_domain_model_partner.title.description" resname="tx_partnerrating_domain_model_partner.title.description">
         <source>By entering the name of the partner, a partner can be found in the evaluation sheet.</source>
-        <target state="needs-translation">By entering the name of the partner, a partner can be found in the evaluation sheet.</target>
+        <target state="needs-review-translation" state-qualifier="leveraged-mt">Zadáním jména partnera naleznete partnera v hodnotícím listu.</target>
       </trans-unit>
       <trans-unit id="tx_partnerrating_domain_model_partner.partner_nr" resname="tx_partnerrating_domain_model_partner.partner_nr">
         <source>Partner Nr</source>
-        <target state="needs-translation">Partner Nr</target>
+        <target state="needs-review-translation" state-qualifier="leveraged-mt">Číslo partnera</target>
       </trans-unit>
       <trans-unit id="tx_partnerrating_domain_model_partner.partner_nr.description" resname="tx_partnerrating_domain_model_partner.partner_nr.description">
         <source>By entering the partner number, a partner can be found in the evaluation sheet.</source>
-        <target state="needs-translation">By entering the partner number, a partner can be found in the evaluation sheet.</target>
+        <target state="needs-review-translation" state-qualifier="leveraged-mt">Zadáním čísla partnera lze najít partnera v hodnotícím listu.</target>
       </trans-unit>
       <trans-unit id="tx_partnerrating_domain_model_rating" resname="tx_partnerrating_domain_model_rating">
         <source>Rating</source>
-        <target state="needs-translation">Rating</target>
+        <target state="needs-review-translation" state-qualifier="leveraged-mt">Hodnocení</target>
       </trans-unit>
       <trans-unit id="tx_partnerrating_domain_model_rating.rate_value" resname="tx_partnerrating_domain_model_rating.rate_value">
         <source>Rate Value</source>
-        <target state="needs-translation">Rate Value</target>
+        <target state="needs-review-translation" state-qualifier="leveraged-mt">Hodnotit hodnotu</target>
       </trans-unit>
       <trans-unit id="tx_partnerrating_domain_model_rating.rate_value.description" resname="tx_partnerrating_domain_model_rating.rate_value.description">
         <source>Valuation value assigned by a department</source>
-        <target state="needs-translation">Valuation value assigned by a department</target>
+        <target state="needs-review-translation" state-qualifier="leveraged-mt">Hodnota ocenění přidělená oddělením</target>
       </trans-unit>
       <trans-unit id="tx_partnerrating_domain_model_rating.partner" resname="tx_partnerrating_domain_model_rating.partner">
         <source>Partner</source>
-        <target state="needs-translation">Partner</target>
+        <target state="needs-review-translation" state-qualifier="leveraged-mt">Partner</target>
       </trans-unit>
       <trans-unit id="tx_partnerrating_domain_model_rating.partner.description" resname="tx_partnerrating_domain_model_rating.partner.description">
         <source>Partner who received this rating</source>
-        <target state="needs-translation">Partner who received this rating</target>
+        <target state="needs-review-translation" state-qualifier="leveraged-mt">Partner, který obdržel toto hodnocení</target>
       </trans-unit>
       <trans-unit id="tx_partnerrating_domain_model_rating.reason" resname="tx_partnerrating_domain_model_rating.reason">
         <source>Rating Reason</source>
-        <target state="needs-translation">Rating Reason</target>
+        <target state="needs-review-translation" state-qualifier="leveraged-mt">Důvod hodnocení</target>
       </trans-unit>
       <trans-unit id="tx_partnerrating_domain_model_rating.reason_text" resname="tx_partnerrating_domain_model_rating.reason_text">
         <source>Rating Reason Text</source>
-        <target state="needs-translation">Rating Reason Text</target>
+        <target state="needs-review-translation" state-qualifier="leveraged-mt">Text důvodu hodnocení</target>
       </trans-unit>
       <trans-unit id="tx_partnerrating_domain_model_rating.reason_text.description" resname="tx_partnerrating_domain_model_rating.reason_text.description">
         <source>Justification for the department's rating in free text form</source>
-        <target state="needs-translation">Justification for the department's rating in free text form</target>
+        <target state="needs-review-translation" state-qualifier="leveraged-mt">Odůvodnění hodnocení útvaru ve formě volného textu</target>
       </trans-unit>
       <trans-unit id="tx_partnerrating_domain_model_rating.reason.description" resname="tx_partnerrating_domain_model_rating.reason.description">
         <source>Reason for rating given by the department</source>
-        <target state="needs-translation">Reason for rating given by the department</target>
+        <target state="needs-review-translation" state-qualifier="leveraged-mt">Důvod pro rating vydaný útvarem</target>
       </trans-unit>
       <trans-unit id="tx_partnerrating_domain_model_rating.department" resname="tx_partnerrating_domain_model_rating.department">
         <source>Department</source>
-        <target state="needs-translation">Department</target>
+        <target state="needs-review-translation" state-qualifier="leveraged-mt">Oddělení</target>
       </trans-unit>
       <trans-unit id="tx_partnerrating_domain_model_rating.department.description" resname="tx_partnerrating_domain_model_rating.department.description">
         <source>Department that gave the rating</source>
-        <target state="needs-translation">Department that gave the rating</target>
+        <target state="needs-review-translation" state-qualifier="leveraged-mt">Oddělení, které dalo rating</target>
       </trans-unit>
       <trans-unit id="tx_partnerrating_domain_model_reason.department" resname="tx_partnerrating_domain_model_reason.department">
         <source>Department</source>
-        <target state="needs-translation">Department</target>
+        <target state="needs-review-translation" state-qualifier="leveraged-mt">Oddělení</target>
       </trans-unit>
       <trans-unit id="tx_partnerrating_domain_model_reason.department.description" resname="tx_partnerrating_domain_model_reason.department.description">
         <source>Department to which this reason is available for selection in the rating form</source>
-        <target state="needs-translation">Department to which this reason is available for selection in the rating form</target>
+        <target state="needs-review-translation" state-qualifier="leveraged-mt">Oddělení, kterému je tento důvod k dispozici pro výběr ve formuláři</target>
       </trans-unit>
       <trans-unit id="tx_partnerrating_domain_model_reason" resname="tx_partnerrating_domain_model_reason">
         <source>Rating Reason</source>
-        <target state="needs-translation">Rating Reason</target>
+        <target state="needs-review-translation" state-qualifier="leveraged-mt">Důvod hodnocení</target>
       </trans-unit>
       <trans-unit id="tx_partnerrating_domain_model_reason.description" resname="tx_partnerrating_domain_model_reason.description">
         <source>Description</source>
-        <target state="needs-translation">Description</target>
+        <target state="needs-review-translation" state-qualifier="leveraged-mt">L 343, 22.12.2009, s. 1).</target>
       </trans-unit>
       <trans-unit id="tx_partnerrating_domain_model_reason.title" resname="tx_partnerrating_domain_model_reason.title">
         <source>Title</source>
-        <target state="needs-translation">Title</target>
+        <target state="needs-review-translation" state-qualifier="leveraged-mt">Hlava 1 – Celkem</target>
       </trans-unit>
       <trans-unit id="tx_partnerrating_domain_model_reason.title.description" resname="tx_partnerrating_domain_model_reason.title.description">
         <source>Heading of the rating reason</source>
-        <target state="needs-translation">Heading of the rating reason</target>
+        <target state="needs-review-translation" state-qualifier="leveraged-mt">Nadpis důvodu ratingu</target>
       </trans-unit>
       <trans-unit id="tx_partnerrating_domain_model_reason.description.description" resname="tx_partnerrating_domain_model_reason.description.description">
         <source>Complete formulation of the rating reason</source>
-        <target state="needs-translation">Complete formulation of the rating reason</target>
+        <target state="needs-review-translation" state-qualifier="leveraged-mt">Úplné složení důvodu ratingu</target>
       </trans-unit>
       <trans-unit id="tx_partnerrating_domain_model_department" resname="tx_partnerrating_domain_model_department">
         <source>Department</source>
-        <target state="needs-translation">Department</target>
+        <target state="needs-review-translation" state-qualifier="leveraged-mt">Oddělení</target>
       </trans-unit>
       <trans-unit id="tx_partnerrating_domain_model_department.title" resname="tx_partnerrating_domain_model_department.title">
         <source>Title</source>
-        <target state="needs-translation">Title</target>
+        <target state="needs-review-translation" state-qualifier="leveraged-mt">Hlava 1 – Celkem</target>
       </trans-unit>
       <trans-unit id="tx_partnerrating_domain_model_department.title.description" resname="tx_partnerrating_domain_model_department.title.description">
         <source>Name of the department used in the list output of departments by the plugin.</source>
-        <target state="needs-translation">Name of the department used in the list output of departments by the plugin.</target>
+        <target state="needs-review-translation" state-qualifier="leveraged-mt">Název oddělení použitý v seznamu výstupů oddělení plugin.</target>
       </trans-unit>
     </body>
   </file>

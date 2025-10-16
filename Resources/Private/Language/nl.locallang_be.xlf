@@ -3,73 +3,73 @@
   <file source-language="en" original="EXT:partner_rating/Resources/Private/Language/locallang_db.xlf" datatype="plaintext" product-name="partner_rating" date="2024-06-20T14:39:50+02:00" target-language="nl">
     <header/>
     <body>
-      <trans-unit id="partnerrating_pi1.title" resname="partnerrating_pi1.title">
+      <trans-unit id="partnerrating_pi1.title" resname="partnerrating_pi1.title" approved="yes">
         <source>Partner Rating</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Partner beoordeling</target>
+        <target state="final">Partner beoordeling</target>
       </trans-unit>
-      <trans-unit id="partnerrating_pi1.description" resname="partnerrating_pi1.description">
+      <trans-unit id="partnerrating_pi1.description" resname="partnerrating_pi1.description" approved="yes">
         <source>Plugin to provide a front-end form for departments to rate partners.</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Plugin te voorzien van een front-end formulier voor afdelingen om partners te beoordelen.</target>
+        <target state="final">Plugin te voorzien van een front-end formulier voor afdelingen om partners te beoordelen.</target>
       </trans-unit>
-      <trans-unit id="constants.customcategory.plugin.tx_partnerrating_pi1" resname="constants.customcategory.plugin.tx_partnerrating_pi1">
+      <trans-unit id="constants.customcategory.plugin.tx_partnerrating_pi1" resname="constants.customcategory.plugin.tx_partnerrating_pi1" approved="yes">
         <source>Partner Rating</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Partner beoordeling</target>
+        <target state="final">Partner beoordeling</target>
       </trans-unit>
-      <trans-unit id="constants.subcategory.fluidrootpaths" resname="constants.subcategory.fluidrootpaths">
+      <trans-unit id="constants.subcategory.fluidrootpaths" resname="constants.subcategory.fluidrootpaths" approved="yes">
         <source>Fluid root paths</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Vloeistofwortel paden</target>
+        <target state="final">Vloeistofwortel paden</target>
       </trans-unit>
-      <trans-unit id="constants.subcategory.resources" resname="constants.subcategory.resources">
+      <trans-unit id="constants.subcategory.resources" resname="constants.subcategory.resources" approved="yes">
         <source>Resources</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Hulpmiddelen</target>
+        <target state="final">Hulpmiddelen</target>
       </trans-unit>
-      <trans-unit id="constants.subcategory.settings" resname="constants.subcategory.settings">
+      <trans-unit id="constants.subcategory.settings" resname="constants.subcategory.settings" approved="yes">
         <source>Settings</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Instellingen</target>
+        <target state="final">Instellingen</target>
       </trans-unit>
-      <trans-unit id="constants.view.templateRootPath" resname="constants.view.templateRootPath">
+      <trans-unit id="constants.view.templateRootPath" resname="constants.view.templateRootPath" approved="yes">
         <source>Path to template root (FE)</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Pad naar template root (FE)</target>
+        <target state="final">Pad naar template root (FE)</target>
       </trans-unit>
-      <trans-unit id="constants.view.partialRootPath" resname="constants.view.partialRootPath">
+      <trans-unit id="constants.view.partialRootPath" resname="constants.view.partialRootPath" approved="yes">
         <source>Path to template partials (FE)</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Pad naar template partials (FE)</target>
+        <target state="final">Pad naar template partials (FE)</target>
       </trans-unit>
-      <trans-unit id="constants.view.layoutRootPath" resname="constants.view.layoutRootPath">
+      <trans-unit id="constants.view.layoutRootPath" resname="constants.view.layoutRootPath" approved="yes">
         <source>Path to template layouts (FE)</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Pad naar template lay-outs (FE)</target>
+        <target state="final">Pad naar template lay-outs (FE)</target>
       </trans-unit>
-      <trans-unit id="constants.settings.includeBootstrap" resname="constants.settings.includeBootstrap">
+      <trans-unit id="constants.settings.includeBootstrap" resname="constants.settings.includeBootstrap" approved="yes">
         <source>Include Bootstrap from CDN:If this option is "true" then Bootstrap 5 will be included via CDN from jsDelivr. This option should only be used for testing purposes. If you want to use Bootstrap 5 (the default framework of the Partner Rating template) for rendering, it is recommended to include it yourself via your site package and leave this option disabled.</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Bootstrap opnemen van CDN:als deze optie "true" is, dan zal Bootstrap 5 worden opgenomen via CDN uit jsDelivr. Deze optie mag alleen voor testdoeleinden worden gebruikt. Als je Bootstrap 5 wilt gebruiken (het standaard framework van het partner-waarderingssjabloon) voor het renderen, het wordt aangeraden om het zelf op te nemen via je site pakket en deze optie uit te schakelen.</target>
+        <target state="final">Bootstrap opnemen van CDN:als deze optie "true" is, dan zal Bootstrap 5 worden opgenomen via CDN uit jsDelivr. Deze optie mag alleen voor testdoeleinden worden gebruikt. Als je Bootstrap 5 wilt gebruiken (het standaard framework van het partner-waarderingssjabloon) voor het renderen, het wordt aangeraden om het zelf op te nemen via je site pakket en deze optie uit te schakelen.</target>
       </trans-unit>
-      <trans-unit id="constants.settings.cssFile" resname="constants.settings.cssFile">
+      <trans-unit id="constants.settings.cssFile" resname="constants.settings.cssFile" approved="yes">
         <source>Path to CSS file (FE):CSS file that is used by default</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Pad naar CSS-bestand (FE):CSS-bestand dat standaard wordt gebruikt</target>
+        <target state="final">Pad naar CSS-bestand (FE):CSS-bestand dat standaard wordt gebruikt</target>
       </trans-unit>
-      <trans-unit id="constants.settings.javaScriptFile" resname="constants.settings.javaScriptFile">
+      <trans-unit id="constants.settings.javaScriptFile" resname="constants.settings.javaScriptFile" approved="yes">
         <source>Path to JavaScript file (FE):JavaScript file that is used by default</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Pad naar JavaScript bestand (FE):JavaScript bestand dat standaard wordt gebruikt</target>
+        <target state="final">Pad naar JavaScript bestand (FE):JavaScript bestand dat standaard wordt gebruikt</target>
       </trans-unit>
-      <trans-unit id="constants.settings.ratingValues" resname="constants.settings.ratingValues">
+      <trans-unit id="constants.settings.ratingValues" resname="constants.settings.ratingValues" approved="yes">
         <source>Rating Values:Comma separated list of integer values that can be selected for the rating.</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Waarden beoordeling:Komma gescheiden lijst van integerwaarden die geselecteerd kunnen worden voor de beoordeling.</target>
+        <target state="final">Waarden beoordeling:Komma gescheiden lijst van integerwaarden die geselecteerd kunnen worden voor de beoordeling.</target>
       </trans-unit>
-      <trans-unit id="constants.settings.ratingReasonMinValue" resname="constants.settings.ratingReasonMinValue">
+      <trans-unit id="constants.settings.ratingReasonMinValue" resname="constants.settings.ratingReasonMinValue" approved="yes">
         <source>Rating Reason Min. Value:If the selected rating exceeds this limit, then there is an obligation to select a reason.</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Rating reden op Min. Waarde:Als de geselecteerde beoordeling deze limiet overschrijdt, is er een verplichting om een reden te selecteren.</target>
+        <target state="final">Rating reden op Min. Waarde:Als de geselecteerde beoordeling deze limiet overschrijdt, is er een verplichting om een reden te selecteren.</target>
       </trans-unit>
-      <trans-unit id="constants.settings.keepMinOneSearchResult" resname="constants.settings.keepMinOneSearchResult">
+      <trans-unit id="constants.settings.keepMinOneSearchResult" resname="constants.settings.keepMinOneSearchResult" approved="yes">
         <source>Keep min. one search result:If this setting is `true`, then it is ensured that at least one result remains in the partner selection list, even if the entered string no longer leads to any results.</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Houd min. één zoekresultaat: als deze instelling `true` is, dan is gegarandeerd dat er ten minste één resultaat in de partnerselectielijst blijft staan zelfs als de ingevoerde tekenreeks niet langer tot resultaten leidt.</target>
+        <target state="final">Houd min. één zoekresultaat: als deze instelling `true` is, dan is gegarandeerd dat er ten minste één resultaat in de partnerselectielijst blijft staan zelfs als de ingevoerde tekenreeks niet langer tot resultaten leidt.</target>
       </trans-unit>
-      <trans-unit id="constants.settings.partnerLabelFields" resname="constants.settings.partnerLabelFields">
+      <trans-unit id="constants.settings.partnerLabelFields" resname="constants.settings.partnerLabelFields" approved="yes">
         <source>Partner Label Fields:Comma-separated list of database fields to be used for forming the label of entries in the partner selection field. Fields that do not exist in the partner table are ignored.</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Partner Label Fields:Komma-gescheiden lijst van databasevelden die moeten worden gebruikt voor het vormen van het label van items in het veld partner selectie. Velden die niet bestaan in de partnertabel worden genegeerd.</target>
+        <target state="final">Partner Label Fields:Komma-gescheiden lijst van databasevelden die moeten worden gebruikt voor het vormen van het label van items in het veld partner selectie. Velden die niet bestaan in de partnertabel worden genegeerd.</target>
       </trans-unit>
-      <trans-unit id="constants.settings.partnerLabelFieldSplitString" resname="constants.settings.partnerLabelFieldSplitString">
+      <trans-unit id="constants.settings.partnerLabelFieldSplitString" resname="constants.settings.partnerLabelFieldSplitString" approved="yes">
         <source>Partner Label Field Split String:String used between label fields that are defined by `partnerLabelFields`.</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Partner Label veld Split String:String gebruikt tussen label velden die zijn gedefinieerd door `partnerLabelField`.</target>
+        <target state="final">Partner Label veld Split String:String gebruikt tussen label velden die zijn gedefinieerd door `partnerLabelField`.</target>
       </trans-unit>
     </body>
   </file>

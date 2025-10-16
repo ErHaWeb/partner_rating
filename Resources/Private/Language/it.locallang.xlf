@@ -63,17 +63,17 @@
         <source>No record storage page defined</source>
         <target state="final">Nessuna pagina di archiviazione record definita</target>
       </trans-unit>
-      <trans-unit id="department.notFound" resname="department.notFound">
+      <trans-unit id="department.notFound" resname="department.notFound" approved="yes">
         <source>No department found</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Nessun reparto trovato</target>
+        <target state="final">Nessun reparto trovato</target>
       </trans-unit>
-      <trans-unit id="submit" resname="submit">
+      <trans-unit id="submit" resname="submit" approved="yes">
         <source>Save Rating</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Salva Valutazione</target>
+        <target state="final">Salva Valutazione</target>
       </trans-unit>
-      <trans-unit id="back" resname="back">
+      <trans-unit id="back" resname="back" approved="yes">
         <source>← back</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">← indietro</target>
+        <target state="final">← indietro</target>
       </trans-unit>
     </body>
   </file>

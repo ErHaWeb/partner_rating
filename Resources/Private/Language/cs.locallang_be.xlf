@@ -3,73 +3,73 @@
   <file source-language="en" original="EXT:partner_rating/Resources/Private/Language/locallang_db.xlf" datatype="plaintext" product-name="partner_rating" date="2024-06-20T14:39:50+02:00" target-language="cs">
     <header/>
     <body>
-      <trans-unit id="partnerrating_pi1.title" resname="partnerrating_pi1.title">
+      <trans-unit id="partnerrating_pi1.title" resname="partnerrating_pi1.title" approved="yes">
         <source>Partner Rating</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Hodnocení partnera</target>
+        <target state="final">Hodnocení partnera</target>
       </trans-unit>
-      <trans-unit id="partnerrating_pi1.description" resname="partnerrating_pi1.description">
+      <trans-unit id="partnerrating_pi1.description" resname="partnerrating_pi1.description" approved="yes">
         <source>Plugin to provide a front-end form for departments to rate partners.</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Plugin poskytuje front-end formulář pro hodnocení partnerů.</target>
+        <target state="final">Plugin poskytuje front-end formulář pro hodnocení partnerů.</target>
       </trans-unit>
-      <trans-unit id="constants.customcategory.plugin.tx_partnerrating_pi1" resname="constants.customcategory.plugin.tx_partnerrating_pi1">
+      <trans-unit id="constants.customcategory.plugin.tx_partnerrating_pi1" resname="constants.customcategory.plugin.tx_partnerrating_pi1" approved="yes">
         <source>Partner Rating</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Hodnocení partnera</target>
+        <target state="final">Hodnocení partnera</target>
       </trans-unit>
-      <trans-unit id="constants.subcategory.fluidrootpaths" resname="constants.subcategory.fluidrootpaths">
+      <trans-unit id="constants.subcategory.fluidrootpaths" resname="constants.subcategory.fluidrootpaths" approved="yes">
         <source>Fluid root paths</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Kořenové cesty</target>
+        <target state="final">Kořenové cesty</target>
       </trans-unit>
-      <trans-unit id="constants.subcategory.resources" resname="constants.subcategory.resources">
+      <trans-unit id="constants.subcategory.resources" resname="constants.subcategory.resources" approved="yes">
         <source>Resources</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Zdroje</target>
+        <target state="final">Zdroje</target>
       </trans-unit>
-      <trans-unit id="constants.subcategory.settings" resname="constants.subcategory.settings">
+      <trans-unit id="constants.subcategory.settings" resname="constants.subcategory.settings" approved="yes">
         <source>Settings</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Nastavení</target>
+        <target state="final">Nastavení</target>
       </trans-unit>
-      <trans-unit id="constants.view.templateRootPath" resname="constants.view.templateRootPath">
+      <trans-unit id="constants.view.templateRootPath" resname="constants.view.templateRootPath" approved="yes">
         <source>Path to template root (FE)</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Cesta k kořenové složce šablony (FE)</target>
+        <target state="final">Cesta k kořenové složce šablony (FE)</target>
       </trans-unit>
-      <trans-unit id="constants.view.partialRootPath" resname="constants.view.partialRootPath">
+      <trans-unit id="constants.view.partialRootPath" resname="constants.view.partialRootPath" approved="yes">
         <source>Path to template partials (FE)</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Cesta k šabloně dílčí (FE)</target>
+        <target state="final">Cesta k šabloně dílčí (FE)</target>
       </trans-unit>
-      <trans-unit id="constants.view.layoutRootPath" resname="constants.view.layoutRootPath">
+      <trans-unit id="constants.view.layoutRootPath" resname="constants.view.layoutRootPath" approved="yes">
         <source>Path to template layouts (FE)</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Cesta k šablonám (FE)</target>
+        <target state="final">Cesta k šablonám (FE)</target>
       </trans-unit>
-      <trans-unit id="constants.settings.includeBootstrap" resname="constants.settings.includeBootstrap">
+      <trans-unit id="constants.settings.includeBootstrap" resname="constants.settings.includeBootstrap" approved="yes">
         <source>Include Bootstrap from CDN:If this option is "true" then Bootstrap 5 will be included via CDN from jsDelivr. This option should only be used for testing purposes. If you want to use Bootstrap 5 (the default framework of the Partner Rating template) for rendering, it is recommended to include it yourself via your site package and leave this option disabled.</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Zahrnout Bootstrap z CDN:Pokud je tato volba "true", pak Bootstrap 5 bude zahrnut přes CDN z jsDelivr. Tato možnost by měla být použita pouze pro testovací účely. Pokud chcete použít Bootstrap 5 (výchozí rámec šablony Partnerského hodnocení) pro vykreslování, je doporučeno jej zahrnout sami prostřednictvím vašeho balíčku a nechat tuto možnost vypnutou.</target>
+        <target state="final">Zahrnout Bootstrap z CDN:Pokud je tato volba "true", pak Bootstrap 5 bude zahrnut přes CDN z jsDelivr. Tato možnost by měla být použita pouze pro testovací účely. Pokud chcete použít Bootstrap 5 (výchozí rámec šablony Partnerského hodnocení) pro vykreslování, je doporučeno jej zahrnout sami prostřednictvím vašeho balíčku a nechat tuto možnost vypnutou.</target>
       </trans-unit>
-      <trans-unit id="constants.settings.cssFile" resname="constants.settings.cssFile">
+      <trans-unit id="constants.settings.cssFile" resname="constants.settings.cssFile" approved="yes">
         <source>Path to CSS file (FE):CSS file that is used by default</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Cesta k CSS souboru (FE):CSS soubor, který se používá ve výchozím nastavení</target>
+        <target state="final">Cesta k CSS souboru (FE):CSS soubor, který se používá ve výchozím nastavení</target>
       </trans-unit>
-      <trans-unit id="constants.settings.javaScriptFile" resname="constants.settings.javaScriptFile">
+      <trans-unit id="constants.settings.javaScriptFile" resname="constants.settings.javaScriptFile" approved="yes">
         <source>Path to JavaScript file (FE):JavaScript file that is used by default</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Cesta k souboru JavaScriptu (FE):Javascriptový soubor, který se používá ve výchozím nastavení</target>
+        <target state="final">Cesta k souboru JavaScriptu (FE):Javascriptový soubor, který se používá ve výchozím nastavení</target>
       </trans-unit>
-      <trans-unit id="constants.settings.ratingValues" resname="constants.settings.ratingValues">
+      <trans-unit id="constants.settings.ratingValues" resname="constants.settings.ratingValues" approved="yes">
         <source>Rating Values:Comma separated list of integer values that can be selected for the rating.</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Hodnocené hodnoty:Čárkou oddělený seznam celých hodnot, které mohou být vybrány pro hodnocení.</target>
+        <target state="final">Hodnocené hodnoty:Čárkou oddělený seznam celých hodnot, které mohou být vybrány pro hodnocení.</target>
       </trans-unit>
-      <trans-unit id="constants.settings.ratingReasonMinValue" resname="constants.settings.ratingReasonMinValue">
+      <trans-unit id="constants.settings.ratingReasonMinValue" resname="constants.settings.ratingReasonMinValue" approved="yes">
         <source>Rating Reason Min. Value:If the selected rating exceeds this limit, then there is an obligation to select a reason.</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Důvod hodnocení Min. Hodnota:Pokud vybraný rating překročí tento limit, je zde povinnost vybrat důvod.</target>
+        <target state="final">Důvod hodnocení Min. Hodnota:Pokud vybraný rating překročí tento limit, je zde povinnost vybrat důvod.</target>
       </trans-unit>
-      <trans-unit id="constants.settings.keepMinOneSearchResult" resname="constants.settings.keepMinOneSearchResult">
+      <trans-unit id="constants.settings.keepMinOneSearchResult" resname="constants.settings.keepMinOneSearchResult" approved="yes">
         <source>Keep min. one search result:If this setting is `true`, then it is ensured that at least one result remains in the partner selection list, even if the entered string no longer leads to any results.</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Ponechat min. jeden výsledek vyhledávání:Pokud je toto nastavení `true`, pak je zajištěno, že alespoň jeden výsledek zůstane v seznamu výběru partnera, i když zadaný řetězec již nevede k nějakým výsledkům.</target>
+        <target state="final">Ponechat min. jeden výsledek vyhledávání:Pokud je toto nastavení `true`, pak je zajištěno, že alespoň jeden výsledek zůstane v seznamu výběru partnera, i když zadaný řetězec již nevede k nějakým výsledkům.</target>
       </trans-unit>
-      <trans-unit id="constants.settings.partnerLabelFields" resname="constants.settings.partnerLabelFields">
+      <trans-unit id="constants.settings.partnerLabelFields" resname="constants.settings.partnerLabelFields" approved="yes">
         <source>Partner Label Fields:Comma-separated list of database fields to be used for forming the label of entries in the partner selection field. Fields that do not exist in the partner table are ignored.</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Pole popisek partnera :Čárkou oddělený seznam kolonek databáze, které se mají použít pro vytvoření štítku pro záznamy v poli výběru partnera. Pole neexistující v tabulce partnerů jsou ignorována.</target>
+        <target state="final">Pole popisek partnera :Čárkou oddělený seznam kolonek databáze, které se mají použít pro vytvoření štítku pro záznamy v poli výběru partnera. Pole neexistující v tabulce partnerů jsou ignorována.</target>
       </trans-unit>
-      <trans-unit id="constants.settings.partnerLabelFieldSplitString" resname="constants.settings.partnerLabelFieldSplitString">
+      <trans-unit id="constants.settings.partnerLabelFieldSplitString" resname="constants.settings.partnerLabelFieldSplitString" approved="yes">
         <source>Partner Label Field Split String:String used between label fields that are defined by `partnerLabelFields`.</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Rozdělení polí popisku partnera:Řetězec použitý mezi polími popisku, která jsou definována v `partnerLabelFields`.</target>
+        <target state="final">Rozdělení polí popisku partnera:Řetězec použitý mezi polími popisku, která jsou definována v `partnerLabelFields`.</target>
       </trans-unit>
     </body>
   </file>

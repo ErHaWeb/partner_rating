@@ -3,73 +3,73 @@
   <file source-language="en" original="EXT:partner_rating/Resources/Private/Language/locallang_db.xlf" datatype="plaintext" product-name="partner_rating" date="2024-06-20T14:39:50+02:00" target-language="sv-SE">
     <header/>
     <body>
-      <trans-unit id="partnerrating_pi1.title" resname="partnerrating_pi1.title">
+      <trans-unit id="partnerrating_pi1.title" resname="partnerrating_pi1.title" approved="yes">
         <source>Partner Rating</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Partner Betyg</target>
+        <target state="final">Partner Betyg</target>
       </trans-unit>
-      <trans-unit id="partnerrating_pi1.description" resname="partnerrating_pi1.description">
+      <trans-unit id="partnerrating_pi1.description" resname="partnerrating_pi1.description" approved="yes">
         <source>Plugin to provide a front-end form for departments to rate partners.</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Plugin för att tillhandahålla ett front-end formulär för avdelningar att betygsätta partners.</target>
+        <target state="final">Plugin för att tillhandahålla ett front-end formulär för avdelningar att betygsätta partners.</target>
       </trans-unit>
-      <trans-unit id="constants.customcategory.plugin.tx_partnerrating_pi1" resname="constants.customcategory.plugin.tx_partnerrating_pi1">
+      <trans-unit id="constants.customcategory.plugin.tx_partnerrating_pi1" resname="constants.customcategory.plugin.tx_partnerrating_pi1" approved="yes">
         <source>Partner Rating</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Partner Betyg</target>
+        <target state="final">Partner Betyg</target>
       </trans-unit>
-      <trans-unit id="constants.subcategory.fluidrootpaths" resname="constants.subcategory.fluidrootpaths">
+      <trans-unit id="constants.subcategory.fluidrootpaths" resname="constants.subcategory.fluidrootpaths" approved="yes">
         <source>Fluid root paths</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Flytande rotsökvägar</target>
+        <target state="final">Flytande rotsökvägar</target>
       </trans-unit>
-      <trans-unit id="constants.subcategory.resources" resname="constants.subcategory.resources">
+      <trans-unit id="constants.subcategory.resources" resname="constants.subcategory.resources" approved="yes">
         <source>Resources</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Resurser</target>
+        <target state="final">Resurser</target>
       </trans-unit>
-      <trans-unit id="constants.subcategory.settings" resname="constants.subcategory.settings">
+      <trans-unit id="constants.subcategory.settings" resname="constants.subcategory.settings" approved="yes">
         <source>Settings</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Inställningar</target>
+        <target state="final">Inställningar</target>
       </trans-unit>
-      <trans-unit id="constants.view.templateRootPath" resname="constants.view.templateRootPath">
+      <trans-unit id="constants.view.templateRootPath" resname="constants.view.templateRootPath" approved="yes">
         <source>Path to template root (FE)</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Sökväg till mallroten (FE)</target>
+        <target state="final">Sökväg till mallroten (FE)</target>
       </trans-unit>
-      <trans-unit id="constants.view.partialRootPath" resname="constants.view.partialRootPath">
+      <trans-unit id="constants.view.partialRootPath" resname="constants.view.partialRootPath" approved="yes">
         <source>Path to template partials (FE)</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Sökväg till mallpartialer (FE)</target>
+        <target state="final">Sökväg till mallpartialer (FE)</target>
       </trans-unit>
-      <trans-unit id="constants.view.layoutRootPath" resname="constants.view.layoutRootPath">
+      <trans-unit id="constants.view.layoutRootPath" resname="constants.view.layoutRootPath" approved="yes">
         <source>Path to template layouts (FE)</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Sökväg till malllayouter (FE)</target>
+        <target state="final">Sökväg till malllayouter (FE)</target>
       </trans-unit>
-      <trans-unit id="constants.settings.includeBootstrap" resname="constants.settings.includeBootstrap">
+      <trans-unit id="constants.settings.includeBootstrap" resname="constants.settings.includeBootstrap" approved="yes">
         <source>Include Bootstrap from CDN:If this option is "true" then Bootstrap 5 will be included via CDN from jsDelivr. This option should only be used for testing purposes. If you want to use Bootstrap 5 (the default framework of the Partner Rating template) for rendering, it is recommended to include it yourself via your site package and leave this option disabled.</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Inkludera Bootstrap från CDN:Om det här alternativet är "true" så kommer Bootstrap 5 att inkluderas via CDN från jsDelivr. Detta alternativ bör endast användas i testsyfte. Om du vill använda Bootstrap 5 (standard ramverk för Partner Rating mall) för rendering, det rekommenderas att inkludera det själv via ditt webbplatspaket och lämna det här alternativet inaktiverat.</target>
+        <target state="final">Inkludera Bootstrap från CDN:Om det här alternativet är "true" så kommer Bootstrap 5 att inkluderas via CDN från jsDelivr. Detta alternativ bör endast användas i testsyfte. Om du vill använda Bootstrap 5 (standard ramverk för Partner Rating mall) för rendering, det rekommenderas att inkludera det själv via ditt webbplatspaket och lämna det här alternativet inaktiverat.</target>
       </trans-unit>
-      <trans-unit id="constants.settings.cssFile" resname="constants.settings.cssFile">
+      <trans-unit id="constants.settings.cssFile" resname="constants.settings.cssFile" approved="yes">
         <source>Path to CSS file (FE):CSS file that is used by default</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Sökväg till CSS-fil (FE):CSS-fil som används som standard</target>
+        <target state="final">Sökväg till CSS-fil (FE):CSS-fil som används som standard</target>
       </trans-unit>
-      <trans-unit id="constants.settings.javaScriptFile" resname="constants.settings.javaScriptFile">
+      <trans-unit id="constants.settings.javaScriptFile" resname="constants.settings.javaScriptFile" approved="yes">
         <source>Path to JavaScript file (FE):JavaScript file that is used by default</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Sökväg till JavaScript-fil (FE):JavaScript-fil som används som standard</target>
+        <target state="final">Sökväg till JavaScript-fil (FE):JavaScript-fil som används som standard</target>
       </trans-unit>
-      <trans-unit id="constants.settings.ratingValues" resname="constants.settings.ratingValues">
+      <trans-unit id="constants.settings.ratingValues" resname="constants.settings.ratingValues" approved="yes">
         <source>Rating Values:Comma separated list of integer values that can be selected for the rating.</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Betygsvärden:Kommaseparerad lista över heltal värden som kan väljas för betyg.</target>
+        <target state="final">Betygsvärden:Kommaseparerad lista över heltal värden som kan väljas för betyg.</target>
       </trans-unit>
-      <trans-unit id="constants.settings.ratingReasonMinValue" resname="constants.settings.ratingReasonMinValue">
+      <trans-unit id="constants.settings.ratingReasonMinValue" resname="constants.settings.ratingReasonMinValue" approved="yes">
         <source>Rating Reason Min. Value:If the selected rating exceeds this limit, then there is an obligation to select a reason.</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Orsak till Min. värde:Om det valda betyget överskrider denna gräns, då finns det en skyldighet att välja en anledning.</target>
+        <target state="final">Orsak till Min. värde:Om det valda betyget överskrider denna gräns, då finns det en skyldighet att välja en anledning.</target>
       </trans-unit>
-      <trans-unit id="constants.settings.keepMinOneSearchResult" resname="constants.settings.keepMinOneSearchResult">
+      <trans-unit id="constants.settings.keepMinOneSearchResult" resname="constants.settings.keepMinOneSearchResult" approved="yes">
         <source>Keep min. one search result:If this setting is `true`, then it is ensured that at least one result remains in the partner selection list, even if the entered string no longer leads to any results.</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Behåll min. ett sökresultat:Om den här inställningen är `true`, är det säkerställt att minst ett resultat finns kvar i partnerns urvalslista, även om den inmatade strängen inte längre leder till några resultat.</target>
+        <target state="final">Behåll min. ett sökresultat:Om den här inställningen är `true`, är det säkerställt att minst ett resultat finns kvar i partnerns urvalslista, även om den inmatade strängen inte längre leder till några resultat.</target>
       </trans-unit>
-      <trans-unit id="constants.settings.partnerLabelFields" resname="constants.settings.partnerLabelFields">
+      <trans-unit id="constants.settings.partnerLabelFields" resname="constants.settings.partnerLabelFields" approved="yes">
         <source>Partner Label Fields:Comma-separated list of database fields to be used for forming the label of entries in the partner selection field. Fields that do not exist in the partner table are ignored.</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Partner Etikettfält:Kommaseparerad lista över databasfält som ska användas för att skapa etikett på poster i partnerns urvalsfält. Fält som inte finns i partnertabellen ignoreras.</target>
+        <target state="final">Partner Etikettfält:Kommaseparerad lista över databasfält som ska användas för att skapa etikett på poster i partnerns urvalsfält. Fält som inte finns i partnertabellen ignoreras.</target>
       </trans-unit>
-      <trans-unit id="constants.settings.partnerLabelFieldSplitString" resname="constants.settings.partnerLabelFieldSplitString">
+      <trans-unit id="constants.settings.partnerLabelFieldSplitString" resname="constants.settings.partnerLabelFieldSplitString" approved="yes">
         <source>Partner Label Field Split String:String used between label fields that are defined by `partnerLabelFields`.</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">Partner Label Field Split String:Sträng som används mellan etikettfält som definieras av `partnerLabelFields`.</target>
+        <target state="final">Partner Label Field Split String:Sträng som används mellan etikettfält som definieras av `partnerLabelFields`.</target>
       </trans-unit>
     </body>
   </file>

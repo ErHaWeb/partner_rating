@@ -63,17 +63,17 @@
         <source>No record storage page defined</source>
         <target state="final">レコードストレージページが定義されていません</target>
       </trans-unit>
-      <trans-unit id="department.notFound" resname="department.notFound">
+      <trans-unit id="department.notFound" resname="department.notFound" approved="yes">
         <source>No department found</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">部署が見つかりません</target>
+        <target state="final">部署が見つかりません</target>
       </trans-unit>
-      <trans-unit id="submit" resname="submit">
+      <trans-unit id="submit" resname="submit" approved="yes">
         <source>Save Rating</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">評価を保存</target>
+        <target state="final">評価を保存</target>
       </trans-unit>
-      <trans-unit id="back" resname="back">
+      <trans-unit id="back" resname="back" approved="yes">
         <source>← back</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">逆方向に移動</target>
+        <target state="final">逆方向に移動</target>
       </trans-unit>
     </body>
   </file>

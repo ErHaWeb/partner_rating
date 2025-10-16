@@ -59,13 +59,13 @@
         <source>No reason selected</source>
         <target state="final">Ingen årsag valgt</target>
       </trans-unit>
-      <trans-unit id="pages.notFound" resname="pages.notFound">
+      <trans-unit id="pages.notFound" resname="pages.notFound" approved="yes">
         <source>No record storage page defined</source>
-        <target state="needs-translation">No record storage page defined</target>
+        <target state="final">Ingen lagringsside defineret</target>
       </trans-unit>
       <trans-unit id="department.notFound" resname="department.notFound">
         <source>No department found</source>
-        <target state="needs-translation">No department found</target>
+        <target state="needs-review-translation" state-qualifier="leveraged-mt">Ingen afdeling fundet</target>
       </trans-unit>
       <trans-unit id="submit" resname="submit" approved="yes">
         <source>Save Rating</source>

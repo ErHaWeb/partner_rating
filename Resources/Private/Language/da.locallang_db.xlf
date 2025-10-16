@@ -37,75 +37,75 @@
       </trans-unit>
       <trans-unit id="tx_partnerrating_domain_model_rating.partner" resname="tx_partnerrating_domain_model_rating.partner">
         <source>Partner</source>
-        <target state="needs-translation">Partner</target>
+        <target state="needs-review-translation" state-qualifier="leveraged-mt">Partner</target>
       </trans-unit>
       <trans-unit id="tx_partnerrating_domain_model_rating.partner.description" resname="tx_partnerrating_domain_model_rating.partner.description">
         <source>Partner who received this rating</source>
-        <target state="needs-translation">Partner who received this rating</target>
+        <target state="needs-review-translation" state-qualifier="leveraged-mt">Partner, der har modtaget denne bedømmelse</target>
       </trans-unit>
       <trans-unit id="tx_partnerrating_domain_model_rating.reason" resname="tx_partnerrating_domain_model_rating.reason">
         <source>Rating Reason</source>
-        <target state="needs-translation">Rating Reason</target>
+        <target state="needs-review-translation" state-qualifier="leveraged-mt">Årsag Til Vurdering</target>
       </trans-unit>
       <trans-unit id="tx_partnerrating_domain_model_rating.reason_text" resname="tx_partnerrating_domain_model_rating.reason_text">
         <source>Rating Reason Text</source>
-        <target state="needs-translation">Rating Reason Text</target>
+        <target state="needs-review-translation" state-qualifier="leveraged-mt">Begrundelse For Vurdering</target>
       </trans-unit>
       <trans-unit id="tx_partnerrating_domain_model_rating.reason_text.description" resname="tx_partnerrating_domain_model_rating.reason_text.description">
         <source>Justification for the department's rating in free text form</source>
-        <target state="needs-translation">Justification for the department's rating in free text form</target>
+        <target state="needs-review-translation" state-qualifier="leveraged-mt">Begrundelse for instituttets rating i fritekstform</target>
       </trans-unit>
       <trans-unit id="tx_partnerrating_domain_model_rating.reason.description" resname="tx_partnerrating_domain_model_rating.reason.description">
         <source>Reason for rating given by the department</source>
-        <target state="needs-translation">Reason for rating given by the department</target>
+        <target state="needs-review-translation" state-qualifier="leveraged-mt">Årsag til vurdering givet af afdelingen</target>
       </trans-unit>
       <trans-unit id="tx_partnerrating_domain_model_rating.department" resname="tx_partnerrating_domain_model_rating.department">
         <source>Department</source>
-        <target state="needs-translation">Department</target>
+        <target state="needs-review-translation" state-qualifier="leveraged-mt">Afdeling</target>
       </trans-unit>
       <trans-unit id="tx_partnerrating_domain_model_rating.department.description" resname="tx_partnerrating_domain_model_rating.department.description">
         <source>Department that gave the rating</source>
-        <target state="needs-translation">Department that gave the rating</target>
+        <target state="needs-review-translation" state-qualifier="leveraged-mt">Afdeling, der gav rating</target>
       </trans-unit>
       <trans-unit id="tx_partnerrating_domain_model_reason.department" resname="tx_partnerrating_domain_model_reason.department">
         <source>Department</source>
-        <target state="needs-translation">Department</target>
+        <target state="needs-review-translation" state-qualifier="leveraged-mt">Afdeling</target>
       </trans-unit>
       <trans-unit id="tx_partnerrating_domain_model_reason.department.description" resname="tx_partnerrating_domain_model_reason.department.description">
         <source>Department to which this reason is available for selection in the rating form</source>
-        <target state="needs-translation">Department to which this reason is available for selection in the rating form</target>
+        <target state="needs-review-translation" state-qualifier="leveraged-mt">Afdeling for hvilken denne grund er tilgængelig for udvælgelse i ratingformularen</target>
       </trans-unit>
       <trans-unit id="tx_partnerrating_domain_model_reason" resname="tx_partnerrating_domain_model_reason">
         <source>Rating Reason</source>
-        <target state="needs-translation">Rating Reason</target>
+        <target state="needs-review-translation" state-qualifier="leveraged-mt">Årsag Til Vurdering</target>
       </trans-unit>
       <trans-unit id="tx_partnerrating_domain_model_reason.description" resname="tx_partnerrating_domain_model_reason.description">
         <source>Description</source>
-        <target state="needs-translation">Description</target>
+        <target state="needs-review-translation" state-qualifier="leveraged-mt">Varebeskrivelse</target>
       </trans-unit>
       <trans-unit id="tx_partnerrating_domain_model_reason.title" resname="tx_partnerrating_domain_model_reason.title">
         <source>Title</source>
-        <target state="needs-translation">Title</target>
+        <target state="needs-review-translation" state-qualifier="leveraged-mt">Titel</target>
       </trans-unit>
       <trans-unit id="tx_partnerrating_domain_model_reason.title.description" resname="tx_partnerrating_domain_model_reason.title.description">
         <source>Heading of the rating reason</source>
-        <target state="needs-translation">Heading of the rating reason</target>
+        <target state="needs-review-translation" state-qualifier="leveraged-mt">Overskrift på kreditvurderingsårsagen</target>
       </trans-unit>
       <trans-unit id="tx_partnerrating_domain_model_reason.description.description" resname="tx_partnerrating_domain_model_reason.description.description">
         <source>Complete formulation of the rating reason</source>
-        <target state="needs-translation">Complete formulation of the rating reason</target>
+        <target state="needs-review-translation" state-qualifier="leveraged-mt">Fuldstændig formulering af kreditvurderingsårsagen</target>
       </trans-unit>
       <trans-unit id="tx_partnerrating_domain_model_department" resname="tx_partnerrating_domain_model_department">
         <source>Department</source>
-        <target state="needs-translation">Department</target>
+        <target state="needs-review-translation" state-qualifier="leveraged-mt">Afdeling</target>
       </trans-unit>
       <trans-unit id="tx_partnerrating_domain_model_department.title" resname="tx_partnerrating_domain_model_department.title">
         <source>Title</source>
-        <target state="needs-translation">Title</target>
+        <target state="needs-review-translation" state-qualifier="leveraged-mt">Titel</target>
       </trans-unit>
       <trans-unit id="tx_partnerrating_domain_model_department.title.description" resname="tx_partnerrating_domain_model_department.title.description">
         <source>Name of the department used in the list output of departments by the plugin.</source>
-        <target state="needs-translation">Name of the department used in the list output of departments by the plugin.</target>
+        <target state="needs-review-translation" state-qualifier="leveraged-mt">Navn på den afdeling, der bruges i listen output af afdelinger af plugin.</target>
       </trans-unit>
     </body>
   </file>

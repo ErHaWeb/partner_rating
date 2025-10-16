@@ -3,77 +3,77 @@
   <file source-language="en" original="EXT:partner_rating/Resources/Private/Language/locallang_db.xlf" datatype="plaintext" product-name="partner_rating" date="2024-04-11T09:06:16+02:00" target-language="pt-PT">
     <header/>
     <body>
-      <trans-unit id="validation.reason" resname="validation.reason">
+      <trans-unit id="validation.reason" resname="validation.reason" approved="yes">
         <source>Please select a reason.</source>
-        <target state="needs-translation">Please select a reason.</target>
+        <target state="final">Por favor, selecione o motivo.</target>
       </trans-unit>
-      <trans-unit id="validation.partner" resname="validation.partner">
+      <trans-unit id="validation.partner" resname="validation.partner" approved="yes">
         <source>Please select a partner.</source>
-        <target state="needs-translation">Please select a partner.</target>
+        <target state="final">Por favor, selecione um parceiro.</target>
       </trans-unit>
-      <trans-unit id="form.title" resname="form.title">
+      <trans-unit id="form.title" resname="form.title" approved="yes">
         <source>Rating Form</source>
-        <target state="needs-translation">Rating Form</target>
+        <target state="final">Formulário de Classificação</target>
       </trans-unit>
-      <trans-unit id="partner.title" resname="partner.title">
+      <trans-unit id="partner.title" resname="partner.title" approved="yes">
         <source>Partner</source>
-        <target state="needs-translation">Partner</target>
+        <target state="final">Parceiro</target>
       </trans-unit>
-      <trans-unit id="partner.searchPlaceholder" resname="partner.searchPlaceholder">
+      <trans-unit id="partner.searchPlaceholder" resname="partner.searchPlaceholder" approved="yes">
         <source>Number or name of the partner</source>
-        <target state="needs-translation">Number or name of the partner</target>
+        <target state="final">Número ou nome do parceiro</target>
       </trans-unit>
-      <trans-unit id="partner.searchTooltip" resname="partner.searchTooltip">
+      <trans-unit id="partner.searchTooltip" resname="partner.searchTooltip" approved="yes">
         <source>Enter partial words or partner numbers to find matching results more quickly.</source>
-        <target state="needs-translation">Enter partial words or partner numbers to find matching results more quickly.</target>
+        <target state="final">Insira palavras parciais ou números de parceiro para encontrar resultados mais rapidamente.</target>
       </trans-unit>
-      <trans-unit id="partner.choosePartner" resname="partner.choosePartner">
+      <trans-unit id="partner.choosePartner" resname="partner.choosePartner" approved="yes">
         <source>Choose a Partner</source>
-        <target state="needs-translation">Choose a Partner</target>
+        <target state="final">Escolha um Parceiro</target>
       </trans-unit>
-      <trans-unit id="save.title" resname="save.title">
+      <trans-unit id="save.title" resname="save.title" approved="yes">
         <source>Rating saved!</source>
-        <target state="needs-translation">Rating saved!</target>
+        <target state="final">Classificação salva!</target>
       </trans-unit>
-      <trans-unit id="save.message" resname="save.message">
+      <trans-unit id="save.message" resname="save.message" approved="yes">
         <source>%1$s has been rated with a rating of %2$s.</source>
-        <target state="needs-translation">%1$s has been rated with a rating of %2$s.</target>
+        <target state="final">%1$s foi avaliado com uma classificação de %2$s.</target>
       </trans-unit>
-      <trans-unit id="reason.title" resname="reason.title">
+      <trans-unit id="reason.title" resname="reason.title" approved="yes">
         <source>Rating Reason</source>
-        <target state="needs-translation">Rating Reason</target>
+        <target state="final">Motivo da classificação</target>
       </trans-unit>
-      <trans-unit id="reasons.title" resname="reasons.title">
+      <trans-unit id="reasons.title" resname="reasons.title" approved="yes">
         <source>Rating Reasons</source>
-        <target state="needs-translation">Rating Reasons</target>
+        <target state="final">Motivos de avaliação</target>
       </trans-unit>
-      <trans-unit id="reasonText.title" resname="reasonText.title">
+      <trans-unit id="reasonText.title" resname="reasonText.title" approved="yes">
         <source>Rating Reason (free text)</source>
-        <target state="needs-translation">Rating Reason (free text)</target>
+        <target state="final">Motivo de Classificação (texto gratuito)</target>
       </trans-unit>
-      <trans-unit id="rating.title" resname="rating.title">
+      <trans-unit id="rating.title" resname="rating.title" approved="yes">
         <source>Rating</source>
-        <target state="needs-translation">Rating</target>
+        <target state="final">Classificação</target>
       </trans-unit>
-      <trans-unit id="reason.none" resname="reason.none">
+      <trans-unit id="reason.none" resname="reason.none" approved="yes">
         <source>No reason selected</source>
-        <target state="needs-translation">No reason selected</target>
+        <target state="final">Nenhum motivo selecionado</target>
       </trans-unit>
-      <trans-unit id="pages.notFound" resname="pages.notFound">
+      <trans-unit id="pages.notFound" resname="pages.notFound" approved="yes">
         <source>No record storage page defined</source>
-        <target state="needs-translation">No record storage page defined</target>
+        <target state="final">Nenhuma página de armazenamento de registro definida</target>
       </trans-unit>
       <trans-unit id="department.notFound" resname="department.notFound">
         <source>No department found</source>
-        <target state="needs-translation">No department found</target>
+        <target state="needs-review-translation" state-qualifier="leveraged-mt">Nenhum departamento encontrado</target>
       </trans-unit>
       <trans-unit id="submit" resname="submit">
         <source>Save Rating</source>
-        <target state="needs-translation">Save Rating</target>
+        <target state="needs-review-translation" state-qualifier="leveraged-mt">Salvar avaliação</target>
       </trans-unit>
       <trans-unit id="back" resname="back">
         <source>← back</source>
-        <target state="needs-translation">← back</target>
+        <target state="needs-review-translation" state-qualifier="leveraged-mt">de volta</target>
       </trans-unit>
     </body>
   </file>

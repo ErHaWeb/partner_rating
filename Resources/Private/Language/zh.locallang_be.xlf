@@ -3,73 +3,73 @@
   <file source-language="en" original="EXT:partner_rating/Resources/Private/Language/locallang_db.xlf" datatype="plaintext" product-name="partner_rating" date="2024-06-20T14:39:50+02:00" target-language="zh-CN">
     <header/>
     <body>
-      <trans-unit id="partnerrating_pi1.title" resname="partnerrating_pi1.title">
+      <trans-unit id="partnerrating_pi1.title" resname="partnerrating_pi1.title" approved="yes">
         <source>Partner Rating</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">合作伙伴评分</target>
+        <target state="final">合作伙伴评分</target>
       </trans-unit>
-      <trans-unit id="partnerrating_pi1.description" resname="partnerrating_pi1.description">
+      <trans-unit id="partnerrating_pi1.description" resname="partnerrating_pi1.description" approved="yes">
         <source>Plugin to provide a front-end form for departments to rate partners.</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">为各部门提供前端表单以评分合作伙伴的插件。</target>
+        <target state="final">为各部门提供前端表单以评分合作伙伴的插件。</target>
       </trans-unit>
-      <trans-unit id="constants.customcategory.plugin.tx_partnerrating_pi1" resname="constants.customcategory.plugin.tx_partnerrating_pi1">
+      <trans-unit id="constants.customcategory.plugin.tx_partnerrating_pi1" resname="constants.customcategory.plugin.tx_partnerrating_pi1" approved="yes">
         <source>Partner Rating</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">合作伙伴评分</target>
+        <target state="final">合作伙伴评分</target>
       </trans-unit>
-      <trans-unit id="constants.subcategory.fluidrootpaths" resname="constants.subcategory.fluidrootpaths">
+      <trans-unit id="constants.subcategory.fluidrootpaths" resname="constants.subcategory.fluidrootpaths" approved="yes">
         <source>Fluid root paths</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">液体根路径</target>
+        <target state="final">液体根路径</target>
       </trans-unit>
-      <trans-unit id="constants.subcategory.resources" resname="constants.subcategory.resources">
+      <trans-unit id="constants.subcategory.resources" resname="constants.subcategory.resources" approved="yes">
         <source>Resources</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">资源</target>
+        <target state="final">资源</target>
       </trans-unit>
-      <trans-unit id="constants.subcategory.settings" resname="constants.subcategory.settings">
+      <trans-unit id="constants.subcategory.settings" resname="constants.subcategory.settings" approved="yes">
         <source>Settings</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">设置</target>
+        <target state="final">设置</target>
       </trans-unit>
-      <trans-unit id="constants.view.templateRootPath" resname="constants.view.templateRootPath">
+      <trans-unit id="constants.view.templateRootPath" resname="constants.view.templateRootPath" approved="yes">
         <source>Path to template root (FE)</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">模板根路径 (FE)</target>
+        <target state="final">模板根路径 (FE)</target>
       </trans-unit>
-      <trans-unit id="constants.view.partialRootPath" resname="constants.view.partialRootPath">
+      <trans-unit id="constants.view.partialRootPath" resname="constants.view.partialRootPath" approved="yes">
         <source>Path to template partials (FE)</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">模板partials (FE)</target>
+        <target state="final">模板partials (FE)</target>
       </trans-unit>
-      <trans-unit id="constants.view.layoutRootPath" resname="constants.view.layoutRootPath">
+      <trans-unit id="constants.view.layoutRootPath" resname="constants.view.layoutRootPath" approved="yes">
         <source>Path to template layouts (FE)</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">模板布局路径 (FE)</target>
+        <target state="final">模板布局路径 (FE)</target>
       </trans-unit>
-      <trans-unit id="constants.settings.includeBootstrap" resname="constants.settings.includeBootstrap">
+      <trans-unit id="constants.settings.includeBootstrap" resname="constants.settings.includeBootstrap" approved="yes">
         <source>Include Bootstrap from CDN:If this option is "true" then Bootstrap 5 will be included via CDN from jsDelivr. This option should only be used for testing purposes. If you want to use Bootstrap 5 (the default framework of the Partner Rating template) for rendering, it is recommended to include it yourself via your site package and leave this option disabled.</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">包含 CDN 的 Bootstrap：如果此选项是 "true" ，那么Bootstrap 5 将通过 JsDelivr 的 CDN 包含。 此选项只能用于测试目的。 如果您想使用 Bootstrap 5 (合作伙伴评分模板的默认框架) 进行渲染， 建议通过您的站点包将其包括在内，并禁用此选项。</target>
+        <target state="final">包含 CDN 的 Bootstrap：如果此选项是 "true" ，那么Bootstrap 5 将通过 JsDelivr 的 CDN 包含。 此选项只能用于测试目的。 如果您想使用 Bootstrap 5 (合作伙伴评分模板的默认框架) 进行渲染， 建议通过您的站点包将其包括在内，并禁用此选项。</target>
       </trans-unit>
-      <trans-unit id="constants.settings.cssFile" resname="constants.settings.cssFile">
+      <trans-unit id="constants.settings.cssFile" resname="constants.settings.cssFile" approved="yes">
         <source>Path to CSS file (FE):CSS file that is used by default</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">CSS 文件 (FE)：默认使用的 CSS 文件路径</target>
+        <target state="final">CSS 文件 (FE)：默认使用的 CSS 文件路径</target>
       </trans-unit>
-      <trans-unit id="constants.settings.javaScriptFile" resname="constants.settings.javaScriptFile">
+      <trans-unit id="constants.settings.javaScriptFile" resname="constants.settings.javaScriptFile" approved="yes">
         <source>Path to JavaScript file (FE):JavaScript file that is used by default</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">JavaScript 文件 (FE)：默认使用的JavaScript 文件路径</target>
+        <target state="final">JavaScript 文件 (FE)：默认使用的JavaScript 文件路径</target>
       </trans-unit>
-      <trans-unit id="constants.settings.ratingValues" resname="constants.settings.ratingValues">
+      <trans-unit id="constants.settings.ratingValues" resname="constants.settings.ratingValues" approved="yes">
         <source>Rating Values:Comma separated list of integer values that can be selected for the rating.</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">评分值：逗号分隔的整数值列表，可以选择评分。</target>
+        <target state="final">评分值：逗号分隔的整数值列表，可以选择评分。</target>
       </trans-unit>
-      <trans-unit id="constants.settings.ratingReasonMinValue" resname="constants.settings.ratingReasonMinValue">
+      <trans-unit id="constants.settings.ratingReasonMinValue" resname="constants.settings.ratingReasonMinValue" approved="yes">
         <source>Rating Reason Min. Value:If the selected rating exceeds this limit, then there is an obligation to select a reason.</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">评分原因最小值：如果选中的评分超过此限制，则有义务选择理由。</target>
+        <target state="final">评分原因最小值：如果选中的评分超过此限制，则有义务选择理由。</target>
       </trans-unit>
-      <trans-unit id="constants.settings.keepMinOneSearchResult" resname="constants.settings.keepMinOneSearchResult">
+      <trans-unit id="constants.settings.keepMinOneSearchResult" resname="constants.settings.keepMinOneSearchResult" approved="yes">
         <source>Keep min. one search result:If this setting is `true`, then it is ensured that at least one result remains in the partner selection list, even if the entered string no longer leads to any results.</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">保持最小值。 一个搜索结果：如果这个设置是`true`，则确保在伙伴选择列表中至少留下一个结果。 即使输入的字符串不再导致任何结果。</target>
+        <target state="final">保持最小值。 一个搜索结果：如果这个设置是`true`，则确保在伙伴选择列表中至少留下一个结果。 即使输入的字符串不再导致任何结果。</target>
       </trans-unit>
-      <trans-unit id="constants.settings.partnerLabelFields" resname="constants.settings.partnerLabelFields">
+      <trans-unit id="constants.settings.partnerLabelFields" resname="constants.settings.partnerLabelFields" approved="yes">
         <source>Partner Label Fields:Comma-separated list of database fields to be used for forming the label of entries in the partner selection field. Fields that do not exist in the partner table are ignored.</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">合作伙伴标签字段:逗号分隔的数据库字段列表用于形成合作伙伴选择字段标签。 合作伙伴表中不存在的字段被忽略。</target>
+        <target state="final">合作伙伴标签字段:逗号分隔的数据库字段列表用于形成合作伙伴选择字段标签。 合作伙伴表中不存在的字段被忽略。</target>
       </trans-unit>
-      <trans-unit id="constants.settings.partnerLabelFieldSplitString" resname="constants.settings.partnerLabelFieldSplitString">
+      <trans-unit id="constants.settings.partnerLabelFieldSplitString" resname="constants.settings.partnerLabelFieldSplitString" approved="yes">
         <source>Partner Label Field Split String:String used between label fields that are defined by `partnerLabelFields`.</source>
-        <target state="needs-review-translation" state-qualifier="leveraged-mt">合作伙伴标签字段分隔字符串:在标签字段之间使用 "partner LabelFields" 定义的字符串。</target>
+        <target state="final">合作伙伴标签字段分隔字符串:在标签字段之间使用 "partner LabelFields" 定义的字符串。</target>
       </trans-unit>
     </body>
   </file>

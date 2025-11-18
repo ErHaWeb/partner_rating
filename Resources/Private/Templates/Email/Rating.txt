@@ -1,0 +1,12 @@
+<f:layout name="SystemEmail" />
+<f:section name="Title">{headline}</f:section>
+<f:section name="Main">
+    <f:if condition="{rating}">
+        Rate Value: {rating.rateValue}
+        Partner: {rating.partner.title} ({rating.partner.partnerNr})
+        Reasons:<f:for each="{rating.reason}" as="reason">
+            Reason: {reason.title}
+            Description: {reason.description -> f:format.stripTags()}</f:for>
+        Reason Text: {rating.reasonText}
+    </f:if>
+</f:section>

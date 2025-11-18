@@ -20,6 +20,10 @@ use ErHaWeb\PartnerRating\Domain\Repository\DepartmentRepository;
 use ErHaWeb\PartnerRating\Domain\Repository\RatingRepository;
 use ErHaWeb\PartnerRating\Domain\Repository\ReasonRepository;
 use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
+use Symfony\Component\Mime\Address;
+use TYPO3\CMS\Core\Mail\FluidEmail;
+use TYPO3\CMS\Core\Mail\MailerInterface;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 use TYPO3\CMS\Extbase\Persistence\Exception\IllegalObjectTypeException;
@@ -59,10 +63,14 @@ class RatingController extends ActionController
     public function showAction(Department $department, null|Rating $rating = null): ResponseInterface
     {
         $assign = [];
+        $ratingReasonMinValue = (int)($this->settings['ratingReasonMinValue'] ?? 0);
 
         // If rating exists save it
-        if ($rating !== null) {
+        if ($rating instanceof Rating) {
             if ($this->persistenceManager->isNewObject($rating)) {
+                if($rating->getRateValue() > $ratingReasonMinValue) {
+                    $this->sendMail($rating);
+                }
                 $this->ratingRepository->add($rating);
                 $rating->setDepartment($department);
                 $this->persistenceManager->persistAll();
@@ -73,7 +81,7 @@ class RatingController extends ActionController
         $assign['data'] = $this->request->getAttribute('currentContentObject')->data;
         $assign['ratingValues'] = GeneralUtility::intExplode(',', ($this->settings['ratingValues'] ?? ''));
 
-        $assign['dataAttributes']['ratingreasonminvalue'] = (int)($this->settings['ratingReasonMinValue'] ?? 0);
+        $assign['dataAttributes']['ratingreasonminvalue'] = $ratingReasonMinValue;
         $assign['dataAttributes']['keepminonesearchresult'] = (int)($this->settings['keepMinOneSearchResult'] ?? 0) ? 1 : 0;
 
         $partnerLabelFields = GeneralUtility::trimExplode(',', ($this->settings['partnerLabelFields'] ?? ''));
@@ -124,5 +132,34 @@ class RatingController extends ActionController
 
         $this->view->assignMultiple($assign);
         return $this->htmlResponse();
+    }
+
+    /**
+     * @throws TransportExceptionInterface
+     */
+    private function sendMail(Rating $rating): void {
+        $mailSubject = $this->settings['mail']['subject'] ?? '';
+        $mailTo = $this->settings['mail']['to'] ?? '';
+        $mailFrom = $this->settings['mail']['from'] ?? '';
+
+        if(!$mailSubject || !$mailTo) {
+            return;
+        }
+
+        $email = new FluidEmail();
+        $email
+            ->to($mailTo)
+            ->subject($mailSubject)
+            ->format(FluidEmail::FORMAT_BOTH) // send HTML and plaintext mail
+            ->setTemplate('Rating')
+            ->assignMultiple([
+                'headline' => $mailSubject,
+                'rating' => $rating,
+            ]);
+        if($mailFrom) {
+            $email->from($mailFrom);
+        }
+        $mailerInterface = GeneralUtility::makeInstance(MailerInterface::class);
+        $mailerInterface->send($email);
     }
 }

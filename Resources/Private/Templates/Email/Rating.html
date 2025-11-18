@@ -1,0 +1,14 @@
+<f:layout name="SystemEmail" />
+<f:section name="Title">{headline}</f:section>
+<f:section name="Main">
+    <f:if condition="{rating}">
+        Rate Value: {rating.rateValue}<br>
+        Partner: {rating.partner.title} ({rating.partner.partnerNr})<br>
+        Reasons:<br>
+        <f:for each="{rating.reason}" as="reason">
+            Reason: {reason.title}<br>
+            Description: {reason.description -> f:sanitize.html()}<br>
+        </f:for>
+        Reason Text: {rating.reasonText}
+    </f:if>
+</f:section>

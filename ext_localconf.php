@@ -15,3 +15,5 @@ ExtensionUtility::configurePlugin(
     // non-cacheable actions
     [RatingController::class => 'list,show']
 );
+
+$GLOBALS['TYPO3_CONF_VARS']['MAIL']['templateRootPaths'][] = 'EXT:partner_rating/Resources/Private/Templates/Email/';

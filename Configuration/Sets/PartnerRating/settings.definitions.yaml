@@ -1,87 +1,66 @@
 categories:
-  partnerrating:
-    label: 'LLL:EXT:partner_rating/Resources/Private/Language/locallang_be.xlf:categories.partnerrating'
+  partnerrating: ~
   partnerrating.templates:
-    label: 'LLL:EXT:partner_rating/Resources/Private/Language/locallang_be.xlf:categories.partnerrating.templates'
     parent: partnerrating
   partnerrating.resources:
-    label: 'LLL:EXT:partner_rating/Resources/Private/Language/locallang_be.xlf:categories.partnerrating.resources'
     parent: partnerrating
   partnerrating.settings:
-    label: 'LLL:EXT:partner_rating/Resources/Private/Language/locallang_be.xlf:categories.partnerrating.settings'
     parent: partnerrating
 
 settings:
   plugin.tx_partnerrating_pi1.view.templateRootPath:
-    label: 'LLL:EXT:partner_rating/Resources/Private/Language/locallang_be.xlf:constants.view.templateRootPath'
     type: string
-    default: ''
+    default: 'EXT:partner_rating/Resources/Private/Templates/'
     category: partnerrating.templates
   plugin.tx_partnerrating_pi1.view.partialRootPath:
-    label: 'LLL:EXT:partner_rating/Resources/Private/Language/locallang_be.xlf:constants.view.partialRootPath'
     type: string
-    default: ''
+    default: 'EXT:partner_rating/Resources/Private/Partials/'
     category: partnerrating.templates
   plugin.tx_partnerrating_pi1.view.layoutRootPath:
-    label: 'LLL:EXT:partner_rating/Resources/Private/Language/locallang_be.xlf:constants.view.layoutRootPath'
     type: string
-    default: ''
+    default: 'EXT:partner_rating/Resources/Private/Layouts/'
     category: partnerrating.templates
   plugin.tx_partnerrating_pi1.settings.includeBootstrap:
-    label: 'LLL:EXT:partner_rating/Resources/Private/Language/locallang_be.xlf:constants.settings.includeBootstrap'
     type: bool
     default: 0
     category: partnerrating.resources
   plugin.tx_partnerrating_pi1.settings.cssFile:
-    label: 'LLL:EXT:partner_rating/Resources/Private/Language/locallang_be.xlf:constants.settings.cssFile'
     type: string
     default: 'EXT:partner_rating/Resources/Public/Css/main.min.css'
     category: partnerrating.resources
   plugin.tx_partnerrating_pi1.settings.javaScriptFile:
-    label: 'LLL:EXT:partner_rating/Resources/Private/Language/locallang_be.xlf:constants.settings.javaScriptFile'
     type: string
     default: 'EXT:partner_rating/Resources/Public/JavaScript/show.min.js'
     category: partnerrating.resources
   plugin.tx_partnerrating_pi1.settings.ratingValues:
-    label: 'LLL:EXT:partner_rating/Resources/Private/Language/locallang_be.xlf:constants.settings.ratingValues'
     type: string
     default: '1,2,3,4,5'
     category: partnerrating.settings
   plugin.tx_partnerrating_pi1.settings.ratingReasonMinValue:
-    label: 'LLL:EXT:partner_rating/Resources/Private/Language/locallang_be.xlf:constants.settings.ratingReasonMinValue'
     type: int
     default: 3
     category: partnerrating.settings
   plugin.tx_partnerrating_pi1.settings.keepMinOneSearchResult:
-    label: 'LLL:EXT:partner_rating/Resources/Private/Language/locallang_be.xlf:constants.settings.keepMinOneSearchResult'
     type: int
     default: 1
     category: partnerrating.settings
   plugin.tx_partnerrating_pi1.settings.partnerLabelFields:
-    label: 'LLL:EXT:partner_rating/Resources/Private/Language/locallang_be.xlf:constants.settings.partnerLabelFields'
     type: string
     default: 'title,partner_nr'
     category: partnerrating.settings
   plugin.tx_partnerrating_pi1.settings.partnerLabelFieldSplitString:
-    label: 'LLL:EXT:partner_rating/Resources/Private/Language/locallang_be.xlf:constants.settings.partnerLabelFieldSplitString'
     type: string
     default: '|'
     category: partnerrating.settings
   plugin.tx_partnerrating_pi1.settings.mail.subject:
-    label: 'LLL:EXT:partner_rating/Resources/Private/Language/locallang_be.xlf:constants.settings.mail.subject'
-    description: 'LLL:EXT:partner_rating/Resources/Private/Language/locallang_be.xlf:constants.settings.description.mail.subject'
     type: string
     default: ''
     category: partnerrating.settings
   plugin.tx_partnerrating_pi1.settings.mail.from:
-    label: 'LLL:EXT:partner_rating/Resources/Private/Language/locallang_be.xlf:constants.settings.mail.from'
-    description: 'LLL:EXT:partner_rating/Resources/Private/Language/locallang_be.xlf:constants.settings.description.mail.from'
     type: string
     default: ''
     category: partnerrating.settings
   plugin.tx_partnerrating_pi1.settings.mail.to:
-    label: 'LLL:EXT:partner_rating/Resources/Private/Language/locallang_be.xlf:constants.settings.mail.to'
-    description: 'LLL:EXT:partner_rating/Resources/Private/Language/locallang_be.xlf:constants.settings.description.mail.to'
     type: string
     default: ''
     category: partnerrating.settings

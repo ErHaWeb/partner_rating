@@ -1,5 +1,6 @@
 <?php
 
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
 
 defined('TYPO3') || die();
@@ -15,5 +16,11 @@ defined('TYPO3') || die();
         'tx-partnerrating',
         'plugins',
         'LLL:EXT:partner_rating/Resources/Private/Language/locallang_be.xlf:partnerrating_pi1.description'
+    );
+    ExtensionManagementUtility::addToAllTCAtypes(
+        'tt_content',
+        'pages',
+        'partnerrating_pi1',
+        'after:header'
     );
 })();

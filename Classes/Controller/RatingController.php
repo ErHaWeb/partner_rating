@@ -19,11 +19,12 @@ use ErHaWeb\PartnerRating\Domain\Model\Rating;
 use ErHaWeb\PartnerRating\Domain\Repository\DepartmentRepository;
 use ErHaWeb\PartnerRating\Domain\Repository\RatingRepository;
 use ErHaWeb\PartnerRating\Domain\Repository\ReasonRepository;
+use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
-use Symfony\Component\Mime\Address;
 use TYPO3\CMS\Core\Mail\FluidEmail;
 use TYPO3\CMS\Core\Mail\MailerInterface;
+use TYPO3\CMS\Core\Site\Entity\Site;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 use TYPO3\CMS\Extbase\Persistence\Exception\IllegalObjectTypeException;
@@ -48,10 +49,39 @@ class RatingController extends ActionController
      */
     public function listAction(): ResponseInterface
     {
-        $assign['data'] = $this->request->getAttribute('currentContentObject')->data;
-        $assign['departments'] = $this->departmentRepository->findAll();
-        $this->view->assignMultiple($assign);
+        $this->view->assignMultiple([
+            'settings' => $this->getSettings($this->request),
+            'data' => $this->request->getAttribute('currentContentObject')->data,
+            'departments' => $this->departmentRepository->findAll(),
+        ]);
         return $this->htmlResponse();
+    }
+
+    private function getSettings(RequestInterface $request): array
+    {
+        /** @var Site|null $site */
+        $site = $request->getAttribute('site');
+        if (!$site instanceof Site) {
+            return [];
+        }
+
+        $siteSettings = $site->getSettings();
+
+        return [
+            'includeBootstrap' => $siteSettings->get('plugin.tx_partnerrating_pi1.settings.includeBootstrap'),
+            'cssFile' => $siteSettings->get('plugin.tx_partnerrating_pi1.settings.cssFile'),
+            'javaScriptFile' => $siteSettings->get('plugin.tx_partnerrating_pi1.settings.javaScriptFile'),
+            'ratingValues' => $siteSettings->get('plugin.tx_partnerrating_pi1.settings.ratingValues'),
+            'ratingReasonMinValue' => $siteSettings->get('plugin.tx_partnerrating_pi1.settings.ratingReasonMinValue'),
+            'keepMinOneSearchResult' => $siteSettings->get('plugin.tx_partnerrating_pi1.settings.keepMinOneSearchResult'),
+            'partnerLabelFields' => $siteSettings->get('plugin.tx_partnerrating_pi1.settings.partnerLabelFields'),
+            'partnerLabelFieldSplitString' => $siteSettings->get('plugin.tx_partnerrating_pi1.settings.partnerLabelFieldSplitString'),
+            'mail' => [
+                'subject' => $siteSettings->get('plugin.tx_partnerrating_pi1.settings.mail.subject'),
+                'from' => $siteSettings->get('plugin.tx_partnerrating_pi1.settings.mail.from'),
+                'to' => $siteSettings->get('plugin.tx_partnerrating_pi1.settings.mail.to'),
+            ],
+        ];
     }
 
     /**
@@ -63,12 +93,15 @@ class RatingController extends ActionController
     public function showAction(Department $department, null|Rating $rating = null): ResponseInterface
     {
         $assign = [];
-        $ratingReasonMinValue = (int)($this->settings['ratingReasonMinValue'] ?? 0);
+        $settings = $this->getSettings($this->request);
+        $ratingReasonMinValue = (int)($settings['ratingReasonMinValue'] ?? 0);
+
+        $assign['settings'] = $settings;
 
         // If rating exists save it
         if ($rating instanceof Rating) {
             if ($this->persistenceManager->isNewObject($rating)) {
-                if($rating->getRateValue() > $ratingReasonMinValue) {
+                if ($rating->getRateValue() > $ratingReasonMinValue) {
                     $this->sendMail($rating);
                 }
                 $this->ratingRepository->add($rating);
@@ -79,12 +112,13 @@ class RatingController extends ActionController
         }
 
         $assign['data'] = $this->request->getAttribute('currentContentObject')->data;
-        $assign['ratingValues'] = GeneralUtility::intExplode(',', ($this->settings['ratingValues'] ?? ''));
+        $assign['ratingValues'] = array_map(intval(...), $settings['ratingValues'] ?? []);
 
         $assign['dataAttributes']['ratingreasonminvalue'] = $ratingReasonMinValue;
-        $assign['dataAttributes']['keepminonesearchresult'] = (int)($this->settings['keepMinOneSearchResult'] ?? 0) ? 1 : 0;
+        $assign['dataAttributes']['keepminonesearchresult'] = (int)($settings['keepMinOneSearchResult'] ?? 0) !== 0 ? 1 : 0;
 
-        $partnerLabelFields = GeneralUtility::trimExplode(',', ($this->settings['partnerLabelFields'] ?? ''));
+        $partnerLabelFields = GeneralUtility::trimExplode(',', ($settings['partnerLabelFields'] ?? ''));
+
         $existingColumns = array_keys($GLOBALS['TCA']['tx_partnerrating_domain_model_partner']['columns']);
         foreach ($partnerLabelFields as $key => $replaceColumn) {
             if (!in_array($replaceColumn, $existingColumns, true)) {
@@ -93,7 +127,7 @@ class RatingController extends ActionController
         }
 
         $assign['dataAttributes']['partnerlabelfields'] = implode(',', $partnerLabelFields);
-        $assign['dataAttributes']['partnerlabelfieldsplitstring'] = $this->settings['partnerLabelFieldSplitString'] ?? '|';
+        $assign['dataAttributes']['partnerlabelfieldsplitstring'] = $settings['partnerLabelFieldSplitString'] ?? '|';
 
         // Assign department, reasons, and partners to the view
         $assign['department'] = $department;
@@ -118,7 +152,7 @@ class RatingController extends ActionController
 
         $reasonText = $this->request->getArguments()['reasonText'] ?? '';
         if ($reasonText !== '') {
-            $values['reasonText'] = htmlspecialchars($reasonText);
+            $values['reasonText'] = htmlspecialchars((string)$reasonText);
         }
 
         $rating = $this->request->getArguments()['rating'] ?? null;
@@ -126,7 +160,7 @@ class RatingController extends ActionController
             $values['rating'] = $rating;
         }
 
-        if (!empty($values)) {
+        if ($values !== []) {
             $assign['values'] = $values;
         }
 
@@ -137,12 +171,15 @@ class RatingController extends ActionController
     /**
      * @throws TransportExceptionInterface
      */
-    private function sendMail(Rating $rating): void {
-        $mailSubject = $this->settings['mail']['subject'] ?? '';
-        $mailTo = $this->settings['mail']['to'] ?? '';
-        $mailFrom = $this->settings['mail']['from'] ?? '';
+    private function sendMail(Rating $rating): void
+    {
+        $settings = $this->getSettings($this->request);
 
-        if(!$mailSubject || !$mailTo) {
+        $mailSubject = $settings['mail']['subject'] ?? '';
+        $mailTo = $settings['mail']['to'] ?? '';
+        $mailFrom = $settings['mail']['from'] ?? '';
+
+        if (!$mailSubject || !$mailTo) {
             return;
         }
 
@@ -156,7 +193,7 @@ class RatingController extends ActionController
                 'headline' => $mailSubject,
                 'rating' => $rating,
             ]);
-        if($mailFrom) {
+        if ($mailFrom) {
             $email->from($mailFrom);
         }
         $mailerInterface = GeneralUtility::makeInstance(MailerInterface::class);

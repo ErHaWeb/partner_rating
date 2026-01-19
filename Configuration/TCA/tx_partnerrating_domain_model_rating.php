@@ -17,7 +17,9 @@ return [
             'endtime' => 'endtime',
         ],
         'searchFields' => 'rate_value, reason_text',
-        'iconfile' => 'EXT:partner_rating/Resources/Public/Icons/tx_partnerrating_domain_model_rating.svg',
+        'typeicon_classes' => [
+            'default' => 'tx-partnerrating-rating',
+        ],
     ],
     'types' => [
         '1' => ['showitem' => 'rate_value, partner, reason, reason_text, department, --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language, sys_language_uid, l10n_parent, l10n_diffsource, --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access, hidden, starttime, endtime'],

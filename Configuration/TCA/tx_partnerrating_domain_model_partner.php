@@ -17,7 +17,9 @@ return [
             'endtime' => 'endtime',
         ],
         'searchFields' => 'title,slug,partner_nr',
-        'iconfile' => 'EXT:partner_rating/Resources/Public/Icons/tx_partnerrating_domain_model_partner.svg',
+        'typeicon_classes' => [
+            'default' => 'tx-partnerrating-partner',
+        ],
     ],
     'types' => [
         '1' => ['showitem' => 'title, slug, partner_nr, --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language, sys_language_uid, l10n_parent, l10n_diffsource, --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access, hidden, starttime, endtime'],

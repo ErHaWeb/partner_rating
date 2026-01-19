@@ -13,17 +13,4 @@ plugin.tx_partnerrating_pi1 {
       1 = {$plugin.tx_partnerrating_pi1.view.layoutRootPath}
     }
   }
-  settings {
-    includeBootstrap = {$plugin.tx_partnerrating_pi1.settings.includeBootstrap}
-    cssFile = {$plugin.tx_partnerrating_pi1.settings.cssFile}
-    javaScriptFile = {$plugin.tx_partnerrating_pi1.settings.javaScriptFile}
-    ratingValues = {$plugin.tx_partnerrating_pi1.settings.ratingValues}
-    ratingReasonMinValue = {$plugin.tx_partnerrating_pi1.settings.ratingReasonMinValue}
-    keepMinOneSearchResult = {$plugin.tx_partnerrating_pi1.settings.keepMinOneSearchResult}
-    partnerLabelFields = {$plugin.tx_partnerrating_pi1.settings.partnerLabelFields}
-    partnerLabelFieldSplitString = {$plugin.tx_partnerrating_pi1.settings.partnerLabelFieldSplitString}
-    mail.subject = {$plugin.tx_partnerrating_pi1.settings.mail.subject}
-    mail.from = {$plugin.tx_partnerrating_pi1.settings.mail.from}
-    mail.to = {$plugin.tx_partnerrating_pi1.settings.mail.to}
-  }
 }

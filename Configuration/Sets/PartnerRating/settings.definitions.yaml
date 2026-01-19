@@ -46,7 +46,7 @@ settings:
     default: 3
     category: partnerrating.settings
   plugin.tx_partnerrating_pi1.settings.keepMinOneSearchResult:
-    type: int
+    type: bool
     default: 1
     category: partnerrating.settings
   plugin.tx_partnerrating_pi1.settings.partnerLabelFields:

@@ -29,5 +29,5 @@ return [
         'provider' => SvgSpriteIconProvider::class,
         'source' => 'EXT:partner_rating/Resources/Public/Icons/Sprite.svg',
         'sprite' => 'EXT:partner_rating/Resources/Public/Icons/Sprite.svg#tx-partnerrating-reason',
-    ]
+    ],
 ];

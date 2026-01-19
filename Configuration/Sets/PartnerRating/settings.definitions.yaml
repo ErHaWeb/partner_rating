@@ -33,8 +33,13 @@ settings:
     default: 'EXT:partner_rating/Resources/Public/JavaScript/show.min.js'
     category: partnerrating.resources
   plugin.tx_partnerrating_pi1.settings.ratingValues:
-    type: string
-    default: '1,2,3,4,5'
+    type: stringlist
+    default:
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
     category: partnerrating.settings
   plugin.tx_partnerrating_pi1.settings.ratingReasonMinValue:
     type: int
@@ -45,12 +50,10 @@ settings:
     default: 1
     category: partnerrating.settings
   plugin.tx_partnerrating_pi1.settings.partnerLabelFields:
-    type: string
-    default: 'title,partner_nr'
-    category: partnerrating.settings
-  plugin.tx_partnerrating_pi1.settings.partnerLabelFieldSplitString:
-    type: string
-    default: '|'
+    type: stringlist
+    default:
+      - title
+      - partner_nr
     category: partnerrating.settings
   plugin.tx_partnerrating_pi1.settings.mail.subject:
     type: string

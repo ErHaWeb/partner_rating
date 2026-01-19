@@ -75,7 +75,6 @@ class RatingController extends ActionController
             'ratingReasonMinValue' => $siteSettings->get('plugin.tx_partnerrating_pi1.settings.ratingReasonMinValue'),
             'keepMinOneSearchResult' => $siteSettings->get('plugin.tx_partnerrating_pi1.settings.keepMinOneSearchResult'),
             'partnerLabelFields' => $siteSettings->get('plugin.tx_partnerrating_pi1.settings.partnerLabelFields'),
-            'partnerLabelFieldSplitString' => $siteSettings->get('plugin.tx_partnerrating_pi1.settings.partnerLabelFieldSplitString'),
             'mail' => [
                 'subject' => $siteSettings->get('plugin.tx_partnerrating_pi1.settings.mail.subject'),
                 'from' => $siteSettings->get('plugin.tx_partnerrating_pi1.settings.mail.from'),
@@ -117,7 +116,7 @@ class RatingController extends ActionController
         $assign['dataAttributes']['ratingreasonminvalue'] = $ratingReasonMinValue;
         $assign['dataAttributes']['keepminonesearchresult'] = (int)($settings['keepMinOneSearchResult'] ?? 0) !== 0 ? 1 : 0;
 
-        $partnerLabelFields = GeneralUtility::trimExplode(',', ($settings['partnerLabelFields'] ?? ''));
+        $partnerLabelFields = $settings['partnerLabelFields'] ?? [];
 
         $existingColumns = array_keys($GLOBALS['TCA']['tx_partnerrating_domain_model_partner']['columns']);
         foreach ($partnerLabelFields as $key => $replaceColumn) {
@@ -126,8 +125,7 @@ class RatingController extends ActionController
             }
         }
 
-        $assign['dataAttributes']['partnerlabelfields'] = implode(',', $partnerLabelFields);
-        $assign['dataAttributes']['partnerlabelfieldsplitstring'] = $settings['partnerLabelFieldSplitString'] ?? '|';
+        $assign['dataAttributes']['partnerlabelfields'] = json_encode(array_values($partnerLabelFields));
 
         // Assign department, reasons, and partners to the view
         $assign['department'] = $department;

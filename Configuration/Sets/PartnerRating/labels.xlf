@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-	<file source-language="en" original="EXT:partner_rating/Configuration/Sets/PartnerRating/labels.xlf" datatype="plaintext" product-name="partner_rating" date="2026-01-16T13:37:19+01:00">
+	<file source-language="en" original="EXT:partner_rating/Configuration/Sets/PartnerRating/labels.xlf" datatype="plaintext" product-name="partner_rating" date="2026-01-19T22:04:55+01:00">
 		<header></header>
 		<body>
 			<trans-unit id="label">
@@ -73,13 +73,7 @@
 				<source>Partner Label Fields</source>
 			</trans-unit>
 			<trans-unit id="settings.description.plugin.tx_partnerrating_pi1.settings.partnerLabelFields">
-				<source>Comma-separated list of database fields to be used for forming the label of entries in the partner selection field. Fields that do not exist in the partner table are ignored.</source>
-			</trans-unit>
-			<trans-unit id="settings.plugin.tx_partnerrating_pi1.settings.partnerLabelFieldSplitString">
-				<source>Partner Label Field Split String</source>
-			</trans-unit>
-			<trans-unit id="settings.description.plugin.tx_partnerrating_pi1.settings.partnerLabelFieldSplitString">
-				<source>String used between label fields that are defined by &#34;partnerLabelFields&#34;.</source>
+				<source>List of database fields to be used for forming the label of entries in the partner selection field. Fields that do not exist in the partner table are ignored.</source>
 			</trans-unit>
 			<trans-unit id="settings.plugin.tx_partnerrating_pi1.settings.ratingReasonMinValue">
 				<source>Rating Reason Min. Value</source>
@@ -91,7 +85,7 @@
 				<source>Rating Values</source>
 			</trans-unit>
 			<trans-unit id="settings.description.plugin.tx_partnerrating_pi1.settings.ratingValues">
-				<source>Comma separated list of integer values that can be selected for the rating.</source>
+				<source>List of integer values that can be selected for the rating.</source>
 			</trans-unit>
 		</body>
 	</file>

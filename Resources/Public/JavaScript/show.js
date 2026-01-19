@@ -27,8 +27,7 @@
     emptyOptionSelected = false,
     ratingReasonMinValue = 0,
     keepMinOneSearchResult = false,
-    partnerLabelFields = '',
-    partnerLabelFieldSplitString = '';
+    partnerLabelFields = [];
 
   // Function to perform an AJAX request and populate the select field
   function updatePartnerSelect() {
@@ -37,7 +36,7 @@
     // Create a FormData object to send data via POST
     const formData = new FormData();
     formData.append('searchText', searchText);
-    formData.append('partnerLabelFields', partnerLabelFields);
+    formData.append('partnerLabelFields', JSON.stringify(partnerLabelFields));
 
     // Perform an AJAX request with the POST method
     fetch('/', {
@@ -86,10 +85,10 @@
     const optionElement = document.createElement('option');
     optionElement.value = option.uid;
     optionElement.textContent = '';
-    partnerLabelFields.split(',').forEach((value, key, array) => {
+    partnerLabelFields.forEach((value, key) => {
       optionElement.textContent += option[value];
-      if (!Object.is(array.length - 1, key)) {
-        optionElement.textContent += ' ' + partnerLabelFieldSplitString + ' ';
+      if (key < partnerLabelFields.length - 1) {
+        optionElement.textContent += ' | ';
       }
     });
     optionElement.selected = option.selected;
@@ -207,10 +206,7 @@
       keepMinOneSearchResult = form.getAttribute('data-keepminonesearchresult') === '1';
     }
     if (form.hasAttribute('data-partnerlabelfields')) {
-      partnerLabelFields = form.getAttribute('data-partnerlabelfields');
-    }
-    if (form.hasAttribute('data-partnerlabelfieldsplitstring')) {
-      partnerLabelFieldSplitString = form.getAttribute('data-partnerlabelfieldsplitstring');
+      partnerLabelFields = JSON.parse(form.getAttribute('data-partnerlabelfields'));
     }
 
     // Query other relevant elements within the container

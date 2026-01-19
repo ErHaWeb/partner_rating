@@ -60,7 +60,10 @@ final readonly class GetPartner implements MiddlewareInterface
     {
         // Extract the search text from the request's parsed body, defaulting to an empty string if not provided.
         $searchText = htmlspecialchars($request->getParsedBody()['searchText'] ?? '', ENT_NOQUOTES | ENT_SUBSTITUTE | ENT_HTML401);
-        $partnerLabelFields = GeneralUtility::trimExplode(',', $request->getParsedBody()['partnerLabelFields'] ?? [], true);
+        $partnerLabelFields = json_decode($request->getParsedBody()['partnerLabelFields'] ?? '[]', true);
+        if (!is_array($partnerLabelFields)) {
+            $partnerLabelFields = [];
+        }
 
         // Retrieve the language associated with the request, falling back to the default language of the site.
         /** @var SiteLanguage $language */

@@ -28,13 +28,13 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 /**
  * Middleware for getting partners based on search criteria.
  */
-final class GetPartner implements MiddlewareInterface
+final readonly class GetPartner implements MiddlewareInterface
 {
     /**
      * Constructor for GetPartner middleware.
      */
     public function __construct(
-        private readonly ConnectionPool $connectionPool
+        private ConnectionPool $connectionPool
     ) {}
 
     /**

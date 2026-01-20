@@ -9,7 +9,7 @@
             <span class="input-group-text searchTooltip"><abbr class="initialism" title="{f:translate(key: 'partner.searchTooltip')}">?</abbr></span>
         </div>
         <div class="input-group input-group-partner">
-            <f:form.select additionalAttributes="{data-validation: '{f:translate(key: \'validation.partner\')}'}" class="form-select" id="partner-{data.uid}" property="partner" required="required" size="6">
+            <f:form.select class="form-select" id="partner-{data.uid}" property="partner" required="required" size="6" data-validation="{f:translate(key: 'validation.partner')}">
                 <f:form.select.option selected="selected" value="0">
                     <f:translate key="partner.choosePartner"/>
                 </f:form.select.option>

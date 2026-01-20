@@ -7,7 +7,7 @@
             </label>
             <f:for as="rating" each="{ratingValues}">
                 <div class="form-check rating-item">
-                    <f:form.radio additionalAttributes="{required: required}" class="form-check-input" id="radioRating-{data.uid}-{rating}" property="rateValue" value="{rating}"/>
+                    <f:form.radio class="form-check-input" id="radioRating-{data.uid}-{rating}" property="rateValue" value="{rating}" required="required"/>
                     <label class="form-check-label" for="radioRating-{data.uid}-{rating}">{rating}</label>
                 </div>
             </f:for>

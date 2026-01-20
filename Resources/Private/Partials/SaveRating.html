@@ -40,6 +40,15 @@
                             </div>
                         </f:if>
                     </div>
+                    <f:if condition="{user.uid} > 0">
+                        <div class="alert-rating-author">
+                            <span><f:translate key="rating.user" />: </span>
+                            <f:if condition="{user.first_name} && {user.last_name}">
+                                <f:then>{user.first_name} {user.last_name}</f:then>
+                                <f:else>{user.username}</f:else>
+                            </f:if>
+                        </div>
+                    </f:if>
                 </div>
                 <button aria-label="Close" class="btn-close" data-bs-dismiss="alert" tabindex="-1" type="button"></button>
             </div>

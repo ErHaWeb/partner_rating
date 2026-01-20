@@ -1,15 +1,13 @@
 <html data-namespace-typo3-fluid="true" lang="en" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
 <f:layout name="SystemEmail" />
 <f:section name="Title">{headline}</f:section>
-<f:section name="Main">
-    <f:if condition="{rating}">
-        Date: <f:format.date format="{dateFormat}">{rating.ratingDate}</f:format.date>
-        Rate Value: {rating.rateValue}
-        Partner: {rating.partner.title} ({rating.partner.partnerNr})
-        <f:if condition="{rating.reason}">Reasons:<f:for each="{rating.reason}" as="reason">
-            Reason: {reason.title}
-            Description: {reason.description -> f:format.stripTags()}</f:for></f:if>
-        <f:if condition="{rating.reasonText}">Reason Text: {rating.reasonText}</f:if>
-    </f:if>
-</f:section>
+<f:section name="Main"><f:if condition="{rating}">Date: <f:format.date format="{dateFormat}">{rating.ratingDate}</f:format.date>
+Rate Value: {rating.rateValue}
+Partner: {rating.partner.title} ({rating.partner.partnerNr})
+<f:if condition="{rating.reason}">Reasons:
+<f:for each="{rating.reason}" as="reason">- Reason: {reason.title}
+  Description: {reason.description -> f:format.stripTags()}
+</f:for></f:if><f:if condition="{rating.reasonText}">Reason Text: {rating.reasonText}</f:if>
+<f:if condition="{user.uid} > 0"><f:translate key="rating.user" extensionName="PartnerRating"/>: <f:if condition="{user.first_name} && {user.last_name}"><f:then>{user.first_name} {user.last_name}</f:then>
+<f:else>{user.username}</f:else></f:if></f:if></f:if></f:section>
 </html>

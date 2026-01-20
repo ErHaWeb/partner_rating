@@ -16,13 +16,21 @@ return [
             'starttime' => 'starttime',
             'endtime' => 'endtime',
         ],
-        'searchFields' => 'rate_value, reason_text',
+        'searchFields' => 'rate_value, reason_text, frontend_user_id',
         'typeicon_classes' => [
             'default' => 'tx-partnerrating-rating',
         ],
     ],
     'types' => [
-        '1' => ['showitem' => 'rate_value, rating_date, partner, reason, reason_text, department, --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language, sys_language_uid, l10n_parent, l10n_diffsource, --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access, hidden, starttime, endtime'],
+        '1' => [
+            'showitem' => '
+                rate_value, rating_date, partner, reason, reason_text, department, frontend_user_id,
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,
+                    sys_language_uid, l10n_parent, l10n_diffsource,
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,
+                    hidden, starttime, endtime
+            ',
+        ],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -195,6 +203,24 @@ return [
                 'default' => 0,
                 'behaviour' => [
                     'allowLanguageSynchronization' => true,
+                ],
+            ],
+        ],
+        'frontend_user_id' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:partner_rating/Resources/Private/Language/locallang_db.xlf:tx_partnerrating_domain_model_rating.frontend_user_id',
+            'description' => 'LLL:EXT:partner_rating/Resources/Private/Language/locallang_db.xlf:tx_partnerrating_domain_model_rating.frontend_user_id.description',
+            'config' => [
+                'type' => 'group',
+                'allowed' => 'fe_users',
+                'size' => 1,
+                'maxitems' => 1,
+                'minitems' => 0,
+                'default' => 0,
+                'suggestOptions' => [
+                    'default' => [
+                        'searchWholePhrase' => true,
+                    ],
                 ],
             ],
         ],

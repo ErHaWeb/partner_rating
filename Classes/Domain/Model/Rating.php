@@ -31,6 +31,13 @@ class Rating extends AbstractEntity
     protected int $rateValue = 0;
 
     /**
+     * Optional FE user UID (fe_users.uid)
+     *
+     * @var int
+     */
+    protected int $frontendUserId = 0;
+
+    /**
      * partner
      *
      * @var Partner|null
@@ -100,6 +107,22 @@ class Rating extends AbstractEntity
     public function setRateValue(int $rateValue): void
     {
         $this->rateValue = $rateValue;
+    }
+
+    /**
+     * Returns the frontendUserId (fe_users.uid) if available
+     */
+    public function getFrontendUserId(): int
+    {
+        return $this->frontendUserId;
+    }
+
+    /**
+     * Sets the frontendUserId (fe_users.uid)
+     */
+    public function setFrontendUserId(int $frontendUserId): void
+    {
+        $this->frontendUserId = $frontendUserId;
     }
 
     /**

@@ -14,6 +14,7 @@ declare(strict_types=1);
 
 namespace ErHaWeb\PartnerRating\Controller;
 
+use Doctrine\DBAL\Exception;
 use ErHaWeb\PartnerRating\Domain\Model\Department;
 use ErHaWeb\PartnerRating\Domain\Model\Rating;
 use ErHaWeb\PartnerRating\Domain\Repository\DepartmentRepository;
@@ -24,6 +25,8 @@ use Psr\Container\NotFoundExceptionInterface;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
+use TYPO3\CMS\Core\Database\Connection;
+use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Mail\FluidEmail;
 use TYPO3\CMS\Core\Mail\MailerInterface;
 use TYPO3\CMS\Core\Site\Entity\Site;
@@ -31,6 +34,7 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 use TYPO3\CMS\Extbase\Persistence\Exception\IllegalObjectTypeException;
 use TYPO3\CMS\Extbase\Persistence\Generic\PersistenceManager;
+use TYPO3\CMS\Frontend\Authentication\FrontendUserAuthentication;
 
 /**
  * The rating controller
@@ -41,7 +45,8 @@ class RatingController extends ActionController
         private readonly PersistenceManager $persistenceManager,
         private readonly DepartmentRepository $departmentRepository,
         private readonly ReasonRepository $reasonRepository,
-        private readonly RatingRepository $ratingRepository
+        private readonly RatingRepository $ratingRepository,
+        private readonly ConnectionPool $connectionPool
     ) {}
 
     /**
@@ -98,6 +103,14 @@ class RatingController extends ActionController
                 $this->ratingRepository->add($rating);
                 $rating->setDepartment($department);
                 $rating->setRatingDate(time());
+
+                // Save reference to frontend user if exist
+                $frontendUserAuthentication = $this->getFrontendUser();
+                $frontendUserId = $frontendUserAuthentication->getUserId() ?? 0;
+                if ($frontendUserId > 0) {
+                    $rating->setFrontendUserId($frontendUserId);
+                }
+
                 $this->persistenceManager->persistAll();
 
                 if ($rating->getRateValue() > $ratingMailMinValue) {
@@ -105,6 +118,7 @@ class RatingController extends ActionController
                 }
             }
             $assign['savedRating'] = $rating;
+            $assign['user'] = $this->getFrontendUserDataById($rating->getFrontendUserId()) ?? [];
         }
 
         $assign['data'] = $this->request->getAttribute('currentContentObject')->data;
@@ -163,6 +177,12 @@ class RatingController extends ActionController
         return $this->htmlResponse();
     }
 
+    private function getFrontendUser(): FrontendUserAuthentication
+    {
+        // This will create an anonymous frontend user if none is logged in
+        return $this->request->getAttribute('frontend.user');
+    }
+
     /**
      * @throws TransportExceptionInterface
      */
@@ -186,11 +206,52 @@ class RatingController extends ActionController
                 'headline' => $mailSubject,
                 'rating' => $rating,
                 'dateFormat' => $settings['mail']['dateFormat'] ?? '',
+                'user' => $this->getFrontendUserDataById($rating->getFrontendUserId()),
             ]);
         if ($mailFrom) {
             $email->from($mailFrom);
         }
         $mailerInterface = GeneralUtility::makeInstance(MailerInterface::class);
         $mailerInterface->send($email);
+    }
+
+    /**
+     * @param int $frontendUserId
+     * @return array
+     */
+    public function getFrontendUserDataById(int $frontendUserId): array
+    {
+        $queryBuilder = $this->connectionPool
+            ->getQueryBuilderForTable('fe_users');
+
+        try {
+            $row = $queryBuilder
+                ->select(
+                    'uid',
+                    'username',
+                    'first_name',
+                    'last_name',
+                    'email'
+                )
+                ->from('fe_users')
+                ->where(
+                    $queryBuilder->expr()->eq(
+                        'uid',
+                        $queryBuilder->createNamedParameter(
+                            $frontendUserId,
+                            Connection::PARAM_INT
+                        )
+                    )
+                )
+                ->executeQuery()
+                ->fetchAssociative();
+
+            if (is_array($row)) {
+                return $row;
+            }
+        } catch (Exception) {
+        }
+
+        return [];
     }
 }

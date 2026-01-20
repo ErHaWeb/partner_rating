@@ -6,26 +6,31 @@
 
 <f:section name="Main">
     <f:if condition="{rating}">
-        <strong>Date:</strong> <f:format.date format="{dateFormat}">{rating.ratingDate}</f:format.date><br>
-        <strong>Rate Value:</strong> {rating.rateValue}<br>
-        <strong>Partner:</strong> {rating.partner.title} ({rating.partner.partnerNr})<br>
+        <strong><f:translate key="mail.rating.date" extensionName="PartnerRating" />:</strong>
+        <f:format.date format="{dateFormat}">{rating.ratingDate}</f:format.date><br>
+        <strong><f:translate key="mail.rating.rateValue" extensionName="PartnerRating" />:</strong>
+        {rating.rateValue}<br>
+        <strong><f:translate key="mail.rating.partner" extensionName="PartnerRating" />:</strong>
+        {rating.partner.title} ({rating.partner.partnerNr})<br>
         <f:if condition="{rating.reason}">
-            <strong>Reasons:</strong><br>
+            <strong><f:translate key="mail.rating.reasons" extensionName="PartnerRating" />:</strong><br>
             <ul>
                 <f:for each="{rating.reason}" as="reason">
                     <li>
-                        <strong>Reason:</strong> {reason.title}<br>
-                        <strong>Description:</strong>
+                        <strong><f:translate key="mail.rating.reason" extensionName="PartnerRating" />:</strong>
+                        {reason.title}<br>
+                        <strong><f:translate key="mail.rating.description" extensionName="PartnerRating" />:</strong>
                         {reason.description -> f:format.stripTags()}
                     </li>
                 </f:for>
             </ul>
         </f:if>
         <f:if condition="{rating.reasonText}">
-            <strong>Reason Text:</strong> {rating.reasonText}<br>
+            <strong><f:translate key="mail.rating.reasonText" extensionName="PartnerRating" />:</strong>
+            {rating.reasonText}<br>
         </f:if>
         <f:if condition="{user.uid} > 0">
-            <strong><f:translate key="rating.user" extensionName="PartnerRating" />:</strong>
+            <strong><f:translate key="mail.rating.user" extensionName="PartnerRating" />:</strong>
             <f:if condition="{user.first_name} && {user.last_name}">
                 <f:then>{user.first_name} {user.last_name}</f:then>
                 <f:else>{user.username}</f:else>

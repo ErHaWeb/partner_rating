@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-    <file source-language="en" original="EXT:partner_rating/Resources/Private/Language/locallang_db.xlf" datatype="plaintext" product-name="partner_rating" date="2026-01-20T13:42:43+01:00">
+    <file source-language="en" original="EXT:partner_rating/Resources/Private/Language/locallang_db.xlf" datatype="plaintext" product-name="partner_rating" date="2026-01-20T14:17:02+01:00">
         <header></header>
         <body>
             <trans-unit id="validation.reason">
@@ -42,6 +42,9 @@
             <trans-unit id="rating.title">
                 <source>Rating</source>
             </trans-unit>
+            <trans-unit id="department.title">
+                <source>Department</source>
+            </trans-unit>
             <trans-unit id="reason.none">
                 <source>No reason selected</source>
             </trans-unit>
@@ -59,6 +62,9 @@
             </trans-unit>
             <trans-unit id="mail.rating.user">
                 <source>Review of</source>
+            </trans-unit>
+            <trans-unit id="mail.rating.department">
+                <source>Department</source>
             </trans-unit>
             <trans-unit id="mail.rating.date">
                 <source>Date</source>

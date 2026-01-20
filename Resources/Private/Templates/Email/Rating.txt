@@ -2,6 +2,7 @@
 <f:layout name="SystemEmail" />
 <f:section name="Title">{headline}</f:section>
 <f:section name="Main"><f:if condition="{rating}">
+<f:translate key="mail.rating.department" extensionName="PartnerRating" />: {rating.department.title}
 <f:translate key="mail.rating.date" extensionName="PartnerRating" />: <f:format.date format="{dateFormat}">{rating.ratingDate}</f:format.date>
 <f:translate key="mail.rating.rateValue" extensionName="PartnerRating" />: {rating.rateValue}
 <f:translate key="mail.rating.partner" extensionName="PartnerRating" />: {rating.partner.title} ({rating.partner.partnerNr})<f:if condition="{rating.reason}">

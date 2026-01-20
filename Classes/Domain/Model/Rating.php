@@ -60,6 +60,13 @@ class Rating extends AbstractEntity
     protected null|Department $department = null;
 
     /**
+     * ratingDate
+     *
+     * @var int
+     */
+    protected int $ratingDate = 0;
+
+    /**
      * __construct
      */
     public function __construct()
@@ -175,5 +182,21 @@ class Rating extends AbstractEntity
     public function setDepartment(Department $department): void
     {
         $this->department = $department;
+    }
+
+    /**
+     * Returns the ratingDate
+     */
+    public function getRatingDate(): int
+    {
+        return $this->ratingDate;
+    }
+
+    /**
+     * Sets the ratingDate
+     */
+    public function setRatingDate(int $ratingDate): void
+    {
+        $this->ratingDate = $ratingDate;
     }
 }

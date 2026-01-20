@@ -71,3 +71,7 @@ settings:
     type: string
     default: ''
     category: partnerrating.settings
+  plugin.tx_partnerrating_pi1.settings.mail.dateFormat:
+    type: string
+    default: 'd.m.Y H:i'
+    category: partnerrating.settings

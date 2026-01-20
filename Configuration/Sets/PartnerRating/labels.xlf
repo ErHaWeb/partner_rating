@@ -69,6 +69,12 @@
 			<trans-unit id="settings.description.plugin.tx_partnerrating_pi1.settings.mail.to">
 				<source>If no email recipient has been specified, rating emails are disabled.</source>
 			</trans-unit>
+			<trans-unit id="settings.plugin.tx_partnerrating_pi1.settings.mail.dateFormat">
+				<source>Mail Date Format</source>
+			</trans-unit>
+			<trans-unit id="settings.description.plugin.tx_partnerrating_pi1.settings.mail.dateFormat">
+				<source>PHP date format string used to display the rating timestamp in email notifications. Default: d.m.Y H:i</source>
+			</trans-unit>
 			<trans-unit id="settings.plugin.tx_partnerrating_pi1.settings.partnerLabelFields">
 				<source>Partner Label Fields</source>
 			</trans-unit>

@@ -51,6 +51,12 @@
             <trans-unit id="tx_partnerrating_domain_model_rating.department.description">
                 <source>Department that gave the rating</source>
             </trans-unit>
+            <trans-unit id="tx_partnerrating_domain_model_rating.rating_date">
+                <source>Rating Date</source>
+            </trans-unit>
+            <trans-unit id="tx_partnerrating_domain_model_rating.rating_date.description">
+                <source>Date and time when the rating was submitted</source>
+            </trans-unit>
             <trans-unit id="tx_partnerrating_domain_model_reason.department">
                 <source>Department</source>
             </trans-unit>

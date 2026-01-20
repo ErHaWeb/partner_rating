@@ -3,6 +3,7 @@
 <f:section name="Title">{headline}</f:section>
 <f:section name="Main">
     <f:if condition="{rating}">
+        <strong>Date:</strong> <f:format.date format="{dateFormat}">{rating.ratingDate}</f:format.date><br>
         <strong>Rate Value:</strong> {rating.rateValue}<br>
         <strong>Partner:</strong> {rating.partner.title} ({rating.partner.partnerNr})<br>
         <f:if condition="{rating.reason}">

@@ -3,6 +3,7 @@
 <f:section name="Title">{headline}</f:section>
 <f:section name="Main">
     <f:if condition="{rating}">
+        Date: <f:format.date format="{dateFormat}">{rating.ratingDate}</f:format.date>
         Rate Value: {rating.rateValue}
         Partner: {rating.partner.title} ({rating.partner.partnerNr})
         <f:if condition="{rating.reason}">Reasons:<f:for each="{rating.reason}" as="reason">

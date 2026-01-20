@@ -95,12 +95,14 @@ class RatingController extends ActionController
         // If rating exists save it
         if ($rating instanceof Rating) {
             if ($this->persistenceManager->isNewObject($rating)) {
-                if ($rating->getRateValue() > $ratingMailMinValue) {
-                    $this->sendMail($rating);
-                }
                 $this->ratingRepository->add($rating);
                 $rating->setDepartment($department);
+                $rating->setRatingDate(time());
                 $this->persistenceManager->persistAll();
+
+                if ($rating->getRateValue() > $ratingMailMinValue) {
+                    $this->sendMail($rating, $settings);
+                }
             }
             $assign['savedRating'] = $rating;
         }
@@ -164,10 +166,8 @@ class RatingController extends ActionController
     /**
      * @throws TransportExceptionInterface
      */
-    private function sendMail(Rating $rating): void
+    private function sendMail(Rating $rating, array $settings): void
     {
-        $settings = $this->getSettings($this->request);
-
         $mailSubject = $settings['mail']['subject'] ?? '';
         $mailTo = $settings['mail']['to'] ?? '';
         $mailFrom = $settings['mail']['from'] ?? '';
@@ -185,6 +185,7 @@ class RatingController extends ActionController
             ->assignMultiple([
                 'headline' => $mailSubject,
                 'rating' => $rating,
+                'dateFormat' => $settings['mail']['dateFormat'] ?? '',
             ]);
         if ($mailFrom) {
             $email->from($mailFrom);

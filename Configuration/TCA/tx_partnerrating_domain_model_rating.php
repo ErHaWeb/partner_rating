@@ -22,7 +22,7 @@ return [
         ],
     ],
     'types' => [
-        '1' => ['showitem' => 'rate_value, partner, reason, reason_text, department, --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language, sys_language_uid, l10n_parent, l10n_diffsource, --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access, hidden, starttime, endtime'],
+        '1' => ['showitem' => 'rate_value, rating_date, partner, reason, reason_text, department, --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language, sys_language_uid, l10n_parent, l10n_diffsource, --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access, hidden, starttime, endtime'],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -184,6 +184,18 @@ return [
                 'default' => 0,
                 'minitems' => 0,
                 'maxitems' => 1,
+            ],
+        ],
+        'rating_date' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:partner_rating/Resources/Private/Language/locallang_db.xlf:tx_partnerrating_domain_model_rating.rating_date',
+            'description' => 'LLL:EXT:partner_rating/Resources/Private/Language/locallang_db.xlf:tx_partnerrating_domain_model_rating.rating_date.description',
+            'config' => [
+                'type' => 'datetime',
+                'default' => 0,
+                'behaviour' => [
+                    'allowLanguageSynchronization' => true,
+                ],
             ],
         ],
     ],

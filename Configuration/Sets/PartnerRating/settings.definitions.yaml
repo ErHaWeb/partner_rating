@@ -45,6 +45,10 @@ settings:
     type: int
     default: 3
     category: partnerrating.settings
+  plugin.tx_partnerrating_pi1.settings.ratingMailMinValue:
+    type: int
+    default: 4
+    category: partnerrating.settings
   plugin.tx_partnerrating_pi1.settings.keepMinOneSearchResult:
     type: bool
     default: 1

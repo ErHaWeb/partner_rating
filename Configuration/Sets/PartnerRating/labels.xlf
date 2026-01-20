@@ -81,6 +81,12 @@
 			<trans-unit id="settings.description.plugin.tx_partnerrating_pi1.settings.ratingReasonMinValue">
 				<source>If the selected rating exceeds this limit, then there is an obligation to select a reason.</source>
 			</trans-unit>
+			<trans-unit id="settings.plugin.tx_partnerrating_pi1.settings.ratingMailMinValue">
+				<source>Rating Mail Min. Value</source>
+			</trans-unit>
+			<trans-unit id="settings.description.plugin.tx_partnerrating_pi1.settings.ratingMailMinValue">
+				<source>If the selected rating exceeds this limit, an email notification will be sent.</source>
+			</trans-unit>
 			<trans-unit id="settings.plugin.tx_partnerrating_pi1.settings.ratingValues">
 				<source>Rating Values</source>
 			</trans-unit>

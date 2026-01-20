@@ -88,13 +88,14 @@ class RatingController extends ActionController
         $assign = [];
         $settings = $this->getSettings($this->request);
         $ratingReasonMinValue = (int)($settings['ratingReasonMinValue'] ?? 0);
+        $ratingMailMinValue = (int)($settings['ratingMailMinValue'] ?? 0);
 
         $assign['settings'] = $settings;
 
         // If rating exists save it
         if ($rating instanceof Rating) {
             if ($this->persistenceManager->isNewObject($rating)) {
-                if ($rating->getRateValue() > $ratingReasonMinValue) {
+                if ($rating->getRateValue() > $ratingMailMinValue) {
                     $this->sendMail($rating);
                 }
                 $this->ratingRepository->add($rating);

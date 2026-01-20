@@ -19,6 +19,8 @@ use ErHaWeb\PartnerRating\Domain\Model\Rating;
 use ErHaWeb\PartnerRating\Domain\Repository\DepartmentRepository;
 use ErHaWeb\PartnerRating\Domain\Repository\RatingRepository;
 use ErHaWeb\PartnerRating\Domain\Repository\ReasonRepository;
+use Psr\Container\ContainerExceptionInterface;
+use Psr\Container\NotFoundExceptionInterface;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
@@ -67,20 +69,12 @@ class RatingController extends ActionController
 
         $siteSettings = $site->getSettings();
 
-        return [
-            'includeBootstrap' => $siteSettings->get('plugin.tx_partnerrating_pi1.settings.includeBootstrap'),
-            'cssFile' => $siteSettings->get('plugin.tx_partnerrating_pi1.settings.cssFile'),
-            'javaScriptFile' => $siteSettings->get('plugin.tx_partnerrating_pi1.settings.javaScriptFile'),
-            'ratingValues' => $siteSettings->get('plugin.tx_partnerrating_pi1.settings.ratingValues'),
-            'ratingReasonMinValue' => $siteSettings->get('plugin.tx_partnerrating_pi1.settings.ratingReasonMinValue'),
-            'keepMinOneSearchResult' => $siteSettings->get('plugin.tx_partnerrating_pi1.settings.keepMinOneSearchResult'),
-            'partnerLabelFields' => $siteSettings->get('plugin.tx_partnerrating_pi1.settings.partnerLabelFields'),
-            'mail' => [
-                'subject' => $siteSettings->get('plugin.tx_partnerrating_pi1.settings.mail.subject'),
-                'from' => $siteSettings->get('plugin.tx_partnerrating_pi1.settings.mail.from'),
-                'to' => $siteSettings->get('plugin.tx_partnerrating_pi1.settings.mail.to'),
-            ],
-        ];
+        try {
+            return $siteSettings->get('plugin')['tx_partnerrating_pi1']['settings'] ?? [];
+        } catch (NotFoundExceptionInterface|ContainerExceptionInterface) {
+        }
+
+        return [];
     }
 
     /**

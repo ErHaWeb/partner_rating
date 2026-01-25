@@ -82,16 +82,16 @@
 				<source>List of database fields to be used for forming the label of entries in the partner selection field. Fields that do not exist in the partner table are ignored.</source>
 			</trans-unit>
 			<trans-unit id="settings.plugin.tx_partnerrating_pi1.settings.ratingReasonMinValue">
-				<source>Rating Reason Min. Value</source>
+				<source>Rating Reason Trigger Value</source>
 			</trans-unit>
 			<trans-unit id="settings.description.plugin.tx_partnerrating_pi1.settings.ratingReasonMinValue">
-				<source>If the selected rating exceeds this limit, then there is an obligation to select a reason.</source>
+				<source>If the selected rating reaches or exceeds this value, selecting a reason is required.</source>
 			</trans-unit>
 			<trans-unit id="settings.plugin.tx_partnerrating_pi1.settings.ratingMailMinValue">
-				<source>Rating Mail Min. Value</source>
+				<source>Rating Mail Trigger Value</source>
 			</trans-unit>
 			<trans-unit id="settings.description.plugin.tx_partnerrating_pi1.settings.ratingMailMinValue">
-				<source>If the selected rating exceeds this limit, an email notification will be sent.</source>
+				<source>An email notification is triggered when the selected rating exceeds this value.</source>
 			</trans-unit>
 			<trans-unit id="settings.plugin.tx_partnerrating_pi1.settings.ratingValues">
 				<source>Rating Values</source>

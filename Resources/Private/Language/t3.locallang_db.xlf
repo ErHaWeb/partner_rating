@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns:t3="http://typo3.org/schemas/xliff" xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" original="EXT:partner_rating/Resources/Private/Language/locallang_db.xlf" datatype="plaintext" product-name="partner_rating" date="2024-04-11T09:06:39+02:00" target-language="t3">
+    <header/>
+    <body>
+      <trans-unit id="tx_partnerrating_domain_model_partner" resname="tx_partnerrating_domain_model_partner">
+        <source>Partner</source>
+        <target>crwdns296568:0crwdne296568:0</target>
+      </trans-unit>
+      <trans-unit id="tx_partnerrating_domain_model_partner.title" resname="tx_partnerrating_domain_model_partner.title">
+        <source>Title</source>
+        <target>crwdns296570:0crwdne296570:0</target>
+      </trans-unit>
+      <trans-unit id="tx_partnerrating_domain_model_partner.title.description" resname="tx_partnerrating_domain_model_partner.title.description">
+        <source>By entering the name of the partner, a partner can be found in the evaluation sheet.</source>
+        <target>crwdns296572:0crwdne296572:0</target>
+      </trans-unit>
+      <trans-unit id="tx_partnerrating_domain_model_partner.partner_nr" resname="tx_partnerrating_domain_model_partner.partner_nr">
+        <source>Partner Nr</source>
+        <target>crwdns296574:0crwdne296574:0</target>
+      </trans-unit>
+      <trans-unit id="tx_partnerrating_domain_model_partner.partner_nr.description" resname="tx_partnerrating_domain_model_partner.partner_nr.description">
+        <source>By entering the partner number, a partner can be found in the evaluation sheet.</source>
+        <target>crwdns296576:0crwdne296576:0</target>
+      </trans-unit>
+      <trans-unit id="tx_partnerrating_domain_model_rating" resname="tx_partnerrating_domain_model_rating">
+        <source>Rating</source>
+        <target>crwdns296578:0crwdne296578:0</target>
+      </trans-unit>
+      <trans-unit id="tx_partnerrating_domain_model_rating.rate_value" resname="tx_partnerrating_domain_model_rating.rate_value">
+        <source>Rate Value</source>
+        <target>crwdns296580:0crwdne296580:0</target>
+      </trans-unit>
+      <trans-unit id="tx_partnerrating_domain_model_rating.rate_value.description" resname="tx_partnerrating_domain_model_rating.rate_value.description">
+        <source>Valuation value assigned by a department</source>
+        <target>crwdns296582:0crwdne296582:0</target>
+      </trans-unit>
+      <trans-unit id="tx_partnerrating_domain_model_rating.partner" resname="tx_partnerrating_domain_model_rating.partner">
+        <source>Partner</source>
+        <target>crwdns296584:0crwdne296584:0</target>
+      </trans-unit>
+      <trans-unit id="tx_partnerrating_domain_model_rating.partner.description" resname="tx_partnerrating_domain_model_rating.partner.description">
+        <source>Partner who received this rating</source>
+        <target>crwdns296586:0crwdne296586:0</target>
+      </trans-unit>
+      <trans-unit id="tx_partnerrating_domain_model_rating.reason" resname="tx_partnerrating_domain_model_rating.reason">
+        <source>Rating Reason</source>
+        <target>crwdns296588:0crwdne296588:0</target>
+      </trans-unit>
+      <trans-unit id="tx_partnerrating_domain_model_rating.reason_text" resname="tx_partnerrating_domain_model_rating.reason_text">
+        <source>Rating Reason Text</source>
+        <target>crwdns296590:0crwdne296590:0</target>
+      </trans-unit>
+      <trans-unit id="tx_partnerrating_domain_model_rating.reason_text.description" resname="tx_partnerrating_domain_model_rating.reason_text.description">
+        <source>Justification for the department's rating in free text form</source>
+        <target>crwdns296592:0crwdne296592:0</target>
+      </trans-unit>
+      <trans-unit id="tx_partnerrating_domain_model_rating.reason.description" resname="tx_partnerrating_domain_model_rating.reason.description">
+        <source>Reason for rating given by the department</source>
+        <target>crwdns296594:0crwdne296594:0</target>
+      </trans-unit>
+      <trans-unit id="tx_partnerrating_domain_model_rating.department" resname="tx_partnerrating_domain_model_rating.department">
+        <source>Department</source>
+        <target>crwdns296596:0crwdne296596:0</target>
+      </trans-unit>
+      <trans-unit id="tx_partnerrating_domain_model_rating.department.description" resname="tx_partnerrating_domain_model_rating.department.description">
+        <source>Department that gave the rating</source>
+        <target>crwdns296598:0crwdne296598:0</target>
+      </trans-unit>
+      <trans-unit id="tx_partnerrating_domain_model_reason.department" resname="tx_partnerrating_domain_model_reason.department">
+        <source>Department</source>
+        <target>crwdns296600:0crwdne296600:0</target>
+      </trans-unit>
+      <trans-unit id="tx_partnerrating_domain_model_reason.department.description" resname="tx_partnerrating_domain_model_reason.department.description">
+        <source>Department to which this reason is available for selection in the rating form</source>
+        <target>crwdns296602:0crwdne296602:0</target>
+      </trans-unit>
+      <trans-unit id="tx_partnerrating_domain_model_reason" resname="tx_partnerrating_domain_model_reason">
+        <source>Rating Reason</source>
+        <target>crwdns296604:0crwdne296604:0</target>
+      </trans-unit>
+      <trans-unit id="tx_partnerrating_domain_model_reason.description" resname="tx_partnerrating_domain_model_reason.description">
+        <source>Description</source>
+        <target>crwdns296606:0crwdne296606:0</target>
+      </trans-unit>
+      <trans-unit id="tx_partnerrating_domain_model_reason.title" resname="tx_partnerrating_domain_model_reason.title">
+        <source>Title</source>
+        <target>crwdns296608:0crwdne296608:0</target>
+      </trans-unit>
+      <trans-unit id="tx_partnerrating_domain_model_reason.title.description" resname="tx_partnerrating_domain_model_reason.title.description">
+        <source>Heading of the rating reason</source>
+        <target>crwdns296610:0crwdne296610:0</target>
+      </trans-unit>
+      <trans-unit id="tx_partnerrating_domain_model_reason.description.description" resname="tx_partnerrating_domain_model_reason.description.description">
+        <source>Complete formulation of the rating reason</source>
+        <target>crwdns296612:0crwdne296612:0</target>
+      </trans-unit>
+      <trans-unit id="tx_partnerrating_domain_model_department" resname="tx_partnerrating_domain_model_department">
+        <source>Department</source>
+        <target>crwdns296614:0crwdne296614:0</target>
+      </trans-unit>
+      <trans-unit id="tx_partnerrating_domain_model_department.title" resname="tx_partnerrating_domain_model_department.title">
+        <source>Title</source>
+        <target>crwdns296616:0crwdne296616:0</target>
+      </trans-unit>
+      <trans-unit id="tx_partnerrating_domain_model_department.title.description" resname="tx_partnerrating_domain_model_department.title.description">
+        <source>Name of the department used in the list output of departments by the plugin.</source>
+        <target>crwdns296618:0crwdne296618:0</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
